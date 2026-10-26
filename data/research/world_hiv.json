@@ -132,7 +132,7 @@
    "kind": "国",
    "name": "スリランカ",
    "en": "Sri Lanka",
-   "moc": "特定技能・技能実習",
+   "moc": "特定技能・技能実習・育成就労",
    "plhiv": 8700,
    "plhiv_low": 7800,
    "plhiv_high": 9600,
@@ -168,7 +168,7 @@
    "kind": "国",
    "name": "バングラデシュ",
    "en": "Bangladesh",
-   "moc": "特定技能・技能実習",
+   "moc": "特定技能・技能実習・育成就労",
    "plhiv": 19000,
    "plhiv_low": 17000,
    "plhiv_high": 21000,
@@ -186,7 +186,7 @@
    "kind": "国",
    "name": "ウズベキスタン",
    "en": "Uzbekistan",
-   "moc": "特定技能・技能実習",
+   "moc": "特定技能・技能実習・育成就労",
    "plhiv": 63000,
    "plhiv_low": 51000,
    "plhiv_high": 81000,
@@ -222,7 +222,7 @@
    "kind": "国",
    "name": "タイ",
    "en": "Thailand",
-   "moc": "特定技能・技能実習",
+   "moc": "特定技能・技能実習・育成就労",
    "plhiv": 620000,
    "plhiv_low": 560000,
    "plhiv_high": 690000,
@@ -276,7 +276,7 @@
    "kind": "国",
    "name": "ラオス",
    "en": "Lao People's Democratic Republic",
-   "moc": "特定技能・技能実習",
+   "moc": "特定技能・技能実習・育成就労",
    "plhiv": 23000,
    "plhiv_low": 20000,
    "plhiv_high": 25000,
@@ -384,7 +384,7 @@
    "kind": "国",
    "name": "東ティモール",
    "en": "Timor-Leste",
-   "moc": "技能実習",
+   "moc": "技能実習・育成就労",
    "plhiv": 2200,
    "plhiv_low": 1900,
    "plhiv_high": 2600,
@@ -432,7 +432,15 @@
     "source_id": "S5"
    },
    {
-    "text": "両方の制度で覚書がある国は14か国。技能実習だけの国はブータン・東ティモール・フィジー、特定技能だけの国はマレーシア・キルギス・タジキスタンです。このページでは、合わせて20か国を載せています。",
+    "text": "「技能実習」は2027年4月から、人材育成と人材確保を目的とした「育成就労」に変わります（技能実習制度を発展的に解消し、令和9年4月から施行）。",
+    "source_id": "S14"
+   },
+   {
+    "text": "「育成就労」の協力覚書は、いま6か国です（ウズベキスタン、スリランカ、タイ、バングラデシュ、東ティモール、ラオス）。6か国とも、このページの20か国に入っています。",
+    "source_id": "S13"
+   },
+   {
+    "text": "特定技能と技能実習の両方で覚書がある国は14か国。技能実習だけの国はブータン・東ティモール・フィジー、特定技能だけの国はマレーシア・キルギス・タジキスタンです。このページでは、合わせて20か国を載せています。",
     "source_id": null
    }
   ],
@@ -581,6 +589,20 @@
    "publisher": "国連合同エイズ計画（UNAIDS）",
    "url": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2021/october/new-zealand-lift-travel-restrictions-hiv",
    "published": "2021-10-25"
+  },
+  {
+   "id": "S13",
+   "title": "育成就労に関する二国間の協力覚書",
+   "publisher": "出入国在留管理庁",
+   "url": "https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00002.html",
+   "published": null
+  },
+  {
+   "id": "S14",
+   "title": "外国人育成就労制度について",
+   "publisher": "厚生労働省",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/index_00029.html",
+   "published": null
   }
  ]
 }

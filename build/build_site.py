@@ -17,7 +17,8 @@ SITE_URL = "https://yumaki5555.github.io/kansensho/"
 XLSX_SRC = os.path.join(ROOT, "日本の感染症の状況_2026年10月.xlsx")
 XLSX_PUB = "kansensho_2026-10.xlsx"
 TITLE = "日本の感染症を知る"
-DESC = "HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。検査・予防・治療で使える公費の制度もまとめました。"
+DESC = "HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。検査・予防・治療で使える公費の支援もまとめました。"
+AS_OF = "2026年10月26日時点"
 
 os.makedirs(DOCS, exist_ok=True)
 data = {n: json.load(open(os.path.join(ROOT, "data", "out", f"{n}.json"), encoding="utf-8"))
@@ -57,7 +58,7 @@ head = f"""<!DOCTYPE html>
   --series-1: #2f6cb3; --series-2: #c2532d; --series-3: #a87a12; --series-4: #3b8a56;
   --cds-chart-grid: #e9ecea; --cds-chart-axis: #b4bdb8; --cds-chart-reference: #6f7a75; --cds-chart-muted: #c8cfcb;
   --cds-surface-popover: #ffffff; --cds-border: #d3dad6; --cds-shadow-popover: 0 6px 18px rgba(20, 30, 25, .14); --cds-text-secondary: #59645f;
-  --cds-font-size-caption: 0.8125rem; --cds-font-size-body: 0.9375rem; --cds-font-size-heading: 1.0625rem; --cds-font-size-title: 1.5rem;
+  --cds-font-size-caption: 0.875rem; --cds-font-size-body: 1rem; --cds-font-size-heading: 1.125rem; --cds-font-size-title: 1.5rem;
   --cds-font-weight-medium: 600;
   --cds-gap-xs: 4px; --cds-gap-sm: 8px; --cds-gap-md: 16px; --cds-gap-lg: 24px; --cds-gap-xl: 48px;
   --cds-pad-xs: 4px; --cds-pad-sm: 8px; --cds-pad-md: 12px; --cds-pad-lg: 18px;
@@ -81,15 +82,17 @@ body {{ margin: 0; background: var(--color-bg); color: var(--color-fg); font-fam
 .site-bar a, .site-foot a {{ color: var(--color-fg); text-underline-offset: 3px; }}
 .site-home {{ font-weight: 700; text-decoration: none; }}
 .site-home span {{ color: var(--color-fg-muted); font-weight: 400; margin-left: .4em; }}
-#dash-root {{ padding-block: 32px 48px; }}
+#dash-root {{ padding-block: 0 48px; }}
 .site-foot {{ border-top: 1px solid var(--color-border-line); }}
 .site-foot-in {{ padding-block: 20px 32px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.8; }}
 .site-foot p {{ margin: 0; }}
 .dash-skeleton {{ color: transparent; background: var(--cds-chart-grid); border-radius: 4px; }}
-a:focus-visible {{ outline: 2px solid var(--color-fg); outline-offset: 2px; }}
+a:focus-visible {{ outline: 3px solid var(--color-fg); outline-offset: 2px; }}
+.site-bar a {{ display: inline-flex; align-items: center; min-height: 40px; }}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="data.js?v={ver}"></script>
+<script>window.KJ_SITE = {{ name: "{TITLE}", url: "{SITE_URL}", asOf: "{AS_OF}", xlsx: "{XLSX_PUB}" }};</script>
 <script>
 // ページ本体（claude.ai 版と共通）にデータを渡す小さな仕組み
 (function () {{
@@ -130,7 +133,7 @@ tail = f"""
 </main>
 <footer class="site-foot"><div class="site-foot-in">
   <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。HIV/エイズの世界の動向は国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）の公式資料。結核の医療費助成の一部は東京都の公式ページ。くわしくは「出典一覧」をご覧ください。</p>
-  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（4つの比較、公費の支え、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
+  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（4つの比較、公費の支援、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
   <p><a href="https://yumaki5555.github.io/">「日本を知る。」のトップへ</a></p>
 </div></footer>
 </body>
