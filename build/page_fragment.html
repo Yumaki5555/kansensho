@@ -387,8 +387,11 @@
   .kj-foot { margin-top: 40px; border-top: 1px solid var(--color-border-line); padding-top: 18px; display: grid; gap: 10px; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.8; }
   .kj-foot nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 20px; font-size: 0.9375rem; }
   .kj-foot nav a { display: inline-flex; align-items: center; min-height: 40px; font-weight: 600; }
-  .kj-totop { position: fixed; right: max(16px, env(safe-area-inset-right, 0px)); bottom: max(16px, env(safe-area-inset-bottom, 0px)); z-index: 45; box-shadow: var(--cds-shadow-popover); }
-  @media print { .kj-top, .kj-sub, .kj-totop, .kj-fig-tools { display: none !important; } }
+  /* 「先頭へ」：fixed はダッシュボードの中だと画面に留まらないため、ページの最後に置いた高さ0の箱を sticky で画面の下に貼りつける */
+  .kj-totop-wrap { position: sticky; bottom: max(16px, env(safe-area-inset-bottom, 0px)); height: 0; z-index: 45; }
+  .kj-totop { position: absolute; right: 0; bottom: 0; box-shadow: var(--cds-shadow-popover); }
+  .kj-foot { padding-bottom: 64px; }
+  @media print { .kj-top, .kj-sub, .kj-totop-wrap, .kj-fig-tools { display: none !important; } }
 </style>
 
 <div class="kj" id="kj">
@@ -813,7 +816,7 @@
     </ul></nav>
     <p>掲載内容は2026年10月26日時点（最終更新：2026年10月26日）。このページの数字と制度の説明は、国（世界の動向は国連の機関、結核の医療費助成の一部は東京都）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</p>
   </footer>
-  <button type="button" class="kj-ibtn kj-totop" id="kj-totop" hidden aria-label="このページの先頭へ戻る">↑ 先頭へ</button>
+  <div class="kj-totop-wrap"><button type="button" class="kj-ibtn kj-totop" id="kj-totop" hidden aria-label="このページの先頭へ戻る">↑ 先頭へ</button></div>
 </div>
 
 <script>
