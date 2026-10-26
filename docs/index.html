@@ -660,6 +660,32 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
   .kj-door-go { font-size: 0.9375rem; font-weight: 700; color: var(--kj-link); }
   @media (max-width: 480px) { .kj .kj-door { padding: 10px 10px 12px; border-radius: 14px; } .kj-door-d { font-size: 0.875rem; } }
 
+  /* トップの「まず3分でわかる」：5つのステップの要点（4つの入口より上に置き、いちばん目立たせる） */
+  .kj-outline { display: grid; gap: 14px; padding: 20px; border-radius: 22px; background: var(--kj-tint-blue); border: 2px solid color-mix(in srgb, var(--kj-link) 40%, transparent); }
+  @media (max-width: 560px) { .kj-outline { padding: 14px 12px; border-radius: 16px; } }
+  .kj-outline-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 10px 16px; }
+  .kj-outline-head > div { display: grid; gap: 4px; }
+  .kj-outline-head .kj-band-k { justify-self: start; }
+  .kj-outline-head h2 { margin: 2px 0 0; font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.375rem); font-weight: 700; line-height: 1.3; word-break: auto-phrase; }
+  .kj-outline-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  @media (max-width: 1099px) { .kj-outline-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); } }
+  .kj .kj-outline-list a { display: grid; grid-template-rows: auto auto 1fr auto; gap: 6px; height: 100%; padding: 12px 14px 14px; border-radius: 14px; background: var(--color-panel); border: 1.5px solid var(--color-border-line); color: var(--color-fg); text-decoration: none; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .kj .kj-outline-list a:hover { border-color: var(--kj-link); box-shadow: 0 6px 18px rgba(20, 40, 60, .12); transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) { .kj .kj-outline-list a, .kj .kj-outline-list a:hover { transition: none; transform: none; } }
+  .kj-ol-no { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 0.875rem; letter-spacing: 0.06em; color: var(--kj-link); }
+  .kj-ol-no .kj-illu { width: 48px; height: 48px; border-radius: 12px; padding: 3px; flex: none; }
+  .kj-ol-t { font-weight: 700; font-size: 1.0625rem; line-height: 1.5; word-break: auto-phrase; }
+  .kj-ol-fact { font-size: 0.875rem; line-height: 1.6; color: var(--color-fg-muted); }
+  .kj-ol-fact b { display: block; font-family: var(--font-anthropic-serif); font-size: 1.5rem; font-weight: 600; line-height: 1.3; color: var(--color-fg); font-variant-numeric: tabular-nums; }
+  .kj-ol-go { font-size: 0.875rem; font-weight: 700; color: var(--kj-link); }
+  @media (max-width: 560px) {
+    .kj .kj-outline-list a { grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto; column-gap: 10px; }
+    .kj-ol-no { grid-row: 1 / span 3; flex-direction: column; align-items: flex-start; }
+    .kj-ol-t, .kj-ol-fact, .kj-ol-go { grid-column: 2; }
+    .kj-ol-go { display: none; }
+    .kj-ol-fact b { font-size: 1.25rem; }
+  }
+
   /* 見出しの帯（セクションの頭） */
   .kj-band { display: grid; gap: 6px; }
   .kj-band-k { justify-self: start; display: inline-flex; align-items: center; gap: 0.4rem; padding: 2px 12px; border-radius: 999px; background: var(--kj-tint-orange); color: var(--color-fg); font-weight: 700; font-size: 0.9375rem; }
@@ -1007,7 +1033,8 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
     </div>
     <nav class="kj-drawer" id="kj-drawer" aria-label="メニュー" hidden>
       <ul>
-        <li><a href="#home" data-nav data-view-link="home">トップ（まず3分でわかる）</a></li>
+        <li><a href="#home" data-nav data-view-link="home">トップ</a></li>
+        <li><a href="#sanpun" data-nav data-view-link="sanpun">まず3分でわかる（5つのステップ）</a></li>
         <li><a href="#countries" data-nav data-group-link="world">① 世界では何が流行？</a>
           <ul>
             <li><a href="#countries" data-nav data-view-link="countries">国別の比較表</a></li>
@@ -1077,6 +1104,14 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
       <p class="kj-hero-desc">HIV・梅毒・はしか・結核。世界と日本の感染状況、外国人材の受入制度、健康診断、医療費の仕組みを公的資料でわかりやすく解説します。</p>
       <p class="kj-asof"><span>掲載内容：<b>2026年10月27日時点</b></span><span>最終更新：<b>2026年10月27日</b></span><span><a href="#riyou" data-nav>ご利用にあたって</a></span></p>
     </header>
+    <section class="kj-outline" id="home-outline" aria-labelledby="home-outline-h">
+      <div class="kj-outline-head">
+        <div><span class="kj-band-k">まず3分でわかる</span><h2 id="home-outline-h">5つのステップで全体をつかむ</h2><p class="kj-cap">まずはここから。大きな数字と図で、全体の流れを順番に見られます。</p></div>
+        <a class="kj-btn kj-btn-pri" href="#sanpun" data-nav>5つのステップを順番に見る →</a>
+      </div>
+      <ol class="kj-outline-list" id="home-outline-list"></ol>
+    </section>
+    <div class="kj-band"><h2 id="home-doors-h" style="font-size:clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem)">調べたいことから選ぶ</h2></div>
     <nav aria-label="調べたいことを選ぶ">
       <ul class="kj-doors">
         <li><a class="kj-door" href="#countries" data-nav><span class="kj-door-n" aria-hidden="true">1</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-world"/></svg></span><b>世界では何が流行？</b><span class="kj-door-d">海外の感染状況を、日本と比べて見る</span><span class="kj-door-go">国別に比べる →</span></a></li>
@@ -1085,42 +1120,6 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         <li><a class="kj-door" href="#cost" data-nav><span class="kj-door-n" aria-hidden="true">4</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-cost"/></svg></span><b>治療費は誰が払う？</b><span class="kj-door-d">医療費と、保険・公費・本人の負担</span><span class="kj-door-go">費用を見る →</span></a></li>
       </ul>
     </nav>
-
-    <section class="kj-section" id="sanpun" aria-labelledby="sanpun-h">
-      <div class="kj-band"><span class="kj-band-k">まず3分でわかる</span><h2 id="sanpun-h">5つのステップで全体をつかむ</h2><p class="kj-cap">大きな数字と図だけで流れがわかるようにしています。根拠の資料は、各ステップの「詳しく見る」と出典から確かめられます。</p></div>
-      <div class="kj-steps">
-        <section class="kj-step" id="step1" aria-labelledby="step1-h">
-          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-world"/></svg></span><div><span class="kj-step-no">STEP 1</span><h3 id="step1-h">海外では今も流行している</h3></div></div>
-          <p class="kj-step-lede">日本では少なくなった病気も、世界では毎年たくさんの人がかかっています。日本国内で増えている病気もあります。下の数字は、病気ごとに数え方（発病した人・かかった人・感染している人など）が違うため、病気どうしの大きさは比べられません。</p>
-          <div class="kj-step-body"><div class="kj-ntiles" id="step1-tiles"></div></div>
-          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#countries" data-nav>国別の数字を詳しく見る →</a><a href="#world" data-nav>HIV/エイズ 世界の動向</a></div>
-        </section>
-        <section class="kj-step" id="step2" aria-labelledby="step2-h">
-          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-moc"/></svg></span><div><span class="kj-step-no">STEP 2</span><h3 id="step2-h">日本は外国人をどう受け入れている？</h3></div></div>
-          <p class="kj-step-lede">日本は、特定技能・技能実習（2027年4月からは育成就労）・留学などの在留資格で外国人を受け入れています。外国人材の送り出し・受け入れで結ぶ「協力覚書」と、入国前に結核の検査を求める「JPETS」は、別の制度です。</p>
-          <div class="kj-step-body"><div class="kj-ntiles" id="step2-nums"></div><div class="kj-venn" id="step2-venn"></div><div class="kj-schemes" id="step2-schemes"></div></div>
-          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry" data-nav>入国前の健康確認を詳しく見る →</a><a href="#entry-moc" data-nav>協力覚書の一覧</a></div>
-        </section>
-        <section class="kj-step" id="step3" aria-labelledby="step3-h">
-          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-check"/></svg></span><div><span class="kj-step-no">STEP 3</span><h3 id="step3-h">検査される病気・されない病気</h3></div></div>
-          <p class="kj-step-lede">入国前・入国時・入国後の制度ごとに、4つの病気が検査の対象かを並べました。「一律義務なし」は制度の対象外と公的資料で確認できたもの、「未確認」は公的資料で確認できなかったもの（制度がないとは決めつけていません）です。</p>
-          <div class="kj-step-body"><div id="step3-mx"></div></div>
-          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry-check" data-nav>国・在留資格を選んで調べる →</a><a href="#entry-gaps" data-nav>制度上の確認事項</a></div>
-        </section>
-        <section class="kj-step" id="step4" aria-labelledby="step4-h">
-          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-japan"/></svg></span><div><span class="kj-step-no">STEP 4</span><h3 id="step4-h">日本国内の感染状況は？</h3></div></div>
-          <p class="kj-step-lede">国内で届け出られた患者の数です。「外国生まれ」「外国籍」「国外で感染」は、それぞれ意味の違う数字です。国内の患者数の増減だけで、感染した場所や経路を決めることはできません。</p>
-          <div class="kj-step-body"><div class="kj-ntiles" id="step4-nums"></div><div class="kj-fx" id="step4-fx"></div><figure class="kj-fig" id="step4-fig" style="margin:0"><div class="kj-fig-head"><div><h3>結核：新しく登録された患者のうち、外国生まれの人の割合</h3><p class="kj-cap">生まれた国で分けた数です（国籍ではありません）。棒にふれる・タップすると人数も出ます。</p></div><div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="step4-foreign">画像で保存（PNG）</button></div></div><div class="kj-plot" id="step4-chart"></div><div id="step4-insight"></div><div id="step4-src"></div></figure></div>
-          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#compare" data-nav>国内の推移を詳しく見る →</a><a href="#tb-tables" data-nav>結核の外国生まれの表</a></div>
-        </section>
-        <section class="kj-step" id="step5" aria-labelledby="step5-h">
-          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-cost"/></svg></span><div><span class="kj-step-no">STEP 5</span><h3 id="step5-h">感染した場合、いくらかかる？</h3></div></div>
-          <p class="kj-step-lede">治療費は、<b style="color:var(--kj-pay-ins)">公的医療保険</b>・<b style="color:var(--kj-pay-pub)">公費（税金）</b>・<b style="color:var(--kj-pay-self)">本人</b>の3つで分けて払われます。病気と使える制度によって、本人の負担は大きく違います。</p>
-          <div class="kj-step-body"><div class="kj-paykey" id="step5-key"></div><div class="kj-grid" id="step5-cases"></div></div>
-          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#cost" data-nav>医療費と負担のしくみを詳しく見る →</a><a href="#cost-sim" data-nav>100万円の場合を試算する</a></div>
-        </section>
-      </div>
-    </section>
 
     <section class="kj-section" id="home-dz" aria-labelledby="home-dz-h">
       <div class="kj-band"><span class="kj-band-k">4つの感染症</span><h2 id="home-dz-h">HIV・梅毒・はしか・結核のちがい</h2><p class="kj-cap">カードを押すと、その病気の詳しい資料とグラフに進みます。</p></div>
@@ -1155,6 +1154,49 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         <p class="kj-links"><a href="#guide" data-nav>数字の見方・注意事項へ</a><a href="#sources" data-nav>出典一覧へ</a><a href="#riyou-4" data-nav>掲載データの限界</a></p>
       </div>
     </details>
+  </section>
+
+  <!-- まず3分でわかる（5つのステップ） -->
+  <section class="kj-view" id="sanpun" data-label="まず3分でわかる" hidden>
+    <header class="kj-vhead">
+      <span class="kj-band-k" style="justify-self:start">まず3分でわかる</span>
+      <h2 class="kj-h2" tabindex="-1">5つのステップで全体をつかむ</h2>
+      <p class="kj-lede">大きな数字と図だけで、流れがわかるようにしています。根拠の資料は、各ステップの「詳しく見る」と出典から確かめられます。</p>
+      <nav class="kj-toc kj-toc-n" aria-label="このページの中の移動"><a href="#step1" data-nav>海外では今も流行している</a><a href="#step2" data-nav>日本は外国人をどう受け入れている？</a><a href="#step3" data-nav>検査される病気・されない病気</a><a href="#step4" data-nav>日本国内の感染状況は？</a><a href="#step5" data-nav>感染した場合、いくらかかる？</a></nav>
+    </header>
+    <div class="kj-steps">
+      <section class="kj-step" id="step1" aria-labelledby="step1-h">
+        <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-world"/></svg></span><div><span class="kj-step-no">STEP 1</span><h3 id="step1-h">海外では今も流行している</h3></div></div>
+        <p class="kj-step-lede">日本では少なくなった病気も、世界では毎年たくさんの人がかかっています。日本国内で増えている病気もあります。下の数字は、病気ごとに数え方（発病した人・かかった人・感染している人など）が違うため、病気どうしの大きさは比べられません。</p>
+        <div class="kj-step-body"><div class="kj-ntiles" id="step1-tiles"></div></div>
+        <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#countries" data-nav>国別の数字を詳しく見る →</a><a href="#world" data-nav>HIV/エイズ 世界の動向</a></div>
+      </section>
+      <section class="kj-step" id="step2" aria-labelledby="step2-h">
+        <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-moc"/></svg></span><div><span class="kj-step-no">STEP 2</span><h3 id="step2-h">日本は外国人をどう受け入れている？</h3></div></div>
+        <p class="kj-step-lede">日本は、特定技能・技能実習（2027年4月からは育成就労）・留学などの在留資格で外国人を受け入れています。外国人材の送り出し・受け入れで結ぶ「協力覚書」と、入国前に結核の検査を求める「JPETS」は、別の制度です。</p>
+        <div class="kj-step-body"><div class="kj-ntiles" id="step2-nums"></div><div class="kj-venn" id="step2-venn"></div><div class="kj-schemes" id="step2-schemes"></div></div>
+        <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry" data-nav>入国前の健康確認を詳しく見る →</a><a href="#entry-moc" data-nav>協力覚書の一覧</a></div>
+      </section>
+      <section class="kj-step" id="step3" aria-labelledby="step3-h">
+        <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-check"/></svg></span><div><span class="kj-step-no">STEP 3</span><h3 id="step3-h">検査される病気・されない病気</h3></div></div>
+        <p class="kj-step-lede">入国前・入国時・入国後の制度ごとに、4つの病気が検査の対象かを並べました。「一律義務なし」は制度の対象外と公的資料で確認できたもの、「未確認」は公的資料で確認できなかったもの（制度がないとは決めつけていません）です。</p>
+        <div class="kj-step-body"><div id="step3-mx"></div></div>
+        <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry-check" data-nav>国・在留資格を選んで調べる →</a><a href="#entry-gaps" data-nav>制度上の確認事項</a></div>
+      </section>
+      <section class="kj-step" id="step4" aria-labelledby="step4-h">
+        <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-japan"/></svg></span><div><span class="kj-step-no">STEP 4</span><h3 id="step4-h">日本国内の感染状況は？</h3></div></div>
+        <p class="kj-step-lede">国内で届け出られた患者の数です。「外国生まれ」「外国籍」「国外で感染」は、それぞれ意味の違う数字です。国内の患者数の増減だけで、感染した場所や経路を決めることはできません。</p>
+        <div class="kj-step-body"><div class="kj-ntiles" id="step4-nums"></div><div class="kj-fx" id="step4-fx"></div><figure class="kj-fig" id="step4-fig" style="margin:0"><div class="kj-fig-head"><div><h3>結核：新しく登録された患者のうち、外国生まれの人の割合</h3><p class="kj-cap">生まれた国で分けた数です（国籍ではありません）。棒にふれる・タップすると人数も出ます。</p></div><div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="step4-foreign">画像で保存（PNG）</button></div></div><div class="kj-plot" id="step4-chart"></div><div id="step4-insight"></div><div id="step4-src"></div></figure></div>
+        <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#compare" data-nav>国内の推移を詳しく見る →</a><a href="#tb-tables" data-nav>結核の外国生まれの表</a></div>
+      </section>
+      <section class="kj-step" id="step5" aria-labelledby="step5-h">
+        <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-cost"/></svg></span><div><span class="kj-step-no">STEP 5</span><h3 id="step5-h">感染した場合、いくらかかる？</h3></div></div>
+        <p class="kj-step-lede">治療費は、<b style="color:var(--kj-pay-ins)">公的医療保険</b>・<b style="color:var(--kj-pay-pub)">公費（税金）</b>・<b style="color:var(--kj-pay-self)">本人</b>の3つで分けて払われます。病気と使える制度によって、本人の負担は大きく違います。</p>
+        <div class="kj-step-body"><div class="kj-paykey" id="step5-key"></div><div class="kj-grid" id="step5-cases"></div></div>
+        <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#cost" data-nav>医療費と負担のしくみを詳しく見る →</a><a href="#cost-sim" data-nav>100万円の場合を試算する</a></div>
+      </section>
+    </div>
+    <nav class="kj-endnav" aria-label="次に見る"><a class="kj-btn" href="#home" data-nav>← トップへ</a><a class="kj-btn" href="#countries" data-nav>① 世界では何が流行？</a><a class="kj-btn" href="#entry" data-nav>② 日本の入国時検査は？</a><a class="kj-btn" href="#compare" data-nav>③ 日本ではどうなっている？</a><a class="kj-btn" href="#cost" data-nav>④ 治療費は誰が払う？</a><a class="kj-btn" href="#kadai" data-nav>制度の課題を考える</a></nav>
   </section>
 
   <!-- 国別に比較する -->
@@ -4556,7 +4598,33 @@ function loadCalcSettings() {
   SPLIT_EX = get('割合の例') || [];
   if (calc.M === null) calc.M = get('金額の初期値');
 }
+// トップの「まず3分でわかる」：5つのステップの要点（題名は各ステップの見出し、数字は data.js から）
+function renderOutline() {
+  const box = $('#home-outline-list');
+  if (!box) return;
+  const tb = DBY.tb, wTb = worldNum(tb), v = vennSets();
+  const pre = ckSystems().filter((x) => /^(jpets|health_form)$/.test(x.ID));
+  const yes = pre.length ? DISEASES.filter((d) => ['義務あり', '条件付き', '導入予定'].includes(ckAggregate(pre, d).st)) : [];
+  const fr = tbForeignRows(), last = fr[fr.length - 1];
+  const hiv = scenarios().find((r) => r.項目 === 'hiv'), hs = hiv ? scenarioSplit(hiv) : null;
+  const facts = [
+    wTb ? [`約${man(wTb.値)}${wTb.単位}`, `世界で${wTb.見出し}（${wTb.年}年・${wTb.種類}）`] : null,
+    [`${v.nMoc}か国と${v.nJ}か国`, `協力覚書の国と、入国前の結核検査（JPETS）の対象国。重なるのは${v.both.length}か国`],
+    yes.length ? [`${yes.map((d) => d.label).join('・')}だけ`, `入国前に検査を求める制度で調べる感染症。${DISEASES.filter((d) => !yes.includes(d)).map((d) => d.label).join('・')}は対象外`] : null,
+    last ? [`${last.p.toFixed(1)}%`, `新しく登録された結核患者のうち、外国生まれの人の割合（${last.x}年）`] : null,
+    hs ? [`本人 ${man(hs.self)}円`, `HIVの治療を1年間続けた場合の本人の負担（医療費 約${man(hs.M)}円のモデル試算）`] : null,
+  ];
+  const ILLU = ['world', 'moc', 'check', 'japan', 'cost'];
+  box.replaceChildren(...facts.map((f, i) => {
+    const hd = document.getElementById(`step${i + 1}-h`);
+    const il = illu(ILLU[i]); il.querySelector('svg').setAttribute('viewBox', '0 0 160 100');
+    return h('li', {}, h('a', { href: `#step${i + 1}`, 'data-nav': '' },
+      h('span', { class: 'kj-ol-no' }, il, `STEP ${i + 1}`), h('span', { class: 'kj-ol-t' }, hd ? hd.textContent : ''),
+      h('span', { class: 'kj-ol-fact' }, f ? [h('b', {}, f[0]), f[1]] : '—'), h('span', { class: 'kj-ol-go' }, '詳しく見る →')));
+  }));
+}
 function renderExplainer() {
+  renderOutline();
   renderStep1(); renderStep2(); renderCkMatrix($('#step3-mx')); renderStep4(); renderStep5();
   renderDZ(); renderChecker(); renderKadai(); renderTerms();
 }
@@ -4585,6 +4653,7 @@ function setupTabs(list, onChange) {
 /* ===== ページの切りかえ（#の後ろでページを決める。ブラウザの「戻る」も使える） ===== */
 const VIEW_INFO = {
   home: { label: 'トップ', path: [] },
+  sanpun: { label: 'まず3分でわかる', path: [] },
   countries: { label: '世界の状況（国別に比較する）', group: 'world', path: [] },
   world: { label: 'HIV/エイズ 世界の動向', group: 'world', path: [['世界の状況', 'countries']] },
   diseases: { label: '4つの感染症', group: 'disease', path: [] },
@@ -4809,7 +4878,7 @@ $('#kj-q').addEventListener('keydown', (ev) => {
   }
   if (ev.key === 'Enter') { ev.preventDefault(); const x = lastResults[Math.max(0, resultIdx)]; if (x) openResult(x); }
 });
-const QUICK = [['入国時の検査の早見', 'entry-check'], ['100万円の医療費の試算', 'cost-sim'], ['外国人の場合の制度', 'cost-foreign'], ['制度の課題を考える', 'kadai'], ['ことばの説明', 'guide-terms'], ['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
+const QUICK = [['まず3分でわかる', 'sanpun'], ['入国時の検査の早見', 'entry-check'], ['100万円の医療費の試算', 'cost-sim'], ['外国人の場合の制度', 'cost-foreign'], ['制度の課題を考える', 'kadai'], ['ことばの説明', 'guide-terms'], ['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
 $('#kj-quick').replaceChildren(h('span', { class: 'kj-search-hint', style: 'width:100%' }, 'よく見られる項目'), ...QUICK.map(([t, id]) => h('a', { href: `#${id}`, class: 'kj-mini', 'data-nav': '' }, t)));
 
 /* ===== 操作の受け付け ===== */
