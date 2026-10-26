@@ -340,6 +340,7 @@ if seido:
         for x in ck["systems"]:
             entry.append({"区分": "早見", "ID": x["id"], "時期": x["timing"], "種類": x["kind"], "名前": x["name"], "ルール": json.dumps(x["rules"], ensure_ascii=False),
                           "対象": x.get("conditions"), "対象外": x.get("exceptions"), "根拠": x.get("basis"), "基準日": ck["as_of"], "リンク": x.get("link"),
+                          "だれが": x.get("who"), "なにを": x.get("what"),
                           "出典ID": ids("制度", x.get("source_ids"))})
     rs = seido.get("residents")
     if rs:

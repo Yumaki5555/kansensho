@@ -89,6 +89,8 @@ body {{ margin: 0; background: var(--color-bg); color: var(--color-fg); font-fam
 .dash-skeleton {{ color: transparent; background: var(--cds-chart-grid); border-radius: 4px; }}
 a:focus-visible {{ outline: 3px solid var(--color-fg); outline-offset: 2px; }}
 .site-bar a {{ display: inline-flex; align-items: center; min-height: 40px; }}
+/* スマホ：いちばん上の帯を細くして、トップの入口が画面の下に押し出されないように */
+@media (max-width: 560px) {{ .site-bar-in {{ padding-block: 2px; gap: 0 12px; font-size: 0.8125rem; }} .site-bar a {{ min-height: 34px; }} .site-home span {{ display: none; }} }}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="data.js?v={ver}"></script>
