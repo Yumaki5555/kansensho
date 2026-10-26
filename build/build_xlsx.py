@@ -13,8 +13,9 @@ from openpyxl.utils import get_column_letter
 sys.stdout.reconfigure(encoding="utf-8")
 data_dir, out_path = sys.argv[1], sys.argv[2]
 load = lambda n: json.load(open(os.path.join(data_dir, f"{n}.json"), encoding="utf-8"))  # noqa: E731
-annual, ytd, breakdown, notes, sources, world = (load(n) for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world"])
+annual, ytd, breakdown, notes, sources, world, kouhi = (load(n) for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi"])
 WORLD = "HIV/エイズ（世界）"
+KOUHI = "公費の制度"
 
 FONT = "游ゴシック"
 GREEN = "28765B"
@@ -28,6 +29,8 @@ f_link = Font(name=FONT, size=10.5, color="1F5FA8", underline="single")
 fill_head = PatternFill("solid", fgColor=GREEN)
 fill_soku = PatternFill("solid", fgColor="FFF4D1")
 fill_soft = PatternFill("solid", fgColor="EEF5F1")
+fill_yes = PatternFill("solid", fgColor="DDEFE4")
+fill_no = PatternFill("solid", fgColor="EEEEEE")
 thin = Side(style="thin", color="C9D3CE")
 box = Border(left=thin, right=thin, top=thin, bottom=thin)
 wrap = Alignment(wrap_text=True, vertical="top")
@@ -164,7 +167,7 @@ for name, sheet, display, main, ymain in SHEETS:
     r += 1
 
     # 内訳の表
-    rows = [b for b in breakdown if b["病気"] == name]
+    rows = [b for b in breakdown if b["病気"] == name and b["種類"] != "公費"]
     for title in dict.fromkeys(b["表"] for b in rows):
         t_rows = [b for b in rows if b["表"] == title]
         cols = list(dict.fromkeys(b["列"] for b in t_rows))
@@ -187,10 +190,12 @@ for name, sheet, display, main, ymain in SHEETS:
             r = para(ws, r, "注：" + n["文"], f_note)
         r += 1
 
-    for kind, head in [("特徴", "最近の特徴"), ("対策", "国の主な対策")]:
+    for kind, head in [("特徴", "最近の特徴"), ("対策", "国の主な対策"), ("公費", "公費で受けられる支え")]:
         r = section(ws, r, head)
         for n in notes_of(name, kind):
             r = para(ws, r, f"{n['番号']}. {n['文']}（出典 {n['出典ID']}）")
+        if kind == "公費":
+            r = para(ws, r, "4つの病気の一覧や、HIVの治療の自己負担の上限の表は「公費の支え」シートにあります。", f_note)
         r += 1
     r = section(ws, r, "この病気の数字を見るときの注意")
     for n in notes_of(name, "見るときの注意"):
@@ -291,6 +296,67 @@ sm.page_setup.orientation = "landscape"
 sm.sheet_properties.pageSetUpPr.fitToPage = True
 sm.page_setup.fitToHeight = 0
 
+# 公費で受けられる支え
+ks = wb.create_sheet("公費の支え", wb.sheetnames.index("4つの比較") + 1)
+ks.sheet_view.showGridLines = False
+ks.cell(row=1, column=1, value="公費で受けられる支え（検査・予防・治療）").font = f_title
+ks.row_dimensions[1].height = 26
+for i, w in enumerate([16, 13, 11, 76, 11], 1):
+    ks.column_dimensions[get_column_letter(i)].width = w
+r = para(ks, 2, notes_of(KOUHI, "説明")[0]["文"], f_note, cols=5, per_line=95)
+r += 1
+r = section(ks, r, "ひと目でわかる一覧")
+r = header(ks, r, ["病気", "場面", "目安", "内容", "出典ID"])
+first_k = r
+for k in kouhi:
+    yes = k["目安"] == "公費あり"
+    put(ks, r, 1, "はしか（麻しん）" if k["病気"] == "はしか" else k["病気"], f_bold, fill_soft, align=Alignment(vertical="top"))
+    put(ks, r, 2, k["場面"], align=Alignment(vertical="top"))
+    put(ks, r, 3, k["目安"], f_bold if yes else f_body, fill_yes if yes else fill_no, align=Alignment(horizontal="center", vertical="top"))
+    put(ks, r, 4, k["内容"], align=wrap)
+    put(ks, r, 5, k["出典ID"], align=Alignment(vertical="top"))
+    ks.row_dimensions[r].height = max(18, 16 * math.ceil(len(k["内容"]) / 44))
+    r += 1
+ks.auto_filter.ref = f"A{first_k - 1}:E{r - 1}"
+r = para(ks, r, "「公費なし」は、その場面で使える国の公費の制度が、国の法律や資料に見当たらないという意味です。", f_note, cols=5, per_line=95)
+r += 1
+r = section(ks, r, "治療費の公費のしくみ（感染症法）")
+for n in notes_of(KOUHI, "しくみ"):
+    r = para(ks, r, f"{n['番号']}. {n['文']}（出典 {n['出典ID']}）", cols=5, per_line=95)
+r += 1
+for name, sheet, display, main, ymain in SHEETS:
+    r = section(ks, r, display)
+    for n in notes_of(name, "公費"):
+        r = para(ks, r, f"{n['番号']}. {n['文']}（出典 {n['出典ID']}）", cols=5, per_line=95)
+    for title in dict.fromkeys(b["表"] for b in breakdown if b["病気"] == name and b["種類"] == "公費"):
+        t_rows = [b for b in breakdown if b["病気"] == name and b["表"] == title]
+        r += 1
+        ks.cell(row=r, column=1, value=title).font = f_bold
+        r += 1
+        ks.merge_cells(start_row=r, start_column=1, end_row=r, end_column=3)
+        put(ks, r, 1, "所得の区分（健康保険の世帯）", f_head, fill_head, align=center)
+        put(ks, r, 4, t_rows[0]["列"], f_head, fill_head, align=center)
+        put(ks, r, 5, "出典ID", f_head, fill_head, align=center)
+        r += 1
+        for b in t_rows:
+            ks.merge_cells(start_row=r, start_column=1, end_row=r, end_column=3)
+            put(ks, r, 1, b["区分"], align=wrap)
+            put(ks, r, 4, b["値"], fmt='#,##0"円"', align=Alignment(horizontal="left", vertical="top"))
+            put(ks, r, 5, b["出典ID"])
+            ks.row_dimensions[r].height = 30 if len(b["区分"]) > 26 else 18
+            r += 1
+        for n in notes_of(name, "表の注", title):
+            r = para(ks, r, "注：" + n["文"], f_note, cols=5, per_line=95)
+    r += 1
+r = section(ks, r, "この内容を見るときの注意")
+for n in notes_of(KOUHI, "見るときの注意"):
+    r = para(ks, r, f"・{n['文']}", cols=5, per_line=95)
+ks.freeze_panes = "A5"
+ks.page_setup.orientation = "landscape"
+ks.page_setup.fitToWidth = 1
+ks.page_setup.fitToHeight = 0
+ks.sheet_properties.pageSetUpPr.fitToPage = True
+
 # 見るときの注意
 cs = wb.create_sheet("見るときの注意")
 cs.sheet_view.showGridLines = False
@@ -298,8 +364,8 @@ cs.column_dimensions["A"].width = 16
 cs.column_dimensions["B"].width = 110
 cs.cell(row=1, column=1, value="数字を見るときの注意").font = f_title
 r = 3
-for who in ["全体", "HIV/エイズ", WORLD, "梅毒", "はしか", "結核"]:
-    cs.cell(row=r, column=1, value=who if who != "全体" else "全体にかかわること").font = f_sec
+for who in ["全体", "HIV/エイズ", WORLD, "梅毒", "はしか", "結核", KOUHI]:
+    cs.cell(row=r, column=1, value={"全体": "全体にかかわること", KOUHI: "公費で受けられる支え"}.get(who, who)).font = f_sec
     r += 1
     for n in [n for n in notes if n["病気"] == who and n["種類"] == "見るときの注意"]:
         put(cs, r, 1, n["番号"], align=Alignment(horizontal="center", vertical="top"), border=False)
@@ -311,7 +377,7 @@ for who in ["全体", "HIV/エイズ", WORLD, "梅毒", "はしか", "結核"]:
 # 出典一覧
 ss = wb.create_sheet("出典一覧")
 ss.sheet_view.showGridLines = False
-ss.cell(row=1, column=1, value="出典一覧（国と国連機関の公式資料のみ）").font = f_title
+ss.cell(row=1, column=1, value="出典一覧（国・東京都・国連機関の公式資料のみ）").font = f_title
 para(ss, 2, "各シートの「出典ID」はこの表の番号です。URLはクリックで開けます。確認日は2026年10月26日。", f_note, cols=7)
 header(ss, 4, ["出典ID", "病気", "資料名", "発行元", "URL", "公表日・更新日", "確認日"])
 for i, w in enumerate([10, 11, 60, 30, 55, 22, 12], 1):
@@ -338,13 +404,14 @@ intro.column_dimensions["B"].width = 100
 intro.cell(row=1, column=1, value="日本の感染症を知る：HIV/エイズ・梅毒・はしか・結核の状況").font = f_title
 rows = [
     ("作成日", "2026年10月26日（この日までに国が公表した資料をもとにしています）"),
-    ("内容", "4つの感染症について、最新の人数、過去10年の動き、男女・年代・都道府県、2026年の途中経過、国の対策をまとめました。"),
-    ("使った資料", "国の公式資料だけを使いました（厚生労働省、国立健康危機管理研究機構〔JIHS〕）。HIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（国連合同エイズ計画〔UNAIDS〕・国際移住機関〔IOM〕）の公式資料を使っています。"),
-    ("シートの説明", "「4つの比較」…4つの病気を1つの表で比べます。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「HIV・世界の動向」…世界全体と、日本と協力覚書を結んだ国のHIVの状況（UNAIDSの推計）、移住者とHIV、入国前の健康診断。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
+    ("内容", "4つの感染症について、最新の人数、過去10年の動き、男女・年代・都道府県、2026年の途中経過、国の対策と、検査・予防・治療で使える公費の制度をまとめました。"),
+    ("使った資料", "国の公式資料だけを使いました（厚生労働省、国立健康危機管理研究機構〔JIHS〕）。HIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（国連合同エイズ計画〔UNAIDS〕・国際移住機関〔IOM〕）の公式資料を使っています。公費の制度のうち結核の医療費助成の一部は、東京都の公式ページで確かめました。"),
+    ("シートの説明", "「4つの比較」…4つの病気を1つの表で比べます。\n「公費の支え」…検査・予防・治療で使える公費の制度の一覧と、病気ごとの説明、HIVの治療の自己負担の上限。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「HIV・世界の動向」…世界全体と、日本と協力覚書を結んだ国のHIVの状況（UNAIDSの推計）、移住者とHIV、入国前の健康診断。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
     ("確定値", "国が1年分の届出を集計し直した数。"),
     ("速報値", "毎週や3か月ごとに出る途中の数。あとから変わることがあります。表では黄色で示しています。"),
     ("届出数", "医師が感染症と診断して保健所に届け出た数。検査を受けていない人などは入らないため、実際に感染している人の数とは同じではありません。"),
     ("罹患率（りかんりつ）", "人口10万人あたり、1年間に新しく病気になった人の数。人口の違う地域や年どうしを比べやすくなります。"),
+    ("公費（こうひ）", "国や都道府県・市区町村が、税金などで費用を負担すること。"),
 ]
 r = 3
 for k, v in rows:

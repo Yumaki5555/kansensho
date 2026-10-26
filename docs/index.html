@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>日本の感染症を知る｜HIV/エイズ・梅毒・はしか・結核の今</title>
-<meta name="description" content="HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。">
+<meta name="description" content="HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。検査・予防・治療で使える公費の制度もまとめました。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="日本を知る。">
 <meta property="og:title" content="日本の感染症を知る｜HIV/エイズ・梅毒・はしか・結核の今">
-<meta property="og:description" content="HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。">
+<meta property="og:description" content="HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。検査・予防・治療で使える公費の制度もまとめました。">
 <meta property="og:url" content="https://yumaki5555.github.io/kansensho/">
 <meta property="og:image" content="https://yumaki5555.github.io/kansensho/ogp.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -59,7 +59,7 @@ body { margin: 0; background: var(--color-bg); color: var(--color-fg); font-fami
 a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="data.js?v=79afa5ed"></script>
+<script src="data.js?v=cb7cf714"></script>
 <script>
 // ページ本体（claude.ai 版と共通）にデータを渡す小さな仕組み
 (function () {
@@ -185,6 +185,24 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
   .kj-table td.kj-muted { color: var(--color-fg-muted); }
   .kj-table .kj-tag, .kj-table th.kj-tag { text-align: left; white-space: nowrap; color: var(--color-fg-muted); }
   .kj-foot { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.7; border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-md); }
+  /* 公費の一覧：広いときは表、狭いときは病気ごとに縦に並べる */
+  .kj-kmap { container-type: inline-size; }
+  .kj-kmap-box { min-height: 10rem; }
+  .kj-h4 { margin: var(--cds-gap-xs) 0 0; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+  .kj-table.kj-ktable th, .kj-table.kj-ktable td { text-align: left; }
+  .kj-table.kj-ktable td { min-width: 12em; line-height: 1.7; font-variant-numeric: normal; }
+  .kj-table.kj-ktable td.kj-name { min-width: 0; width: 9em; }
+  .kj-kcell { display: grid; gap: 0.25rem; justify-items: start; }
+  .kj-badge { display: inline-block; padding: 0 0.5em; border: 1px solid var(--color-border-line); border-radius: 999px; font-weight: 600; white-space: nowrap; color: var(--color-fg-muted); }
+  .kj-badge-yes { color: var(--color-ok); border-color: currentColor; }
+  @container (max-width: 40rem) {
+    .kj-ktable thead { display: none; }
+    .kj-ktable, .kj-ktable tbody, .kj-ktable tr, .kj-ktable td { display: block; }
+    .kj-ktable tr { padding: var(--cds-pad-sm) 0; border-bottom: 1px solid var(--color-border-line); }
+    .kj-ktable tbody tr:last-child { border-bottom: 0; }
+    .kj-table.kj-ktable td, .kj-table.kj-ktable td.kj-name { min-width: 0; width: auto; padding: 4px 0; border-bottom: 0; }
+    .kj-ktable td[data-label]::before { content: attr(data-label); display: block; color: var(--color-fg-muted); }
+  }
   .kj [data-dash-source-state=empty] { color: transparent; }
   .kj [data-dash-source-state=refreshing] { opacity: 0.5; transition: opacity var(--cds-dur-slow); }
 </style>
@@ -194,7 +212,7 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
     <h1 class="kj-title">日本の感染症を知る</h1>
     <p class="kj-sub">HIV/エイズ・梅毒・はしか・結核の広がりを、国の公式資料だけでまとめました。</p>
     <p class="kj-take" id="takeaway">10年前と比べて、HIV/エイズは<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=HIV/エイズ">—</span>倍、結核は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=結核">—</span>倍に減りました。梅毒は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=梅毒">—</span>倍で、高い水準が続いています。はしかは2026年に入って急に増え、<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=はしか">—</span>で前年の同じ時期の<span class="kj-em dash-skeleton" data-source="overview" data-field="前年同期の倍" data-where="病気=はしか">—</span>倍になっています。</p>
-    <p class="kj-cap">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構）が公表している資料から作成。数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料と、日本の協力覚書についての国の資料から作りました。</p>
+    <p class="kj-cap">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構）が公表している資料から作成。数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料と、日本の協力覚書についての国の資料から作りました。「公費で受けられる支え」は国の法律・資料のほか、結核の医療費の一部を東京都の公式ページで確かめました。</p>
     <nav class="kj-nav" aria-label="ページ内の移動">
       <button type="button" class="kj-chip" data-target="overview">4つの比較</button>
       <button type="button" class="kj-chip" data-target="hiv">HIV/エイズ</button>
@@ -202,6 +220,7 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
       <button type="button" class="kj-chip" data-target="syphilis">梅毒</button>
       <button type="button" class="kj-chip" data-target="measles">はしか</button>
       <button type="button" class="kj-chip" data-target="tb">結核</button>
+      <button type="button" class="kj-chip" data-target="kouhi">公費で受けられる支え</button>
       <button type="button" class="kj-chip" data-target="cautions">見るときの注意</button>
       <button type="button" class="kj-chip" data-target="sources">出典</button>
     </nav>
@@ -421,6 +440,26 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
     </div>
   </section>
 
+  <section class="kj-section" id="kouhi" aria-labelledby="kouhi-h">
+    <h2 class="kj-h2" id="kouhi-h">公費で受けられる支え（検査・予防・治療）</h2>
+    <p class="kj-lede" id="kouhi-lede"><span class="dash-skeleton" id="kouhi-lede-text" data-source="notes" data-field="文" data-where="病気=公費の制度&amp;種類=説明&amp;番号=1">—</span></p>
+    <div class="kj-grid">
+      <div class="kj-card kj-wide kj-kmap" id="kouhi-map">
+        <h3>ひと目でわかる一覧</h3>
+        <p class="kj-cap">「公費あり」は、その場面で使える公費の制度があるもの。「公費なし」は、国の法律や資料に見当たらないものです。くわしい条件は、下の病気ごとの説明を見てください。</p>
+        <div class="kj-scroll kj-kmap-box dash-skeleton" id="kouhi-map-box" data-source="kouhi"></div>
+        <h4 class="kj-h4">治療費の公費のしくみ（感染症法）</h4>
+        <ul class="kj-list kj-list-sm" id="kouhi-common" data-source="notes"></ul>
+      </div>
+      <div class="kj-card" id="kouhi-hiv"><div class="kj-tile-head"><span class="kj-swatch" data-i="0"></span><h3>HIV/エイズ</h3></div><ol class="kj-list kj-list-sm" data-source="notes"></ol></div>
+      <div class="kj-tables" id="kouhi-tables" data-source="breakdown notes"></div>
+      <div class="kj-card" id="kouhi-syphilis"><div class="kj-tile-head"><span class="kj-swatch" data-i="1"></span><h3>梅毒</h3></div><ol class="kj-list kj-list-sm" data-source="notes"></ol></div>
+      <div class="kj-card" id="kouhi-measles"><div class="kj-tile-head"><span class="kj-swatch" data-i="2"></span><h3>はしか（麻しん）</h3></div><ol class="kj-list kj-list-sm" data-source="notes"></ol></div>
+      <div class="kj-card" id="kouhi-tb"><div class="kj-tile-head"><span class="kj-swatch" data-i="3"></span><h3>結核</h3></div><ol class="kj-list kj-list-sm" data-source="notes"></ol></div>
+      <div class="kj-card kj-wide" id="kouhi-cautions"><h3>この内容を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
   <section class="kj-section" id="cautions" aria-labelledby="cautions-h">
     <h2 class="kj-h2" id="cautions-h">数字を見るときの注意</h2>
     <div class="kj-card"><ul class="kj-list" id="cautions-list" data-source="notes"></ul></div>
@@ -428,7 +467,7 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
 
   <section class="kj-section" id="sources" aria-labelledby="sources-h">
     <h2 class="kj-h2" id="sources-h">出典一覧</h2>
-    <p class="kj-cap">すべて国、または国連の機関（UNAIDS・IOM）の公式資料です。各項目の「出典」を押すと、ここの該当する行に移動します。確認日はすべて2026年10月26日。</p>
+    <p class="kj-cap">すべて国（結核の医療費助成の一部は東京都）、または国連の機関（UNAIDS・IOM）の公式資料です。各項目の「出典」を押すと、ここの該当する行に移動します。確認日はすべて2026年10月26日。</p>
     <label class="kj-filter" for="src-filter">病気で絞り込む
       <select class="kj-select" id="src-filter">
         <option value="">すべて</option>
@@ -437,6 +476,7 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
         <option value="梅毒">梅毒</option>
         <option value="はしか">はしか</option>
         <option value="結核">結核</option>
+        <option value="公費の制度">公費の制度</option>
       </select>
     </label>
     <div class="kj-card kj-srcbox">
@@ -447,14 +487,14 @@ a:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
     </div>
   </section>
 
-  <footer class="kj-foot">このページの数字は、国（世界の動向は国連の機関）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</footer>
+  <footer class="kj-foot">このページの数字と制度の説明は、国（世界の動向は国連の機関、結核の医療費助成の一部は東京都）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</footer>
 </div>
 
 <script>
 const DISEASES = [
   { id: 'hiv', name: 'HIV/エイズ', stack: ['HIV感染者', 'エイズ患者'], age: ['HIV感染者', 'エイズ患者'], ageExtra: [], unit: '件' },
   { id: 'syphilis', name: '梅毒', bars: '合計', extra: ['男性', '女性'], age: ['男性', '女性'], ageExtra: ['合計'], unit: '人' },
-  { id: 'measles', name: 'はしか', bars: '届出数', age: ['届出数'], ageExtra: [], unit: '人' },
+  { id: 'measles', name: 'はしか', label: 'はしか（麻しん）', bars: '届出数', age: ['届出数'], ageExtra: [], unit: '人' },
   { id: 'tb', name: '結核', bars: '新登録患者数', rate: '罹患率（人口10万対）', age: ['新登録患者数'], ageExtra: ['構成比(%)', '罹患率（人口10万対）'], unit: '人' },
 ];
 const LOW_BURDEN = 10; // 国の「低まん延」の目安（罹患率10以下）
@@ -828,49 +868,52 @@ function drawTables(d, B, N) {
     wrap.append(c);
     return;
   }
-  const rows = B.data.filter((r) => r.病気 === d.name && r.種類 !== '年代別' && String(r.ページ) !== 'false');
+  // 公費の表は「公費で受けられる支え」に載せる
+  const rows = B.data.filter((r) => r.病気 === d.name && r.種類 !== '年代別' && r.種類 !== '公費' && String(r.ページ) !== 'false');
   const titles = [...new Set(rows.map((r) => r.表))];
-  wrap.replaceChildren(...titles.map((t, ti) => {
-    const tr = rows.filter((r) => r.表 === t);
-    const cols = [...new Set(tr.map((r) => r.列))];
-    const labels = [...new Set(tr.map((r) => r.区分))];
-    const card = el('div', 'kj-card');
-    card.id = `${d.id}-table-${ti + 1}`;
-    card.append(el('h3', '', t));
-    const sc = el('div', 'kj-scroll');
-    const table = el('table', 'kj-table');
-    const hr = table.createTHead().insertRow();
-    hr.append(el('th', '', tr[0].種類 === '都道府県' ? '都道府県' : ''));
-    cols.forEach((c) => hr.append(el('th', '', c)));
-    const body = table.createTBody();
-    labels.forEach((l) => {
-      const row = body.insertRow();
-      row.insertCell().textContent = l;
-      cols.forEach((c) => {
-        const cell = row.insertCell();
-        const r = tr.find((x) => x.区分 === l && x.列 === c);
-        cell.textContent = r ? show(r.値, c) : '—';
-        if (r) mark(cell, 'breakdown', '値', { 病気: d.name, 表: t, 区分: l, 列: c });
-      });
+  wrap.replaceChildren(...titles.map((t, ti) => tableCard(d.name, t, rows.filter((r) => r.表 === t), `${d.id}-table-${ti + 1}`, N)));
+}
+
+const FIRST_HEAD = { 都道府県: '都道府県', 公費: '所得の区分' };
+function srcButton(src) {
+  const b = el('button', 'kj-src', `出典 ${src}`);
+  b.type = 'button';
+  b.addEventListener('click', () => jumpToSource(src));
+  return b;
+}
+function tableCard(name, t, tr, id, N) {
+  const cols = [...new Set(tr.map((r) => r.列))];
+  const labels = [...new Set(tr.map((r) => r.区分))];
+  const card = el('div', 'kj-card');
+  card.id = id;
+  card.append(el('h3', '', t));
+  const sc = el('div', 'kj-scroll');
+  const table = el('table', 'kj-table');
+  const hr = table.createTHead().insertRow();
+  hr.append(el('th', '', FIRST_HEAD[tr[0].種類] || ''));
+  cols.forEach((c) => hr.append(el('th', '', c)));
+  const body = table.createTBody();
+  labels.forEach((l) => {
+    const row = body.insertRow();
+    row.insertCell().textContent = l;
+    cols.forEach((c) => {
+      const cell = row.insertCell();
+      const r = tr.find((x) => x.区分 === l && x.列 === c);
+      cell.textContent = r ? show(r.値, c) : '—';
+      if (r) mark(cell, 'breakdown', '値', { 病気: name, 表: t, 区分: l, 列: c });
     });
-    sc.append(table);
-    card.append(sc);
-    const ns = N.data.filter((n) => n.病気 === d.name && n.種類 === '表の注' && n.表 === t);
-    if (ns.length) {
-      const det = el('details', 'kj-details');
-      det.append(el('summary', '', '表の注'));
-      ns.forEach((n) => det.append(mark(el('p', '', n.文), 'notes', '文', { 病気: n.病気, 種類: n.種類, 表: n.表, 番号: n.番号 })));
-      card.append(det);
-    }
-    const src = tr[0].出典ID;
-    if (src) {
-      const b = el('button', 'kj-src', `出典 ${src}`);
-      b.type = 'button';
-      b.addEventListener('click', () => jumpToSource(src));
-      card.append(b);
-    }
-    return card;
-  }));
+  });
+  sc.append(table);
+  card.append(sc);
+  const ns = N.data.filter((n) => n.病気 === name && n.種類 === '表の注' && n.表 === t);
+  if (ns.length) {
+    const det = el('details', 'kj-details');
+    det.append(el('summary', '', '表の注'));
+    ns.forEach((n) => det.append(mark(el('p', '', n.文), 'notes', '文', { 病気: n.病気, 種類: n.種類, 表: n.表, 番号: n.番号 })));
+    card.append(det);
+  }
+  if (tr[0].出典ID) card.append(srcButton(tr[0].出典ID));
+  return card;
 }
 
 function drawList(list, N, who, kind) {
@@ -890,10 +933,10 @@ function drawList(list, N, who, kind) {
   }));
 }
 
-function drawLede(d, N) {
+function drawLede(d, N, kind = '数え方') {
   const p = document.getElementById(`${d.id}-lede-text`);
   if (N.status !== 'ok') { if (stateOf(N) === 'error') { p.textContent = '—'; p.classList.remove('dash-skeleton'); } return; }
-  const n = N.data.find((x) => x.病気 === d.name && x.種類 === '数え方');
+  const n = N.data.find((x) => x.病気 === d.name && x.種類 === kind);
   p.classList.remove('dash-skeleton');
   p.textContent = n ? n.文 : '—';
 }
@@ -1016,6 +1059,70 @@ function drawWorld(W, N) {
   drawList(document.querySelector('#world-cautions .kj-list'), N, who, '見るときの注意');
 }
 
+// 公費で受けられる支え：病気（行）× 場面（列）の一覧と、病気ごとの説明
+const KOUHI = '公費の制度';
+function drawKouhiMap(K) {
+  const box = document.getElementById('kouhi-map-box');
+  if (!prep(box, K)) return;
+  const scenes = [...new Set(K.data.map((r) => r.場面))];
+  const table = el('table', 'kj-table kj-ktable');
+  const hr = table.createTHead().insertRow();
+  hr.append(el('th', '', '病気'), ...scenes.map((s) => el('th', '', s)));
+  const body = table.createTBody();
+  DISEASES.forEach((d, i) => {
+    const rows = K.data.filter((r) => r.病気 === d.name);
+    if (!rows.length) return;
+    const tr = body.insertRow();
+    const name = el('td', 'kj-name');
+    const head = el('div', 'kj-tile-head');
+    const sw = el('span', 'kj-swatch');
+    sw.style.background = dash.colors[i];
+    head.append(sw, el('span', '', d.label || d.name));
+    name.append(head);
+    tr.append(name);
+    scenes.forEach((s) => {
+      const td = el('td');
+      td.dataset.label = s;
+      const r = rows.find((x) => x.場面 === s);
+      if (r) {
+        const c = el('div', 'kj-kcell');
+        const where = { 病気: d.name, 場面: s };
+        c.append(mark(el('span', `kj-badge${r.目安 === '公費あり' ? ' kj-badge-yes' : ''}`, r.目安), 'kouhi', '目安', where),
+          mark(el('span', '', r.内容), 'kouhi', '内容', where));
+        if (r.出典ID) c.append(srcButton(r.出典ID));
+        td.append(c);
+      } else {
+        td.textContent = '—';
+        td.classList.add('kj-muted');
+      }
+      tr.append(td);
+    });
+  });
+  box.replaceChildren(table);
+}
+function drawKouhi(K, B, N) {
+  drawKouhiMap(K);
+  drawLede({ id: 'kouhi', name: KOUHI }, N, '説明');
+  drawList(document.getElementById('kouhi-common'), N, KOUHI, 'しくみ');
+  DISEASES.forEach((d) => drawList(document.querySelector(`#kouhi-${d.id} .kj-list`), N, d.name, '公費'));
+  drawList(document.querySelector('#kouhi-cautions .kj-list'), N, KOUHI, '見るときの注意');
+  const wrap = document.getElementById('kouhi-tables');
+  const st = stateOf(B, N);
+  if (st !== 'ok') {
+    const c = el('div', 'kj-card');
+    c.style.minHeight = '8rem';
+    if (st === 'error') failIn(c); else c.classList.add('dash-skeleton');
+    wrap.replaceChildren(c);
+    return;
+  }
+  const rows = B.data.filter((r) => r.種類 === '公費');
+  const keys = [...new Set(rows.map((r) => `${r.病気}\u0000${r.表}`))];
+  wrap.replaceChildren(...keys.map((k, i) => {
+    const [name, t] = k.split('\u0000');
+    return tableCard(name, t, rows.filter((r) => r.病気 === name && r.表 === t), `kouhi-table-${i + 1}`, N);
+  }));
+}
+
 let srcFilter = '';
 function drawSources(S) {
   const table = document.getElementById('src-table');
@@ -1071,9 +1178,10 @@ let linked = false;
 dash.onData(() => {
   const A = dash.data('annual'), Y = dash.data('ytd2026'), B = dash.data('breakdown');
   const N = dash.data('notes'), S = dash.data('sources'), O = dash.data('overview'), YC = dash.data('ytd_change');
-  const W = dash.data('world');
+  const W = dash.data('world'), K = dash.data('kouhi');
   drawOverviewMarks(O);
   drawWorld(W, N);
+  drawKouhi(K, B, N);
   DISEASES.forEach((d, i) => {
     drawSpark(d, i, A);
     drawLede(d, N);
@@ -1098,8 +1206,8 @@ dash.onData(() => {
 
 </main>
 <footer class="site-foot"><div class="site-foot-in">
-  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。HIV/エイズの世界の動向は国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）の公式資料。くわしくは「出典一覧」をご覧ください。</p>
-  <p>同じ内容のExcelの表：<a href="kansensho_2026-10.xlsx" download>kansensho_2026-10.xlsx</a>（4つの比較、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
+  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。HIV/エイズの世界の動向は国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）の公式資料。結核の医療費助成の一部は東京都の公式ページ。くわしくは「出典一覧」をご覧ください。</p>
+  <p>同じ内容のExcelの表：<a href="kansensho_2026-10.xlsx" download>kansensho_2026-10.xlsx</a>（4つの比較、公費の支え、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
   <p><a href="https://yumaki5555.github.io/">「日本を知る。」のトップへ</a></p>
 </div></footer>
 </body>

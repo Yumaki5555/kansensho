@@ -12,7 +12,7 @@ HIV/エイズには「世界の動向」（UNAIDSの推計、日本と協力覚�
 | 場所 | 役割 |
 |---|---|
 | `docs/` | **公開されるページ**（index.html、data.js、Excel、サムネイル、アイコン） |
-| `data/research/` | 病気ごとに調べた結果（数字・出典URL・注意点）。ここが元データ。`world_hiv.json` はHIV/エイズの世界の動向 |
+| `data/research/` | 病気ごとに調べた結果（数字・出典URL・注意点）。ここが元データ。`world_hiv.json` はHIV/エイズの世界の動向、`kouhi.json` は公費で受けられる支え（検査・予防・治療） |
 | `data/out/` | 元データを、Excelとページ共通の形にまとめたもの |
 | `build/page_fragment.html` | ページ本体（グラフ・表・文章の作り）。claude.ai 版のページと共通 |
 | `build/consolidate.py` | `data/research` → `data/out` にまとめる |

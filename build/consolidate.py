@@ -3,6 +3,7 @@
 """
 import json
 import os
+import re
 import sys
 
 sys.stdout.reconfigure(encoding="utf-8")
@@ -36,7 +37,7 @@ CAUTIONS = {
         "「確定値」は、国が1年分の届出を集計し直した数です。「速報値」は、毎週や3か月ごとに出る途中の数で、あとから届出が追加されて変わることがあります。たとえば梅毒の2024年は、速報値14,663例が確定値では14,829例になりました。",
         "最新の確定値が出ている年は病気ごとに違います。HIV/エイズと結核は2025年、梅毒とはしかは2024年までです（2025年は速報値）。",
         "「2026年の途中経過」は、病気によって期間が違います。HIV/エイズは1〜6月ごろ（第1・第2四半期）、梅毒・はしか・結核は10月11日（第41週）までで、それぞれ前の年の同じ時期と比べています。",
-        "出典は国の公式資料（厚生労働省、国立健康危機管理研究機構）だけを使いました。ただしHIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料を使っています。",
+        "出典は国の公式資料（厚生労働省、国立健康危機管理研究機構）だけを使いました。ただしHIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料を使っています。「公費で受けられる支え」のうち結核の医療費助成の一部は、東京都の公式ページで確かめました。",
         "前年比や「10年前と比べて何倍か」などは、資料の数字からこのまとめで計算したものです。",
     ],
     "HIV/エイズ": [
@@ -184,12 +185,41 @@ for s in wd["sources"]:
     sources.append({"出典ID": sid("世界", s["id"]), "病気": WORLD, "資料名": s["title"], "発行元": s["publisher"],
                     "URL": s["url"], "公表日・更新日": s.get("published") or "記載なし", "確認日": s.get("accessed") or "2026-10-26"})
 
+# 公費で受けられる支え（検査・予防・治療）。出典の「S1」などは公費の資料、「HIV-14」などは病気ごとの資料
+KOUHI = "公費の制度"
+kouhi = []
+kd = json.load(open(os.path.join(src_dir, "kouhi.json"), encoding="utf-8"))
+K = lambda s: sid("公費", s) if s and re.fullmatch(r"S\d+", s) else s  # noqa: E731
+for r in kd["summary"]:
+    kouhi.append({"病気": r["disease"], "場面": r["scene"], "目安": r["level"], "内容": r["text"], "出典ID": K(r["source_id"])})
+notes.append({"病気": KOUHI, "種類": "説明", "表": None, "文": kd["intro"], "出典ID": None})
+for n in kd["common"]:
+    notes.append({"病気": KOUHI, "種類": "しくみ", "表": None, "文": n["text"], "出典ID": K(n["source_id"])})
+SCENE_ORDER = ["【検査】", "【予防】", "【治療】"]
+for who, items in kd["items"].items():
+    # 検査 → 予防 → 治療 の順に並べる（同じ場面の中は書いた順）
+    for n in sorted(items, key=lambda n: next(i for i, p in enumerate(SCENE_ORDER) if n["text"].startswith(p))):
+        notes.append({"病気": who, "種類": "公費", "表": None, "文": n["text"], "出典ID": K(n["source_id"])})
+for t in kd["tables"]:
+    for r in t["rows"]:
+        for c in t["columns"]:
+            breakdown.append({"病気": t["disease"], "表": t["title"], "種類": "公費", "区分": r["label"], "列": c,
+                              "値": r["values"].get(c), "出典ID": K(t["source_id"]), "ページ": True})
+    if t.get("note"):
+        notes.append({"病気": t["disease"], "種類": "表の注", "表": t["title"], "文": t["note"], "出典ID": K(t["source_id"])})
+for t in kd["cautions"]:
+    notes.append({"病気": KOUHI, "種類": "見るときの注意", "表": None, "文": t, "出典ID": None})
+for s in kd["sources"]:
+    sources.append({"出典ID": K(s["id"]), "病気": KOUHI, "資料名": s["title"], "発行元": s["publisher"],
+                    "URL": s["url"], "公表日・更新日": s.get("published") or "記載なし", "確認日": s.get("accessed") or "2026-10-26"})
+skeys = [(k["病気"], k["場面"]) for k in kouhi]
+assert len(skeys) == len(set(skeys)) and set(k["場面"] for k in kouhi) <= set(kd["scenes"])
+
 for who, items in CAUTIONS.items():
     for t in items:
         notes.append({"病気": who, "種類": "見るときの注意", "表": None, "文": t, "出典ID": None})
 
 # 文章の中の仮の出典番号（S12など）を、出典一覧の番号（結核-12など）に置きかえる
-import re
 PREFIX = {name: prefix for _, name, prefix in DISEASES}
 PREFIX[WORLD] = "世界"
 for n in notes:
@@ -210,11 +240,11 @@ akeys = [(a["病気"], a["年"], a["指標"]) for a in annual]
 assert len(akeys) == len(set(akeys))
 wkeys = [w["名前"] for w in world]
 assert len(wkeys) == len(set(wkeys))
-used = {x["出典ID"] for x in annual + ytd + breakdown + notes + world if x["出典ID"]}
+used = {x["出典ID"] for x in annual + ytd + breakdown + notes + world + kouhi if x["出典ID"]}
 known = {s["出典ID"] for s in sources}
 assert used <= known, used - known
 
-for fname, rows in [("annual", annual), ("ytd2026", ytd), ("breakdown", breakdown), ("notes", notes), ("sources", sources), ("world", world)]:
+for fname, rows in [("annual", annual), ("ytd2026", ytd), ("breakdown", breakdown), ("notes", notes), ("sources", sources), ("world", world), ("kouhi", kouhi)]:
     with open(os.path.join(out_dir, f"{fname}.json"), "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=0)
     print(fname, len(rows), "rows", os.path.getsize(os.path.join(out_dir, f"{fname}.json")), "bytes")
