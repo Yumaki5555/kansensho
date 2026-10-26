@@ -17,12 +17,12 @@ SITE_URL = "https://yumaki5555.github.io/kansensho/"
 XLSX_SRC = os.path.join(ROOT, "日本の感染症の状況_2026年10月.xlsx")
 XLSX_PUB = "kansensho_2026-10.xlsx"
 TITLE = "世界の感染症と日本の水際対策"
-DESC = "HIV・梅毒・はしか・結核の感染状況、外国人材の受入制度、入国前の健康確認、国内の医療費を公的資料で比較。どの国でどの感染症が多いか（WHO）、日本と協力覚書を結んだ国、入国前の結核検査（JPETS）、国内の患者数の推移、公費の支援と治療費を、出典つきのグラフと表で確かめられます。"
-AS_OF = "2026年10月26日時点"
+DESC = "海外で流行する感染症。日本では、入国時に何を検査している？ 治療費は誰が負担する？ HIV・梅毒・はしか・結核の感染状況、外国人材の受入制度、入国前の健康確認、国内の医療費を公的資料で比較。どの国でどの感染症が多いか（WHO）、日本と協力覚書を結んだ国、入国前の結核検査（JPETS）、国内の患者数の推移、公費の支援と治療費を、出典つきのグラフと表で確かめられます。"
+AS_OF = "2026年10月27日時点"
 
 os.makedirs(DOCS, exist_ok=True)
 data = {n: json.load(open(os.path.join(ROOT, "data", "out", f"{n}.json"), encoding="utf-8"))
-        for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi", "countries", "entry", "costs", "info", "others", "guide"]}
+        for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi", "countries", "entry", "costs", "info", "others", "guide", "explain"]}
 data_js = "window.KJ_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
 open(os.path.join(DOCS, "data.js"), "w", encoding="utf-8").write(data_js)
 ver = hashlib.sha1(data_js.encode("utf-8")).hexdigest()[:8]

@@ -34,7 +34,7 @@
   .kj-brand-mark::after { content: ""; position: absolute; inset: 0.3rem 0.22rem; border-bottom: 2px solid #fff; border-left: 2px solid #fff; transform: skewX(-18deg); }
   .kj-menu { display: none; }
   .kj-menu ul { display: flex; gap: 2px; list-style: none; margin: 0; padding: 0; }
-  .kj .kj-menu a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; border-radius: 8px; color: var(--color-fg); text-decoration: none; font-size: 0.9375rem; font-weight: 500; white-space: nowrap; position: relative; }
+  .kj .kj-menu a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 10px; border-radius: 8px; color: var(--color-fg); text-decoration: none; font-size: 0.9375rem; font-weight: 500; white-space: nowrap; position: relative; }
   .kj .kj-menu a:hover { background: var(--color-bg); }
   .kj .kj-menu a[aria-current="page"] { color: var(--kj-link); font-weight: 700; }
   .kj .kj-menu a[aria-current="page"]::after { content: ""; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 3px; border-radius: 2px; background: currentColor; }
@@ -43,7 +43,7 @@
   .kj-ibtn:hover { border-color: var(--color-fg-muted); }
   .kj-ibtn svg { width: 1.1em; height: 1.1em; flex: none; }
   .kj-ibtn[aria-expanded="true"] { background: var(--color-fg); color: var(--color-panel); border-color: var(--color-fg); }
-  @media (min-width: 1120px) { .kj-menu { display: block; } .kj-menubtn { display: none; } }
+  @media (min-width: 1200px) { .kj-menu { display: block; } .kj-menubtn { display: none; } }
   @media (max-width: 420px) { .kj .kj-brand { font-size: 0.9375rem; white-space: normal; line-height: 1.35; min-width: 0; flex: 1 1 auto; } .kj-ibtn .kj-ibtn-t { display: none; } .kj-ibtn { padding: 0 10px; } }
   /* スマートフォンなどのメニュー */
   .kj-drawer { border-top: 1px solid var(--color-border-line); padding: 8px 0 16px; max-height: calc(100vh - 64px); overflow: auto; }
@@ -53,7 +53,7 @@
   .kj .kj-drawer a[aria-current="page"] { background: var(--color-bg); color: var(--kj-link); }
   .kj .kj-drawer a[aria-current="page"]::before { content: ""; width: 4px; align-self: stretch; margin: 10px 0; border-radius: 2px; background: currentColor; }
   .kj-drawer-foot { margin-top: 8px; padding: 8px 12px 0; border-top: 1px solid var(--color-border-line); font-size: var(--cds-font-size-caption); display: flex; flex-wrap: wrap; gap: 4px 16px; }
-  @media (min-width: 1120px) { .kj-drawer { display: none !important; } }
+  @media (min-width: 1200px) { .kj-drawer { display: none !important; } }
   /* 検索 */
   .kj-search { border-top: 1px solid var(--color-border-line); padding: 12px 0 16px; display: grid; gap: 10px; max-height: calc(100vh - 64px); overflow: auto; }
   .kj-search-row { display: flex; gap: 8px; align-items: center; }
@@ -68,13 +68,13 @@
   .kj-results mark { background: var(--kj-hl); color: inherit; border-radius: 2px; }
   /* 国内の感染症の中の切りかえ */
   .kj-sub { display: none; }
-  .kj[data-group="world"] .kj-sub, .kj[data-group="disease"] .kj-sub, .kj[data-group="domestic"] .kj-sub, .kj[data-group="docs"] .kj-sub { display: block; }
+  .kj[data-group="world"] .kj-sub, .kj[data-group="disease"] .kj-sub, .kj[data-group="cost"] .kj-sub, .kj[data-group="docs"] .kj-sub { display: block; }
   .kj-sub-in { display: none; gap: 6px; overflow-x: auto; overflow-y: hidden; padding: 10px 0; scrollbar-width: thin; }
-  .kj[data-group="world"] .kj-sub-in[data-sub="world"], .kj[data-group="disease"] .kj-sub-in[data-sub="disease"], .kj[data-group="domestic"] .kj-sub-in[data-sub="domestic"], .kj[data-group="docs"] .kj-sub-in[data-sub="docs"] { display: flex; }
+  .kj[data-group="world"] .kj-sub-in[data-sub="world"], .kj[data-group="disease"] .kj-sub-in[data-sub="disease"], .kj[data-group="cost"] .kj-sub-in[data-sub="cost"], .kj[data-group="docs"] .kj-sub-in[data-sub="docs"] { display: flex; }
   .kj .kj-sub a { flex: none; display: inline-flex; align-items: center; gap: 0.45rem; min-height: 42px; padding: 0 14px; border: 1px solid var(--color-border-line); border-radius: 999px; background: var(--color-panel); color: var(--color-fg); text-decoration: none; font-size: 0.9375rem; white-space: nowrap; }
   .kj .kj-sub a:hover { border-color: var(--color-fg-muted); }
   .kj .kj-sub a[aria-current="page"] { background: var(--color-fg); color: var(--color-panel); border-color: var(--color-fg); font-weight: 700; }
-  @media (min-width: 1120px) {
+  @media (min-width: 1200px) {
     .kj-sub { position: sticky; top: var(--kj-head-h); z-index: 35; background: var(--color-bg); box-shadow: 0 0 0 100vmax var(--color-bg); clip-path: inset(0 -100vmax -1px); }
     .kj-sub::after { content: ""; position: absolute; left: 0; right: 0; bottom: -1px; height: 1px; background: var(--color-border-line); box-shadow: 0 0 0 100vmax var(--color-border-line); clip-path: inset(0 -100vmax); }
   }
@@ -520,7 +520,359 @@
   @media (max-width: 560px) { .kj-controls .kj-field { width: 100%; } .kj-controls .kj-field .kj-select, .kj-controls .kj-field .kj-input { flex: 1 1 12em; } }
   /* 小さな文字の下限（スマートフォンで拡大せずに読めるように） */
   .kj-cap, .kj-count, .kj-srcline { font-size: max(0.875rem, 14px); }
+
+  /* ===== 2026年10月27日の改修で足したもの（一般向けの入口・3分でわかる・病気のカード・入国時の検査の早見・医療費・課題） ===== */
+  /* 払い手の色（全ページで同じ）：本人負担＝緑、公的医療保険＝青、公費（税金）＝オレンジ */
+  .kj { --kj-pay-self: #2b8a4b; --kj-pay-ins: #2462b0; --kj-pay-pub: #d9730d; --kj-tint-blue: #eaf2fb; --kj-tint-green: #e8f5ec; --kj-tint-orange: #fdf0e1; --kj-tint-gray: #f1f4f2; }
+  @media (prefers-color-scheme: dark) { .kj { --kj-pay-self: #5cc184; --kj-pay-ins: #74a9ee; --kj-pay-pub: #f2a24e; --kj-tint-blue: #172434; --kj-tint-green: #15281c; --kj-tint-orange: #2e2214; --kj-tint-gray: #1e2622; } }
+  .kj.kj-export-host { --kj-pay-self: #2b8a4b; --kj-pay-ins: #2462b0; --kj-pay-pub: #d9730d; }
+  /* イラスト（図の部品はページの中の symbol を使う） */
+  .kj-ic { display: inline-block; flex: none; width: 1.5em; height: 1.5em; }
+  .kj-illu { display: grid; place-items: center; border-radius: 18px; background: var(--kj-tint-blue); }
+  .kj-illu svg { width: 100%; height: 100%; }
+  @media (prefers-color-scheme: dark) { .kj-illu { background: #e9eef0; } }
+  /* グラフの文字を少し大きく（重ならない範囲で） */
+  .kj-tick { font-size: 13.5px; }
+  .kj-tick-soku { font-size: 12px; }
+  .kj-val { font-size: 13px; }
+  .kj-unitlab, .kj-ref { font-size: 13px; }
+  .kj-tag { font-size: 0.8125rem; }
+  .kj-namebtn small, .kj-table td small, .kj-table td .kj-sm, .kj-tip-note { font-size: 0.8125rem; }
+
+  /* トップ：題名・キャッチコピー・説明 */
+  .kj-hero2 { display: grid; gap: 12px; padding: 18px 0 4px; }
+  .kj-hero2 .kj-h1 { font-size: clamp(2rem, 1.35rem + 2.9vw, 3.15rem); letter-spacing: 0.01em; }
+  .kj-catch { margin: 0; font-size: clamp(1.1875rem, 1rem + 0.9vw, 1.5625rem); font-weight: 700; line-height: 1.65; color: var(--kj-link); max-width: 34em; }
+  .kj-catch span { display: inline-block; }
+  /* 日本語の見出しを、ことばの切れ目で折り返す（対応していないブラウザではふつうの折り返し） */
+  .kj-catch, .kj-door b, .kj-step h3, .kj-band h2, .kj-dzc h3, .kj-h2, .kj-ckc h5, .kj-case h4, .kj-qa .kj-acc-t, .kj-point b { word-break: auto-phrase; }
+  .kj-hero-desc { font-size: 1.0625rem; line-height: 1.9; max-width: 44em; }
+  /* トップ：イラストつきの大きな4つの入口（カード全体を押せる） */
+  .kj-doors { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); list-style: none; margin: 0; padding: 0; }
+  @media (min-width: 1000px) { .kj-doors { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+  @media (max-width: 359px) { .kj-doors { grid-template-columns: 1fr; } }
+  .kj .kj-door { position: relative; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; height: 100%; padding: 14px 14px 16px; border: 1.5px solid var(--color-border-line); border-radius: 18px; background: var(--color-panel); color: var(--color-fg); text-decoration: none; transition: transform .15s, box-shadow .15s, border-color .15s; }
+  .kj .kj-door:hover { border-color: var(--kj-link); box-shadow: 0 6px 18px rgba(20, 40, 60, .12); transform: translateY(-2px); }
+  @media (prefers-reduced-motion: reduce) { .kj .kj-door, .kj .kj-door:hover { transition: none; transform: none; } }
+  .kj-door .kj-illu { aspect-ratio: 16 / 10; }
+  .kj-door-n { position: absolute; top: 10px; left: 10px; display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--kj-link); color: #fff; font-weight: 700; font-size: 1rem; }
+  .kj-door b { font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem); line-height: 1.45; }
+  .kj-door-d { font-size: 0.9375rem; color: var(--color-fg-muted); line-height: 1.65; }
+  .kj-door-go { font-size: 0.9375rem; font-weight: 700; color: var(--kj-link); }
+  @media (max-width: 480px) { .kj .kj-door { padding: 10px 10px 12px; border-radius: 14px; } .kj-door-d { font-size: 0.875rem; } }
+
+  /* 見出しの帯（セクションの頭） */
+  .kj-band { display: grid; gap: 6px; }
+  .kj-band-k { justify-self: start; display: inline-flex; align-items: center; gap: 0.4rem; padding: 2px 12px; border-radius: 999px; background: var(--kj-tint-orange); color: var(--color-fg); font-weight: 700; font-size: 0.9375rem; }
+  .kj-band h2 { margin: 0; font-size: clamp(1.5rem, 1.2rem + 1.3vw, 2.125rem); font-weight: 700; }
+  /* まず3分でわかる：5つのステップ */
+  .kj-steps { display: grid; gap: 22px; counter-reset: kjstep; }
+  .kj-step { display: grid; gap: 14px; padding: 22px; border-radius: 20px; background: var(--color-panel); border: 1px solid var(--color-border-line); }
+  @media (max-width: 560px) { .kj-step { padding: 16px 14px; border-radius: 16px; } }
+  .kj-step-head { display: flex; align-items: center; gap: 12px; }
+  .kj-step-head .kj-illu { width: 64px; height: 64px; border-radius: 16px; padding: 4px; }
+  .kj-step-no { display: block; font-size: 0.875rem; font-weight: 700; letter-spacing: 0.08em; color: var(--kj-link); }
+  .kj-step h3 { margin: 0; font-size: clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem); font-weight: 700; line-height: 1.4; }
+  .kj-step-lede { font-size: 1rem; line-height: 1.9; max-width: 48em; }
+  .kj-step-body { display: grid; gap: 14px; }
+  .kj-step-foot { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center; }
+  .kj .kj-btn-pri { background: var(--kj-link); border-color: var(--kj-link); color: #fff; }
+  .kj .kj-btn-pri:hover { background: var(--color-fg); border-color: var(--color-fg); color: var(--color-panel); }
+  @media (prefers-color-scheme: dark) { .kj .kj-btn-pri { color: #10161a; } }
+  /* 大きな数字のタイル */
+  .kj-ntiles { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14.5rem), 1fr)); }
+  .kj-ntile { display: grid; gap: 4px; align-content: start; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--color-border-line); border-top: 5px solid var(--c, var(--kj-link)); background: var(--color-panel); }
+  .kj-ntile-h { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1rem; }
+  .kj-ntile-h .kj-ic { width: 2rem; height: 2rem; color: var(--c); }
+  .kj-ntile-what { font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.55; }
+  .kj-ntile .kj-big { font-size: clamp(2rem, 1.7rem + 1vw, 2.5rem); }
+  .kj-ntile-sub { font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.6; }
+  .kj-jtrend { margin-top: 6px; padding-top: 8px; border-top: 1px dashed var(--color-border-line); display: grid; gap: 2px; font-size: 0.9375rem; line-height: 1.6; }
+  .kj-jtrend b { font-variant-numeric: tabular-nums; }
+  .kj-trendtag { justify-self: start; display: inline-flex; align-items: center; gap: 0.3rem; padding: 0 10px; border-radius: 999px; font-weight: 700; font-size: 0.875rem; line-height: 1.8; border: 1.5px solid currentColor; }
+  .kj-trendtag.kj-up { background: color-mix(in srgb, var(--color-bad) 8%, transparent); }
+  .kj-trendtag.kj-down { background: color-mix(in srgb, var(--color-ok) 8%, transparent); }
+  .kj-trendtag.kj-flat { background: var(--kj-tint-gray); }
+  /* 協力覚書とJPETSの重なり（2つの円） */
+  .kj-venn { display: grid; gap: 8px; }
+  .kj-venn-svg { display: flex; justify-content: center; }
+  .kj-venn svg text { font-family: var(--font-anthropic-sans); }
+  .kj-venn-t { font-size: 15px; font-weight: 700; fill: var(--color-fg); }
+  .kj-venn-n { font-size: 30px; font-weight: 700; fill: var(--color-fg); font-family: var(--font-anthropic-serif) !important; }
+  .kj-venn-l { font-size: 13px; fill: var(--color-fg); }
+  .kj-venn-m { font-size: 13px; fill: var(--color-fg-muted); }
+  .kj-venn-lists { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); font-size: 0.9375rem; line-height: 1.7; }
+  .kj-venn-lists > div { padding: 10px 12px; border-radius: 12px; background: var(--kj-tint-gray); }
+  .kj-venn-lists b { display: block; }
+  .kj-schemes { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); }
+  .kj-scheme { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--color-border-line); background: var(--color-panel); display: grid; gap: 6px; align-content: start; font-size: 0.9375rem; line-height: 1.7; }
+  .kj-scheme h4 { font-size: 1.0625rem; }
+  /* 入国時の検査の状態（5つ）：色だけでなく記号と文字でも区別 */
+  .kj-s5 { display: inline-flex; align-items: center; gap: 0.3rem; padding: 0 10px; border-radius: 999px; border: 1.5px solid currentColor; font-weight: 700; font-size: 0.875rem; line-height: 1.85; white-space: nowrap; font-style: normal; }
+  .kj-s5 i { font-style: normal; }
+  .kj-s5-yes { color: #0b6b55; background: color-mix(in srgb, #0b6b55 10%, transparent); }
+  .kj-s5-cond { color: #a24f00; background: color-mix(in srgb, #d9730d 10%, transparent); border-style: dashed; }
+  .kj-s5-no { color: var(--color-fg-muted); border-color: var(--color-border-line); background: var(--kj-tint-gray); }
+  .kj-s5-unk { color: #7a5b00; border-style: dotted; background: color-mix(in srgb, #c9a000 9%, transparent); }
+  .kj-s5-plan { color: var(--kj-link); border-style: dashed; background: color-mix(in srgb, var(--kj-link) 7%, transparent); }
+  @media (prefers-color-scheme: dark) { .kj-s5-yes { color: #5fd3b0; } .kj-s5-cond { color: #f2a24e; } .kj-s5-unk { color: #e6c35a; } }
+  .kj-s5key { display: grid; gap: 8px; margin: 0; }
+  .kj-s5key div { display: grid; grid-template-columns: minmax(0, 9.5em) 1fr; gap: 4px 12px; align-items: start; }
+  .kj-s5key dt, .kj-s5key dd { margin: 0; }
+  .kj-s5key dd { font-size: 0.9375rem; line-height: 1.75; }
+  @media (max-width: 560px) { .kj-s5key div { grid-template-columns: 1fr; } }
+  /* 4つの病気 × 制度 の早見表 */
+  .kj-mx th, .kj-mx td { text-align: center !important; vertical-align: middle; }
+  .kj-mx td:first-child { min-width: 11em; }
+  .kj-mx td:first-child b { display: block; font-size: 0.9375rem; line-height: 1.5; }
+  .kj-mx tbody tr:has(.kj-mx-t:not(:empty)) td { border-top: 2px solid var(--color-border-line); }
+  .kj-mx th:first-child, .kj-mx td:first-child { text-align: left !important; }
+  .kj-mx thead th { white-space: normal; min-width: 6.5em; line-height: 1.45; }
+  .kj-mx .kj-mx-t { display: block; font-size: 0.8125rem; font-weight: 700; color: var(--kj-link); }
+  .kj-mx td .kj-s5 { font-size: 0.8125rem; padding: 0 8px; }
+  .kj-mx td small { display: block; color: var(--color-fg-muted); font-size: 0.75rem; line-height: 1.4; margin-top: 2px; }
+  /* 国内：外国生まれ・外国籍・国外で感染 */
+  .kj-fx { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); }
+  .kj-fx > div { padding: 12px 14px; border-radius: 12px; border: 1px solid var(--color-border-line); border-left: 5px solid var(--c); background: var(--color-panel); display: grid; gap: 4px; align-content: start; }
+  .kj-fx-k { font-size: 0.875rem; font-weight: 700; color: var(--color-fg-muted); }
+  .kj-fx .kj-big { font-size: 2rem; }
+  .kj-fx p { font-size: 0.9375rem; line-height: 1.7; }
+  /* 払い手の積み上げの帯（本人＝緑・保険＝青・公費＝オレンジ） */
+  .kj-paybar { display: flex; height: 34px; border-radius: 8px; overflow: hidden; background: var(--cds-chart-grid); }
+  .kj-paybar > span { display: flex; align-items: center; justify-content: center; min-width: 2px; color: #fff; font-size: 0.8125rem; font-weight: 700; white-space: nowrap; overflow: hidden; }
+  @media (prefers-color-scheme: dark) { .kj-paybar > span { color: #0d1410; } }
+  .kj-pay-self { background: var(--kj-pay-self); }
+  .kj-pay-ins { background: var(--kj-pay-ins); }
+  .kj-pay-pub { background: var(--kj-pay-pub); }
+  .kj-paylines { display: grid; gap: 2px; margin: 0; font-size: 0.9375rem; }
+  .kj-paylines > div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 8px; align-items: center; padding: 2px 0; border-bottom: 1px dashed var(--color-border-line); }
+  .kj-paylines dt { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .kj-paylines dd { margin: 0; text-align: right; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .kj-paylines i { width: 0.9rem; height: 0.9rem; border-radius: 3px; display: inline-block; }
+  .kj-paykey { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.9375rem; }
+  .kj-paykey span { display: inline-flex; align-items: center; gap: 0.4rem; }
+  .kj-paykey i { width: 1rem; height: 1rem; border-radius: 3px; display: inline-block; }
+  .kj-case { display: grid; gap: 8px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--color-border-line); background: var(--color-panel); align-content: start; }
+  .kj-case h4 { font-size: 1.0625rem; line-height: 1.5; }
+  .kj-case-total { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; }
+  .kj-case-total .kj-big { font-size: clamp(1.875rem, 1.6rem + 1vw, 2.375rem); }
+  .kj-case-self { font-size: 1rem; }
+  .kj-case-self b { font-size: 1.375rem; color: var(--kj-pay-self); font-variant-numeric: tabular-nums; }
+  .kj-case-note { font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.7; }
+  .kj-tagrow { display: flex; flex-wrap: wrap; gap: 6px; }
+  .kj-tag-per { border: 1px solid currentColor; color: var(--color-fg); background: var(--kj-tint-gray); }
+  .kj-tag-model { border: 1px dashed currentColor; color: #a24f00; }
+  .kj-tag-avg { border: 1px solid currentColor; color: #0b6b55; }
+  .kj-tag-price { border: 1px solid currentColor; color: var(--kj-link); }
+  .kj-tag-unk { border: 1px dotted currentColor; color: var(--color-fg-muted); }
+  @media (prefers-color-scheme: dark) { .kj-tag-model { color: #f2a24e; } .kj-tag-avg { color: #5fd3b0; } }
+  .kj-noval { display: grid; gap: 4px; padding: 12px 14px; border-radius: 12px; border: 1.5px dotted var(--color-fg-muted); background: var(--kj-tint-gray); }
+  .kj-noval b { font-size: 1.25rem; }
+
+  /* 病気のカード（イラスト・一言・感染経路・世界・日本・入国時の検査・治療と予防・医療費） */
+  .kj-dz { display: grid; gap: 16px; grid-template-columns: 1fr; }
+  @media (min-width: 900px) { .kj-dz { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  .kj-dzc { position: relative; display: grid; gap: 12px; align-content: start; padding: 18px; border-radius: 18px; border: 1.5px solid var(--color-border-line); border-top: 6px solid var(--c); background: var(--color-panel); }
+  .kj-dzc:hover { border-color: var(--c); box-shadow: 0 6px 18px rgba(20, 40, 60, .10); }
+  .kj-dzc-head { display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; }
+  .kj-dzc-head .kj-illu { width: 76px; height: 76px; padding: 6px; background: color-mix(in srgb, var(--c) 12%, var(--color-panel)); border-radius: 50%; color: var(--c); }
+  @media (prefers-color-scheme: dark) { .kj-dzc-head .kj-illu { background: color-mix(in srgb, var(--c) 22%, #1b2420); } }
+  .kj-dzc h3 { margin: 0; font-size: 1.5rem; }
+  .kj-dzc-one { font-size: 0.9375rem; line-height: 1.7; }
+  .kj-dzc dl { margin: 0; display: grid; gap: 0; }
+  .kj-dzc dl > div { display: grid; grid-template-columns: 7.5em 1fr; gap: 4px 12px; padding: 8px 0; border-top: 1px solid var(--color-border-line); }
+  .kj-dzc dt { font-size: 0.875rem; font-weight: 700; color: var(--color-fg-muted); display: flex; gap: 0.35rem; align-items: flex-start; }
+  .kj-dzc dt .kj-ic { width: 1.25rem; height: 1.25rem; color: var(--c); margin-top: 1px; }
+  .kj-dzc dd { margin: 0; font-size: 0.9375rem; line-height: 1.7; display: grid; gap: 4px; }
+  .kj-dzc dd .kj-em { font-size: 1.125rem; }
+  @media (max-width: 480px) { .kj-dzc { padding: 14px 12px; } .kj-dzc dl > div { grid-template-columns: 1fr; } }
+  .kj .kj-dzc-go { justify-self: start; font-weight: 700; }
+  .kj .kj-dzc-go::after { content: ""; position: absolute; inset: 0; border-radius: 18px; }
+  .kj-dzc a:not(.kj-dzc-go), .kj-dzc button { position: relative; z-index: 1; }
+  .kj-dzc-note { font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.7; padding: 8px 10px; border-radius: 10px; background: var(--kj-tint-gray); }
+
+  /* 「この数字からわかること」 */
+  .kj-insight { display: grid; grid-template-columns: auto 1fr; gap: 2px 10px; align-items: start; margin: 0; padding: 10px 14px; border-radius: 12px; background: var(--kj-tint-blue); font-size: 0.9375rem; line-height: 1.8; }
+  .kj-insight::before { content: ""; grid-row: 1 / span 2; width: 1.5rem; height: 1.5rem; margin-top: 2px; border-radius: 50%; background: var(--kj-link) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 4a5.5 5.5 0 0 0-3.2 10c.6.5 1 1.1 1 1.8V17h4.4v-1.2c0-.7.4-1.3 1-1.8A5.5 5.5 0 0 0 12 4zM9.8 19h4.4v1.4H9.8z' fill='%23fff'/%3E%3C/svg%3E") center / 80% no-repeat; }
+  .kj-insight b { font-size: 0.875rem; color: var(--kj-link); }
+  .kj-insight span { grid-column: 2; }
+
+  /* 入国時の検査の早見（条件を選ぶ → 制度ごとのカード） */
+  .kj-ck { display: grid; gap: 14px; }
+  .kj-ck-ctl { display: grid; gap: 10px 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); align-items: end; }
+  .kj-ck-ctl label { display: grid; gap: 4px; font-size: 0.9375rem; font-weight: 700; }
+  .kj-ck-ctl .kj-select { width: 100%; min-height: 48px; font-size: 1rem; }
+  .kj-ck-sum { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-size: 0.9375rem; }
+  .kj-ck-res { display: grid; gap: 12px; }
+  .kj-ck-time { display: grid; gap: 10px; }
+  .kj-ck-time > h4 { display: flex; align-items: center; gap: 0.5rem; font-size: 1.125rem; padding-bottom: 6px; border-bottom: 2px solid var(--color-border-line); }
+  .kj-ck-cards { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr)); }
+  .kj-ckc { display: grid; gap: 8px; align-content: start; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--color-border-line); background: var(--color-panel); }
+  .kj-ckc-kind { justify-self: start; font-size: 0.8125rem; font-weight: 700; padding: 0 8px; border-radius: 6px; background: var(--kj-tint-gray); color: var(--color-fg-muted); }
+  .kj-ckc h5 { margin: 0; font-size: 1.0625rem; line-height: 1.5; }
+  .kj-ckc ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .kj-ckc li { display: grid; gap: 4px; font-size: 0.9375rem; line-height: 1.7; }
+  .kj-ckc li > div:first-child { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; font-weight: 700; }
+  .kj-ckc-unk { font-size: 0.8125rem; color: var(--color-fg-muted); font-weight: 400; }
+  .kj-ckc-meta { font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.7; display: grid; gap: 2px; }
+  .kj-ckc-meta b { color: var(--color-fg); font-weight: 600; }
+
+  /* 制度の課題を考える（Q&A） */
+  .kj-qa { display: grid; gap: 10px; }
+  .kj-qa .kj-acc > summary { grid-template-columns: auto 1fr auto; }
+  .kj-qa-q { grid-column: 1; grid-row: 1; display: inline-grid; place-items: center; width: 2.2rem; height: 2.2rem; border-radius: 50%; background: var(--kj-link); color: #fff; font-weight: 700; }
+  @media (prefers-color-scheme: dark) { .kj-qa-q { color: #0d1410; } }
+  .kj-qa .kj-acc-t { grid-column: 2; font-size: 1.125rem; }
+  .kj-qa-blocks { display: grid; gap: 10px; }
+  .kj-qa-b { display: grid; gap: 6px; padding: 12px 14px; border-radius: 12px; border-left: 5px solid var(--c); background: var(--color-bg); }
+  .kj-qa-b h4 { display: flex; align-items: center; gap: 0.4rem; font-size: 1rem; }
+  .kj-qa-b h4 i { font-style: normal; display: inline-grid; place-items: center; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--c); color: #fff; font-size: 0.875rem; }
+  .kj-qa-b ul { margin: 0; padding-left: 1.2em; display: grid; gap: 6px; font-size: 0.9375rem; line-height: 1.8; }
+  .kj-qa-fact { --c: #0b6b55; }
+  .kj-qa-issue { --c: #c26100; }
+  .kj-qa-unk { --c: #6b7680; }
+  .kj-unk-kind { display: inline-block; margin-right: 0.4em; padding: 0 6px; border-radius: 4px; font-size: 0.8125rem; font-weight: 700; border: 1px dotted currentColor; color: var(--color-fg-muted); }
+
+  /* ことばの説明 */
+  .kj-terms { display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr)); margin: 0; }
+  .kj-terms > div { padding: 10px 12px; border-radius: 12px; border: 1px solid var(--color-border-line); background: var(--color-panel); display: grid; gap: 2px; align-content: start; }
+  .kj-terms dt { font-weight: 700; }
+  .kj-terms dt small { font-weight: 400; color: var(--color-fg-muted); margin-left: 0.4em; }
+  .kj-terms dd { margin: 0; font-size: 0.9375rem; line-height: 1.75; }
+
+  /* 「詳しく調べる」（専門的な資料は開いたときだけ見せる） */
+  .kj-deep { border: 1.5px solid var(--color-border-line); border-radius: 16px; background: var(--color-panel); }
+  .kj-deep > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: auto 1fr auto; gap: 2px 12px; align-items: center; padding: 14px 18px; min-height: 60px; }
+  .kj-deep > summary::-webkit-details-marker { display: none; }
+  .kj-deep > summary::after { content: "開く ＋"; grid-column: 3; grid-row: 1 / span 2; font-weight: 700; color: var(--kj-link); font-size: 0.9375rem; white-space: nowrap; }
+  .kj-deep[open] > summary::after { content: "閉じる －"; }
+  .kj-deep > summary .kj-ic { grid-row: 1 / span 2; width: 2rem; height: 2rem; color: var(--kj-link); }
+  .kj-deep-t { font-weight: 700; font-size: 1.0625rem; }
+  .kj-deep-g { grid-column: 2; font-size: 0.875rem; color: var(--color-fg-muted); line-height: 1.6; }
+  .kj-deep-body { padding: 4px 18px 18px; display: grid; gap: 24px; border-top: 1px solid var(--color-border-line); padding-top: 18px; }
+  @media (max-width: 560px) { .kj-deep > summary { padding: 12px 12px; } .kj-deep-body { padding: 14px 10px 14px; } }
+  .kj-points { display: grid; gap: 10px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); }
+  .kj-point { display: grid; gap: 6px; align-content: start; padding: 14px 16px; border-radius: 14px; background: var(--kj-tint-blue); }
+  .kj-point b { font-size: 1.0625rem; line-height: 1.5; }
+  .kj-point p { font-size: 0.9375rem; line-height: 1.75; }
+
+  /* 表：狭い画面ではカードの形にする（横に動かさなくても読めるように） */
+  .kj-rt { container-type: inline-size; }
+  @container (max-width: 38rem) {
+    .kj-rt .kj-scroll { overflow: visible; background: none; }
+    .kj-rt table.kj-table, .kj-rt table.kj-table > tbody, .kj-rt table.kj-table > tbody > tr, .kj-rt table.kj-table > tbody > tr > td { display: block; width: 100%; }
+    .kj-rt table.kj-table > thead { display: none; }
+    .kj-rt table.kj-table > tbody > tr { position: relative; margin-bottom: 10px; padding: 10px 12px; border: 1px solid var(--color-border-line); border-radius: 12px; background: var(--color-panel); }
+    .kj-rt table.kj-table > tbody > tr > td { border: 0 !important; padding: 3px 0 !important; text-align: left !important; white-space: normal !important; min-width: 0 !important; position: static !important; background: none !important; }
+    .kj-rt table.kj-table > tbody > tr > td[data-label]:not([data-label=""])::before { content: attr(data-label); display: block; font-size: 0.8125rem; font-weight: 600; color: var(--color-fg-muted); }
+    .kj-rt table.kj-table > tbody > tr > td.kj-rt-check { position: absolute !important; right: 12px; top: 12px; width: auto; }
+    .kj-rt table.kj-table > tbody > tr > td.kj-rt-check::before { display: inline !important; margin-right: 0.3em; }
+    .kj-rt .kj-namebtn { font-size: 1.0625rem; padding-right: 5.5em; }
+    .kj-rt tr.kj-sel { border-color: var(--kj-link); box-shadow: inset 0 0 0 1px var(--kj-link); }
+  }
+
+  /* 右下の「上に戻る」（いつも表示） */
+  .kj-totop { font-weight: 700; }
+  @media print { .kj-doors .kj-illu, .kj-step-head .kj-illu { display: none; } }
 </style>
+
+<!-- イラストの部品（ページの中で使い回す。色はページの色の設定に合わせる） -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- ① 世界（地球と、周りの病原体） -->
+    <symbol id="kj-i-world" viewBox="0 0 160 100">
+      <circle cx="80" cy="52" r="38" fill="#cfe3f7"/>
+      <path d="M58 30c8-6 18-6 24-1 4 4 0 9-5 10-6 2-4 8 2 9 7 1 9 7 4 11-5 4-12 2-15-3-3-4-8-4-11-1-3-7-2-18 1-25zM90 40c6-4 14-2 17 4 3 6 0 12-5 14-4 1-5 6-2 10-6 5-14 4-16-2-2-5 2-8 1-12-1-5-1-11 5-14zM74 76c4-2 9-1 11 2-3 4-9 5-13 2z" fill="#3b8a56"/>
+      <circle cx="80" cy="52" r="38" fill="none" stroke="#2462b0" stroke-width="3"/>
+      <path d="M42 52h76M80 14c14 12 14 64 0 76M80 14c-14 12-14 64 0 76" fill="none" stroke="#2462b0" stroke-width="1.5" opacity=".45"/>
+      <g fill="#d9730d"><circle cx="30" cy="28" r="7"/><circle cx="132" cy="70" r="8"/><circle cx="136" cy="26" r="5"/></g>
+      <g stroke="#d9730d" stroke-width="2.5" stroke-linecap="round"><path d="M30 18v-3M30 38v3M20 28h-3M40 28h3M23 21l-2-2M37 35l2 2M23 35l-2 2M37 21l2-2"/><path d="M132 59v-3M132 81v3M121 70h-3M143 70h3M124 62l-2-2M140 78l2 2M124 78l-2 2M140 62l2-2"/></g>
+    </symbol>
+    <!-- ② 入国時の検査（パスポートと検査の管・確認の印） -->
+    <symbol id="kj-i-entry" viewBox="0 0 160 100">
+      <rect x="26" y="16" width="58" height="76" rx="7" fill="#1f4f8f"/>
+      <circle cx="55" cy="46" r="14" fill="none" stroke="#f3d27a" stroke-width="3"/>
+      <path d="M41 46h28M55 32c6 5 6 23 0 28M55 32c-6 5-6 23 0 28" stroke="#f3d27a" stroke-width="2" fill="none"/>
+      <rect x="40" y="70" width="30" height="4" rx="2" fill="#f3d27a"/>
+      <rect x="40" y="78" width="22" height="4" rx="2" fill="#f3d27a" opacity=".7"/>
+      <rect x="100" y="14" width="18" height="62" rx="9" fill="#fff" stroke="#2462b0" stroke-width="3"/>
+      <rect x="103" y="44" width="12" height="29" rx="6" fill="#d9730d"/>
+      <path d="M96 14h26" stroke="#2462b0" stroke-width="4" stroke-linecap="round"/>
+      <circle cx="122" cy="78" r="16" fill="#2b8a4b"/>
+      <path d="M114 78l6 6 10-11" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <!-- ③ 日本の状況（日本列島と棒グラフ） -->
+    <symbol id="kj-i-japan" viewBox="0 0 160 100">
+      <path d="M100 12c6-3 13 0 14 6 1 5-3 9-8 9-4 3-9 2-11-2-1-5 1-10 5-13z" fill="#3b8a56"/>
+      <path d="M96 32c4-2 8 1 7 5-3 9-8 16-15 22-6 5-13 9-20 12-5 2-9 2-12-1-2-3 0-6 4-7 8-3 15-7 21-13 6-6 10-12 15-18z" fill="#3b8a56"/>
+      <path d="M58 76c4-1 7 1 7 4-1 3-5 4-8 3-2-2-2-5 1-7zM44 80c5-2 9 0 9 4 0 5-4 9-9 9-4-1-5-5-4-8 1-2 2-4 4-5z" fill="#3b8a56"/>
+      <g fill="#2462b0"><rect x="16" y="58" width="12" height="32" rx="2"/><rect x="32" y="46" width="12" height="44" rx="2" opacity=".75"/><rect x="120" y="50" width="12" height="40" rx="2" opacity=".75"/><rect x="136" y="38" width="12" height="52" rx="2"/></g>
+      <path d="M10 92h142" stroke="#5b6770" stroke-width="2.5" stroke-linecap="round"/>
+      <circle cx="84" cy="44" r="6" fill="#d9730d" stroke="#fff" stroke-width="2"/>
+    </symbol>
+    <!-- ④ 治療費（病院とお金） -->
+    <symbol id="kj-i-cost" viewBox="0 0 160 100">
+      <rect x="18" y="26" width="70" height="64" rx="4" fill="#fff" stroke="#2462b0" stroke-width="3"/>
+      <rect x="40" y="12" width="26" height="20" rx="3" fill="#fff" stroke="#2462b0" stroke-width="3"/>
+      <path d="M53 15v14M46 22h14" stroke="#2b8a4b" stroke-width="4" stroke-linecap="round"/>
+      <g fill="#cfe3f7" stroke="#2462b0" stroke-width="2"><rect x="28" y="40" width="14" height="12" rx="2"/><rect x="64" y="40" width="14" height="12" rx="2"/><rect x="28" y="60" width="14" height="12" rx="2"/><rect x="64" y="60" width="14" height="12" rx="2"/></g>
+      <rect x="46" y="66" width="14" height="24" rx="2" fill="#2462b0"/>
+      <g><ellipse cx="122" cy="84" rx="24" ry="7" fill="#b85f08"/><rect x="98" y="72" width="48" height="12" fill="#d9730d"/><ellipse cx="122" cy="72" rx="24" ry="7" fill="#f2a24e"/>
+        <ellipse cx="122" cy="62" rx="24" ry="7" fill="#b85f08"/><rect x="98" y="50" width="48" height="12" fill="#d9730d"/><ellipse cx="122" cy="50" rx="24" ry="7" fill="#f6b86e"/></g>
+      <text x="122" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#7a3d00" font-family="sans-serif">¥</text>
+    </symbol>
+    <!-- 病気：HIV（突起のあるウイルスの粒子） -->
+    <symbol id="kj-i-hiv" viewBox="0 0 64 64">
+      <g stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M32 6v8M32 50v8M6 32h8M50 32h8M13.6 13.6l5.7 5.7M44.7 44.7l5.7 5.7M13.6 50.4l5.7-5.7M44.7 19.3l5.7-5.7"/></g>
+      <g fill="currentColor"><circle cx="32" cy="5" r="3.5"/><circle cx="32" cy="59" r="3.5"/><circle cx="5" cy="32" r="3.5"/><circle cx="59" cy="32" r="3.5"/><circle cx="12.5" cy="12.5" r="3.5"/><circle cx="51.5" cy="51.5" r="3.5"/><circle cx="12.5" cy="51.5" r="3.5"/><circle cx="51.5" cy="12.5" r="3.5"/></g>
+      <circle cx="32" cy="32" r="17" fill="currentColor" opacity=".18" stroke="currentColor" stroke-width="3"/>
+      <path d="M26 24c6 2 9 6 9 9s-3 7-9 8M30 24c5 3 8 6 8 9" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+    </symbol>
+    <!-- 病気：梅毒（らせん形の細菌＝梅毒トレポネーマ） -->
+    <symbol id="kj-i-syphilis" viewBox="0 0 64 64">
+      <path d="M6 40c4-10 8-10 12 0s8 10 12 0 8-10 12 0 8 10 12 0 6-8 6-8" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+      <path d="M8 20c3-7 6-7 9 0s6 7 9 0 6-7 9 0 6 7 9 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".5"/>
+      <circle cx="50" cy="16" r="3" fill="currentColor" opacity=".5"/>
+    </symbol>
+    <!-- 病気：はしか（ウイルスと発しん） -->
+    <symbol id="kj-i-measles" viewBox="0 0 64 64">
+      <circle cx="28" cy="30" r="18" fill="currentColor" opacity=".18"/>
+      <circle cx="28" cy="30" r="18" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="3 3"/>
+      <path d="M20 26c4-4 12-4 16 0M18 34c5 4 15 4 20 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+      <g fill="currentColor"><circle cx="50" cy="44" r="3.5"/><circle cx="56" cy="52" r="2.5"/><circle cx="46" cy="54" r="2.8"/><circle cx="54" cy="38" r="2.2"/><circle cx="38" cy="54" r="2"/></g>
+    </symbol>
+    <!-- 病気：結核（棒の形の細菌と肺） -->
+    <symbol id="kj-i-tb" viewBox="0 0 64 64">
+      <path d="M30 10v14c0 4-3 6-6 8l-6 4c-5 3-8 9-8 15 0 4 3 7 7 6l9-2c3-1 4-4 4-7zM34 10v14c0 4 3 6 6 8l6 4c5 3 8 9 8 15 0 4-3 7-7 6l-9-2c-3-1-4-4-4-7z" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+      <g fill="currentColor"><rect x="17" y="40" width="12" height="4.5" rx="2.25" transform="rotate(-25 23 42)"/><rect x="38" y="44" width="12" height="4.5" rx="2.25" transform="rotate(30 44 46)"/><rect x="40" y="34" width="10" height="4" rx="2" transform="rotate(-10 45 36)"/></g>
+    </symbol>
+    <!-- 小さな記号 -->
+    <symbol id="kj-i-route" viewBox="0 0 24 24"><path d="M4 18c4 0 4-6 8-6s4-6 8-6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="4" cy="18" r="2.5" fill="currentColor"/><path d="M17 4l3 2-2 3" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="kj-i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 12h17M12 3.5c3 2.6 3 14.4 0 17M12 3.5c-3 2.6-3 14.4 0 17" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
+    <symbol id="kj-i-jp" viewBox="0 0 24 24"><path d="M15 3c2-1 4 1 3 3l-3 4c-2 3-5 6-9 8-2 1-3-1-2-2 3-2 6-4 8-7z" fill="currentColor"/><path d="M5 20c1-1 3-1 3 1s-3 2-3-1z" fill="currentColor"/></symbol>
+    <symbol id="kj-i-pass" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 16h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="kj-i-care" viewBox="0 0 24 24"><rect x="9.5" y="3" width="5" height="18" rx="1.5" fill="currentColor"/><rect x="3" y="9.5" width="18" height="5" rx="1.5" fill="currentColor"/></symbol>
+    <symbol id="kj-i-yen" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 7l4 5 4-5M12 12v6M8.5 13h7M8.5 16h7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="kj-i-moc" viewBox="0 0 160 100">
+      <rect x="18" y="20" width="56" height="70" rx="6" fill="#fff" stroke="#2462b0" stroke-width="3"/>
+      <rect x="86" y="20" width="56" height="70" rx="6" fill="#fff" stroke="#2b8a4b" stroke-width="3"/>
+      <g stroke="#2462b0" stroke-width="3" stroke-linecap="round"><path d="M28 36h36M28 46h36M28 56h24"/></g>
+      <g stroke="#2b8a4b" stroke-width="3" stroke-linecap="round"><path d="M96 36h36M96 46h36M96 56h24"/></g>
+      <path d="M58 76c8-6 14-6 22 0 8 6 14 6 22 0" fill="none" stroke="#d9730d" stroke-width="4" stroke-linecap="round"/>
+      <text x="46" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#2462b0" font-family="sans-serif">協力覚書</text>
+      <text x="114" y="16" text-anchor="middle" font-size="12" font-weight="700" fill="#2b8a4b" font-family="sans-serif">健康の確認</text>
+    </symbol>
+    <symbol id="kj-i-check" viewBox="0 0 160 100">
+      <rect x="40" y="10" width="80" height="84" rx="8" fill="#fff" stroke="#2462b0" stroke-width="3"/>
+      <rect x="62" y="4" width="36" height="14" rx="5" fill="#2462b0"/>
+      <g stroke-linecap="round" stroke-linejoin="round" fill="none" stroke-width="4"><path d="M52 34l5 5 8-9" stroke="#2b8a4b"/><path d="M52 56l5 5 8-9" stroke="#2b8a4b"/><path d="M53 76l10 0" stroke="#5b6770"/></g>
+      <g stroke="#9aa6a0" stroke-width="3" stroke-linecap="round"><path d="M74 35h34M74 57h34M74 77h24"/></g>
+      <circle cx="128" cy="74" r="14" fill="#d9730d"/><text x="128" y="80" text-anchor="middle" font-size="18" font-weight="700" fill="#fff" font-family="sans-serif">?</text>
+    </symbol>
+    <symbol id="kj-i-qa" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 9a2 2 0 1 1 3 1.7c-.7.4-1 .9-1 1.6M12 14.2v.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="kj-i-book" viewBox="0 0 24 24"><path d="M4 5c3-1 6-1 8 1 2-2 5-2 8-1v14c-3-1-6-1-8 1-2-2-5-2-8-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 6v14" stroke="currentColor" stroke-width="2"/></symbol>
+  </defs>
+</svg>
 
 <div class="kj" id="kj">
   <a class="kj-skip" href="#kj-main" id="kj-skip">本文へ移動</a>
@@ -529,11 +881,13 @@
       <a class="kj-brand" href="#home" data-nav><span class="kj-brand-mark" aria-hidden="true"></span><span style="word-break:keep-all">世界の感染症と<wbr>日本の水際対策</span></a>
       <nav class="kj-menu" aria-label="主なメニュー">
         <ul>
-          <li><a href="#countries" data-nav data-group-link="world">国別に比較</a></li>
+          <li><a href="#countries" data-nav data-group-link="world">世界の状況</a></li>
+          <li><a href="#entry" data-nav data-group-link="entry">入国時の検査</a></li>
+          <li><a href="#compare" data-nav data-group-link="domestic">日本の状況</a></li>
+          <li><a href="#cost" data-nav data-group-link="cost">治療費と負担</a></li>
           <li><a href="#diseases" data-nav data-group-link="disease">4つの感染症</a></li>
-          <li><a href="#entry" data-nav data-group-link="entry">入国前対策</a></li>
-          <li><a href="#compare" data-nav data-group-link="domestic">国内の状況・公費</a></li>
-          <li><a href="#guide" data-nav data-group-link="docs">資料・注意事項</a></li>
+          <li><a href="#kadai" data-nav data-group-link="kadai">課題を考える</a></li>
+          <li><a href="#guide" data-nav data-group-link="docs">詳しく調べる</a></li>
         </ul>
       </nav>
       <div class="kj-tools">
@@ -554,11 +908,19 @@
     </div>
     <nav class="kj-drawer" id="kj-drawer" aria-label="メニュー" hidden>
       <ul>
-        <li><a href="#home" data-nav data-view-link="home">トップ</a></li>
-        <li><a href="#countries" data-nav data-group-link="world">国別に比較する</a>
+        <li><a href="#home" data-nav data-view-link="home">トップ（まず3分でわかる）</a></li>
+        <li><a href="#countries" data-nav data-group-link="world">① 世界では何が流行？</a>
           <ul>
             <li><a href="#countries" data-nav data-view-link="countries">国別の比較表</a></li>
             <li><a href="#world" data-nav data-view-link="world">HIV/エイズ 世界の動向</a></li>
+          </ul>
+        </li>
+        <li><a href="#entry" data-nav data-view-link="entry">② 日本の入国時検査は？</a></li>
+        <li><a href="#compare" data-nav data-view-link="compare">③ 日本ではどうなっている？</a></li>
+        <li><a href="#cost" data-nav data-group-link="cost">④ 治療費は誰が払う？</a>
+          <ul>
+            <li><a href="#cost" data-nav data-view-link="cost">治療費と公的負担</a></li>
+            <li><a href="#kouhi" data-nav data-view-link="kouhi">公費で受けられる支援</a></li>
           </ul>
         </li>
         <li><a href="#diseases" data-nav data-group-link="disease">4つの感染症を見る</a>
@@ -570,17 +932,10 @@
             <li><a href="#tb" data-nav data-view-link="tb"><span class="kj-swatch" data-i="3"></span>結核</a></li>
           </ul>
         </li>
-        <li><a href="#entry" data-nav data-view-link="entry">日本の入国前対策を見る</a></li>
-        <li><a href="#compare" data-nav data-group-link="domestic">国内の状況・公費を見る</a>
+        <li><a href="#kadai" data-nav data-view-link="kadai">制度の課題を考える</a></li>
+        <li><a href="#guide" data-nav data-group-link="docs">詳しく調べる</a>
           <ul>
-            <li><a href="#compare" data-nav data-view-link="compare">国内の状況（4つの病気の比較）</a></li>
-            <li><a href="#kouhi" data-nav data-view-link="kouhi">公費で受けられる支援</a></li>
-            <li><a href="#cost" data-nav data-view-link="cost">治療費と公的負担</a></li>
-          </ul>
-        </li>
-        <li><a href="#guide" data-nav data-group-link="docs">資料・注意事項</a>
-          <ul>
-            <li><a href="#guide" data-nav data-view-link="guide">数字の見方・注意事項</a></li>
+            <li><a href="#guide" data-nav data-view-link="guide">数字の見方・ことばの説明・注意事項</a></li>
             <li><a href="#sources" data-nav data-view-link="sources">出典一覧</a></li>
             <li><a href="#links" data-nav data-view-link="links">さらに詳しく調べたい方へ</a></li>
           </ul>
@@ -601,13 +956,12 @@
       <a href="#measles" data-nav data-view-link="measles"><span class="kj-swatch" data-i="2"></span>はしか</a>
       <a href="#tb" data-nav data-view-link="tb"><span class="kj-swatch" data-i="3"></span>結核</a>
     </div>
-    <div class="kj-sub-in" data-sub="domestic">
-      <a href="#compare" data-nav data-view-link="compare">国内の状況</a>
-      <a href="#kouhi" data-nav data-view-link="kouhi">公費で受けられる支援</a>
+    <div class="kj-sub-in" data-sub="cost">
       <a href="#cost" data-nav data-view-link="cost">治療費と公的負担</a>
+      <a href="#kouhi" data-nav data-view-link="kouhi">公費で受けられる支援</a>
     </div>
     <div class="kj-sub-in" data-sub="docs">
-      <a href="#guide" data-nav data-view-link="guide">数字の見方・注意事項</a>
+      <a href="#guide" data-nav data-view-link="guide">数字の見方・ことばの説明</a>
       <a href="#sources" data-nav data-view-link="sources">出典一覧</a>
       <a href="#links" data-nav data-view-link="links">さらに詳しく調べたい方へ</a>
     </div>
@@ -618,32 +972,85 @@
 
   <!-- トップ -->
   <section class="kj-view" id="home" data-label="トップ">
-    <header class="kj-vhead kj-hero">
+    <header class="kj-vhead kj-hero2">
       <h1 class="kj-h1" tabindex="-1">世界の感染症と日本の水際対策</h1>
-      <p class="kj-sub-t">HIV・梅毒・はしか・結核の感染状況、外国人材の受入制度、入国前の健康確認、国内の医療費を公的資料で比較</p>
-      <p class="kj-asof"><span>掲載内容：<b>2026年10月26日時点</b></span><span>最終更新：<b>2026年10月26日</b></span></p>
+      <p class="kj-catch"><span>海外で流行する感染症。</span><span>日本では、入国時に何を検査している？</span><span>治療費は誰が負担する？</span></p>
+      <p class="kj-hero-desc">HIV・梅毒・はしか・結核。世界と日本の感染状況、外国人材の受入制度、健康診断、医療費の仕組みを公的資料でわかりやすく解説します。</p>
+      <p class="kj-asof"><span>掲載内容：<b>2026年10月27日時点</b></span><span>最終更新：<b>2026年10月27日</b></span><span><a href="#riyou" data-nav>ご利用にあたって</a></span></p>
     </header>
     <nav aria-label="調べたいことを選ぶ">
-      <ul class="kj-e4">
-        <li><a href="#countries" data-nav><span class="kj-e4-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></span><b>国別に比較する</b><span class="kj-e4-d">どの国で、どの感染症が多いか。協力覚書・入国前検査とあわせて確かめる</span></a></li>
-        <li><a href="#diseases" data-nav><span class="kj-e4-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="7.5" r="3.6"/><circle cx="16.5" cy="7.5" r="3.6"/><circle cx="7.5" cy="16.5" r="3.6"/><circle cx="16.5" cy="16.5" r="3.6"/></svg></span><b>4つの感染症を見る</b><span class="kj-e4-d">HIV/エイズ・梅毒・はしか・結核の特徴、世界と日本の状況、検査と治療</span></a></li>
-        <li><a href="#entry" data-nav><span class="kj-e4-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></span><b>日本の入国前対策を見る</b><span class="kj-e4-d">外国人材の協力覚書と、入国前の検査・健康診断の制度</span></a></li>
-        <li><a href="#compare" data-nav><span class="kj-e4-ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 11.5 12 14.5l2.5-3M12 14.5V19M9.5 16.2h5"/></svg></span><b>国内の状況・公費を見る</b><span class="kj-e4-d">国内の患者数の推移、公費の支援、治療費と公的負担</span></a></li>
+      <ul class="kj-doors">
+        <li><a class="kj-door" href="#countries" data-nav><span class="kj-door-n" aria-hidden="true">1</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-world"/></svg></span><b>世界では何が流行？</b><span class="kj-door-d">海外の感染状況を、日本と比べて見る</span><span class="kj-door-go">国別に比べる →</span></a></li>
+        <li><a class="kj-door" href="#entry" data-nav><span class="kj-door-n" aria-hidden="true">2</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-entry"/></svg></span><b>日本の入国時検査は？</b><span class="kj-door-d">入国前・入国時の健康確認の制度</span><span class="kj-door-go">検査の早見へ →</span></a></li>
+        <li><a class="kj-door" href="#compare" data-nav><span class="kj-door-n" aria-hidden="true">3</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-japan"/></svg></span><b>日本ではどうなっている？</b><span class="kj-door-d">国内の患者数と、年ごとの推移</span><span class="kj-door-go">推移を見る →</span></a></li>
+        <li><a class="kj-door" href="#cost" data-nav><span class="kj-door-n" aria-hidden="true">4</span><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-cost"/></svg></span><b>治療費は誰が払う？</b><span class="kj-door-d">医療費と、保険・公費・本人の負担</span><span class="kj-door-go">費用を見る →</span></a></li>
       </ul>
     </nav>
-    <section class="kj-card" id="home-cmp" aria-labelledby="home-cmp-h">
+
+    <section class="kj-section" id="sanpun" aria-labelledby="sanpun-h">
+      <div class="kj-band"><span class="kj-band-k">まず3分でわかる</span><h2 id="sanpun-h">5つのステップで全体をつかむ</h2><p class="kj-cap">大きな数字と図だけで流れがわかるようにしています。根拠の資料は、各ステップの「詳しく見る」と出典から確かめられます。</p></div>
+      <div class="kj-steps">
+        <section class="kj-step" id="step1" aria-labelledby="step1-h">
+          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-world"/></svg></span><div><span class="kj-step-no">STEP 1</span><h3 id="step1-h">海外では今も流行している</h3></div></div>
+          <p class="kj-step-lede">日本では少なくなった病気も、世界では毎年たくさんの人がかかっています。日本国内で増えている病気もあります。下の数字は、病気ごとに数え方（発病した人・かかった人・感染している人など）が違うため、病気どうしの大きさは比べられません。</p>
+          <div class="kj-step-body"><div class="kj-ntiles" id="step1-tiles"></div></div>
+          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#countries" data-nav>国別の数字を詳しく見る →</a><a href="#world" data-nav>HIV/エイズ 世界の動向</a></div>
+        </section>
+        <section class="kj-step" id="step2" aria-labelledby="step2-h">
+          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-moc"/></svg></span><div><span class="kj-step-no">STEP 2</span><h3 id="step2-h">日本は外国人をどう受け入れている？</h3></div></div>
+          <p class="kj-step-lede">日本は、特定技能・技能実習（2027年4月からは育成就労）・留学などの在留資格で外国人を受け入れています。外国人材の送り出し・受け入れで結ぶ「協力覚書」と、入国前に結核の検査を求める「JPETS」は、別の制度です。</p>
+          <div class="kj-step-body"><div class="kj-ntiles" id="step2-nums"></div><div class="kj-venn" id="step2-venn"></div><div class="kj-schemes" id="step2-schemes"></div></div>
+          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry" data-nav>入国前の健康確認を詳しく見る →</a><a href="#entry-moc" data-nav>協力覚書の一覧</a></div>
+        </section>
+        <section class="kj-step" id="step3" aria-labelledby="step3-h">
+          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-check"/></svg></span><div><span class="kj-step-no">STEP 3</span><h3 id="step3-h">検査される病気・されない病気</h3></div></div>
+          <p class="kj-step-lede">入国前・入国時・入国後の制度ごとに、4つの病気が検査の対象かを並べました。「一律義務なし」は制度の対象外と公的資料で確認できたもの、「未確認」は公的資料で確認できなかったもの（制度がないとは決めつけていません）です。</p>
+          <div class="kj-step-body"><div id="step3-mx"></div></div>
+          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#entry-check" data-nav>国・在留資格を選んで調べる →</a><a href="#entry-gaps" data-nav>制度上の確認事項</a></div>
+        </section>
+        <section class="kj-step" id="step4" aria-labelledby="step4-h">
+          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-japan"/></svg></span><div><span class="kj-step-no">STEP 4</span><h3 id="step4-h">日本国内の感染状況は？</h3></div></div>
+          <p class="kj-step-lede">国内で届け出られた患者の数です。「外国生まれ」「外国籍」「国外で感染」は、それぞれ意味の違う数字です。国内の患者数の増減だけで、感染した場所や経路を決めることはできません。</p>
+          <div class="kj-step-body"><div class="kj-ntiles" id="step4-nums"></div><div class="kj-fx" id="step4-fx"></div><figure class="kj-fig" id="step4-fig" style="margin:0"><div class="kj-fig-head"><div><h3>結核：新しく登録された患者のうち、外国生まれの人の割合</h3><p class="kj-cap">生まれた国で分けた数です（国籍ではありません）。棒にふれる・タップすると人数も出ます。</p></div><div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="step4-foreign">画像で保存（PNG）</button></div></div><div class="kj-plot" id="step4-chart"></div><div id="step4-insight"></div><div id="step4-src"></div></figure></div>
+          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#compare" data-nav>国内の推移を詳しく見る →</a><a href="#tb-tables" data-nav>結核の外国生まれの表</a></div>
+        </section>
+        <section class="kj-step" id="step5" aria-labelledby="step5-h">
+          <div class="kj-step-head"><span class="kj-illu"><svg viewBox="0 0 160 100" aria-hidden="true" focusable="false"><use href="#kj-i-cost"/></svg></span><div><span class="kj-step-no">STEP 5</span><h3 id="step5-h">感染した場合、いくらかかる？</h3></div></div>
+          <p class="kj-step-lede">治療費は、<b style="color:var(--kj-pay-ins)">公的医療保険</b>・<b style="color:var(--kj-pay-pub)">公費（税金）</b>・<b style="color:var(--kj-pay-self)">本人</b>の3つで分けて払われます。病気と使える制度によって、本人の負担は大きく違います。</p>
+          <div class="kj-step-body"><div class="kj-paykey" id="step5-key"></div><div class="kj-grid" id="step5-cases"></div></div>
+          <div class="kj-step-foot"><a class="kj-btn kj-btn-pri" href="#cost" data-nav>医療費と負担のしくみを詳しく見る →</a><a href="#cost-sim" data-nav>100万円の場合を試算する</a></div>
+        </section>
+      </div>
+    </section>
+
+    <section class="kj-section" id="home-dz" aria-labelledby="home-dz-h">
+      <div class="kj-band"><span class="kj-band-k">4つの感染症</span><h2 id="home-dz-h">HIV・梅毒・はしか・結核のちがい</h2><p class="kj-cap">カードを押すと、その病気の詳しい資料とグラフに進みます。</p></div>
+      <div class="kj-dz" id="home-dz-cards"></div>
+    </section>
+
+    <section class="kj-section" id="home-kadai" aria-labelledby="home-kadai-h">
+      <div class="kj-band"><span class="kj-band-k">最後に</span><h2 id="home-kadai-h">制度の課題を考える</h2><p class="kj-cap">資料と数字にもとづき、6つの問いに「確認された事実」「制度上の課題」「未確認事項」を分けて答えます。</p></div>
+      <ul class="kj-menucards" id="home-kadai-list"></ul>
+    </section>
+
+    <details class="kj-deep" id="home-cmp-deep">
+      <summary><svg class="kj-ic" aria-hidden="true" focusable="false"><use href="#kj-i-book"/></svg><span class="kj-deep-t">詳しく調べる：国ごとの一覧（感染状況 × 協力覚書 × 入国前検査）</span><span class="kj-deep-g">協力覚書の20か国と入国前の結核検査の対象国を、病気ごとに一覧で見られます。</span></summary>
+      <div class="kj-deep-body">
+        <section class="kj-card" id="home-cmp" aria-labelledby="home-cmp-h">
       <div><h2 class="kj-h3" id="home-cmp-h">国別感染状況 × 日本との協力覚書 × 入国前検査</h2><p class="kj-cap">感染症を選び、国名を押すと、その国の詳しい情報に進みます。日本と協力覚書を結んだ国と、入国前の結核検査の対象国を載せています。</p></div>
       <div class="kj-dchips" role="group" aria-label="感染症を選ぶ" id="home-cmp-d"></div>
       <div class="kj-controls"><label class="kj-field"><span>国を選んで詳しく見る</span><select class="kj-select" id="home-cmp-pick"></select></label></div>
       <p class="kj-cap" id="home-cmp-warn"></p>
-      <div class="kj-scroll"><table class="kj-table kj-cmp-table" id="home-cmp-table"></table></div>
+      <div class="kj-rt"><div class="kj-scroll"><table class="kj-table kj-cmp-table" id="home-cmp-table"></table></div></div>
       <p class="kj-links"><a class="kj-btn" href="#countries" data-nav>すべての国で比べる・並び替える →</a><a href="#entry" data-nav>入国前対策の説明</a><a href="#riyou-3" data-nav>偏見・差別の防止</a></p>
       <div id="home-cmp-src"></div>
     </section>
+      </div>
+    </details>
     <details class="kj-card kj-fold" id="home-data">
       <summary>データについて（出典と集計の注意）</summary>
       <div class="kj-prose" style="display:grid;gap:10px">
-        <p style="color:var(--color-fg);font-size:0.9375rem">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構・出入国在留管理庁など）が公表している資料から作成。国内の数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。国別の数字と世界の動向は、国連の機関（WHO・UNAIDS・IOM）の公式資料から作りました。「公費で受けられる支援」は国の法律・資料のほか、結核の医療費の一部を東京都の公式ページで確かめました。</p>
+        <p style="color:var(--color-fg);font-size:0.9375rem">2026年10月27日時点で国（厚生労働省・国立健康危機管理研究機構・出入国在留管理庁など）が公表している資料から作成。国内の数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。国別の数字と世界の動向は、国連の機関（WHO・UNAIDS・IOM）の公式資料から作りました。「公費で受けられる支援」は国の法律・資料のほか、結核の医療費の一部を東京都の公式ページで確かめました。</p>
         <p style="color:var(--color-fg);font-size:0.9375rem">病気ごとの大きな数字は、最新の確定値（国が1年分を集計し直した数）です。小さな棒グラフは10年ほどの動きで、斜線の棒は速報値です。</p>
         <ul class="kj-list kj-list-sm" id="home-data-list"></ul>
         <p class="kj-links"><a href="#guide" data-nav>数字の見方・注意事項へ</a><a href="#sources" data-nav>出典一覧へ</a><a href="#riyou-4" data-nav>掲載データの限界</a></p>
@@ -686,12 +1093,13 @@
       </div>
       <div class="kj-plot" id="cty-chart"></div>
       <p class="kj-cap" id="cty-chart-note"></p>
+      <div id="cty-chart-insight"></div>
       <div id="cty-chart-src"></div>
     </figure>
     <div class="kj-card" id="cty-table-card">
       <h3>比較表</h3>
       <p class="kj-cap">国名を押すと、下にその国の詳しい情報（感染症の状況・協力覚書・入国前の健康確認・制度上の確認事項）が出ます。「比べる」にチェックを入れると、4つの感染症を並べて比べられます（8か国まで）。</p>
-      <div class="kj-scroll"><table class="kj-table kj-cmp-table" id="cty-table"></table></div>
+      <div class="kj-rt"><div class="kj-scroll"><table class="kj-table kj-cmp-table" id="cty-table"></table></div></div>
       <div id="cty-table-src"></div>
     </div>
     <figure class="kj-fig" id="cty-multi">
@@ -700,6 +1108,7 @@
         <div class="kj-fig-tools"><button type="button" class="kj-mini" id="cty-multi-clear">選択をすべて外す</button><button type="button" class="kj-mini" data-export="countries-multi">画像で保存（PNG）</button></div>
       </div>
       <div class="kj-plot" id="cty-multi-chart"></div>
+      <div id="cty-multi-insight"></div>
       <div id="cty-multi-src"></div>
     </figure>
     <section class="kj-card kj-cd" id="country-detail" aria-live="polite"></section>
@@ -712,6 +1121,11 @@
       <h2 class="kj-h2" tabindex="-1">4つの感染症を見る</h2>
       <p class="kj-lede">HIV/エイズ・梅毒・はしか（麻しん）・結核について、病気の特徴、世界と日本の状況、検査・予防・治療、入国前対策、医療費を、どの病気も同じ順番でまとめています。うつり方や治療、使える制度がそれぞれ違うため、4つの病気を「危険度」で順位づけすることはしていません。</p>
     </header>
+    <section class="kj-section" id="dz-cards-sec" aria-labelledby="dz-cards-h">
+      <h3 class="kj-h3" id="dz-cards-h">4つの病気のちがい</h3>
+      <div class="kj-dz" id="dz-cards"></div>
+      <p class="kj-cap">むずかしいことばは「<a href="#guide-terms" data-nav>ことばの説明</a>」にまとめています。</p>
+    </section>
     <section class="kj-section" aria-labelledby="home-cards-h">
       <h3 class="kj-h3" id="home-cards-h">日本国内の今（4つの病気）</h3>
       <div class="kj-dcards" id="home-cards"></div>
@@ -756,6 +1170,7 @@
       </div>
       <div class="kj-legend" id="compare-legend"></div>
       <div class="kj-plot" id="compare-chart"></div>
+      <div id="compare-insight"></div>
       <details class="kj-details" id="compare-table-box"><summary>数値を表で見る</summary><div class="kj-scroll"><table class="kj-table" id="compare-table"></table></div></details>
       <div id="compare-src"></div>
     </figure>
@@ -831,6 +1246,7 @@
         </div>
         <div class="kj-plot" id="world-change-chart"></div>
         <p class="kj-cap" id="world-change-note"></p>
+        <div id="world-change-insight"></div>
         <div id="world-change-src"></div>
       </figure>
     </div>
@@ -864,6 +1280,7 @@
         </div>
         <div class="kj-plot" id="world-slope-chart"></div>
         <p class="kj-cap" id="world-slope-note"></p>
+        <div id="world-slope-insight"></div>
         <div id="world-slope-src"></div>
       </figure>
       <figure class="kj-fig" id="world-bars">
@@ -876,6 +1293,7 @@
         </div>
         <label class="kj-field"><span>比べる数字</span><select class="kj-select" id="wp-metric"></select></label>
         <div class="kj-plot" id="world-bars-chart"></div>
+        <div id="world-bars-insight"></div>
         <div id="world-bars-src"></div>
       </figure>
     </div>
@@ -890,52 +1308,77 @@
   </section>
 
   <!-- 日本の入国前対策 -->
-  <section class="kj-view" id="entry" data-label="日本の入国前対策" hidden>
+  <section class="kj-view" id="entry" data-label="入国時の検査" hidden>
     <header class="kj-vhead">
-      <h2 class="kj-h2" tabindex="-1">日本の入国前対策</h2>
-      <p class="kj-lede">日本が外国人材の受け入れで結んでいる協力覚書（MOU・MOC）と、日本へ入国する前・入国するときの健康確認の制度を、公的資料で整理しました。制度が十分かどうかは決めつけず、根拠の資料を確かめられるようにしています。</p>
+      <h2 class="kj-h2" tabindex="-1">日本に来る外国人は、どんな健康診断を受けるの？</h2>
+      <p class="kj-lede">国・地域（国籍）、在留資格、感染症、時期（入国前・入国時・入国後）を選ぶと、関係する制度と、検査が義務かどうかが出ます。JPETS（入国前の結核検査）、在留資格の申請で出す健康診断、空港・港の検疫、入国後の健康診断は、それぞれ別の制度です。</p>
     </header>
+    <section class="kj-card kj-ck" id="entry-check" aria-labelledby="entry-check-h">
+      <h3 id="entry-check-h">条件を選んで調べる（入国時の検査の早見）</h3>
+      <div class="kj-ck-ctl">
+        <label for="ck-c">国・地域（国籍）<select class="kj-select" id="ck-c"></select></label>
+        <label for="ck-s">在留資格<select class="kj-select" id="ck-s"></select></label>
+        <label for="ck-d">感染症<select class="kj-select" id="ck-d"></select></label>
+        <label for="ck-t">時期<select class="kj-select" id="ck-t"><option value="*">すべて（入国前・入国時・入国後）</option><option value="入国前">入国前</option><option value="入国時">入国時（空港・港）</option><option value="入国後">入国後</option></select></label>
+      </div>
+      <p class="kj-cap" id="ck-scheme-note"></p>
+      <div class="kj-ck-sum" id="ck-sum" aria-live="polite"></div>
+      <div class="kj-ck-res" id="ck-res"></div>
+      <details class="kj-details" id="ck-keybox"><summary>5つの状態（義務あり・条件付き・導入予定・一律義務なし・未確認）の見方</summary><dl class="kj-s5key" id="ck-key"></dl></details>
+      <p class="kj-cap" id="ck-asof"></p>
+      <p class="kj-cap"><b>国籍で結果が変わるのはJPETSだけです。</b>その国の感染状況（人口全体の数字）は、その国から日本へ入国する人の感染の割合ではなく、国籍から個人の感染や危険性を判断することはできません。<a href="#riyou-3" data-nav>偏見・差別の防止</a></p>
+    </section>
+    <div class="kj-points" id="entry-points">
+      <div class="kj-point"><b>検査の対象として確認できた感染症は結核だけ</b><p>入国前に検査を求める制度（JPETS、特定技能・育成就労の健康診断）で調べる感染症は結核だけで、HIV・梅毒・はしかの検査は入っていません。</p><p class="kj-links"><a href="#entry-matrix" data-nav>4つの感染症 × 制度</a></p></div>
+      <div class="kj-point"><b>協力覚書と検査の義務は別の制度</b><p>外国人材の協力覚書を結んだ国でも、JPETSの対象国とは限りません。JPETSの対象国も、協力覚書の国とは限りません。</p><p class="kj-links"><a href="#step2" data-nav>2つの制度の重なり（図）</a></p></div>
+      <div class="kj-point"><b>空港・港の検疫で、4つの病気は対象外</b><p>検疫法の「検疫感染症」に4つの病気は入っていません。結核を発病している人は、入管法で原則として上陸できません。</p><p class="kj-links"><a href="#entry-others" data-nav>入国時の制度</a></p></div>
+    </div>
     <div class="kj-callout" id="entry-note">
       <h3>2つの制度を分けて見てください</h3>
       <p><b>協力覚書（MOU・MOC）を結んでいること</b>と、<b>入国前の健康診断・感染症検査が義務になっていること</b>は、別の制度です。覚書を結んだ国だからといって検査があるとは限らず、検査の対象国が覚書の国とは限りません。</p>
       <p>また、国別の感染状況（その国の人口全体の数字）は、その国から日本へ入国する人の感染の割合ではありません。</p>
     </div>
-    <section class="kj-card" id="entry-status-key" aria-labelledby="entry-status-h">
-      <h3 id="entry-status-h">制度の状態の見方</h3>
-      <dl class="kj-stkey" id="entry-stkey"></dl>
-    </section>
-    <section class="kj-card" id="entry-matrix" aria-labelledby="entry-matrix-h">
-      <h3 id="entry-matrix-h">4つの感染症 × 入国前・入国時の制度</h3>
-      <p class="kj-cap">それぞれの病気について、入国前や入国時に確かめる制度があるかを示します。説明の下の「出典」から根拠の資料を確かめられます。</p>
-      <div id="entry-matrix-box"></div>
-    </section>
-    <section class="kj-section" id="entry-jpets" aria-labelledby="entry-jpets-h">
-      <h3 class="kj-h3" id="entry-jpets-h">入国前結核スクリーニング（JPETS）</h3>
-      <div class="kj-grid">
-        <div class="kj-card kj-wide" id="entry-jpets-sys"></div>
-        <div class="kj-card kj-wide" id="entry-jpets-countries"><h3>対象国と開始の状況</h3><div class="kj-scroll"><table class="kj-table" id="entry-jpets-table"></table></div></div>
-        <div class="kj-card" id="world-jpets"><h3>これまでの説明：日本の入国前の健康診断とIOM</h3><ul class="kj-list kj-list-sm"></ul></div>
-        <div class="kj-card" id="entry-schemes"><h3>在留資格ごとの適用範囲</h3><div id="entry-schemes-box"></div></div>
+    <details class="kj-deep" id="entry-deep">
+      <summary><svg class="kj-ic" aria-hidden="true" focusable="false"><use href="#kj-i-book"/></svg><span class="kj-deep-t">詳しく調べる：制度の資料</span><span class="kj-deep-g">制度の状態の見方、4つの感染症×制度、JPETSの対象国・対象外・検査の内容、在留資格ごとの適用範囲、そのほかの制度、協力覚書の一覧、制度上の確認事項</span></summary>
+      <div class="kj-deep-body">
+        <section class="kj-card" id="entry-status-key" aria-labelledby="entry-status-h">
+          <h3 id="entry-status-h">制度の状態の見方（実施中・開始予定など）</h3><p class="kj-cap">ここから下は、制度そのものの状態です。上の早見の「義務あり・条件付き…」は、選んだ人にとって義務かどうかを示します。</p>
+          <dl class="kj-stkey" id="entry-stkey"></dl>
+        </section>
+        <section class="kj-card" id="entry-matrix" aria-labelledby="entry-matrix-h">
+          <h3 id="entry-matrix-h">4つの感染症 × 入国前・入国時の制度</h3>
+          <p class="kj-cap">それぞれの病気について、入国前や入国時に確かめる制度があるかを示します。説明の下の「出典」から根拠の資料を確かめられます。</p>
+          <div id="entry-matrix-box"></div>
+        </section>
+        <section class="kj-section" id="entry-jpets" aria-labelledby="entry-jpets-h">
+          <h3 class="kj-h3" id="entry-jpets-h">入国前結核スクリーニング（JPETS）</h3>
+          <div class="kj-grid">
+            <div class="kj-card kj-wide" id="entry-jpets-sys"></div>
+            <div class="kj-card kj-wide" id="entry-jpets-countries"><h3>対象国と開始の状況</h3><div class="kj-rt"><div class="kj-scroll"><table class="kj-table" id="entry-jpets-table"></table></div></div></div>
+            <div class="kj-card" id="world-jpets"><h3>これまでの説明：日本の入国前の健康診断とIOM</h3><ul class="kj-list kj-list-sm"></ul></div>
+            <div class="kj-card" id="entry-schemes"><h3>在留資格ごとの適用範囲</h3><div id="entry-schemes-box"></div></div>
+          </div>
+        </section>
+        <section class="kj-section" id="entry-others" aria-labelledby="entry-others-h">
+          <h3 class="kj-h3" id="entry-others-h">そのほかの入国前・入国時の制度</h3>
+          <div class="kj-grid" id="entry-systems"></div>
+        </section>
+        <section class="kj-section" id="entry-moc" aria-labelledby="entry-moc-h">
+          <h3 class="kj-h3" id="entry-moc-h">日本との協力覚書（特定技能・技能実習・育成就労）</h3>
+          <div class="kj-card">
+            <p class="kj-cap">国名を押すと、その国の感染状況・覚書の正式名称・目的・入国前の健康確認をまとめて見られます（「国別に比較する」のページへ移動します）。</p>
+            <div class="kj-rt"><div class="kj-scroll"><table class="kj-table" id="entry-moc-table"></table></div></div>
+            <div id="entry-moc-src"></div>
+          </div>
+          <div class="kj-card" id="world-moc-card"><h3>協力覚書についての説明</h3><ul class="kj-list kj-list-sm"></ul></div>
+        </section>
+        <section class="kj-card" id="entry-gaps" aria-labelledby="entry-gaps-h">
+          <h3 id="entry-gaps-h">制度上の確認事項</h3>
+          <p class="kj-cap">検査制度が適用される範囲、まだ導入されていない部分、導入の予定、公的資料で確認できなかった項目です。</p>
+          <div id="entry-gaps-box"></div>
+        </section>
       </div>
-    </section>
-    <section class="kj-section" id="entry-others" aria-labelledby="entry-others-h">
-      <h3 class="kj-h3" id="entry-others-h">そのほかの入国前・入国時の制度</h3>
-      <div class="kj-grid" id="entry-systems"></div>
-    </section>
-    <section class="kj-section" id="entry-moc" aria-labelledby="entry-moc-h">
-      <h3 class="kj-h3" id="entry-moc-h">日本との協力覚書（特定技能・技能実習・育成就労）</h3>
-      <div class="kj-card">
-        <p class="kj-cap">国名を押すと、その国の感染状況・覚書の正式名称・目的・入国前の健康確認をまとめて見られます（「国別に比較する」のページへ移動します）。</p>
-        <div class="kj-scroll"><table class="kj-table" id="entry-moc-table"></table></div>
-        <div id="entry-moc-src"></div>
-      </div>
-      <div class="kj-card" id="world-moc-card"><h3>協力覚書についての説明</h3><ul class="kj-list kj-list-sm"></ul></div>
-    </section>
-    <section class="kj-card" id="entry-gaps" aria-labelledby="entry-gaps-h">
-      <h3 id="entry-gaps-h">制度上の確認事項</h3>
-      <p class="kj-cap">検査制度が適用される範囲、まだ導入されていない部分、導入の予定、公的資料で確認できなかった項目です。</p>
-      <div id="entry-gaps-box"></div>
-    </section>
+    </details>
   </section>
 
   <!-- 公費で受けられる支援 -->
@@ -976,48 +1419,100 @@
   <!-- 治療費と公的負担 -->
   <section class="kj-view" id="cost" data-label="治療費と公的負担" hidden>
     <header class="kj-vhead">
-      <h2 class="kj-h2" tabindex="-1">感染症の治療には、1人当たりいくらかかる？</h2>
-      <p class="kj-lede">医療費の総額と、税金・公的医療保険・本人負担の内訳を確認できます。</p>
-      <p class="kj-links"><a href="#cost-cautions" data-nav>見るときの注意</a><a href="#kouhi" data-nav>公費で受けられる支援</a><a href="#riyou-4" data-nav>掲載データの限界</a></p>
+      <h2 class="kj-h2" tabindex="-1">もし日本で感染症が見つかったら、いくらかかり、誰が払う？</h2>
+      <p class="kj-lede">治療にかかる医療費の総額と、それを公的医療保険・公費（税金）・本人がどう分けて払うかを、病気ごと・条件ごとに示します。公表された平均値・制度上の価格・モデル試算を区別し、公表値が見つからないものは「公表値未確認」とし、数字を作っていません。</p>
+      <p class="kj-links"><a href="#cost-cards" data-nav>病気ごとの費用</a><a href="#cost-sim" data-nav>100万円の場合の試算</a><a href="#cost-foreign" data-nav>外国人の場合の制度</a><a href="#cost-cautions" data-nav>見るときの注意</a><a href="#kouhi" data-nav>公費で受けられる支援</a></p>
     </header>
     <div class="kj-callout" id="cost-note">
       <h3>「医療費の総額」＝「税金の負担」ではありません</h3>
-      <p>治療にかかった医療費の総額は、ふつう<b>公的医療保険の給付</b>・<b>公費（税金）</b>・<b>本人の負担</b>の3つで分けて払われます。病気や制度によって分け方が違い、公的医療保険にも税金が入っているため、「税金でいくら払っているか」を1人ごとに正確に出せないことがあります。</p>
+      <p>治療にかかった医療費の総額は、ふつう<b style="color:var(--kj-pay-ins)">公的医療保険の給付</b>・<b style="color:var(--kj-pay-pub)">公費（税金）</b>・<b style="color:var(--kj-pay-self)">本人の負担</b>の3つで分けて払われます。公的医療保険の主な財源は保険料ですが、税金も入っているため、保険の給付をそのまま「税金」とは呼べず、「税金でいくら払っているか」を1人ごとに正確に出すこともできません。</p>
     </div>
     <section class="kj-card" id="cost-pay" aria-labelledby="cost-pay-h">
-      <h3 id="cost-pay-h">3つの払い手のちがい</h3>
+      <h3 id="cost-pay-h">3つの払い手のちがい（色は全ページで同じ）</h3>
       <div class="kj-pay" id="cost-pay-box"></div>
-      <div id="cost-fin"></div>
     </section>
-    <figure class="kj-fig" id="cost-fig">
-      <div class="kj-fig-head">
-        <div><h3 id="cost-fig-title">4つの病気の費用を比べる</h3><p class="kj-cap" id="cost-fig-cap"></p></div>
-        <div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="cost">画像で保存（PNG）</button></div>
-      </div>
-      <div class="kj-controls" id="cost-fig-ctl"></div>
-      <div class="kj-legend" id="cost-legend"></div>
-      <div class="kj-plot" id="cost-chart"></div>
-      <p class="kj-cap" id="cost-chart-note"></p>
-      <div id="cost-chart-src"></div>
-    </figure>
-    <section class="kj-section" id="cost-detail" aria-labelledby="cost-detail-h">
-      <h3 class="kj-h3" id="cost-detail-h">病気ごとの費用（確認できた公表値と、確認できなかった項目）</h3>
-      <div class="kj-tabs" role="tablist" aria-label="病気を選ぶ" id="cost-tabs"></div>
-      <div id="cost-panels"></div>
+    <section class="kj-section" id="cost-cards" aria-labelledby="cost-cards-h">
+      <h3 class="kj-h3" id="cost-cards-h">病気ごとの費用（代表的な例）</h3>
+      <p class="kj-cap" id="cost-cards-cap"></p>
+      <div class="kj-paykey" id="cost-cards-key"></div>
+      <div class="kj-dz" id="cost-cards-box"></div>
     </section>
-    <section class="kj-card kj-calc" id="cost-calc" aria-labelledby="cost-calc-h">
-      <h3 id="cost-calc-h">医療費の内訳の試算（制度のきまりから計算）</h3>
+    <section class="kj-card kj-calc" id="cost-sim" aria-labelledby="cost-sim-h">
+      <h3 id="cost-sim-h">医療費が100万円だったら、誰がいくら払う？（条件を選ぶ試算）</h3>
       <div id="cost-calc-box"></div>
+      <figure class="kj-fig" id="cost-sim-fig" style="margin:0;padding:14px">
+        <div class="kj-fig-head">
+          <div><h4 id="cost-sim-title">制度ごとの払い手（試算）</h4><p class="kj-cap" id="cost-sim-cap"></p></div>
+          <div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="cost-sim">画像で保存（PNG）</button></div>
+        </div>
+        <div class="kj-paykey" id="cost-sim-key"></div>
+        <div class="kj-plot" id="cost-sim-chart"></div>
+        <div id="cost-sim-insight"></div>
+        <div id="cost-sim-src"></div>
+      </figure>
+      <section id="cost-calc" aria-labelledby="cost-calc-h" style="display:grid;gap:12px">
+        <h4 id="cost-calc-h" style="font-size:1.0625rem">選んだ制度の内訳と、1年間続いた場合（制度のきまりから計算）</h4>
+        <div id="cost-calc-detail"></div>
+      </section>
     </section>
+    <section class="kj-card" id="cost-foreign" aria-labelledby="cost-foreign-h">
+      <h3 id="cost-foreign-h">外国人の場合は？（日本人と同じ制度か、どこまで公表されているか）</h3>
+      <p class="kj-cap">同じ条件なら同じ制度が使われるのか、違う条件があるのかを、根拠の資料とともに示します。</p>
+      <div class="kj-rt"><div class="kj-scroll"><table class="kj-table" id="cost-foreign-table"></table></div></div>
+    </section>
+    <details class="kj-deep" id="cost-deep">
+      <summary><svg class="kj-ic" aria-hidden="true" focusable="false"><use href="#kj-i-book"/></svg><span class="kj-deep-t">詳しく調べる：費用の資料</span><span class="kj-deep-g">払い手の割合・HIVの1年間の医療費・抗HIV薬の値段のグラフ、国全体の医療費の財源、病気ごとの費用の一覧（確認できた値と確認できなかった項目）</span></summary>
+      <div class="kj-deep-body">
+        <figure class="kj-fig" id="cost-fig">
+          <div class="kj-fig-head">
+            <div><h3 id="cost-fig-title">4つの病気の費用を比べる</h3><p class="kj-cap" id="cost-fig-cap"></p></div>
+            <div class="kj-fig-tools"><button type="button" class="kj-mini" data-export="cost">画像で保存（PNG）</button></div>
+          </div>
+          <div class="kj-controls" id="cost-fig-ctl"></div>
+          <div class="kj-legend" id="cost-legend"></div>
+          <div class="kj-plot" id="cost-chart"></div>
+          <p class="kj-cap" id="cost-chart-note"></p>
+          <div id="cost-chart-insight"></div>
+          <div id="cost-chart-src"></div>
+        </figure>
+        <section class="kj-card" id="cost-fin-card" aria-labelledby="cost-fin-h"><h3 id="cost-fin-h">参考：国全体の医療費は、何でまかなわれている？</h3><div id="cost-fin"></div></section>
+        <section class="kj-section" id="cost-detail" aria-labelledby="cost-detail-h">
+          <h3 class="kj-h3" id="cost-detail-h">病気ごとの費用（確認できた公表値と、確認できなかった項目）</h3>
+          <div class="kj-tabs" role="tablist" aria-label="病気を選ぶ" id="cost-tabs"></div>
+          <div id="cost-panels"></div>
+        </section>
+      </div>
+    </details>
     <div class="kj-card" id="cost-cautions"><h3>この内容を見るときの注意</h3><ul class="kj-list kj-list-sm"></ul><p class="kj-links"><a href="#riyou-4" data-nav>掲載データの限界</a><a href="#riyou-6" data-nav>免責事項</a></p></div>
+  </section>
+
+  <!-- 制度の課題を考える -->
+  <section class="kj-view" id="kadai" data-label="制度の課題を考える" hidden>
+    <header class="kj-vhead">
+      <h2 class="kj-h2" tabindex="-1">制度の課題を考える</h2>
+      <p class="kj-lede">6つの問いについて、公的資料で<b>確認された事実</b>、資料から読み取れる<b>制度上の課題</b>（対象外の部分・まだ始まっていない部分など）、<b>未確認事項</b>を分けてまとめました。制度がよいか悪いかを決めつけず、読む人が根拠の資料を確かめられるように、すべての文に出典を付けています。</p>
+      <div class="kj-paykey" aria-label="3つの区分">
+        <span><i style="background:#0b6b55"></i>確認された事実</span><span><i style="background:#c26100"></i>制度上の課題</span><span><i style="background:#6b7680"></i>未確認事項（「調べたが見つからない」と「このサイトでは調べていない」を区別）</span>
+      </div>
+    </header>
+    <div class="kj-qa" id="kadai-list"></div>
+    <div class="kj-callout kj-callout-info">
+      <h3>数字を読むときに</h3>
+      <p>国別の感染状況は、その国に住む人全体の数字で、日本へ入国する人の感染の割合ではありません。国籍と個人の感染リスクは同じではありません。国内の患者数の増減だけで、原因や特定の集団との関係を決めることはできません。</p>
+      <p class="kj-links"><a href="#riyou-3" data-nav>偏見・差別の防止</a><a href="#riyou-4" data-nav>掲載データの限界</a><a href="#riyou-5" data-nav>冷静な理解と対策</a></p>
+    </div>
   </section>
 
   <!-- 数字の見方・注意事項 -->
   <section class="kj-view" id="guide" data-label="数字の見方・注意事項" hidden>
     <header class="kj-vhead">
-      <h2 class="kj-h2" tabindex="-1">数字の見方・注意事項</h2>
+      <h2 class="kj-h2" tabindex="-1">数字の見方・ことばの説明・注意事項</h2>
       <p class="kj-lede">このサイトの数字を読むときに知っておきたいことをまとめました。グラフや表の数字は、種類（確定値・速報値・推計値）によって性質が違います。</p>
     </header>
+    <section class="kj-section" id="guide-terms" aria-labelledby="guide-terms-h">
+      <h3 class="kj-h3" id="guide-terms-h">ことばの説明</h3>
+      <dl class="kj-terms" id="guide-terms-list"></dl>
+    </section>
     <section class="kj-section" aria-labelledby="guide-kinds-h">
       <h3 class="kj-h3" id="guide-kinds-h">数字の種類と、グラフでの見分け方</h3>
       <div class="kj-kinds" id="guide-kinds"></div>
@@ -1170,11 +1665,13 @@
       <li><a href="#riyou-4" data-nav>データの限界</a></li>
       <li><a href="#riyou-6" data-nav>免責事項</a></li>
       <li><a href="#links" data-nav>さらに詳しく調べたい方へ</a></li>
+      <li><a href="#kadai" data-nav>制度の課題を考える</a></li>
+      <li><a href="#guide-terms" data-nav>ことばの説明</a></li>
       <li><a href="#home" data-nav>トップ</a></li>
     </ul></nav>
-    <p>掲載内容は2026年10月26日時点（最終更新：2026年10月26日）。このページの数字と制度の説明は、国（国別の数字と世界の動向は国連の機関、結核の医療費助成の一部は東京都）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」、人口あたりの目安などは、資料の数字からこのページで計算しています（計算したものはそう書いています）。同じ内容をExcelの表にもまとめています。</p>
+    <p>掲載内容は2026年10月27日時点（最終更新：2026年10月27日）。このページの数字と制度の説明は、国（国別の数字と世界の動向は国連の機関、結核の医療費助成の一部は東京都、外国人への適用の例は姫路市）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」、人口あたりの目安などは、資料の数字からこのページで計算しています（計算したものはそう書いています）。同じ内容をExcelの表にもまとめています。</p>
   </footer>
-  <div class="kj-totop-wrap"><button type="button" class="kj-ibtn kj-totop" id="kj-totop" hidden aria-label="このページの先頭へ戻る">↑ 先頭へ</button></div>
+  <div class="kj-totop-wrap"><button type="button" class="kj-ibtn kj-totop" id="kj-totop" aria-label="このページの上に戻る">↑ 上に戻る</button></div>
 </div>
 
 <script>
@@ -1281,7 +1778,7 @@ const span = (ys) => { const a = d3.min(ys), b = d3.max(ys); return a === b ? `$
 
 /* ===== データの入れ物 ===== */
 let A, Y, B, N, S, W, K, O, YC; // 年ごと・途中経過・内訳・文・出典・世界・公費・要約・途中経過の比
-let C = { data: [] }, E = { data: [] }, CO = { data: [] }, I = { data: [] }, OT = { data: [] }, GD = { data: [] }; // 国別・入国前対策・医療費・病気の解説・その他の感染症・資料の案内
+let C = { data: [] }, E = { data: [] }, CO = { data: [] }, I = { data: [] }, OT = { data: [] }, GD = { data: [] }, EX = { data: [] }; // 国別・入国前対策・医療費・病気の解説・その他の感染症・資料の案内・一般向けの解説
 const UNKNOWN_SEX = '性別不明'; // 梅毒の男女別で、性別がわからない人
 // はしかの人口100万人あたりの目安：報告の年（m）と、分母に使ったWHOの結核推計の人口の年（p）
 const measPop = () => { const r = C.data.find((x) => x.はしか_人口の年) || {}; return { m: r.はしか_年 || '—', p: r.はしか_人口の年 || '—' }; };
@@ -1707,8 +2204,10 @@ async function exportPNG(key, btn) {
     ctx.fillStyle = '#1c2321'; ctx.font = `700 48px ${FONT}`;
     ctx.fillText(wrapLines(ctx, spec.title, Wc - 2 * P, 1)[0], P, 96);
     ctx.fillStyle = '#4b5651'; ctx.font = `400 27px ${FONT}`;
-    ctx.fillText(wrapLines(ctx, spec.sub, Wc - 2 * P, 1)[0], P, 146);
-    let top = 176;
+    // 説明（対象年・単位など）は2行まで
+    const subLines = wrapLines(ctx, spec.sub, Wc - 2 * P, 2);
+    subLines.forEach((ln, i) => ctx.fillText(ln, P, 146 + i * 36));
+    let top = 176 + (subLines.length - 1) * 36;
     if (spec.legend && spec.legend.length) {
       let lx = P;
       ctx.font = `400 24px ${FONT}`;
@@ -1949,6 +2448,15 @@ function renderCompare() {
   const panels = comparePanels();
   const ys = panels.flatMap((p) => p.points.map((q) => q.x));
   $('#compare-src').replaceChildren(srcLine(panels.flatMap((p) => p.srcs), [['対象', `${span(ys)}（梅毒・はしかの2025年は速報値）`], ['単位', compareMode === 'count' ? '人（HIV/エイズは件）' : compareMode === 'yoy' ? '%' : '倍']]));
+  setInsight('compare-insight', compareInsight());
+}
+// 「この数字からわかること」：最新の確定値と、収録開始年・前年との比べ（原因は書かない）
+function compareInsight() {
+  const os = DISEASES.map((d) => ({ d, o: overviewOf(d) }));
+  if (compareMode === 'yoy') return [`最新の確定年の前年比は、${os.map(({ d, o }) => `${d.label} ${pct(o.前年比)}（${o.最新確定年}年）`).join('、')}です。`, '報告数の増減だけでは、原因は決められません。'];
+  if (compareMode === 'ten') return [`収録開始年を1倍とすると、最新の確定値は${os.map(({ d, o }) => `${d.label} ${o['10年前と比べて(倍)'].toFixed(1)}倍（${o.最初の年}→${o.最新確定年}年）`).join('、')}です。`, '報告数の増減だけでは、原因は決められません。'];
+  const dn = os.filter(({ o }) => o['10年前と比べて(倍)'] < 0.9).map(({ d }) => d.label), up = os.filter(({ o }) => o['10年前と比べて(倍)'] > 1.1).map(({ d }) => d.label);
+  return [`最新の確定値は${os.map(({ d, o }) => `${d.label} ${fmt(o.最新値)}${d.unit}（${o.最新確定年}年）`).join('、')}です。`, `収録開始年と比べると${dn.length ? `${dn.join('・')}は減り` : ''}${dn.length && up.length ? '、' : ''}${up.length ? `${up.join('・')}は増えています` : ''}（報告数の増減だけでは、原因は決められません）。`];
 }
 EXPORTS.compare = () => {
   const panels = comparePanels();
@@ -1983,7 +2491,7 @@ function renderCompareYtd() {
 const DSECS = [['about', '疾病の概要'], ['routes', '感染経路'], ['world', '世界の感染状況'], ['countries', '国別比較'], ['japan', '日本国内の推移'], ['care', '検査・予防・治療'], ['entry', '入国前対策'], ['cost', '医療費・公費負担'], ['notes', '出典・注意事項']];
 const annualShape = {};
 const infoOf = (who, sec) => I.data.filter((r) => r.病気 === who && r.節 === sec);
-const srcBtns = (idsStr) => (idsStr ? String(idsStr).split('・').filter(Boolean).flatMap((id) => [' ', srcButton(id)]) : []);
+const srcBtns = (idsStr) => (idsStr ? [...new Set(String(idsStr).split('・').filter(Boolean))].flatMap((id) => [' ', srcButton(id)]) : []);
 function infoList(rows, tag) {
   return h(tag || 'ul', { class: 'kj-list kj-list-sm' }, ...rows.map((r) => h('li', {}, h('span', {}, r.文), ...srcBtns(r.出典ID))));
 }
@@ -2034,7 +2542,7 @@ function renderDisease(d) {
   const aLeg = h('div', { class: 'kj-legend' });
   const aTable = h('details', { class: 'kj-details' }, h('summary', {}, '数値を表で見る'), h('div', { class: 'kj-scroll' }, annualTable(d)));
   const shapeSeg = h('div', { class: 'kj-seg', role: 'group', 'aria-label': 'グラフの形' }, ...[['bar', '棒グラフ'], ['line', '折れ線']].map(([k, t]) => h('button', { type: 'button', 'data-shape': k, 'aria-pressed': String((annualShape[d.id] || 'bar') === k) }, t)));
-  annual.append(figHead('年ごとの推移', `${d.annualCap.replace('点線と白抜きの点は速報値です。', '斜線の棒（折れ線では点線と白抜きの点）は速報値です。')}棒にふれる・タップすると、前年との差や出典も出ます。`, `${d.id}-annual`), shapeSeg, aLeg, aPlot, aTable);
+  annual.append(figHead('年ごとの推移', `${d.annualCap.replace('点線と白抜きの点は速報値です。', '斜線の棒（折れ線では点線と白抜きの点）は速報値です。')}棒にふれる・タップすると、前年との差や出典も出ます。`, `${d.id}-annual`), shapeSeg, aLeg, aPlot, insight(annualInsight(d)), aTable);
   const aYears = yearsOf(A.data.filter((r) => r.病気 === d.name));
   const hasSoku = A.data.some((r) => r.病気 === d.name && r.区分 === '速報');
   const setLegend = () => {
@@ -2068,7 +2576,9 @@ function renderDisease(d) {
     const rate = h('figure', { class: 'kj-fig kj-wide', id: `${d.id}-rate` });
     const rPlot = h('div', { class: 'kj-plot' });
     const rRows = A.data.filter((r) => r.病気 === d.name && r.指標 === d.rate);
+    const rLast = [...rRows].sort((a, b) => num(a.年) - num(b.年)).pop();
     rate.append(figHead('罹患率（りかんりつ）の推移', '人口10万人あたり、1年間に新しく結核になった人の数。点線は国が「低まん延」とする目安（10以下）です。', `${d.id}-rate`), rPlot,
+      rLast ? insight([`${rLast.年}年の罹患率は人口10万人あたり${show(rLast.値, d.rate)}で、国が「低まん延」とする目安（${LOW_BURDEN}以下）${num(rLast.値) <= LOW_BURDEN ? 'に入っています' : 'を上回っています'}。`]) : '',
       srcLine(rRows.map((r) => r.出典ID), [['対象', `${span(yearsOf(rRows))}（確定値）`], ['単位', '人口10万人あたりの人数']]));
     chart(rPlot, () => drawRate(rPlot, d));
     EXPORTS[`${d.id}-rate`] = () => ({ title: '結核：罹患率の推移（日本国内）', file: '日本の感染症_結核_罹患率の推移', color: HEX[d.i], sub: `人口10万人あたり、1年間に新しく結核になった人の数／対象：${span(yearsOf(rRows))}（確定値）／点線は「低まん延」の目安（10以下）`, legend: [], source: srcText(rRows.map((r) => r.出典ID)), draw: (b, opt) => drawRate(b, d, opt), height: 440 });
@@ -2084,7 +2594,7 @@ function renderDisease(d) {
   const agePlot = h('div', { class: 'kj-plot' });
   const ageLeg = h('div', { class: 'kj-legend' });
   const ageNotes = notesOf(d.name, '表の注', ageTitle);
-  ageFig.append(figHead(ageTitle, d.id === 'tb' ? 'すべての棒に人数を書いています。棒にふれると罹患率も出ます。' : 'すべての棒に人数を書いています。', `${d.id}-age`), ageLeg, agePlot,
+  ageFig.append(figHead(ageTitle, d.id === 'tb' ? 'すべての棒に人数を書いています。棒にふれると罹患率も出ます。' : 'すべての棒に人数を書いています。', `${d.id}-age`), ageLeg, agePlot, insight(ageInsight(d, ageRows, ageTitle)),
     ageNotes.length ? noteBox(ageNotes) : '', srcLine(ageRows.map((r) => r.出典ID), [['対象', ageTitle.replace(/^年代別/, '').replace(/[（）]/g, '') || '—'], ['単位', d.unit === '件' ? '件' : '人']]));
   if (d.age.length > 1) legend(ageLeg, d.age.map((s2, k) => ({ type: 'bar', name: s2, color: c, opacity: k ? 0.45 : 1 })));
   chart(agePlot, () => drawAge(agePlot, d));
@@ -2104,7 +2614,7 @@ function renderDisease(d) {
   const cfig = h('figure', { class: 'kj-fig', id: `${d.id}-cty` });
   const cPlot = h('div', { class: 'kj-plot' });
   cfig.append(figHead(`日本と関係の深い国の${m0.short}`, `${m0.def} 日本と協力覚書を結んだ国と、入国前の結核検査の対象国を、多い順に並べています（日本は参考）。棒にふれる・タップすると詳しい数字が出ます。`, `${d.id}-cty`), cPlot,
-    h('p', { class: 'kj-cap' }, 'その国に住む人全体の数字で、日本へ入国する人の数字ではありません。'),
+    insight(ctyInsight(d, m0)),
     h('p', { class: 'kj-links' }, h('a', { href: '#countries', 'data-nav': '', 'data-setd': d.id, class: 'kj-btn' }, `すべての国で${d.label}を比べる →`), h('a', { href: '#cty-cautions', 'data-nav': '' }, '国別の数字の注意')),
     srcLine([CM[d.id].src], [['対象', cYear(d.id, m0)], ['区分', m0.kind]]));
   chart(cPlot, () => drawCountryBars(cPlot, focusRows(d.id, m0), d.id, m0));
@@ -2131,7 +2641,7 @@ function renderDisease(d) {
     h('ul', { class: 'kj-list kj-list-sm' }, ...usedIds.map((id) => { const sc = SRC.get(id); return h('li', {}, srcButton(id), ' ', `${sc.資料名}（${sc.発行元}・${sc['公表日・更新日']}） `, extLink(id, '資料を開く') || ''); })));
 
   v.replaceChildren(
-    h('header', { class: 'kj-vhead' }, h('h2', { class: 'kj-h2', tabindex: '-1' }, h('span', { class: 'kj-swatch' }), d.label),
+    h('header', { class: 'kj-vhead' }, h('h2', { class: 'kj-h2', tabindex: '-1' }, (() => { const ic = icon(d.id); ic.style.cssText = `width:2.2rem;height:2.2rem;color:${c}`; return ic; })(), d.label),
       h('p', { class: 'kj-lede' }, h('span', { class: 'kj-lede-k' }, '日本での数え方'), mark(h('span', {}, lede ? lede.文 : '—'), 'notes', '文', { 病気: d.name, 種類: '数え方', 番号: 1 }))),
     toc,
     dsec(d, 1, 'about', keys, ov.length ? h('div', { class: 'kj-pbox' }, h('h4', {}, `${d.label}とは`), infoList(ov)) : noData(), specialBlocks(d, 'about')),
@@ -2149,6 +2659,26 @@ function renderDisease(d) {
     dsec(d, 9, 'notes', caut, srcList),
     h('nav', { class: 'kj-endnav', 'aria-label': '次に見る' }, h('a', { class: 'kj-btn', href: '#diseases', 'data-nav': '' }, '← 4つの感染症の一覧'), ...DISEASES.filter((x) => x !== d).map((x) => h('a', { class: 'kj-btn', href: `#${x.id}`, 'data-nav': '' }, x.label)), h('a', { class: 'kj-btn', href: '#home', 'data-nav': '' }, 'トップへ')));
 }
+// 病気のページのグラフの「この数字からわかること」
+function annualInsight(d) {
+  const o = overviewOf(d);
+  const t = [`${o.最新確定年}年（確定値）は${fmt(o.最新値)}${d.unit}で、前年より${o.前年比 > 0 ? `${pctTxt(o.前年比)}増え` : o.前年比 < 0 ? `${pctTxt(o.前年比)}減り` : '変わらず'}、${o.最初の年}年の${o['10年前と比べて(倍)'].toFixed(1)}倍です。`];
+  if (o.速報年) t.push(`${o.速報年}年は速報値で${fmt(o.速報値)}${d.unit}です（あとで変わることがあります）。`);
+  return t;
+}
+function ageInsight(d, rows, title) {
+  const labels = [...new Set(rows.map((r) => r.区分))];
+  const tot = (l) => { const s = rows.find((r) => r.区分 === l && r.列 === '合計'); return s ? num(s.値) : d3.sum(d.age, (k) => num((rows.find((r) => r.区分 === l && r.列 === k) || {}).値) || 0); };
+  const best = d3.greatest(labels, tot);
+  return best ? [`${title}では、${best}がいちばん多く${fmt(tot(best))}${d.unit}です。`] : null;
+}
+function ctyInsight(d, m) {
+  const rows = focusRows(d.id, m).filter((r) => r.ISO3 !== 'JPN' && cval(r, m) !== null);
+  const jp = C.data.find((r) => r.ISO3 === 'JPN');
+  if (!rows.length) return null;
+  return [`日本と関係の深い国のなかで${m.short}がいちばん${m.unit === '人' ? '多い' : '高い'}のは${rows[0].国}（${ctext(rows[0], m)}）です。`, jp && cval(jp, m) !== null ? `日本（参考）は${ctext(jp, m)}です。` : '', 'その国に住む人全体の数字で、日本へ入国する人の数字ではありません。'];
+}
+const pctTxt = (n) => `${Math.abs(n).toFixed(1)}%`;
 function figHead(title, cap, exportKey) {
   return h('div', { class: 'kj-fig-head' }, h('div', {}, h('h3', {}, title), cap ? h('p', { class: 'kj-cap' }, cap) : null),
     exportKey ? h('div', { class: 'kj-fig-tools' }, h('button', { type: 'button', class: 'kj-mini', 'data-export': exportKey }, '画像で保存（PNG）')) : null);
@@ -2476,9 +3006,9 @@ function renderHomeCmp() {
   const body = t.createTBody();
   rows.forEach((r) => {
     const tr = h('tr', { class: r.ISO3 === 'JPN' ? 'kj-ref' : null });
-    tr.append(h('td', { class: 'kj-sticky kj-left' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${r.ISO3}`) }, r.ISO3 === 'JPN' ? '（参考）日本' : r.国, h('small', {}, r.地域))),
-      h('td', { class: 'kj-big-cell' }, ...mainCell(r, homeD)), h('td', { class: 'kj-left' }, mocCell(r)), h('td', { class: 'kj-st-cell' }, preentryCell(r, homeD)),
-      h('td', {}, h('button', { type: 'button', class: 'kj-mini', onclick: () => goTo(`c-${r.ISO3}`) }, '詳細を見る')));
+    tr.append(h('td', { class: 'kj-sticky kj-left', 'data-label': '' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${r.ISO3}`) }, r.ISO3 === 'JPN' ? '（参考）日本' : r.国, h('small', {}, r.地域))),
+      h('td', { class: 'kj-big-cell', 'data-label': m0.short }, ...mainCell(r, homeD)), h('td', { class: 'kj-left', 'data-label': '日本との協力覚書' }, mocCell(r)), h('td', { class: 'kj-st-cell', 'data-label': '入国前の検査制度' }, preentryCell(r, homeD)),
+      h('td', { 'data-label': '' }, h('button', { type: 'button', class: 'kj-mini', onclick: () => goTo(`c-${r.ISO3}`) }, '詳細を見る')));
     body.append(tr);
   });
   const pick = $('#home-cmp-pick');
@@ -2540,9 +3070,9 @@ function updateCountries() {
     cb.checked = cstate.pick.includes(r.ISO3);
     cb.disabled = !cb.checked && cstate.pick.length >= PICK_C;
     cb.addEventListener('change', () => { if (cb.checked) { if (!cstate.pick.includes(r.ISO3)) cstate.pick.push(r.ISO3); } else cstate.pick = cstate.pick.filter((x) => x !== r.ISO3); updateCountries(); });
-    tr.append(h('td', {}, cb), h('td', { class: 'kj-sticky kj-left' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => selectCountry(r.ISO3) }, r.ISO3 === 'JPN' ? '（参考）日本' : r.国, h('small', {}, `${r.英語名}・${r.地域}`))),
-      h('td', { class: 'kj-big-cell' }, ...mainCell(r, cstate.d)), h('td', { class: 'kj-left' }, mocCell(r)), h('td', { class: 'kj-st-cell' }, preentryCell(r, cstate.d)),
-      h('td', {}, h('button', { type: 'button', class: 'kj-mini', onclick: () => selectCountry(r.ISO3) }, '詳細を見る')));
+    tr.append(h('td', { class: 'kj-rt-check', 'data-label': '比べる' }, cb), h('td', { class: 'kj-sticky kj-left', 'data-label': '' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => selectCountry(r.ISO3) }, r.ISO3 === 'JPN' ? '（参考）日本' : r.国, h('small', {}, `${r.英語名}・${r.地域}`))),
+      h('td', { class: 'kj-big-cell', 'data-label': cm.m[0].short }, ...mainCell(r, cstate.d)), h('td', { class: 'kj-left', 'data-label': '日本との協力覚書' }, mocCell(r)), h('td', { class: 'kj-st-cell', 'data-label': '入国前の検査制度' }, preentryCell(r, cstate.d)),
+      h('td', { 'data-label': '' }, h('button', { type: 'button', class: 'kj-mini', onclick: () => selectCountry(r.ISO3) }, '詳細を見る')));
     body.append(tr);
   });
   $('#cty-table-src').replaceChildren(srcLine([cm.src, 'WHO-5'], [['対象', cYear(cstate.d, cm.m[0])], ['区分', cm.kind], ['地域', '国連のM49の区分をもとにまとめたもの']]));
@@ -2555,6 +3085,11 @@ function updateCountries() {
   $('#cty-chart-src').replaceChildren(srcLine([cm.src], [['対象', cYear(cstate.d, mm)], ['区分', mm.kind], ['単位', mm.unit === '%' ? '%' : mm.unit === '人' ? '人' : '本文のとおり']]));
   const box = $('#cty-chart');
   chart(box, () => drawCountryBars(box, chartRows, cstate.d, mm));
+  const withV = chartRows.filter((r) => typeof sortVal(cval(r, mm)) === 'number' && r.ISO3 !== 'JPN');
+  const jpR = chartRows.find((r) => r.ISO3 === 'JPN' && cval(r, mm) !== null);
+  const big = mm.unit === '人' ? '多い' : '高い', small = mm.unit === '人' ? '少ない' : '低い';
+  setInsight('cty-chart-insight', withV.length ? [`表示している国・地域のうち、${mm.short}がいちばん${cstate.order === 'asc' && cstate.sort !== '国名' ? small : big}のは${withV[0].国}（${ctext(withV[0], mm)}）です。`, jpR ? `日本（参考）は${ctext(jpR, mm)}です。` : '', 'その国の人口全体の数字で、日本へ入国する人の数字ではありません。'] : null);
+  setInsight('cty-multi-insight', ['病気ごとに数字の種類（推計値・報告値）と対象年が違うため、病気どうしの大きさは比べられません。はしかは人口の違いをならすため、人口100万人あたりの目安で並べています。']);
   // 複数国の比較
   const picked = cstate.pick.map((iso) => C.data.find((r) => r.ISO3 === iso)).filter(Boolean);
   $('#cty-multi-cap').textContent = `${picked.length}か国を選んでいます（${PICK_C}か国まで。表の「比べる」で選べます）。病気ごとに単位と数字の種類が違うため、別々の目盛りで並べています。`;
@@ -2575,7 +3110,7 @@ function drawCountryMulti(box, picked, opt = {}) {
   if (!picked.length) { svg.append('text').attr('class', 'kj-tick').attr('x', W / 2).attr('y', 30).attr('text-anchor', 'middle').text('表の「比べる」にチェックを入れてください'); return; }
   const gap = cols === 2 ? 36 : 0, pw = (W - gap * (cols - 1)) / cols;
   DISEASES.forEach((d, k) => {
-    const m = CM[d.id].m[0];
+    const m = d.id === 'measles' ? (CM.measles.m.find((x) => x.k === 'はしか_100万人あたり') || CM.measles.m[0]) : CM[d.id].m[0];
     plotHBars(svg, { x0: (k % cols) * (pw + gap), y0: Math.floor(k / cols) * ph, w: pw, h: ph }, {
       rowH, title: `${d.label}：${m.short}`, unit: `${cYear(d.id, m)}・${m.kind}`, color: colorOf(d), fmt: (v) => m.f(v), tickFmt: (t) => (m.unit === '%' ? `${t}%` : fmt(t)), none: d.id === 'hiv' ? 'UNAIDSの推計なし' : 'データなし',
       box: opt.exporting ? null : box, rows: picked.map((r) => ({ key: `${d.id}-${r.ISO3}`, name: r.ISO3 === 'JPN' ? '（参考）日本' : r.国, v: cval(r, m), color: r.ISO3 === 'JPN' ? 'var(--cds-chart-reference)' : colorOf(d), r })),
@@ -2702,7 +3237,7 @@ function renderEntry() {
     const hr = jt.createTHead().insertRow();
     ['国', '状態', '開始（証明書の提出が必要になる日）', '内容', '協力覚書'].forEach((x, i) => hr.append(h('th', { class: i ? 'kj-left' : null }, x)));
     const body = jt.createTBody();
-    js.forEach((x) => { const c = C.data.find((z) => z.ISO3 === x.ISO3) || {}; body.append(h('tr', {}, h('td', { class: 'kj-name' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${x.ISO3}`) }, x.国)), h('td', { class: 'kj-st-cell' }, stBadge(x.状態)), h('td', { class: 'kj-left kj-nowrap' }, fmtDate(x.開始) || '—'), h('td', { class: 'kj-left', style: 'min-width:16em' }, x.内容 || '', ...srcBtns(x.出典ID)), h('td', { class: 'kj-left' }, c.協力覚書 || 'なし'))); });
+    js.forEach((x) => { const c = C.data.find((z) => z.ISO3 === x.ISO3) || {}; body.append(h('tr', {}, h('td', { class: 'kj-name', 'data-label': '' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${x.ISO3}`) }, x.国)), h('td', { class: 'kj-st-cell', 'data-label': '状態' }, stBadge(x.状態)), h('td', { class: 'kj-left kj-nowrap', 'data-label': '開始（証明書の提出が必要になる日）' }, fmtDate(x.開始) || '—'), h('td', { class: 'kj-left', style: 'min-width:16em', 'data-label': '内容' }, x.内容 || '', ...srcBtns(x.出典ID)), h('td', { class: 'kj-left', 'data-label': '協力覚書' }, c.協力覚書 || 'なし'))); });
   }
   drawList($('#world-jpets ul'), WORLD, '入国前の健康診断');
   const sc = E.data.filter((x) => x.区分 === '在留資格');
@@ -2720,9 +3255,9 @@ function renderEntry() {
   const body = mt.createTBody();
   isos.forEach((iso) => {
     const c = C.data.find((z) => z.ISO3 === iso) || { 国: iso };
-    const cell = (sch) => { const x = mocs.find((z) => z.ISO3 === iso && z.制度 === sch); return h('td', { class: 'kj-left kj-nowrap' }, x ? [x.日付 ? fmtDate(x.日付) : 'あり', /^https:\/\//.test(x.資料URL || '') ? [' ', h('a', { href: x.資料URL, target: '_blank', rel: 'noopener noreferrer', title: x.名前 || '' }, '資料', h('span', { 'aria-hidden': 'true' }, '↗'))] : ''] : h('span', { class: 'kj-sm' }, '—')); };
+    const cell = (sch) => { const x = mocs.find((z) => z.ISO3 === iso && z.制度 === sch); return h('td', { class: 'kj-left kj-nowrap', 'data-label': sch }, x ? [x.日付 ? fmtDate(x.日付) : 'あり', /^https:\/\//.test(x.資料URL || '') ? [' ', h('a', { href: x.資料URL, target: '_blank', rel: 'noopener noreferrer', title: x.名前 || '' }, '資料', h('span', { 'aria-hidden': 'true' }, '↗'))] : ''] : h('span', { class: 'kj-sm' }, '—')); };
     const j = jpetsRow(iso);
-    body.append(h('tr', {}, h('td', { class: 'kj-sticky kj-left' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${iso}`) }, c.国)), cell('特定技能'), cell('技能実習'), cell('育成就労'), h('td', { class: 'kj-st-cell' }, j ? stBadge(j.状態) : h('span', { class: 'kj-sm' }, '対象国ではない'))));
+    body.append(h('tr', {}, h('td', { class: 'kj-sticky kj-left', 'data-label': '' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${iso}`) }, c.国)), cell('特定技能'), cell('技能実習'), cell('育成就労'), h('td', { class: 'kj-st-cell', 'data-label': '入国前の結核検査' }, j ? stBadge(j.状態) : h('span', { class: 'kj-sm' }, '対象国ではない'))));
   });
   $('#entry-moc-src').replaceChildren(srcLine([...new Set(mocs.flatMap((x) => String(x.出典ID || '').split('・')).filter(Boolean))].slice(0, 6), [['日付', '署名日・作成日（資料のとおり）']]));
   const ml = $('#world-moc-card ul');
@@ -2782,17 +3317,19 @@ function costTable(rows) {
 let costTab = 'hiv';
 function renderCost() {
   $('#cost-pay-box').replaceChildren(
-    h('div', { style: '--c:var(--kj-c1)' }, h('b', {}, '公的医療保険の給付'), h('p', {}, '健康保険・国民健康保険などが払う部分です。主な財源は加入者と会社が払う保険料ですが、国や自治体のお金（税金）も入っています。')),
-    h('div', { style: '--c:var(--kj-c3)' }, h('b', {}, '公費（税金）'), h('p', {}, '感染症法や障害者総合支援法などの制度で、国や自治体が税金から払う部分です。病気や制度ごとに、対象や条件が決まっています。')),
-    h('div', { style: '--c:var(--kj-c5)' }, h('b', {}, '本人の負担'), h('p', {}, '病院の窓口などで本人が払う部分です。年齢や所得で割合や上限が決まっていて、公費の制度があると軽くなります。')));
+    h('div', { style: '--c:var(--kj-pay-ins)' }, h('b', {}, '公的医療保険の給付（青）'), h('p', {}, '健康保険・国民健康保険などが払う部分です。主な財源は加入者と会社が払う保険料ですが、国や自治体のお金（税金）も入っています。このため、保険の給付をそのまま「税金」とは呼べません。')),
+    h('div', { style: '--c:var(--kj-pay-pub)' }, h('b', {}, '公費（税金）（オレンジ）'), h('p', {}, '感染症法や障害者総合支援法などの制度で、国や自治体が税金から払う部分です。病気や制度ごとに、対象や条件が決まっています。')),
+    h('div', { style: '--c:var(--kj-pay-self)' }, h('b', {}, '本人の負担（緑）'), h('p', {}, '病院の窓口などで本人が払う部分です。年齢や所得で割合や上限（高額療養費）が決まっていて、公費の制度があると軽くなります。')));
   const fin = CO.data.filter((r) => r.区分 === '財源');
-  $('#cost-fin').replaceChildren(...fin.map((r) => {
+  $('#cost-fin').replaceChildren(...fin.map((r, fi) => {
     let vals = null;
     try { vals = JSON.parse(r.値); } catch (e) { vals = null; }
     const ent = vals ? Object.entries(vals).filter(([, v]) => typeof v === 'number') : [];
     const tot = d3.sum(ent, ([, v]) => v) || 1;
-    const cols = ['var(--kj-c3)', 'var(--kj-c1)', 'var(--kj-c5)', 'var(--kj-c8)', 'var(--kj-c2)', 'var(--kj-c6)'];
-    return h('div', { class: 'kj-subblock', style: 'margin-top:12px' }, h('h4', {}, `参考：国全体の医療費は、何でまかなわれている？（${r.年 || ''}）`),
+    // 財源の色：公費（税金）＝オレンジ、保険料＝青、患者負担＝緑、その他＝灰色（払い手の色と同じ考え方）
+    const colOf = (k, i) => (/^公費/.test(k) ? (i % 2 ? 'color-mix(in srgb, var(--kj-pay-pub) 70%, #000)' : 'var(--kj-pay-pub)') : /^保険料/.test(k) ? (/被保険者/.test(k) ? 'color-mix(in srgb, var(--kj-pay-ins) 70%, #000)' : 'var(--kj-pay-ins)') : /患者/.test(k) ? 'var(--kj-pay-self)' : 'var(--kj-c8)');
+    const cols = ent.map(([k], i) => colOf(k, i));
+    return h('div', { class: 'kj-subblock', style: 'margin-top:12px' }, h('h4', {}, `${['財源の割合', '公費と保険料をさらに分けると', '公的医療保険にも税金が入っている'][fi] || '財源'}（${r.年 || ''}）`),
       h('p', { style: 'font-size:.9375rem' }, r.名前 || ''),
       ent.length ? h('div', { role: 'img', 'aria-label': ent.map(([k, v]) => `${k}${v}${r.単位 || ''}`).join('、'), style: 'display:flex;height:34px;border-radius:6px;overflow:hidden;margin:6px 0' },
         ...ent.map(([k, v], i) => h('div', { title: `${k} ${v}${r.単位 || ''}`, style: `width:${(v / tot) * 100}%;background:${cols[i % cols.length]};display:flex;align-items:center;justify-content:center;color:#fff;font-size:.8125rem;font-weight:700;overflow:hidden;white-space:nowrap` }, v / tot > 0.08 ? `${k} ${v}${r.単位 || ''}` : ''))) : null,
@@ -2829,23 +3366,14 @@ function renderCost() {
 }
 const COST_N = '医療費';
 // 高額療養費（70歳未満・令和8年8月〜令和9年7月診療分）の1か月の上限・多数回該当（tasu）・年間上限（year、8月〜翌年7月）。出典 費用-2・費用-3
-const KOGAKU = [
-  { k: 'a', t: '年収約1,160万円〜', base: 270300, th: 901000, tasu: 140100, year: 1680000 },
-  { k: 'i', t: '年収約770万〜約1,160万円', base: 179100, th: 597000, tasu: 93000, year: 1110000 },
-  { k: 'u', t: '年収約370万〜約770万円', base: 85800, th: 286000, tasu: 44400, year: 530000 },
-  { k: 'e', t: '〜年収約370万円', base: 61500, th: null, tasu: 44400, year: 530000 },
-  { k: 'o', t: '住民税がかからない人', base: 36900, th: null, tasu: 24600, year: 290000 },
-];
+// 金額は data.js（costs の「試算の設定」）から読む（2026-10-27 にプログラムから元データへ移した）
+let KOGAKU = [];
 // multi：直近12か月に上限に達した月が3か月以上あり、4か月目以降（多数回該当）のときは、決まった額の上限
 const kCap = (kb, M, multi) => (multi ? kb.tasu : kb.th ? kb.base + Math.max(0, M - kb.th) * 0.01 : kb.base);
-const PAY = [['保険給付', 'var(--kj-c1)', '#1f5fa8'], ['公費（税）', 'var(--kj-c3)', '#0e8278'], ['本人負担', 'var(--kj-c5)', '#8a6d00']];
+// 払い手の色（全ページで同じ）：公的医療保険＝青、公費（税金）＝オレンジ、本人＝緑
+const PAY = [['保険の給付', 'var(--kj-pay-ins)', '#2462b0'], ['公費（税金）', 'var(--kj-pay-pub)', '#d9730d'], ['本人負担', 'var(--kj-pay-self)', '#2b8a4b']];
 // 制度のきまりから、1か月の医療費を「保険給付・公費・本人負担」に分ける（試算）
-const CASES = [
-  { id: 'hiv', name: 'HIVの通院（自立支援医療）', d: 'hiv' },
-  { id: 'tb_out', name: '結核の通院（感染症法第37条の2）', d: 'tb' },
-  { id: 'tb_in', name: '結核の入院（入院の勧告・第37条）', d: 'tb' },
-  { id: 'ins', name: '健康保険だけ（梅毒・はしかなど）', d: 'syphilis' },
-];
+let CASES = []; // 制度の一覧（data.js の costs「試算の設定」）
 // 1か月分を円未満まで計算する（own は健康保険で本人が払う分＝高額療養費のあと。公費の制度ではそのうち本人の分が self）
 function payRaw(kind, M, o) {
   const cap = kCap(o.kb, M, o.multi);
@@ -2893,12 +3421,7 @@ function yearSplit(kind, M, o) {
 }
 const CALC_SRC = { hiv: ['費用-11', '費用-12', '費用-2'], tb_out: ['費用-13', '費用-24'], tb_in: ['費用-13', '費用-24', '費用-2'], ins: ['費用-2'] };
 // グラフ用の例（金額は資料の価格・点数からの例。病気どうしの医療費の大きさを比べるものではない）
-const SPLIT_EX = [
-  { id: 'hiv', M: 212823, ex: 'ビクタルビ30日分の薬代 212,823円の月', jcap: 10000, jt: '自立支援医療の上限1万円の世帯' },
-  { id: 'tb_out', M: 10000, ex: '通院の医療費1万円の例' },
-  { id: 'tb_in', M: 711600, ex: '結核病棟に30日入院（入院基本料と加算だけ）711,600円の月', high: false },
-  { id: 'ins', M: 5620, ex: '梅毒の初めての受診と血液検査 5,620円の例' },
-];
+let SPLIT_EX = []; // 割合のグラフの例（data.js の costs「試算の設定」）
 const splitRows = () => SPLIT_EX.map((x) => ({ ...x, c: CASES.find((z) => z.id === x.id), s: paySplit(x.id, x.M, { rate: 0.3, kb: KOGAKU[2], jcap: x.jcap || 0, high: !!x.high }) }));
 function drawPaySplit(box, opt = {}) {
   const rows = splitRows();
@@ -2962,18 +3485,25 @@ function renderCostChart() {
   $('#cost-fig-cap').textContent = COST_CHARTS[costChart].cap;
   legend($('#cost-legend'), costChart === 'split' ? PAY.map(([n, c]) => ({ type: 'bar', name: n, color: c })) : []);
   const ids = costChart === 'split' ? [...new Set(Object.values(CALC_SRC).flat())] : [...new Set((costChart === 'hiv' ? costItems(/HIVで治療中|抗HIV薬の薬代|入院医療費|薬と入院以外/, 'HIV/エイズ') : costItems(/1日分の薬価/, 'HIV/エイズ')).flatMap((r) => String(r.出典ID || '').split('・')))];
+  setInsight('cost-chart-insight', costChartInsight());
   $('#cost-chart-note').textContent = costChart === 'split' ? '4つの病気の「1人当たりの医療費の総額」は、対象期間・対象患者・医療費の範囲がそろった公表値がないため、横に並べて比べていません（下の「病気ごとの費用」で、確認できた値と確認できなかった項目を見られます）。' : '';
   $('#cost-chart-src').replaceChildren(srcLine(ids.filter((id) => SRC.has(id)), [['数字の種類', costChart === 'split' ? '試算（制度のきまりからこのサイトで計算）' : costChart === 'hiv' ? '研究による集計（実績）・一部はこのサイトで計算' : '制度上の額（薬価）']]));
   const box = $('#cost-chart');
   chart(box, () => drawCostChart(box));
   drawVisible();
 }
+function costChartInsight() {
+  if (costChart === 'split') { const ps = splitRows().map((r) => (r.s.self / r.s.M) * 100); return ps.length ? [`同じ収入の人でも、本人の負担の割合は${d3.min(ps).toFixed(1)}%〜${d3.max(ps).toFixed(1)}%と、使う制度によって大きく変わります（試算）。`] : null; }
+  if (costChart === 'hiv') { const tot = costItems(/HIVで治療中の人の1年間の医療費/, 'HIV/エイズ')[0], drug = costItems(/1年間の抗HIV薬の薬代/, 'HIV/エイズ')[0]; return tot && drug ? [`1年間の医療費の平均（${fmt(tot.値)}円）のうち、約${Math.round((drug.値 / tot.値) * 100)}%が抗HIV薬の薬代です（${String(tot.年 || '').split('（')[0]}・研究による集計）。`] : null; }
+  const ds = costItems(/1日分の薬価/, 'HIV/エイズ').map((r) => r.値);
+  return ds.length ? [`はじめの治療に勧められる組み合わせの1日分の薬価は${fmt(d3.min(ds))}円〜${fmt(d3.max(ds))}円で、薬代だけで1年に約${man(Math.round(d3.min(ds) * 365))}円〜${man(Math.round(d3.max(ds) * 365))}円になります（薬価からの計算）。`] : null;
+}
 EXPORTS.cost = () => ({ title: COST_CHARTS[costChart].t, file: `医療費_${{ split: '払い手の割合', hiv: 'HIVの1年間の医療費', drug: '抗HIV薬の薬価' }[costChart]}`, color: '#1f5fa8',
   sub: costChart === 'split' ? '70歳未満（3割負担）・年収約370万〜770万円の例／試算（制度のきまりから計算。実際の額とは違うことがあります）／病気どうしの医療費の大きさの比較ではありません' : costChart === 'hiv' ? '1人当たり・1年間の平均（2020年度・NDBを使った国の研究）／単位：円' : '1日分の薬価（2026年10月14日適用）／単位：円',
   legend: costChart === 'split' ? PAY.map(([n, , hx]) => ({ type: 'bar', name: n, hex: hx })) : [], source: srcText(costChart === 'split' ? [...new Set(Object.values(CALC_SRC).flat())] : (costChart === 'hiv' ? ['費用-7'] : ['費用-4', '費用-6'])), draw: drawCostChart });
 
 /* --- 医療費の内訳の試算 --- */
-const calc = { c: 'hiv', M: 212823, rate: 0.3, kb: 2, j: 4, high: false, multi: false };
+const calc = { c: 'hiv', M: null, rate: 0.3, kb: 2, j: 4, high: false, multi: false }; // M（1か月の医療費）の最初の値は data.js から
 // 1年間（8月〜翌年7月）続いた場合の目安の表と説明
 function calcYear(y, o) {
   const kb = o.kb;
@@ -3002,36 +3532,45 @@ function calcYear(y, o) {
     h('div', { class: 'kj-scroll' }, t), h('ul', { class: 'kj-list kj-list-sm' }, ...notes.map((n) => h('li', {}, n))));
 }
 function renderCalc() {
-  const box = $('#cost-calc-box');
-  $('#cost-calc').hidden = false;
+  const box = $('#cost-calc-box'), det = $('#cost-calc-detail');
+  if (!KOGAKU.length || !CASES.length || calc.M === null) { box.replaceChildren(noData('試算に使う数字（高額療養費の上限など）を読み込めませんでした。')); det.replaceChildren(); $('#cost-sim-fig').hidden = true; return; }
+  $('#cost-sim-fig').hidden = false;
   const jrows = B.data.filter((r) => r.病気 === 'HIV/エイズ' && r.種類 === '公費');
   const sel = (id, opts, val, on) => { const s = h('select', { class: 'kj-select', id }, ...opts.map(([v, t]) => h('option', { value: String(v) }, t))); s.value = String(val); s.addEventListener('change', () => { on(s.value); renderCalc(); }); return s; };
   const amount = h('input', { class: 'kj-input', type: 'number', min: '0', step: '100', inputmode: 'numeric', id: 'calc-m', value: String(calc.M), style: 'min-width:9em' });
   amount.addEventListener('change', () => { const v = Number(amount.value); if (v >= 0) { calc.M = v; renderCalc(); } });
-  const c = CASES.find((x) => x.id === calc.c);
-  const o = { rate: calc.rate, kb: KOGAKU[calc.kb], jcap: jrows[calc.j] ? num(jrows[calc.j].値) : 0, high: calc.high, multi: calc.multi };
-  const s = paySplit(calc.c, calc.M, o);
+  const c = CASES.find((x) => x.id === calc.c) || CASES[0];
+  const o = calcOpts();
+  const s = paySplit(c.id, calc.M, o);
   const bar = (k, j) => h('div', { class: 'kj-calc-row' }, h('span', {}, h('i', { style: `display:inline-block;width:.8rem;height:.8rem;border-radius:2px;background:${PAY[j][1]};margin-right:.4rem` }), PAY[j][0]),
     h('div', { class: 'kj-track', style: 'background:var(--cds-chart-grid)' }, h('div', { class: 'kj-fill', style: `width:${s.M ? (s[k] / s.M) * 100 : 0}%;background:${PAY[j][1]}` })), h('b', {}, `${fmt(s[k])}円`));
   const rule = CO.data.find((r) => r.区分 === '試算のきまり' && new RegExp(c.id === 'hiv' ? '^HIVの通院' : c.id === 'tb_out' ? '^結核の通院' : c.id === 'tb_in' ? '^結核の入院' : '^健康保険だけ').test(r.項目 || ''));
   box.replaceChildren(
-    h('p', { class: 'kj-callout kj-callout-info', style: 'margin:0' }, h('span', {}, h('b', {}, 'これは実際の額（実績値）ではなく、制度のきまりからの試算です。'), '1か月の医療費の総額を入れると、健康保険（高額療養費を含む）と公費の制度で、だれがいくら払うかを計算します。70歳未満の人だけを計算します（70歳以上は上限のきまりが違うため計算しません）。4か月目からの上限（多数回該当）は下で選べます。年間の上限は、下の「1年間続いた場合の目安」で計算します。家族の分の合算、入院中の食事代、自治体独自の助成は入れていません。')),
+    h('p', { class: 'kj-callout kj-callout-info', style: 'margin:0' }, h('span', {}, h('b', {}, 'これは実際の額（実績値）ではなく、制度のきまりからの試算です。'), '1か月の医療費の総額と条件を選ぶと、4つの制度それぞれで、健康保険（高額療養費を含む）・公費（税金）・本人がいくら払うかを計算します（下のグラフ）。選んだ制度の内訳と、1年間続いた場合の目安はその下に出ます。70歳未満の人だけを計算します（70歳以上は上限のきまりが違うため計算しません）。家族の分の合算、入院中の食事代、自治体独自の助成は入れていません。高額療養費・公費・本人負担の上限は、重ねて数えないよう、健康保険→公費の制度→本人の順に1回ずつ計算しています。')),
     h('div', { class: 'kj-controls' },
-      h('label', { class: 'kj-field' }, h('span', {}, '使う制度'), sel('calc-c', CASES.map((x) => [x.id, x.name]), calc.c, (v) => { calc.c = v; })),
       h('label', { class: 'kj-field' }, h('span', {}, '1か月の医療費の総額（円）'), amount),
       h('label', { class: 'kj-field' }, h('span', {}, '窓口負担の割合'), sel('calc-r', [[0.3, '3割（小学生〜69歳）'], [0.2, '2割（小学校に入る前）']], calc.rate, (v) => { calc.rate = Number(v); })),
-      h('label', { class: 'kj-field' }, h('span', {}, '所得（高額療養費の区分）'), sel('calc-k', KOGAKU.map((x, i) => [i, x.t]), calc.kb, (v) => { calc.kb = Number(v); }))),
+      h('label', { class: 'kj-field' }, h('span', {}, '所得（高額療養費の区分）'), sel('calc-k', KOGAKU.map((x, i) => [i, x.t]), calc.kb, (v) => { calc.kb = Number(v); })),
+      h('label', { class: 'kj-field' }, h('span', {}, '直近12か月で高額療養費の上限に達した月'), sel('calc-n', [['0', '2か月以下（通常の上限）'], ['1', '3か月以上（4か月目からの多数回該当）']], calc.multi ? '1' : '0', (v) => { calc.multi = v === '1'; }))),
     h('div', { class: 'kj-controls' },
-      h('label', { class: 'kj-field' }, h('span', {}, '直近12か月で高額療養費の上限に達した月'), sel('calc-n', [['0', '2か月以下（通常の上限）'], ['1', '3か月以上（4か月目からの多数回該当）']], calc.multi ? '1' : '0', (v) => { calc.multi = v === '1'; })),
-      calc.c === 'hiv' ? h('label', { class: 'kj-field' }, h('span', {}, '自立支援医療の所得区分（1か月の上限）'), sel('calc-j', jrows.map((r, i) => [i, `${r.区分}：${fmt(num(r.値))}円`]), calc.j, (v) => { calc.j = Number(v); })) : null,
-      calc.c === 'tb_in' ? h('label', { class: 'kj-field' }, h('span', {}, '世帯の市町村民税の所得割の合計'), sel('calc-h', [['0', '56万4千円以下（本人負担なし）'], ['1', '56万4千円を超える（1か月2万円まで本人負担）']], calc.high ? '1' : '0', (v) => { calc.high = v === '1'; })) : null),
+      h('label', { class: 'kj-field' }, h('span', {}, 'HIV：自立支援医療の所得区分（1か月の上限）'), sel('calc-j', jrows.map((r, i) => [i, `${r.区分}：${fmt(num(r.値))}円`]), calc.j, (v) => { calc.j = Number(v); })),
+      h('label', { class: 'kj-field' }, h('span', {}, '結核の入院：世帯の市町村民税の所得割の合計'), sel('calc-h', [['0', '56万4千円以下（本人負担なし）'], ['1', '56万4千円を超える（1か月2万円まで本人負担）']], calc.high ? '1' : '0', (v) => { calc.high = v === '1'; }))));
+  det.replaceChildren(
+    h('div', { class: 'kj-controls' }, h('label', { class: 'kj-field' }, h('span', {}, '内訳を見る制度'), sel('calc-c', CASES.map((x) => [x.id, x.name]), c.id, (v) => { calc.c = v; }))),
     h('div', { class: 'kj-calc-out', 'aria-live': 'polite' }, h('p', {}, `医療費の総額 ${fmt(s.M)}円 の内訳（1か月・試算）`), bar('ins', 0), bar('pub', 1), bar('self', 2),
-      h('p', { class: 'kj-cap' }, s.capUsed ? (calc.multi ? `多数回該当の上限（${fmt(o.kb.tasu)}円）を超えたため、超えた分は保険給付に入れて計算しています。` : '高額療養費の上限を超えたため、超えた分は保険給付に入れて計算しています。') : '高額療養費の上限は超えていません。', ' 公費（税）は、国と自治体が税金から払う分です（保険給付の中にも税金は入っていますが、ここでは分けられません）。')),
-    calcYear(yearSplit(calc.c, calc.M, o), o),
+      h('p', { class: 'kj-cap' }, s.capUsed ? (calc.multi ? `多数回該当の上限（${fmt(o.kb.tasu)}円）を超えたため、超えた分は保険給付に入れて計算しています。` : '高額療養費の上限を超えたため、超えた分は保険給付に入れて計算しています。') : '高額療養費の上限は超えていません。', ' 公費（税金）は、国と自治体が税金から払う分です（保険の給付の中にも税金は入っていますが、ここでは分けられません）。')),
+    calcYear(yearSplit(c.id, calc.M, o), o),
     h('details', { class: 'kj-details' }, h('summary', {}, '計算のしかたと根拠'), rule ? h('ul', { class: 'kj-list kj-list-sm' }, ...(() => { try { return JSON.parse(rule.値); } catch (e) { return []; } })().map((t) => h('li', {}, t))) : null,
       rule && rule.注 ? h('p', {}, rule.注) : null, h('p', {}, '高額療養費の上限（70歳未満・令和8年8月〜令和9年7月診療分。〈 〉は多数回該当、［ ］は年間上限）：', KOGAKU.map((x) => `${x.t} ${fmt(x.base)}円${x.th ? `＋（医療費−${fmt(x.th)}円）×1%` : ''}〈${fmt(x.tasu)}円〉［${fmt(x.year)}円］`).join('／')),
       h('p', {}, '多数回該当：直近12か月の間に高額療養費に該当した月が3か月以上あると、4か月目からは上限が下がります。年間上限：月ごとの自己負担が積み上がって年間の上限額に達したあとは、それ以上の分は保険者から払い戻し（還付）を受けられます（年間は8月から翌年7月まで）。'),
-      h('p', { class: 'kj-cite' }, ...srcBtns(CALC_SRC[calc.c].join('・')), ...srcBtns('費用-3'))));
+      h('p', { class: 'kj-cite' }, ...srcBtns(CALC_SRC[c.id].join('・')), ...srcBtns('費用-3'))));
+  renderSimMeta();
+  redrawIn($('#cost-sim-fig'));
+}
+// いまの試算の条件（制度ごとの違いは payRaw の中で使い分ける）
+function calcOpts() {
+  const jrows = B.data.filter((r) => r.病気 === 'HIV/エイズ' && r.種類 === '公費');
+  return { rate: calc.rate, kb: KOGAKU[calc.kb], jcap: jrows[calc.j] ? num(jrows[calc.j].値) : 0, jlabel: jrows[calc.j] ? jrows[calc.j].区分 : '', high: calc.high, multi: calc.multi };
 }
 
 /* ===== 世界の動向 ===== */
@@ -3093,6 +3632,8 @@ function renderWorld() {
   const changeBox = $('#world-change-chart');
   chart(changeBox, () => drawWorldChange(changeBox));
   $('#world-change-src').replaceChildren(srcLine(['世界-1'], [['対象', `${world.年}年の推計（2010年との比較）`], ['区分', '推計値（UNAIDS）']]));
+  { const k = '新たな感染の増減（2010年比・%）'; const cs = W.data.filter((r) => r.区分 === '国' && typeof r[k] === 'number');
+    setInsight('world-change-insight', [`日本と協力覚書を結んだ国のうち、1年間の新たな感染が2010年より減った国は${cs.filter((r) => r[k] < 0).length}か国、増えた国は${cs.filter((r) => r[k] > 0).length}か国です（UNAIDSの推計）。`, `世界全体では2010年と比べて${showW(world[k], 'pct')}（${world[k] < 0 ? '減少' : '増加'}）です。`]); }
   EXPORTS['world-change'] = () => ({ title: '日本と協力覚書を結んだ国：新たな感染の2010年比', file: 'HIV世界の動向_新たな感染の2010年比', color: HEX[0], sub: `1年間に新たに感染した人の数を2010年と比べた増減（%）／${world.年}年の推計（UNAIDS）／右（＋）が増加、左（−）が減少`, legend: [{ type: 'bar', name: '増加（＋）', hex: '#b13a28' }, { type: 'bar', name: '減少（−）', hex: '#23704a' }], source: srcText(['世界-1']), draw: (b, opt) => drawWorldChange(b, opt) });
   // 複数国の比較
   renderPick();
@@ -3225,6 +3766,10 @@ function renderWorldPickMeta() {
   $('#world-slope-src').replaceChildren(srcLine(ent.map((r) => r.出典ID), [['対象', '2010年と2025年（推計）'], ['区分', '推計値（UNAIDS）'], ['単位', '2010年＝100']]));
   $('#world-bars-title').textContent = `${metricLabel()}を横に並べて比べる`;
   $('#world-bars-src').replaceChildren(srcLine(ent.map((r) => r.出典ID), [['対象', `${W.data[0].年}年の推計`], ['区分', '推計値（UNAIDS）'], ['単位', /（%）/.test(wstate.metric) ? '%' : '人']]));
+  const sk = wstate.slope, sv = ent.filter((r) => typeof r[sk] === 'number');
+  setInsight('world-slope-insight', sv.length ? [`選んだ${sv.length}の国・地域のうち、${sk.startsWith('新たな') ? '新たな感染' : 'エイズによる死亡'}が2010年より減ったのは${sv.filter((r) => r[sk] < 0).map((r) => r.名前).join('・') || 'なし'}、増えたのは${sv.filter((r) => r[sk] > 0).map((r) => r.名前).join('・') || 'なし'}です。`] : null);
+  const bv = ent.filter((r) => typeof r[wstate.metric] === 'number').sort((a, b) => b[wstate.metric] - a[wstate.metric]);
+  setInsight('world-bars-insight', bv.length ? [`選んだ中で${metricLabel()}がいちばん大きいのは${bv[0].名前}（${/（%）/.test(wstate.metric) ? `${bv[0][wstate.metric]}%` : `${man(bv[0][wstate.metric])}人`}）です。`, /（%）/.test(wstate.metric) ? '' : '人数は、人口の多い国ほど大きくなりやすい数です。'] : null);
 }
 let slopeShape = 'bar';
 function drawSlope(box, opt = {}) {
@@ -3487,6 +4032,436 @@ function jumpToSource(id) {
   goTo(`src-${id}`);
 }
 
+/* ===== 2026年10月27日の改修：一般向けの解説（3分でわかる・病気のカード・入国時の検査の早見・医療費の代表例・課題のQ&A） ===== */
+// 数字と文はすべて data.js（explain・entry・costs・info など）から読む。ここに数字や説明文のデータは書かない
+const SVGNS = 'http://www.w3.org/2000/svg';
+function icon(id, cls) {
+  const s = document.createElementNS(SVGNS, 'svg');
+  s.setAttribute('class', `kj-ic${cls ? ` ${cls}` : ''}`); s.setAttribute('aria-hidden', 'true'); s.setAttribute('focusable', 'false');
+  const u = document.createElementNS(SVGNS, 'use'); u.setAttribute('href', `#kj-i-${id}`); s.append(u);
+  return s;
+}
+const illu = (id) => { const s = icon(id); s.removeAttribute('class'); return h('span', { class: 'kj-illu' }, s); };
+// 「この数字からわかること」（グラフの下に1〜2文。データから文を作る。原因は書かない）
+function insight(texts) {
+  const t = [].concat(texts).filter(Boolean);
+  return t.length ? h('p', { class: 'kj-insight' }, h('b', {}, 'この数字からわかること'), h('span', {}, t.join(''))) : '';
+}
+const setInsight = (id, texts) => { const b = document.getElementById(id); if (b) b.replaceChildren(insight(texts)); };
+const exOf = (kind) => EX.data.filter((r) => r.区分 === kind);
+const cardText = (d, key) => EX.data.find((r) => r.区分 === 'カード' && r.病気 === d.name && r.項目 === key) || null;
+const worldNum = (d) => I.data.find((r) => r.病気 === d.name && r.節 === 'world_numbers');
+// 日本国内の動き（収録開始年と比べた倍率で「減っている・増えている」を分ける。速報は別に書く）
+function trendOf(d) {
+  const o = overviewOf(d);
+  const r = o['10年前と比べて(倍)'];
+  const cls = r < 0.9 ? 'kj-down' : r > 1.1 ? 'kj-up' : 'kj-flat';
+  const tag = r < 0.9 ? '▼ 減っている' : r > 1.1 ? '▲ 増えている' : '± 横ばい';
+  const text = `${o.最新確定年}年（確定値）は${fmt(o.最新値)}${d.unit}。${o.最初の年}年の${r.toFixed(1)}倍`;
+  const ytd = `2026年の途中経過（速報・${o.途中の期間}）は前年同期の${o.前年同期の倍.toFixed(1)}倍`;
+  return { cls, tag, text, ytd };
+}
+
+/* --- 払い手の帯（本人＝緑・公費＝オレンジ・保険＝青） --- */
+function payKey(box) { if (box) box.replaceChildren(...[[2, '本人の負担'], [1, '公費（税金）'], [0, '公的医療保険の給付']].map(([j, t]) => h('span', {}, h('i', { style: `background:${PAY[j][1]}` }), t))); }
+function payBar(s) {
+  const seg = [['self', 'kj-pay-self', '本人'], ['pub', 'kj-pay-pub', '公費'], ['ins', 'kj-pay-ins', '保険']];
+  return h('div', { class: 'kj-paybar', role: 'img', 'aria-label': seg.map(([k, , n]) => `${n} ${fmt(s[k])}円`).join('、') },
+    ...seg.filter(([k]) => s[k] > 0).map(([k, cls, n]) => { const p = (s[k] / s.M) * 100; return h('span', { class: cls, style: `width:${p}%`, title: `${n} ${fmt(s[k])}円（${p.toFixed(1)}%）` }, p >= 14 ? `${n} ${Math.round(p)}%` : ''); }));
+}
+function payLines(s) {
+  return h('dl', { class: 'kj-paylines' }, ...[[2, 'self', '本人の負担'], [1, 'pub', '公費（税金）'], [0, 'ins', '公的医療保険の給付']].map(([j, k, t]) => h('div', {}, h('dt', {}, h('i', { style: `background:${PAY[j][1]}` }), t), h('dd', {}, `${fmt(s[k])}円`))));
+}
+// 代表例（data.js の costs「代表例」）を、制度のきまりで払い手に分ける
+function scenarioSplit(row) {
+  let cond = {}, ms = [];
+  try { cond = JSON.parse(row.条件 || '{}'); } catch (e) { cond = {}; }
+  try { ms = JSON.parse(row.月ごとの医療費 || '[]') || []; } catch (e) { ms = []; }
+  if (!KOGAKU.length) return null;
+  const o = { rate: cond.rate || 0.3, kb: KOGAKU[cond.kb === undefined ? 2 : cond.kb], jcap: cond.jcap || 0, high: !!cond.high, multi: false };
+  if (typeof row.値 === 'number') return yearSplit(row.項目, row.値 / 12, o).total;
+  if (!ms.length) return null;
+  const ps = ms.map((M) => paySplit(row.項目, M, o));
+  return { M: d3.sum(ps, (p) => p.M), ins: d3.sum(ps, (p) => p.ins), pub: d3.sum(ps, (p) => p.pub), self: d3.sum(ps, (p) => p.self) };
+}
+const KIND_TAG = (k) => {
+  if (!k) return null;
+  const cls = /未確認/.test(k) ? 'kj-tag-unk' : /平均値|実績/.test(k) ? 'kj-tag-avg' : /試算|推計/.test(k) ? 'kj-tag-model' : 'kj-tag-price';
+  return h('span', { class: `kj-tag ${cls}` }, k);
+};
+function caseCard(row, compact) {
+  const s = scenarioSplit(row);
+  const tags = h('div', { class: 'kj-tagrow' }, row.期間 && row.期間 !== '—' ? h('span', { class: 'kj-tag kj-tag-per' }, `期間：${row.期間}`) : null, KIND_TAG(row.種類));
+  if (!s) {
+    return h('article', { class: 'kj-case' }, h('h4', {}, row.名前), tags,
+      h('div', { class: 'kj-noval' }, h('b', {}, '公表値未確認'), h('span', { class: 'kj-case-note' }, row.注 || '')), h('p', { class: 'kj-cite' }, ...srcBtns(row.出典ID)));
+  }
+  return h('article', { class: 'kj-case' }, h('h4', {}, row.名前), tags,
+    h('p', { class: 'kj-case-total' }, h('span', { class: 'kj-cap' }, '医療費の総額'), h('span', { class: 'kj-big' }, fmt(s.M)), h('span', { class: 'kj-unit' }, '円')),
+    payBar(s),
+    h('p', { class: 'kj-case-self' }, 'このうち本人の負担は ', h('b', {}, `${fmt(s.self)}円`)),
+    payLines(s),
+    h('details', { class: 'kj-details' }, h('summary', {}, '計算の条件と出典'), h('p', {}, row.注 || ''), h('p', { class: 'kj-cite' }, ...srcBtns(row.出典ID))));
+}
+
+/* --- STEP 1：海外では今も流行している --- */
+function renderStep1() {
+  $('#step1-tiles').replaceChildren(...DISEASES.map((d) => {
+    const w = worldNum(d);
+    const tr = trendOf(d);
+    const spark = h('div', { class: 'kj-spark' });
+    chart(spark, () => drawSpark(spark, d));
+    return h('article', { class: 'kj-ntile', style: `--c:${colorOf(d)}` },
+      h('div', { class: 'kj-ntile-h' }, icon(d.id), d.label),
+      w ? [h('p', { class: 'kj-ntile-what' }, `世界：${w.見出し}`), h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, man(w.値)), h('span', { class: 'kj-unit' }, w.単位)),
+        h('p', { class: 'kj-ntile-sub' }, `${w.年}年・${w.種類} `, ...srcBtns(w.出典ID))] : noData('世界の数字を読み込めませんでした。'),
+      h('div', { class: 'kj-jtrend' }, h('span', {}, '日本では'), h('span', { class: `kj-trendtag ${tr.cls}` }, tr.tag), h('span', {}, `${tr.text}。`), d.id === 'measles' ? h('span', { class: 'kj-cap' }, `${tr.ytd}。`) : null, spark));
+  }));
+}
+/* --- STEP 2：受け入れの制度と、協力覚書・JPETSの重なり --- */
+function renderStep2() {
+  const rs = E.data.filter((x) => x.区分 === '在留外国人数');
+  $('#step2-nums').replaceChildren(...rs.map((x) => h('article', { class: 'kj-ntile', style: '--c:var(--kj-link)' },
+    h('p', { class: 'kj-ntile-what' }, x.名前 === '総数' ? '日本に住む外国人（在留外国人）' : `在留資格「${x.名前}」の人`),
+    h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, man(x.値)), h('span', { class: 'kj-unit' }, '人')),
+    h('p', { class: 'kj-ntile-sub' }, `${fmt(x.値)}人（${x.基準日}）・出入国在留管理庁 `, ...srcBtns(x.出典ID)))));
+  if (rs.length) $('#step2-nums').append(h('p', { class: 'kj-cap', style: 'grid-column:1/-1' }, '外国人の人数で、感染症の数字ではありません。'));
+  const box = $('#step2-venn');
+  chart(box, () => drawVenn(box));
+  const sc = E.data.filter((x) => x.区分 === '在留資格');
+  $('#step2-schemes').replaceChildren(...sc.map((x) => h('article', { class: 'kj-scheme' }, h('h4', {}, x.名前),
+    h('div', {}, '入国前の健康診断など：', stBadge(x.状態)), h('div', {}, 'JPETS（結核）：', stBadge(String(x.JPETS || '').split('：')[0] || null)),
+    h('p', { class: 'kj-cap' }, `${String(x.内容 || '').split('。')[0]}。`), h('p', { class: 'kj-cite' }, ...srcBtns(x.出典ID)))));
+}
+function vennSets() {
+  const moc = C.data.filter((r) => r.協力覚書).map((r) => r.ISO3);
+  const jp = E.data.filter((x) => x.区分 === 'JPETSの国').map((x) => x.ISO3);
+  const nm = (iso) => (C.data.find((r) => r.ISO3 === iso) || { 国: iso }).国;
+  const st = (iso) => { const j = jpetsRow(iso); return j ? `（${j.状態 === '実施中' ? '実施中' : /^\d/.test(j.開始 || '') ? `${fmtDate(j.開始)}から予定` : '調整中'}）` : ''; };
+  return { both: moc.filter((x) => jp.includes(x)), mocOnly: moc.filter((x) => !jp.includes(x)), jOnly: jp.filter((x) => !moc.includes(x)), nm, st, nMoc: moc.length, nJ: jp.length };
+}
+function drawVenn(box, opt = {}) {
+  const v = vennSets();
+  const W = Math.min(opt.width || Math.max(300, box.clientWidth), 720), H = W < 480 ? 230 : 250;
+  let svgBox = box.querySelector('.kj-venn-svg');
+  if (!svgBox) { svgBox = h('div', { class: 'kj-venn-svg' }); box.replaceChildren(svgBox, h('div', { class: 'kj-venn-lists' })); }
+  const svg = svgIn(svgBox, W, H, `協力覚書の${v.nMoc}か国と、JPETSの対象${v.nJ}か国の重なりの図`);
+  svg.attr('width', W).style('max-width', '100%').style('height', 'auto');
+  const r = Math.min(H * 0.4, W * 0.25), cy = H / 2 + 6, cx1 = W / 2 - r * 0.55, cx2 = W / 2 + r * 0.55;
+  svg.append('circle').attr('cx', cx1).attr('cy', cy).attr('r', r).style('fill', 'var(--kj-pay-ins)').style('fill-opacity', 0.14).style('stroke', 'var(--kj-pay-ins)').style('stroke-width', 2.5);
+  svg.append('circle').attr('cx', cx2).attr('cy', cy).attr('r', r).style('fill', 'var(--kj-pay-self)').style('fill-opacity', 0.14).style('stroke', 'var(--kj-pay-self)').style('stroke-width', 2.5);
+  svg.append('text').attr('class', 'kj-venn-t').attr('x', cx1 - r * 0.25).attr('y', 18).attr('text-anchor', 'middle').text(`協力覚書 ${v.nMoc}か国`);
+  svg.append('text').attr('class', 'kj-venn-t').attr('x', cx2 + r * 0.25).attr('y', 18).attr('text-anchor', 'middle').text(`JPETSの対象 ${v.nJ}か国`);
+  [[cx1 - r * 0.48, v.mocOnly.length, '協力覚書だけ'], [W / 2, v.both.length, '両方'], [cx2 + r * 0.48, v.jOnly.length, 'JPETSだけ']].forEach(([x, n, t]) => {
+    svg.append('text').attr('class', 'kj-venn-n').attr('x', x).attr('y', cy + 6).attr('text-anchor', 'middle').text(`${n}`);
+    svg.append('text').attr('class', 'kj-venn-l').attr('x', x).attr('y', cy + 28).attr('text-anchor', 'middle').text(t);
+  });
+  svg.append('text').attr('class', 'kj-venn-m').attr('x', W / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('協力覚書を結んだ国＝検査がある国、ではありません');
+  box.querySelector('.kj-venn-lists').replaceChildren(
+    h('div', {}, h('b', {}, `両方（${v.both.length}か国）`), v.both.map((x) => `${v.nm(x)}${v.st(x)}`).join('、')),
+    h('div', {}, h('b', {}, `協力覚書だけ（${v.mocOnly.length}か国）`), v.mocOnly.map(v.nm).join('、')),
+    h('div', {}, h('b', {}, `JPETSだけ（${v.jOnly.length}か国）`), v.jOnly.map((x) => `${v.nm(x)}${v.st(x)}`).join('、') || 'なし'),
+    h('p', { class: 'kj-cap', style: 'grid-column:1/-1' }, '協力覚書：出入国在留管理庁・外国人技能実習機構の一覧（特定技能・技能実習・育成就労）。JPETS：厚生労働省・出入国在留管理庁の資料。', ...srcBtns('制度-1・制度-2・制度-4・制度-8')));
+}
+/* --- 入国時の検査の早見（判定のきまりは data.js の entry「早見」） --- */
+const ck = { c: '', s: '技能実習', d: '*', t: '*' };
+const ckSystems = () => E.data.filter((x) => x.区分 === '早見');
+const ckSchemes = () => E.data.filter((x) => x.区分 === '早見の在留資格');
+function jStartText(j) {
+  if (!j) return '';
+  if (j.状態 === '実施中') return `${fmtDate(j.開始)}から`;
+  if (/^\d{4}-/.test(j.開始 || '')) return `${fmtDate(j.開始)}以降の申請から必要になる予定`;
+  return '開始に向けて調整中（時期は未定）';
+}
+function jpetsListText() {
+  const js = E.data.filter((x) => x.区分 === 'JPETSの国');
+  const g = d3.groups(js, (x) => (x.状態 === '実施中' ? '実施中' : /^\d{4}-/.test(x.開始 || '') ? `${fmtDate(x.開始)}から予定` : '調整中'));
+  return g.map(([k, xs]) => `${xs.map((x) => x.国).join('・')}（${k}）`).join('、');
+}
+function ckCtx(iso, s) {
+  if (!iso) return { j: '未選択', name: '', start: '', s };
+  const r = C.data.find((x) => x.ISO3 === iso) || {};
+  const j = jpetsRow(iso);
+  return { j: j ? j.状態 : 'なし', name: r.国 || iso, start: jStartText(j), s };
+}
+function ckEval(sys, d, ctx) {
+  let rules = [];
+  try { rules = JSON.parse(sys.ルール || '[]'); } catch (e) { rules = []; }
+  for (const r of rules) {
+    const c = r.if || {};
+    if (c.d && !c.d.includes(d.name)) continue;
+    if (c.not_d && c.not_d.includes(d.name)) continue;
+    if (c.s && !c.s.includes(ctx.s)) continue;
+    if (c.j && !c.j.includes(ctx.j)) continue;
+    const why = String(r.why || '').replace(/\{病気\}/g, d.label).replace(/\{国\}/g, ctx.name).replace(/\{開始\}/g, ctx.start).replace(/\{対象国\}/g, jpetsListText());
+    return { st: r.st, unk: r.unk || null, why };
+  }
+  return { st: '未確認', unk: 'このサイトでは調べていない', why: 'このサイトでは調べていません。' };
+}
+// 国・在留資格のすべての組み合わせでまとめた状態（3分でわかる・病気のカードで使う）
+function ckAggregate(syss, d) {
+  const sts = new Set();
+  syss.forEach((sys) => ['実施中', '開始予定', 'なし'].forEach((j) => ckSchemes().forEach((s) => sts.add(ckEval(sys, d, { j, s: s.名前, name: '', start: '' }).st))));
+  if (sts.size === 1) return { st: [...sts][0], star: false };
+  if (sts.has('義務あり')) return { st: '条件付き', star: false, note: '国籍・在留資格などによる' };
+  if (sts.has('導入予定')) return { st: '導入予定', star: true, note: '一部はこれから' };
+  if (sts.has('条件付き')) return { st: '条件付き', star: false, note: '働き方・学校などによる' };
+  return { st: '一律義務なし', star: true, note: '一部の在留資格は未確認' };
+}
+const S5 = { 義務あり: ['kj-s5-yes', '✔'], 条件付き: ['kj-s5-cond', '◐'], 導入予定: ['kj-s5-plan', '◔'], 一律義務なし: ['kj-s5-no', '－'], 未確認: ['kj-s5-unk', '？'] };
+function s5(st, star) { const x = S5[st] || S5.未確認; return h('span', { class: `kj-s5 ${x[0]}` }, h('i', { 'aria-hidden': 'true' }, x[1]), `${st}${star ? '＊' : ''}`); }
+function renderCkMatrix(box) {
+  const syss = ckSystems();
+  if (!syss.length) { box.replaceChildren(noData('入国時の検査のデータを読み込めませんでした。')); return; }
+  const times = ['入国前', '入国時', '入国後'];
+  const t = el('table', 'kj-table kj-mx');
+  t.createTHead().insertRow().append(h('th', {}, '時期・制度'), ...DISEASES.map((d) => { const ic = icon(d.id); ic.style.color = colorOf(d); return h('th', {}, h('span', { style: 'display:inline-flex;align-items:center;gap:.3rem' }, ic, d.label)); }));
+  const body = t.createTBody();
+  times.forEach((tm) => syss.filter((x) => x.時期 === tm).forEach((x, i) => {
+    const tr = body.insertRow();
+    tr.append(h('td', { 'data-label': '' }, h('span', { class: 'kj-mx-t' }, i ? '' : tm === '入国時' ? '入国時（空港・港）' : tm), h('b', {}, x.種類)));
+    DISEASES.forEach((d) => { const a = ckAggregate([x], d); tr.append(h('td', { 'data-label': d.label }, s5(a.st, a.star), a.note && a.st !== '一律義務なし' ? h('small', {}, a.note) : null)); });
+  }));
+  box.replaceChildren(h('div', { class: 'kj-rt' }, h('div', { class: 'kj-scroll' }, t)),
+    h('p', { class: 'kj-cap' }, '国籍・在留資格のすべての組み合わせでまとめた状態です。「条件付き」は、国籍・在留資格・働き方などによって対象になる場合があるもの、「＊」は、確認できた範囲では義務がなく、一部の在留資格は未確認（または一部はこれから）という意味です。'),
+    h('div', { class: 'kj-paykey' }, ...Object.keys(S5).map((k) => s5(k))));
+}
+function renderChecker() {
+  const cs = $('#ck-c'), ss = $('#ck-s'), ds = $('#ck-d'), ts = $('#ck-t');
+  const syss = ckSystems();
+  if (!syss.length) { $('#ck-res').replaceChildren(noData('入国時の検査のデータを読み込めませんでした。')); return; }
+  if (!cs.options.length) {
+    cs.replaceChildren(h('option', { value: '' }, '（国・地域を選ばない）'), ...['日本と関係の深い国（協力覚書・JPETSの対象国）', 'その他の国・地域'].map((gname, gi) => h('optgroup', { label: gname },
+      ...C.data.filter((r) => r.ISO3 !== 'JPN' && (gi ? !isFocus(r) : isFocus(r))).sort((a, b) => a.国.localeCompare(b.国, 'ja')).map((r) => h('option', { value: r.ISO3 }, r.国)))));
+    ss.replaceChildren(...ckSchemes().map((x) => h('option', { value: x.名前 }, x.名前)));
+    ds.replaceChildren(h('option', { value: '*' }, '4つすべて'), ...DISEASES.map((d) => h('option', { value: d.id }, d.label)));
+    [[cs, 'c'], [ss, 's'], [ds, 'd'], [ts, 't']].forEach(([e, k]) => e.addEventListener('change', () => { ck[k] = e.value; renderChecker(); }));
+  }
+  cs.value = ck.c; ss.value = ck.s; ds.value = ck.d; ts.value = ck.t;
+  const ctx = ckCtx(ck.c, ck.s);
+  const dz = ck.d === '*' ? DISEASES : DISEASES.filter((d) => d.id === ck.d);
+  const times = ck.t === '*' ? ['入国前', '入国時', '入国後'] : [ck.t];
+  const counts = {};
+  $('#ck-res').replaceChildren(...times.map((tm) => h('section', { class: 'kj-ck-time' },
+    h('h4', {}, icon(tm === '入国前' ? 'pass' : tm === '入国時' ? 'globe' : 'jp'), tm === '入国時' ? '入国時（空港・港）' : tm),
+    h('div', { class: 'kj-ck-cards' }, ...syss.filter((x) => x.時期 === tm).map((sys) => {
+      const lines = dz.map((d) => {
+        const r = ckEval(sys, d, ctx);
+        counts[r.st] = (counts[r.st] || 0) + 1;
+        return h('li', {}, h('div', {}, dz.length > 1 ? h('span', { style: 'display:inline-flex;align-items:center;gap:.35rem' }, h('span', { class: 'kj-swatch', style: `--c:${colorOf(d)}` }), d.label) : null, s5(r.st), r.unk ? h('span', { class: 'kj-ckc-unk' }, `（${r.unk}）`) : null), h('div', {}, r.why));
+      });
+      const meta = [['対象・条件', sys.対象], ['例外・対象外', sys.対象外], ['根拠', sys.根拠], ['基準日', sys.基準日 ? `${fmtDate(sys.基準日)}に公式資料で確認` : null]].filter(([, v]) => v && v !== '—');
+      return h('article', { class: 'kj-ckc' }, h('span', { class: 'kj-ckc-kind' }, sys.種類), h('h5', {}, sys.名前), h('ul', {}, ...lines),
+        h('details', { class: 'kj-details' }, h('summary', {}, '条件・例外・根拠・基準日'), h('div', { class: 'kj-ckc-meta' }, ...meta.map(([k, v]) => h('div', {}, h('b', {}, `${k}：`), v)))),
+        h('p', { class: 'kj-cite' }, ...srcBtns(sys.出典ID), sys.リンク && sys.リンク !== 'entry-check' ? [' ', h('a', { href: `#${sys.リンク}`, 'data-nav': '' }, '詳しい資料')] : null));
+    })))));
+  const who = [ctx.name || '国・地域を選ばない', ck.s, ck.d === '*' ? '4つの感染症' : DBY[ck.d].label, ck.t === '*' ? '入国前〜入国後' : ck.t].join('・');
+  $('#ck-sum').replaceChildren(h('b', {}, `選んだ条件（${who}）：`), ...Object.keys(S5).filter((k) => counts[k]).map((k) => h('span', {}, s5(k), ` ${counts[k]}件`)));
+  const sch = ckSchemes().find((x) => x.名前 === ck.s);
+  $('#ck-scheme-note').textContent = `${ck.s}：${sch ? sch.内容 : ''}。${ck.c ? `国籍で結果が変わるのはJPETSだけです（${ctx.name}：${ctx.j === 'なし' ? 'JPETSの対象国ではない' : `JPETS ${ctx.j}`}）。` : ''}`;
+  $('#ck-key').replaceChildren(...E.data.filter((x) => x.区分 === '早見の状態').map((x) => h('div', {}, h('dt', {}, s5(x.名前)), h('dd', {}, x.内容))));
+  $('#ck-asof').textContent = `基準日：${fmtDate(syss[0].基準日)}（各制度の公式資料・法令で確認）。制度は変わることがあります。実際の手続きは、出入国在留管理庁・厚生労働省などの最新の案内で確かめてください。`;
+  indexDirty = true;
+}
+/* --- STEP 4：日本国内（外国生まれ・外国籍・国外で感染は別の意味） --- */
+const bget = (who, table, label, col) => { const r = B.data.find((x) => x.病気 === who && x.表 === table && x.区分 === label && x.列 === col); return r ? num(r.値) : null; };
+function renderStep4() {
+  $('#step4-nums').replaceChildren(...DISEASES.map((d) => {
+    const o = overviewOf(d), tr = trendOf(d);
+    return h('article', { class: 'kj-ntile', style: `--c:${colorOf(d)}` }, h('div', { class: 'kj-ntile-h' }, icon(d.id), d.label),
+      h('p', { class: 'kj-ntile-what' }, d.what),
+      h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, fmt(o.最新値)), h('span', { class: 'kj-unit' }, d.unit), h('span', { class: 'kj-year' }, `${o.最新確定年}年・確定値`)),
+      h('div', { class: 'kj-jtrend' }, h('span', { class: `kj-trendtag ${tr.cls}` }, tr.tag), h('span', {}, `${o.最初の年}年の${o['10年前と比べて(倍)'].toFixed(1)}倍・前年比 `, delta(o.前年比, pct(o.前年比))), h('span', { class: 'kj-cap' }, `${tr.ytd}。`)));
+  }));
+  const fx = [];
+  const TBT = '外国生まれの新登録患者（2025年）';
+  const tbL = '外国生まれ（割合は新登録患者全体に占める割合）', tb5L = 'うち入国5年以内（割合は外国生まれ患者に占める割合）';
+  const tbN = bget('結核', TBT, tbL, '人数'), tbP = bget('結核', TBT, tbL, '割合(%)'), tb5 = bget('結核', TBT, tb5L, '人数'), tb5p = bget('結核', TBT, tb5L, '割合(%)');
+  if (tbN !== null) fx.push(h('div', { style: `--c:${colorOf(DBY.tb)}` }, h('span', { class: 'kj-fx-k' }, '結核：生まれた国が外国（外国生まれ）'), h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, fmt(tbN)), h('span', { class: 'kj-unit' }, `人（新登録患者の${tbP}%）`)),
+    h('p', {}, `2025年・確定値。うち入国して5年以内の人は${fmt(tb5)}人（${tb5p}%）。国籍ではなく、生まれた国で分けた数です。`), h('p', { class: 'kj-cite' }, ...srcBtns('結核-1'))));
+  const HT = '国籍・性別（2025年）';
+  const hrows = B.data.filter((x) => x.病気 === 'HIV/エイズ' && x.表 === HT);
+  if (hrows.length) {
+    const f = d3.sum(hrows.filter((x) => /^外国国籍/.test(x.区分)), (x) => num(x.値)), all = d3.sum(hrows, (x) => num(x.値));
+    fx.push(h('div', { style: `--c:${colorOf(DBY.hiv)}` }, h('span', { class: 'kj-fx-k' }, 'HIV/エイズ：外国国籍'), h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, fmt(f)), h('span', { class: 'kj-unit' }, `件（新規報告${fmt(all)}件の${((f / all) * 100).toFixed(1)}%）`)),
+      h('p', {}, '2025年・確定値。HIV感染者とエイズ患者の合計。生まれた国ではなく、国籍で分けた数です。'), h('p', { class: 'kj-cite' }, ...srcBtns('HIV-3'))));
+  }
+  const MT = '推定感染地域別（2024年・確定）';
+  const mrows = B.data.filter((x) => x.病気 === 'はしか' && x.表 === MT);
+  if (mrows.length) {
+    const out = bget('はしか', MT, '国外', '届出数'), all = d3.sum(mrows, (x) => num(x.値));
+    const yt = B.data.filter((x) => x.病気 === 'はしか' && /2026年.*推定感染地域別/.test(x.表));
+    const yo = (yt.find((x) => x.区分 === '国外') || {}).値, ya = d3.sum(yt, (x) => num(x.値));
+    const per = yt.length ? (String(yt[0].表).match(/2026年第[0-9〜]+週/) || [''])[0] : '';
+    fx.push(h('div', { style: `--c:${colorOf(DBY.measles)}` }, h('span', { class: 'kj-fx-k' }, 'はしか：国外で感染したと推定'), h('p', { class: 'kj-big-line' }, h('span', { class: 'kj-big' }, fmt(out)), h('span', { class: 'kj-unit' }, `人（届出${fmt(all)}人のうち）`)),
+      h('p', {}, `2024年・確定値。感染した場所の推定で、国籍とは関係ありません。${yt.length ? `${per}（速報）は${fmt(ya)}人のうち${fmt(num(yo))}人が国外と推定。` : ''}`), h('p', { class: 'kj-cite' }, ...srcBtns([...new Set(['はしか-3', ...yt.map((x) => x.出典ID)])].join('・')))));
+  }
+  fx.push(h('div', { style: `--c:${colorOf(DBY.syphilis)}` }, h('span', { class: 'kj-fx-k' }, '梅毒'), h('p', {}, 'このサイトでは、梅毒の国籍・生まれた国・感染地域（国内・国外）別の数は収録していません（調べていません）。')));
+  $('#step4-fx').replaceChildren(...fx);
+  const box = $('#step4-chart');
+  chart(box, () => drawTbForeign(box));
+  const rows = tbForeignRows();
+  if (rows.length) {
+    const a = rows[0], b = rows[rows.length - 1];
+    setInsight('step4-insight', [`新しく登録された結核患者に占める外国生まれの人の割合は、${a.x}年の${a.p.toFixed(1)}%から${b.x}年の${b.p.toFixed(1)}%になりました（人数は${fmt(a.n)}人→${fmt(b.n)}人）。`, '割合は、外国生まれの人数だけでなく、日本生まれの患者の数の変化にも左右されます。']);
+    $('#step4-src').replaceChildren(srcLine(['結核-1'], [['対象', `${a.x}〜${b.x}年（確定値）`], ['単位', '%（新登録患者に占める割合）']]));
+  }
+}
+function tbForeignRows() {
+  const T = '外国生まれの新登録患者の推移（2021〜2025年）';
+  const ys = [...new Set(B.data.filter((x) => x.病気 === '結核' && x.表 === T).map((x) => x.区分))];
+  return ys.map((y) => ({ x: Number(String(y).replace(/\D/g, '')), n: bget('結核', T, y, '人数'), p: bget('結核', T, y, '新登録患者に占める割合(%)') })).filter((r) => r.p !== null);
+}
+function drawTbForeign(box, opt = {}) {
+  const rows = tbForeignRows();
+  const W = opt.width || Math.max(300, box.clientWidth), H = opt.height || (W < 520 ? 250 : 280);
+  const svg = svgIn(box, W, H, '結核の新登録患者に占める外国生まれの人の割合の棒グラフ');
+  const d = DBY.tb;
+  plotBars(svg, { x0: 0, y0: 0, w: W, h: H }, {
+    years: rows.map((r) => r.x), unit: '単位：%（新しく登録された結核患者に占める、外国生まれの人の割合）', color: colorOf(d), fmt: (v) => `${v.toFixed(1)}%`, tickFmt: (t) => `${t}%`,
+    bars: rows.map((r) => ({ x: r.x, y: r.p })), box: opt.exporting ? null : box,
+    tip: (b) => { const r = rows.find((z) => z.x === b.x); return r ? { title: `結核・外国生まれ　${r.x}年`, lines: [['新登録患者に占める割合', `${r.p.toFixed(1)}%`, colorOf(d)], ['外国生まれの新登録患者', `${fmt(r.n)}人`], ['数字の種類', '確定値']], note: '生まれた国で分けた数（国籍ではありません）。出典 結核-1：厚生労働省「結核登録者情報調査年報集計結果」' } : null; },
+  });
+}
+EXPORTS['step4-foreign'] = () => { const rows = tbForeignRows(); return { title: '結核：新しく登録された患者のうち、外国生まれの人の割合', file: '日本の感染症_結核_外国生まれの割合', color: HEX[3], sub: `${rows[0].x}〜${rows[rows.length - 1].x}年（確定値）／単位：%／生まれた国で分けた数（国籍ではありません）`, legend: [], source: srcText(['結核-1']), draw: drawTbForeign, height: 440 }; };
+/* --- STEP 5 と医療費のページ：病気ごとの代表例 --- */
+const scenarios = () => CO.data.filter((r) => r.区分 === '代表例');
+function renderStep5() {
+  payKey($('#step5-key'));
+  const pick = scenarios().filter((r) => r.項目 === 'hiv' || r.項目 === 'tb_in');
+  $('#step5-cases').replaceChildren(...(pick.length ? pick.map((r) => caseCard(r, true)) : [noData('医療費の例を読み込めませんでした。')]));
+}
+function renderCostCards() {
+  payKey($('#cost-cards-key'));
+  $('#cost-cards-cap').textContent = '「公表された平均値」は国の統計・研究の実績、「モデル試算」は資料の価格・点数と制度のきまりからこのサイトで計算したもの、「制度上の価格」は薬価・診療報酬の点数など国が決めた価格です。個別の患者の事例は載せていません。公表値が見つからないものは「公表値未確認」とし、平均値を作っていません。';
+  $('#cost-cards-box').replaceChildren(...DISEASES.map((d) => {
+    const sc = scenarios().filter((r) => r.病気 === d.name);
+    const items = CO.data.filter((r) => r.区分 === '費用' && r.病気 === d.name);
+    const order = (r) => (/実績/.test(r.種類 || '') ? 0 : /試算|推計/.test(r.種類 || '') ? 1 : 2);
+    const top = items.filter((r) => typeof r.値 === 'number').sort((a, b) => order(a) - order(b)).slice(0, 5);
+    const none = items.length - items.filter((r) => costVal(r)).length;
+    return h('article', { class: 'kj-dzc', style: `--c:${colorOf(d)}`, id: `cost-card-${d.id}` },
+      h('div', { class: 'kj-dzc-head' }, illu(d.id), h('div', {}, h('h3', {}, d.label), h('p', { class: 'kj-dzc-one' }, (cardText(d, 'cost') || {}).文 || ''))),
+      ...sc.map((r) => caseCard(r)),
+      top.length ? h('div', { class: 'kj-subblock' }, h('h4', {}, '主な金額（期間と数字の種類つき）'), h('ul', { class: 'kj-list kj-list-sm' }, ...top.map((r) => h('li', {}, `${r.名前}：`, h('b', {}, costVal(r)), ' ', r.期間 && r.期間 !== '—' ? h('span', { class: 'kj-tag kj-tag-per' }, r.期間) : null, ' ', kindTag(r.種類), ...srcBtns(r.出典ID))))) : null,
+      h('p', { class: 'kj-links' }, h('a', { href: `#cost-panel-${d.id}`, 'data-nav': '' }, `${d.label}の費用の一覧（${items.length}項目。うち${none}項目は公表値未確認）`), h('a', { href: `#kouhi-panel-${d.id}`, 'data-nav': '' }, '公費の支援')));
+  }));
+}
+function renderCostForeign() {
+  const rows = CO.data.filter((r) => r.区分 === '外国人の場合');
+  const t = $('#cost-foreign-table');
+  t.replaceChildren();
+  if (!rows.length) { t.append(h('tbody', {}, h('tr', {}, h('td', {}, '外国人の場合の制度のデータを読み込めませんでした。')))); return; }
+  t.append(h('thead', {}, h('tr', {}, ...['項目', '日本人と同じ制度か', '説明', '出典'].map((x) => h('th', { class: 'kj-left' }, x)))),
+    h('tbody', {}, ...rows.map((r) => h('tr', {}, h('td', { class: 'kj-name', style: 'white-space:normal;min-width:9em', 'data-label': '' }, r.名前), h('td', { class: 'kj-left', style: 'min-width:9em', 'data-label': '日本人と同じ制度か' }, h('b', {}, r.値 || '—')),
+      h('td', { class: 'kj-left', style: 'min-width:20em', 'data-label': '説明' }, r.注), h('td', { class: 'kj-left', 'data-label': '出典' }, ...srcBtns(r.出典ID))))));
+}
+/* --- 100万円（入れた金額）の場合の、制度ごとの払い手（試算・横の積み上げ棒） --- */
+function simRows() { const o = calcOpts(); return CASES.map((c) => ({ c, s: paySplit(c.id, calc.M, o) })); }
+function drawSim(box, opt = {}) {
+  if (!CASES.length || calc.M === null) return;
+  const rows = simRows();
+  const W = opt.width || Math.max(300, box.clientWidth);
+  const narrow = W < 560, rowH = narrow ? 98 : 80, mt = 4;
+  const H = mt + rows.length * rowH + 4;
+  const svg = svgIn(box, W, H, `医療費${fmt(calc.M)}円のときの、制度ごとの払い手の横棒グラフ（試算）`);
+  const x = d3.scaleLinear([0, Math.max(1, calc.M)], [0, W - 2]);
+  const tip = tipOf(box);
+  const SEG = [['self', 2, '本人'], ['pub', 1, '公費'], ['ins', 0, '保険']];
+  rows.forEach((r, i) => {
+    const top = mt + i * rowH;
+    svg.append('text').attr('class', 'kj-rowlab').attr('data-k', r.c.id).style('font-weight', 700).attr('x', 0).attr('y', top + 16).text(r.c.name);
+    let acc = 0;
+    SEG.forEach(([k, j, n]) => {
+      const v = r.s[k];
+      if (v <= 0) return;
+      const x0 = x(acc), w = Math.max(1, x(acc + v) - x(acc));
+      svg.append('rect').attr('data-k', r.c.id).attr('x', x0).attr('y', top + 24).attr('width', w).attr('height', 28).style('fill', PAY[j][1]);
+      if (w > 70) svg.append('text').attr('class', 'kj-val').attr('data-k', r.c.id).style('fill', '#fff').attr('x', x0 + w / 2).attr('y', top + 38).attr('dy', '0.34em').attr('text-anchor', 'middle').text(`${n} ${Math.round((v / r.s.M) * 100)}%`);
+      acc += v;
+    });
+    const t = svg.append('text').attr('class', 'kj-val').attr('data-k', r.c.id).attr('x', 0).attr('y', top + 70);
+    SEG.forEach(([k, j, n], q) => {
+      const sp = t.append('tspan').style('fill', PAY[j][1]).text(`■ ${n} ${fmt(r.s[k])}円`);
+      if (narrow && q === 2) sp.attr('x', 0).attr('dy', 17); else if (q) sp.attr('dx', 12);
+    });
+    if (!opt.exporting) svg.append('rect').attr('class', 'kj-hit').attr('x', 0).attr('width', W).attr('y', top).attr('height', rowH).style('fill', 'transparent')
+      .on('pointerenter pointermove', (ev) => { showTip(tip, box, ev, `${r.c.name}（試算）`, [['医療費の総額', `${fmt(r.s.M)}円`], ['本人の負担', `${fmt(r.s.self)}円`, PAY[2][1]], ['公費（税金）', `${fmt(r.s.pub)}円`, PAY[1][1]], ['公的医療保険の給付', `${fmt(r.s.ins)}円`, PAY[0][1]]], [r.s.capUsed ? '高額療養費の上限を超えた分は、保険の給付に入れて計算' : '高額療養費の上限は超えていません', `出典：${(CALC_SRC[r.c.id] || []).join('・')}（試算はこのサイトで計算）`]); markOn(box, r.c.id); })
+      .on('pointerleave', (ev) => leaveTip(ev, tip, box));
+  });
+}
+function simCondText() {
+  const o = calcOpts();
+  return `70歳未満・窓口${Math.round(calc.rate * 10)}割・${o.kb ? o.kb.t : ''}・${calc.multi ? '多数回該当' : '通常の上限'}。HIVは自立支援医療の上限${fmt(o.jcap)}円、結核の入院は${calc.high ? '所得の多い世帯（月2万円まで本人負担）' : '本人負担のない世帯'}`;
+}
+function renderSimMeta() {
+  if (!CASES.length || calc.M === null) return;
+  payKey($('#cost-sim-key'));
+  $('#cost-sim-title').textContent = `医療費が${fmt(calc.M)}円（1か月）のとき、制度ごとの払い手（試算）`;
+  $('#cost-sim-cap').textContent = `${simCondText()}の場合。上の条件を変えると、グラフと保存する画像も変わります。病気どうしの医療費の大きさを比べるものではありません。`;
+  const rows = simRows();
+  setInsight('cost-sim-insight', [`同じ${fmt(calc.M)}円の医療費でも、本人の負担は${rows.map((r) => `${r.c.name.replace(/（.*$/, '')} ${fmt(r.s.self)}円`).join('、')}と、使える制度で大きく変わります。`, '公費（税金）が出るのは、HIV・結核の制度を使う場合です。']);
+  $('#cost-sim-src').replaceChildren(srcLine([...new Set(Object.values(CALC_SRC).flat())], [['数字の種類', '試算（制度のきまりからこのサイトで計算）'], ['単位', '円（1か月）']]));
+}
+EXPORTS['cost-sim'] = () => ({ title: `医療費が${fmt(calc.M)}円のとき、誰がいくら払う？（制度ごとの試算）`, file: `医療費_${calc.M}円の払い手`, color: '#2462b0',
+  sub: `単位：円（1か月の医療費とその内訳）／高額療養費は令和8年8月〜令和9年7月診療分の額／${simCondText()}／制度のきまりからの試算`,
+  legend: [[2, '本人の負担'], [1, '公費（税金）'], [0, '公的医療保険の給付']].map(([j, n]) => ({ type: 'bar', name: n, hex: PAY[j][2] })), source: srcText([...new Set(Object.values(CALC_SRC).flat())]), draw: drawSim, height: 420 });
+/* --- 病気のカード（トップと「4つの感染症」） --- */
+function dzCard(d) {
+  const o = overviewOf(d), w = worldNum(d), tr = trendOf(d);
+  const c = (k) => cardText(d, k) || {};
+  const pre = ckAggregate(ckSystems().filter((x) => /^(jpets|health_form)$/.test(x.ID)), d);
+  const at = ckAggregate(ckSystems().filter((x) => x.時期 === '入国時'), d);
+  const sc = scenarios().find((r) => r.病気 === d.name);
+  const ss = sc ? scenarioSplit(sc) : null;
+  const row = (ic, t, ...kids) => h('div', {}, h('dt', {}, icon(ic), t), h('dd', {}, ...kids));
+  return h('article', { class: 'kj-dzc', style: `--c:${colorOf(d)}` },
+    h('div', { class: 'kj-dzc-head' }, illu(d.id), h('div', {}, h('h3', {}, d.label), h('p', { class: 'kj-dzc-one' }, c('one').文 || ''))),
+    h('dl', {},
+      row('route', '感染経路', h('span', {}, c('route').文 || '—')),
+      row('globe', '世界の現状', w ? h('span', {}, `${w.見出し}：`, h('b', { class: 'kj-em' }, `約${man(w.値)}${w.単位}`), `（${w.年}年・${w.種類}）`) : '—'),
+      row('jp', '日本の現状', h('span', {}, `${d.what}：`, h('b', { class: 'kj-em' }, `${fmt(o.最新値)}${d.unit}`), `（${o.最新確定年}年・確定値）`), h('span', {}, h('span', { class: `kj-trendtag ${tr.cls}` }, tr.tag), ` ${o.最初の年}年の${o['10年前と比べて(倍)'].toFixed(1)}倍`)),
+      ckSystems().length ? row('pass', '入国時の検査', h('span', {}, '入国前：', s5(pre.st, pre.star), '　入国時：', s5(at.st, at.star)), h('span', {}, c('entry').文 || '')) : null,
+      row('care', '治療・予防', h('span', {}, c('care').文 || '—')),
+      row('yen', '医療費の目安', ss ? h('span', {}, `${sc.名前}：総額 `, h('b', { class: 'kj-em' }, `${fmt(ss.M)}円`), `、本人 ${fmt(ss.self)}円（${sc.種類}）`) : h('span', {}, h('span', { class: 'kj-tag kj-tag-unk' }, '公表値未確認')), h('span', {}, c('cost').文 || ''))),
+    c('note').文 ? h('p', { class: 'kj-dzc-note' }, c('note').文) : null,
+    h('a', { class: 'kj-btn kj-dzc-go', href: `#${d.id}`, 'data-nav': '' }, `${d.label}を詳しく見る →`));
+}
+function renderDZ() {
+  ['#home-dz-cards', '#dz-cards'].forEach((sel) => { const b = $(sel); if (b) b.replaceChildren(...(EX.data.length ? DISEASES.map(dzCard) : [noData('病気のカードのデータを読み込めませんでした。')])); });
+}
+/* --- 制度の課題を考える（Q&A） --- */
+const QA_BL = [['確認された事実', 'kj-qa-fact', '✔'], ['制度上の課題', 'kj-qa-issue', '!'], ['未確認事項', 'kj-qa-unk', '?']];
+function renderKadai() {
+  const qs = d3.groups(exOf('問い'), (r) => r.番号);
+  $('#kadai-list').replaceChildren(...(qs.length ? qs.map(([no, rows], i) => {
+    const links = exOf('問いのリンク').filter((r) => r.番号 === no);
+    return h('details', { class: 'kj-acc', id: `kadai-${no}`, open: i === 0 },
+      h('summary', {}, h('span', { class: 'kj-qa-q', 'aria-hidden': 'true' }, `Q${no}`), h('span', { class: 'kj-acc-t' }, rows[0].見出し), h('span', { class: 'kj-acc-gist' }, QA_BL.map(([k]) => `${k} ${rows.filter((r) => r.種類 === k).length}件`).join('・'))),
+      h('div', { class: 'kj-acc-body kj-qa-blocks' }, ...QA_BL.map(([k, cls, mk]) => {
+        const xs = rows.filter((r) => r.種類 === k);
+        return xs.length ? h('div', { class: `kj-qa-b ${cls}` }, h('h4', {}, h('i', { 'aria-hidden': 'true' }, mk), k), h('ul', {}, ...xs.map((r) => h('li', {}, r.未確認の種類 ? h('span', { class: 'kj-unk-kind' }, r.未確認の種類) : null, r.文, ...srcBtns(r.出典ID))))) : null;
+      }), links.length ? h('p', { class: 'kj-links' }, '根拠を見る：', ...links.map((l) => h('a', { href: `#${l.リンク}`, 'data-nav': '' }, l.見出し))) : null));
+  }) : [noData('Q&Aのデータを読み込めませんでした。')]));
+  $('#home-kadai-list').replaceChildren(...qs.map(([no, rows]) => h('li', {}, h('a', { href: `#kadai-${no}`, 'data-nav': '' }, h('b', {}, `Q${no}. ${rows[0].見出し}`), h('span', {}, QA_BL.map(([k]) => `${k} ${rows.filter((r) => r.種類 === k).length}件`).join('・'))))));
+  indexDirty = true;
+}
+function renderTerms() {
+  $('#guide-terms-list').replaceChildren(...exOf('用語').map((r) => h('div', {}, h('dt', {}, r.見出し, r.読み ? h('small', {}, r.読み) : null), h('dd', {}, r.文, ...srcBtns(r.出典ID)))));
+}
+// 試算に使う数字を data.js（costs の「試算の設定」）から読む
+function loadCalcSettings() {
+  const get = (k) => { const r = CO.data.find((x) => x.区分 === '試算の設定' && x.項目 === k); if (!r) return null; try { return typeof r.値 === 'string' ? JSON.parse(r.値) : r.値; } catch (e) { return r.値; } };
+  KOGAKU = get('高額療養費') || [];
+  CASES = get('制度') || [];
+  SPLIT_EX = get('割合の例') || [];
+  if (calc.M === null) calc.M = get('金額の初期値');
+}
+function renderExplainer() {
+  renderStep1(); renderStep2(); renderCkMatrix($('#step3-mx')); renderStep4(); renderStep5();
+  renderDZ(); renderChecker(); renderKadai(); renderTerms();
+}
+
 /* ===== タブ（矢印キーでも切りかえ） ===== */
 function setupTabs(list, onChange) {
   const tabs = $$('[role="tab"]', list);
@@ -3511,20 +4486,21 @@ function setupTabs(list, onChange) {
 /* ===== ページの切りかえ（#の後ろでページを決める。ブラウザの「戻る」も使える） ===== */
 const VIEW_INFO = {
   home: { label: 'トップ', path: [] },
-  countries: { label: '国別に比較する', group: 'world', path: [] },
-  world: { label: 'HIV/エイズ 世界の動向', group: 'world', path: [['国別に比較する', 'countries']] },
+  countries: { label: '世界の状況（国別に比較する）', group: 'world', path: [] },
+  world: { label: 'HIV/エイズ 世界の動向', group: 'world', path: [['世界の状況', 'countries']] },
   diseases: { label: '4つの感染症', group: 'disease', path: [] },
   hiv: { label: 'HIV/エイズ', group: 'disease', path: [['4つの感染症', 'diseases']] },
   syphilis: { label: '梅毒', group: 'disease', path: [['4つの感染症', 'diseases']] },
   measles: { label: 'はしか（麻しん）', group: 'disease', path: [['4つの感染症', 'diseases']] },
   tb: { label: '結核', group: 'disease', path: [['4つの感染症', 'diseases']] },
-  entry: { label: '日本の入国前対策', group: 'entry', path: [] },
-  compare: { label: '国内の状況（4つの病気の比較）', group: 'domestic', path: [] },
-  kouhi: { label: '公費で受けられる支援', group: 'domestic', path: [['国内の状況・公費', 'compare']] },
-  cost: { label: '治療費と公的負担', group: 'domestic', path: [['国内の状況・公費', 'compare']] },
-  guide: { label: '数字の見方・注意事項', group: 'docs', path: [] },
-  sources: { label: '出典一覧', group: 'docs', path: [['資料・注意事項', 'guide']] },
-  links: { label: 'さらに詳しく調べたい方へ', group: 'docs', path: [['資料・注意事項', 'guide']] },
+  entry: { label: '入国時の検査（どんな健康診断を受ける？）', group: 'entry', path: [] },
+  compare: { label: '日本の状況（4つの病気の比較）', group: 'domestic', path: [] },
+  kouhi: { label: '公費で受けられる支援', group: 'cost', path: [['治療費と負担', 'cost']] },
+  cost: { label: '治療費と公的負担', group: 'cost', path: [] },
+  kadai: { label: '制度の課題を考える', group: 'kadai', path: [] },
+  guide: { label: '数字の見方・ことばの説明', group: 'docs', path: [] },
+  sources: { label: '出典一覧', group: 'docs', path: [['詳しく調べる', 'guide']] },
+  links: { label: 'さらに詳しく調べたい方へ', group: 'docs', path: [['詳しく調べる', 'guide']] },
 };
 const ALIAS = { top: 'home', overview: 'home', '': 'home' };
 let currentView = null;
@@ -3649,11 +4625,11 @@ document.addEventListener('keydown', (ev) => {
 });
 const toTop = $('#kj-totop');
 toTop.addEventListener('click', () => { toPageTop(true); const hd = $(`#${currentView} .kj-h2, #${currentView} .kj-h1`); if (hd) hd.focus({ preventScroll: true }); });
-document.addEventListener('scroll', () => { toTop.hidden = ROOT.getBoundingClientRect().top > -700; }, { passive: true, capture: true });
+// 「上に戻る」はいつも表示する（2026-10-27）
 if (window.ResizeObserver) new ResizeObserver(measureHead).observe($('#kj-top'));
 
 // 検索：見出し・説明・表の行・国名・出典から探す。ひらがな・カタカナ、全角・半角の違いは気にしない
-const SYN = [['はしか', '麻しん', '麻疹', 'ましん', 'measles', 'mr'], ['梅毒', 'ばいどく', 'syphilis'], ['結核', 'けっかく', 'tb'], ['hiv', 'エイズ', 'aids'], ['公費', 'こうひ', '助成', '無料'], ['自己負担', 'じこふたん', '負担', '費用'], ['prep', '予防薬', 'ぷれっぷ'], ['免責', 'めんせき'], ['出典', 'しゅってん', '資料'], ['差別', '偏見', 'さべつ', 'へんけん'], ['速報', 'そくほう'], ['確定', 'かくてい'], ['覚書', 'mou', 'moc', 'おぼえがき', '協力覚書'], ['jpets', '入国前結核スクリーニング'], ['水際', '入国前'], ['医療費', '治療費', 'いくら'], ['薬価', 'やっか'], ['国別', 'くにべつ'], ['who', '世界保健機関']];
+const SYN = [['はしか', '麻しん', '麻疹', 'ましん', 'measles', 'mr'], ['梅毒', 'ばいどく', 'syphilis'], ['結核', 'けっかく', 'tb'], ['hiv', 'エイズ', 'aids'], ['公費', 'こうひ', '助成', '無料'], ['自己負担', 'じこふたん', '負担', '費用'], ['prep', '予防薬', 'ぷれっぷ'], ['免責', 'めんせき'], ['出典', 'しゅってん', '資料'], ['差別', '偏見', 'さべつ', 'へんけん'], ['速報', 'そくほう'], ['確定', 'かくてい'], ['覚書', 'mou', 'moc', 'おぼえがき', '協力覚書'], ['jpets', '入国前結核スクリーニング'], ['水際', '入国前'], ['医療費', '治療費', 'いくら'], ['薬価', 'やっか'], ['国別', 'くにべつ'], ['who', '世界保健機関'], ['健康診断', '健診', 'けんしん', '検査'], ['在留資格', 'ビザ', 'ざいりゅう'], ['課題', 'かだい', 'q&a'], ['外国生まれ', '外国籍', '国籍'], ['保険', 'ほけん', '国民健康保険', '健康保険'], ['公表値未確認', '公表値を確認できず', '確認できず', '未確認']];
 const normQ = (s) => normKana(s).replace(/\s+/g, ' ');
 const SYN_N = SYN.map((g) => g.map(normQ));
 let INDEX = [], indexDirty = true;
@@ -3734,7 +4710,7 @@ $('#kj-q').addEventListener('keydown', (ev) => {
   }
   if (ev.key === 'Enter') { ev.preventDefault(); const x = lastResults[Math.max(0, resultIdx)]; if (x) openResult(x); }
 });
-const QUICK = [['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
+const QUICK = [['入国時の検査の早見', 'entry-check'], ['100万円の医療費の試算', 'cost-sim'], ['外国人の場合の制度', 'cost-foreign'], ['制度の課題を考える', 'kadai'], ['ことばの説明', 'guide-terms'], ['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
 $('#kj-quick').replaceChildren(h('span', { class: 'kj-search-hint', style: 'width:100%' }, 'よく見られる項目'), ...QUICK.map(([t, id]) => h('a', { href: `#${id}`, class: 'kj-mini', 'data-nav': '' }, t)));
 
 /* ===== 操作の受け付け ===== */
@@ -3786,7 +4762,12 @@ function renderAll() {
   renderCountries();
   renderCountryDetail();
   renderEntry();
+  loadCalcSettings();
   renderCost();
+  renderCostCards();
+  renderCostForeign();
+  chart($('#cost-sim-chart'), () => drawSim($('#cost-sim-chart')));
+  renderExplainer();
   renderOthers();
   renderLinks();
   indexDirty = true;
@@ -3800,13 +4781,13 @@ dash.onData(() => {
   }
   if (!ds.every((x) => x.status === 'ok')) return;
   // 国別・入国前対策・医療費などは、なくてもほかのページは表示する
-  const od = ['countries', 'entry', 'costs', 'info', 'others', 'guide'].map((k) => { const x = dash.data(k); return x && x.status === 'ok' && Array.isArray(x.data) ? x : { status: 'ok', data: [] }; });
+  const od = ['countries', 'entry', 'costs', 'info', 'others', 'guide', 'explain'].map((k) => { const x = dash.data(k); return x && x.status === 'ok' && Array.isArray(x.data) ? x : { status: 'ok', data: [] }; });
   const all = ds.concat(od);
   const same = lastData && all.every((x, i) => x.data === lastData[i]);
   if (same) { markAll(); measureHead(); if (!kouhiMode) renderKouhiMap(); drawVisible(); return; }
   lastData = all.map((x) => x.data);
   [A, Y, B, N, S, W, K] = ds;
-  [C, E, CO, I, OT, GD] = od;
+  [C, E, CO, I, OT, GD, EX] = od;
   O = dash.data('overview'); YC = dash.data('ytd_change');
   renderAll();
   if (!routed) { routed = true; route(true); } else drawVisible();

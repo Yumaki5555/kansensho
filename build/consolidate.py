@@ -330,6 +330,22 @@ if seido:
         entry.append({"区分": "在留資格", "名前": x["scheme"], "JPETS": x.get("jpets"), "内容": x.get("health_check"), "状態": x.get("status"), "出典ID": ids("制度", x.get("source_ids"))})
     for x in P.get("gaps", []):
         entry.append({"区分": "確認事項", "名前": x["kind"], "内容": x["text"], "出典ID": ids("制度", x.get("source_ids"))})
+    # 入国時の検査の早見（2026-10-27）：在留資格の選択肢・状態の説明・制度ごとの判定のきまり（上から順に当てはまったものを使う）
+    ck = P.get("checker")
+    if ck:
+        for x in ck["statuses"]:
+            entry.append({"区分": "早見の状態", "名前": x["status"], "内容": x["text"], "出典ID": None})
+        for x in ck["schemes"]:
+            entry.append({"区分": "早見の在留資格", "名前": x["name"], "内容": x["text"], "出典ID": None})
+        for x in ck["systems"]:
+            entry.append({"区分": "早見", "ID": x["id"], "時期": x["timing"], "種類": x["kind"], "名前": x["name"], "ルール": json.dumps(x["rules"], ensure_ascii=False),
+                          "対象": x.get("conditions"), "対象外": x.get("exceptions"), "根拠": x.get("basis"), "基準日": ck["as_of"], "リンク": x.get("link"),
+                          "出典ID": ids("制度", x.get("source_ids"))})
+    rs = seido.get("residents")
+    if rs:
+        entry.append({"区分": "在留外国人数", "名前": "総数", "値": rs["total"], "基準日": rs["as_of"], "内容": rs.get("note"), "出典ID": ids("制度", rs.get("source_ids"))})
+        for x in rs["by_status"]:
+            entry.append({"区分": "在留外国人数", "名前": x["status"], "値": x["value"], "基準日": rs["as_of"], "内容": None, "出典ID": ids("制度", rs.get("source_ids"))})
     add_sources(seido["sources"], "制度", ENTRY)
 
 # 医療費（costs.json）
@@ -347,12 +363,27 @@ if cd:
         if "1人当たり" in (it.get("note") or "") and "確かめられない" in (it.get("note") or ""):
             continue
         costs.append({"区分": "費用", "病気": it["disease"], "項目": it["item"], "名前": it.get("label") or it["item"], "値": it.get("value"), "単位": it.get("unit"),
-                      "年": it.get("year"), "種類": it.get("kind"), "対象": it.get("target"), "範囲": it.get("scope"), "負担": it.get("payer"),
+                      "期間": it.get("period"), "年": it.get("year"), "種類": it.get("kind"), "対象": it.get("target"), "範囲": it.get("scope"), "負担": it.get("payer"),
                       "計算式": it.get("calc"), "注": it.get("note"), "状態": it.get("status"), "探した資料": it.get("searched"), "出典ID": ids("費用", it.get("source_ids"))})
     calc = cd.get("calculator") or {}
     for r in calc.get("rules", []):
         costs.append({"区分": "試算のきまり", "病気": "共通", "項目": r["case"], "名前": r["case"], "値": json.dumps(r.get("steps"), ensure_ascii=False),
                       "注": "　".join(t for t in [r.get("conditions"), f"例：{r['example']}" if r.get("example") else None] if t), "出典ID": ids("費用", r.get("source_ids"))})
+    # 試算に使う数字（2026-10-27 にページのプログラムから元データへ移した）：高額療養費の上限・制度の一覧・割合の例・金額の初期値
+    if calc.get("kogaku"):
+        kg = calc["kogaku"]
+        costs.append({"区分": "試算の設定", "病気": "共通", "項目": "高額療養費", "名前": kg["text"], "値": json.dumps(kg["rows"], ensure_ascii=False), "年": kg.get("valid"), "出典ID": ids("費用", kg.get("source_ids"))})
+    for key, label in [("cases", "制度"), ("split_examples", "割合の例")]:
+        if calc.get(key):
+            costs.append({"区分": "試算の設定", "病気": "共通", "項目": label, "名前": label, "値": json.dumps(calc[key], ensure_ascii=False), "出典ID": None})
+    if calc.get("default_amount"):
+        costs.append({"区分": "試算の設定", "病気": "共通", "項目": "金額の初期値", "名前": "試算の最初に入っている1か月の医療費", "値": calc["default_amount"], "単位": "円", "出典ID": None})
+    for sc in calc.get("scenarios", []):
+        costs.append({"区分": "代表例", "病気": sc["disease"], "項目": sc["case"], "名前": sc["title"], "期間": sc.get("period"), "種類": sc.get("kind"),
+                      "値": sc.get("annual"), "月ごとの医療費": json.dumps(sc.get("months_amounts"), ensure_ascii=False) if sc.get("months_amounts") is not None else None,
+                      "条件": json.dumps({k: sc[k] for k in ("kb", "jcap", "jcap_text", "high", "rate") if k in sc}, ensure_ascii=False), "注": sc.get("note"), "出典ID": ids("費用", sc.get("source_ids"))})
+    for f in cd.get("foreigners", []):
+        costs.append({"区分": "外国人の場合", "病気": "共通", "項目": f["topic"], "名前": f["topic"], "値": f.get("same"), "注": f["text"], "出典ID": ids("費用", f.get("source_ids"))})
     if calc.get("why"):
         notes.append({"病気": COST, "種類": "試算について", "表": None, "文": calc["why"], "出典ID": None})
     if cd.get("comparable"):
@@ -389,6 +420,22 @@ if og:
                       "調べられる内容": g.get("content"), "URL": g["url"], "言語": g.get("lang")})
     add_sources(og["sources"], "他", OTHERS)
 
+# 一般向けの解説（explainer.json）：病気のカード・ことばの説明・制度の課題を考えるQ&A。出典IDは出典一覧の番号をそのまま書いている
+explain = []
+ex = load("explainer.json")
+if ex:
+    fid = lambda lst: "・".join(dict.fromkeys(lst or [])) or None
+    for x in ex["cards"]:
+        explain.append({"区分": "カード", "病気": x["disease"], "項目": x["key"], "文": x["text"], "出典ID": fid(x.get("source_ids"))})
+    for x in ex["terms"]:
+        explain.append({"区分": "用語", "見出し": x["term"], "読み": x.get("yomi") or None, "文": x["text"], "出典ID": fid(x.get("source_ids"))})
+    for q in ex["qa"]:
+        for kind, key in [("確認された事実", "facts"), ("制度上の課題", "issues"), ("未確認事項", "unknown")]:
+            for x in q.get(key, []):
+                explain.append({"区分": "問い", "番号": q["no"], "見出し": q["q"], "種類": kind, "未確認の種類": x.get("kind"), "文": x["text"], "出典ID": fid(x.get("source_ids"))})
+        for label, href in q.get("links", []):
+            explain.append({"区分": "問いのリンク", "番号": q["no"], "見出し": label, "リンク": href})
+
 for who, items in CAUTIONS.items():
     for t in items:
         notes.append({"病気": who, "種類": "見るときの注意", "表": None, "文": t, "出典ID": None})
@@ -414,13 +461,13 @@ akeys = [(a["病気"], a["年"], a["指標"]) for a in annual]
 assert len(akeys) == len(set(akeys))
 wkeys = [w["名前"] for w in world]
 assert len(wkeys) == len(set(wkeys))
-used = {i for x in annual + ytd + breakdown + notes + world + kouhi + countries + entry + costs + info + others if x.get("出典ID") for i in x["出典ID"].split("・")}
+used = {i for x in annual + ytd + breakdown + notes + world + kouhi + countries + entry + costs + info + others + explain if x.get("出典ID") for i in x["出典ID"].split("・")}
 known = {s["出典ID"] for s in sources}
 assert used <= known, used - known
 assert len(known) == len(sources), "出典IDが重複しています"
 
 for fname, rows in [("annual", annual), ("ytd2026", ytd), ("breakdown", breakdown), ("notes", notes), ("sources", sources), ("world", world), ("kouhi", kouhi),
-                    ("countries", countries), ("entry", entry), ("costs", costs), ("info", info), ("others", others), ("guide", guide)]:
+                    ("countries", countries), ("entry", entry), ("costs", costs), ("info", info), ("others", others), ("guide", guide), ("explain", explain)]:
     with open(os.path.join(out_dir, f"{fname}.json"), "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=0)
     print(fname, len(rows), "rows", os.path.getsize(os.path.join(out_dir, f"{fname}.json")), "bytes")

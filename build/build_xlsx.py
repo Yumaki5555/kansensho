@@ -15,6 +15,7 @@ data_dir, out_path = sys.argv[1], sys.argv[2]
 load = lambda n: json.load(open(os.path.join(data_dir, f"{n}.json"), encoding="utf-8"))  # noqa: E731
 annual, ytd, breakdown, notes, sources, world, kouhi = (load(n) for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi"])
 countries, entry, costs, info, others, guide = (load(n) for n in ["countries", "entry", "costs", "info", "others", "guide"])
+explain = load("explain") if os.path.exists(os.path.join(data_dir, "explain.json")) else []
 WORLD = "HIV/エイズ（世界）"
 KOUHI = "公費の制度"
 
@@ -518,18 +519,91 @@ r += 1
 r = section(ew, r, "制度上の確認事項")
 for x in [e for e in entry if e["区分"] == "確認事項"]:
     r = para(ew, r, f"【{x['名前']}】{x['内容']}（出典 {x.get('出典ID') or '—'}）", cols=8, per_line=150)
+rs_ = [e for e in entry if e["区分"] == "在留外国人数"]
+if rs_:
+    r += 1
+    r = section(ew, r, f"参考：在留外国人数（{rs_[0]['基準日']}、出入国在留管理庁。外国人の人数で、感染症の数字ではありません）")
+    r = header(ew, r, ["区分", "人数", "基準日", "", "", "", "", "出典ID"])
+    for x in rs_:
+        put(ew, r, 1, x["名前"], f_bold, fill_soft)
+        put(ew, r, 2, x["値"], fmt="#,##0")
+        put(ew, r, 3, x["基準日"])
+        put(ew, r, 8, x.get("出典ID"))
+        r += 1
 finish(ew, "A4")
 
 # ===== 医療費 =====
+# 試算のきまり（ページの payRaw・roundSplit・paySplit・yearSplit と同じ計算。Excelとページの数字をそろえるため）
+def _setting(k):
+    for c in costs:
+        if c["区分"] == "試算の設定" and c["項目"] == k:
+            return json.loads(c["値"]) if isinstance(c["値"], str) else c["値"]
+    return None
+
+
+KG = _setting("高額療養費") or []
+jsround = lambda x: math.floor(x + 0.5)  # noqa: E731  JavaScript の Math.round と同じ丸め
+
+
+def k_cap(kb, M, multi):
+    return kb["tasu"] if multi else (kb["base"] + max(0, M - kb["th"]) * 0.01 if kb["th"] else kb["base"])
+
+
+def pay_raw(kind, M, o):
+    cap = k_cap(o["kb"], M, o["multi"])
+    own = min(M * o["rate"], cap)
+    self_ = own
+    if kind == "hiv":
+        self_ = min(M * 0.1, o["jcap"], own)
+    if kind == "tb_out":
+        self_ = min(M * 0.05, own)
+    if kind == "tb_in":
+        self_ = min(20000, own) if o["high"] else 0
+    return {"ins": M - own, "own": own, "self": self_, "cap": M * o["rate"] > cap}
+
+
+def round_split(kind, M, ins, self_):
+    total = jsround(M)
+    insurer = max(0, min(total, jsround(ins)))
+    patient = total - insurer if kind == "ins" else max(0, min(total - insurer, jsround(self_)))
+    return {"M": total, "ins": insurer, "pub": total - insurer - patient, "self": patient}
+
+
+def year_split(kind, M, o):
+    hits, s_ins, s_own, s_self = (3 if o["multi"] else 0), 0, 0, 0
+    for _ in range(12):
+        p = pay_raw(kind, M, dict(o, multi=hits >= 3))
+        if p["cap"]:
+            hits += 1
+        s_ins, s_own, s_self = s_ins + p["ins"], s_own + p["own"], s_self + p["self"]
+    refund = max(0, s_own - o["kb"]["year"]) if kind == "ins" else 0
+    return round_split(kind, M * 12, s_ins + refund, s_self - refund)
+
+
+def scenario_split(x):
+    cond = json.loads(x.get("条件") or "{}")
+    ms = json.loads(x.get("月ごとの医療費") or "[]") or []
+    o = {"rate": cond.get("rate", 0.3), "kb": KG[cond.get("kb", 2)], "jcap": cond.get("jcap", 0), "high": bool(cond.get("high")), "multi": False}
+    if isinstance(x.get("値"), (int, float)):
+        return year_split(x["項目"], x["値"] / 12, o)
+    if not ms:
+        return None
+    ps = []
+    for M in ms:
+        p = pay_raw(x["項目"], M, o)
+        ps.append(round_split(x["項目"], M, p["ins"], p["self"]))
+    return {k: sum(q[k] for q in ps) for k in ["M", "ins", "pub", "self"]}
+
+
 if costs:
     mw = sheet("医療費", wb.sheetnames.index("公費の支援") + 1 if "公費の支援" in wb.sheetnames else None)
     mw.cell(row=1, column=1, value="感染症の治療には、1人当たりいくらかかる？（医療費の総額と、税金・公的医療保険・本人負担）").font = f_title
     mw.row_dimensions[1].height = 26
-    for i, w in enumerate([12, 30, 16, 12, 16, 14, 34, 34, 24, 40, 14], 1):
+    for i, w in enumerate([12, 30, 16, 12, 14, 16, 14, 34, 34, 24, 40, 14], 1):
         mw.column_dimensions[get_column_letter(i)].width = w
-    r = para(mw, 2, "「医療費の総額」は「税金の負担」と同じではありません。公表値を確認できなかった項目は「公表値を確認できず」とし、推測の数字は入れていません。「制度上の額」は国が決めた価格（薬価・点数・上限額）、「試算」は制度のきまりから計算したもので、実際に払われた額（実績値）とは違います。", f_note, cols=11, per_line=170)
+    r = para(mw, 2, "「医療費の総額」は「税金の負担」と同じではありません。公的医療保険の主な財源は保険料で、保険の給付をそのまま「税金」とは呼べません。公表値を確認できなかった項目は「公表値を確認できず」とし、推測の数字は入れていません。「制度上の額」は国が決めた価格（薬価・点数・上限額）、「試算」は制度のきまりから計算したもので、実際に払われた額（実績値）とは違います。", f_note, cols=11, per_line=170)
     r += 1
-    r = header(mw, r, ["病気", "項目", "金額など", "単位", "対象年・時点", "数字の種類", "対象", "範囲", "負担", "注・計算式・探した資料", "出典ID"])
+    r = header(mw, r, ["病気", "項目", "金額など", "単位", "期間", "対象年・時点", "数字の種類", "対象", "範囲", "負担", "注・計算式・探した資料", "出典ID"])
     first_m = r
     for x in [c for c in costs if c["区分"] == "費用"]:
         put(mw, r, 1, x["病気"], f_bold, fill_soft, align=wrap)
@@ -540,25 +614,64 @@ if costs:
         else:
             put(mw, r, 3, v, f_bold, fmt="#,##0.##" if isinstance(v, (int, float)) else None, align=wrap if isinstance(v, str) else None)
         put(mw, r, 4, x.get("単位"), align=wrap)
-        put(mw, r, 5, x.get("年"), align=wrap)
-        put(mw, r, 6, x.get("種類"), align=wrap)
-        put(mw, r, 7, x.get("対象"), align=wrap)
-        put(mw, r, 8, x.get("範囲"), align=wrap)
-        put(mw, r, 9, x.get("負担"), align=wrap)
-        put(mw, r, 10, "／".join(t for t in [x.get("注"), f"計算：{x['計算式']}" if x.get("計算式") else None, f"探した資料：{x['探した資料']}" if x.get("探した資料") and v is None else None] if t), align=wrap)
-        put(mw, r, 11, x.get("出典ID"), align=wrap)
+        put(mw, r, 5, x.get("期間"), align=wrap)
+        put(mw, r, 6, x.get("年"), align=wrap)
+        put(mw, r, 7, x.get("種類"), align=wrap)
+        put(mw, r, 8, x.get("対象"), align=wrap)
+        put(mw, r, 9, x.get("範囲"), align=wrap)
+        put(mw, r, 10, x.get("負担"), align=wrap)
+        put(mw, r, 11, "／".join(t for t in [x.get("注"), f"計算：{x['計算式']}" if x.get("計算式") else None, f"探した資料：{x['探した資料']}" if x.get("探した資料") and v is None else None] if t), align=wrap)
+        put(mw, r, 12, x.get("出典ID"), align=wrap)
         mw.row_dimensions[r].height = max(30, 15 * math.ceil(max(len(x.get("対象") or "") / 18, len(x.get("範囲") or "") / 18, len(x.get("注") or "") / 22 + (len(x.get("探した資料") or "") / 22 if v is None else 0))))
         r += 1
-    mw.auto_filter.ref = f"A{first_m - 1}:K{r - 1}"
+    mw.auto_filter.ref = f"A{first_m - 1}:L{r - 1}"
     r += 1
+    # 病気ごとの代表例（ページの「病気ごとの費用」と同じ計算。払い手の分け方は制度のきまりからの試算）
+    sc_rows = [c for c in costs if c["区分"] == "代表例"]
+    if sc_rows and KG:
+        r = section(mw, r, "病気ごとの代表例（ページの「病気ごとの費用」と同じ試算）")
+        r = header(mw, r, ["病気", "代表例", "医療費の総額（円）", "本人の負担（円）", "公費・税金（円）", "公的医療保険の給付（円）", "期間", "数字の種類", "計算の条件", "", "", "出典ID"])
+        for x in sc_rows:
+            s = scenario_split(x)
+            put(mw, r, 1, x["病気"], f_bold, fill_soft, align=wrap)
+            put(mw, r, 2, x["名前"], align=wrap)
+            if s:
+                for j, k in enumerate(["M", "self", "pub", "ins"]):
+                    put(mw, r, 3 + j, s[k], f_bold if k == "M" else f_body, fmt="#,##0")
+            else:
+                mw.merge_cells(start_row=r, start_column=3, end_row=r, end_column=6)
+                put(mw, r, 3, "公表値を確認できず", f_note, fill_no, align=wrap)
+            put(mw, r, 7, x.get("期間"), align=wrap)
+            put(mw, r, 8, x.get("種類"), align=wrap)
+            mw.merge_cells(start_row=r, start_column=9, end_row=r, end_column=11)
+            put(mw, r, 9, x.get("注"), align=wrap)
+            put(mw, r, 12, x.get("出典ID"), align=wrap)
+            mw.row_dimensions[r].height = max(30, 15 * math.ceil(len(x.get("注") or "") / 60))
+            r += 1
+        r += 1
+    fr = [c for c in costs if c["区分"] == "外国人の場合"]
+    if fr:
+        r = section(mw, r, "外国人の場合は？（日本人と同じ制度か、どこまで公表されているか）")
+        r = header(mw, r, ["項目", "", "日本人と同じ制度か", "", "説明", "", "", "", "", "", "", "出典ID"])
+        for x in fr:
+            mw.merge_cells(start_row=r, start_column=1, end_row=r, end_column=2)
+            put(mw, r, 1, x["名前"], f_bold, fill_soft, align=wrap)
+            mw.merge_cells(start_row=r, start_column=3, end_row=r, end_column=4)
+            put(mw, r, 3, x.get("値"), align=wrap)
+            mw.merge_cells(start_row=r, start_column=5, end_row=r, end_column=11)
+            put(mw, r, 5, x.get("注"), align=wrap)
+            put(mw, r, 12, x.get("出典ID"), align=wrap)
+            mw.row_dimensions[r].height = max(30, 15 * math.ceil(len(x.get("注") or "") / 90))
+            r += 1
+        r += 1
     HEAD = {"財源": "参考：医療費の財源", "保険のきまり": "参考：公的医療保険のきまり", "試算のきまり": "試算のきまり"}
     for x in [c for c in costs if c["区分"] in HEAD]:
         r = section(mw, r, f"{HEAD[x['区分']]}（{x.get('項目')}）")
-        r = para(mw, r, f"{x.get('名前') or ''} {x.get('値') or ''}（{x.get('年') or ''}）{x.get('注') or ''}（出典 {x.get('出典ID') or '—'}）", cols=11, per_line=170)
+        r = para(mw, r, f"{x.get('名前') or ''} {x.get('値') or ''}（{x.get('年') or ''}）{x.get('注') or ''}（出典 {x.get('出典ID') or '—'}）", cols=12, per_line=170)
     r += 1
     r = section(mw, r, "この内容を見るときの注意")
     for n in notes_of("医療費", "比べ方") + notes_of("医療費", "試算について"):
-        r = para(mw, r, f"・{n['文']}", cols=11, per_line=170)
+        r = para(mw, r, f"・{n['文']}", cols=12, per_line=170)
     finish(mw, f"C{first_m}")
 
 # ===== 病気の解説 =====
@@ -618,6 +731,139 @@ if others or guide:
             r += 1
     finish(ow, "A3")
 
+# ===== 入国時の検査の早見（2026-10-27）=====
+ck_sys = [e for e in entry if e["区分"] == "早見"]
+ck_sch = [e["名前"] for e in entry if e["区分"] == "早見の在留資格"]
+DZ = [("HIV/エイズ", "HIV/エイズ"), ("梅毒", "梅毒"), ("はしか", "はしか（麻しん）"), ("結核", "結核")]
+
+
+def ck_eval(sy, dname, dlabel, j, s):
+    for r_ in json.loads(sy["ルール"]):
+        c = r_.get("if") or {}
+        if c.get("d") and dname not in c["d"]:
+            continue
+        if c.get("not_d") and dname in c["not_d"]:
+            continue
+        if c.get("s") and s not in c["s"]:
+            continue
+        if c.get("j") and j not in c["j"]:
+            continue
+        return r_["st"]
+    return "未確認"
+
+
+def ck_agg(sy, dname, dlabel):
+    sts = {ck_eval(sy, dname, dlabel, j, s) for j in ["実施中", "開始予定", "なし"] for s in ck_sch}
+    if len(sts) == 1:
+        return sts.pop()
+    if "義務あり" in sts:
+        return "条件付き"
+    if "導入予定" in sts:
+        return "導入予定＊"
+    if "条件付き" in sts:
+        return "条件付き"
+    return "一律義務なし＊"
+
+
+if ck_sys:
+    kw = sheet("入国時の検査の早見", wb.sheetnames.index("協力覚書・入国前対策") + 1 if "協力覚書・入国前対策" in wb.sheetnames else None)
+    kw.cell(row=1, column=1, value="日本に来る外国人は、どんな健康診断を受けるの？（入国時の検査の早見）").font = f_title
+    kw.row_dimensions[1].height = 26
+    for i, w in enumerate([14, 30, 26, 16, 70, 34, 12, 22], 1):
+        kw.column_dimensions[get_column_letter(i)].width = w
+    r = para(kw, 2, "ページの「条件を選んで調べる（入国時の検査の早見）」と同じ判定のきまりです。上の行から順に、条件に当てはまった最初の行の状態になります。{国}などはページで選んだ国名などに置きかわります。状態は「義務あり」「条件付き」「導入予定」「一律義務なし」「未確認」の5つで、未確認は「調べたが見つからない」と「このサイトでは調べていない」を分けています。国籍で結果が変わるのはJPETSだけです。", f_note, cols=8, per_line=150)
+    r = para(kw, r, "国別の感染状況（その国の人口全体の数字）は、その国から日本へ入国する人の感染の割合ではなく、国籍から個人の感染や危険性を判断することはできません。", f_note, cols=8, per_line=150)
+    r += 1
+    r = section(kw, r, "4つの病気 × 制度（国籍・在留資格のすべての組み合わせでまとめた状態。＊は一部が未確認、または一部はこれから）")
+    r = header(kw, r, ["時期", "制度", ""] + [lb for _, lb in DZ] + [""])
+    for sy in ck_sys:
+        put(kw, r, 1, sy["時期"], f_bold, fill_soft)
+        kw.merge_cells(start_row=r, start_column=2, end_row=r, end_column=3)
+        put(kw, r, 2, sy["種類"], align=wrap)
+        for j, (dn, dl) in enumerate(DZ):
+            st = ck_agg(sy, dn, dl)
+            put(kw, r, 4 + j, st, f_bold, fill_yes if st.startswith("義務") else fill_cond if st.startswith(("条件", "導入", "未確認")) else fill_no, align=center)
+        r += 1
+    r += 1
+    r = section(kw, r, "判定のきまり（制度ごと）")
+    r = header(kw, r, ["時期", "制度", "当てはまる条件", "状態", "理由（ページに出る文）", "根拠", "基準日", "出典ID"])
+    first_k = r
+    for sy in ck_sys:
+        for r_ in json.loads(sy["ルール"]):
+            c = r_.get("if") or {}
+            cond = "・".join(x for x in [
+                f"病気：{'・'.join(c['d'])}" if c.get("d") else "", f"病気：{'・'.join(c['not_d'])}以外" if c.get("not_d") else "",
+                f"在留資格：{'・'.join(c['s'])}" if c.get("s") else "", f"国（JPETS）：{'・'.join(c['j'])}" if c.get("j") else ""] if x) or "（ほかのすべて）"
+            put(kw, r, 1, sy["時期"], f_bold, fill_soft, align=wrap)
+            put(kw, r, 2, f"{sy['種類']}：{sy['名前']}", align=wrap)
+            put(kw, r, 3, cond, align=wrap)
+            put(kw, r, 4, r_["st"] + (f"（{r_['unk']}）" if r_.get("unk") else ""), f_bold, align=wrap)
+            put(kw, r, 5, r_["why"], align=wrap)
+            put(kw, r, 6, sy.get("根拠"), align=wrap)
+            put(kw, r, 7, sy.get("基準日"))
+            put(kw, r, 8, sy.get("出典ID"), align=wrap)
+            kw.row_dimensions[r].height = max(30, 15 * math.ceil(max(len(r_["why"]) / 42, len(sy.get("根拠") or "") / 20)))
+            r += 1
+    kw.auto_filter.ref = f"A{first_k - 1}:H{r - 1}"
+    r += 1
+    r = section(kw, r, "状態の見方")
+    for e in [e for e in entry if e["区分"] == "早見の状態"]:
+        r = para(kw, r, f"・{e['名前']}：{e['内容']}", cols=8, per_line=150)
+    finish(kw, "A5")
+
+# ===== 制度の課題を考える・ことばの説明（2026-10-27）=====
+qa = [x for x in explain if x["区分"] == "問い"]
+if qa:
+    qw = sheet("制度の課題を考える")
+    qw.cell(row=1, column=1, value="制度の課題を考える（6つの問い）").font = f_title
+    qw.row_dimensions[1].height = 26
+    for i, w in enumerate([6, 34, 16, 20, 90, 24], 1):
+        qw.column_dimensions[get_column_letter(i)].width = w
+    r = para(qw, 2, "公的資料で確認された事実、資料から読み取れる制度上の課題（対象外の部分・まだ始まっていない部分など）、未確認事項を分けています。すべての文に出典IDを付けています（出典一覧シート）。", f_note, cols=6, per_line=150)
+    r += 1
+    r = header(qw, r, ["番号", "問い", "区分", "未確認の種類", "内容", "出典ID"])
+    first_q = r
+    for x in qa:
+        put(qw, r, 1, x["番号"], align=center)
+        put(qw, r, 2, x["見出し"], f_bold, fill_soft, align=wrap)
+        put(qw, r, 3, x["種類"], f_bold, fill_yes if x["種類"] == "確認された事実" else fill_cond if x["種類"] == "制度上の課題" else fill_no, align=wrap)
+        put(qw, r, 4, x.get("未確認の種類"), align=wrap)
+        put(qw, r, 5, x["文"], align=wrap)
+        put(qw, r, 6, x.get("出典ID"), align=wrap)
+        qw.row_dimensions[r].height = max(20, 15 * math.ceil(len(x["文"]) / 58))
+        r += 1
+    qw.auto_filter.ref = f"A{first_q - 1}:F{r - 1}"
+    finish(qw, f"A{first_q}")
+terms = [x for x in explain if x["区分"] == "用語"]
+cards = [x for x in explain if x["区分"] == "カード"]
+if terms or cards:
+    tw = sheet("ことばの説明・病気のカード")
+    tw.cell(row=1, column=1, value="ことばの説明と、4つの病気のカード（短い説明）").font = f_title
+    for i, w in enumerate([22, 18, 90, 26], 1):
+        tw.column_dimensions[get_column_letter(i)].width = w
+    r = 3
+    r = section(tw, r, "ことばの説明")
+    r = header(tw, r, ["ことば", "読み", "説明", "出典ID"])
+    for x in terms:
+        put(tw, r, 1, x["見出し"], f_bold, fill_soft, align=wrap)
+        put(tw, r, 2, x.get("読み"), align=wrap)
+        put(tw, r, 3, x["文"], align=wrap)
+        put(tw, r, 4, x.get("出典ID"), align=wrap)
+        tw.row_dimensions[r].height = max(20, 15 * math.ceil(len(x["文"]) / 58))
+        r += 1
+    r += 1
+    r = section(tw, r, "4つの病気のカード（トップページ・4つの感染症のページ）")
+    r = header(tw, r, ["病気", "項目", "説明", "出典ID"])
+    KEYN = {"one": "ひと言で", "route": "感染経路", "care": "治療・予防", "entry": "入国時の検査", "cost": "医療費の目安", "note": "数字の注意"}
+    for x in cards:
+        put(tw, r, 1, x["病気"], f_bold, fill_soft, align=wrap)
+        put(tw, r, 2, KEYN.get(x["項目"], x["項目"]), align=wrap)
+        put(tw, r, 3, x["文"], align=wrap)
+        put(tw, r, 4, x.get("出典ID"), align=wrap)
+        tw.row_dimensions[r].height = max(20, 15 * math.ceil(len(x["文"]) / 58))
+        r += 1
+    finish(tw, "A3")
+
 # 見るときの注意
 cs = wb.create_sheet("見るときの注意")
 cs.sheet_view.showGridLines = False
@@ -664,10 +910,10 @@ intro.column_dimensions["A"].width = 22
 intro.column_dimensions["B"].width = 100
 intro.cell(row=1, column=1, value="世界の感染症と日本の水際対策：HIV/エイズ・梅毒・はしか・結核").font = f_title
 rows = [
-    ("作成日", "2026年10月26日（この日までに国が公表した資料をもとにしています）"),
+    ("作成日", "2026年10月26日作成、2026年10月27日更新（入国前結核スクリーニングなどの制度は2026年10月27日に公式資料で確認）"),
     ("内容", "4つの感染症について、国別の感染状況（WHO）、日本と協力覚書を結んだ国と入国前の健康確認の制度、国内の最新の人数・過去10年の動き・男女・年代・都道府県・2026年の途中経過、国の対策、検査・予防・治療で使える公費の制度、治療費と公的負担をまとめました。国別の数字はその国の人口全体の数字で、日本へ入国する人の数字ではありません。"),
     ("使った資料", "国内の数字と制度は国の公式資料（厚生労働省、国立健康危機管理研究機構〔JIHS〕、出入国在留管理庁、外国人技能実習機構、e-Gov法令検索など）を使いました。HIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。国別の数字と世界の動向は、国連の機関（世界保健機関〔WHO〕・国連合同エイズ計画〔UNAIDS〕・国際移住機関〔IOM〕・国連統計部）の公式資料を使っています。公費の制度のうち結核の医療費助成の一部などは、自治体の公式ページで確かめました。"),
-    ("シートの説明", "「国別の比較」…世界の国・地域の結核・はしか・HIV・梅毒の数字（WHO）と、協力覚書・入国前の結核検査。\n「協力覚書・入国前対策」…協力覚書の一覧と、入国前・入国時の健康確認の制度、制度上の確認事項。\n「4つの比較」…4つの病気を1つの表で比べます。\n「公費の支援」…検査・予防・治療で使える公費の制度の一覧と、病気ごとの説明、HIVの治療の自己負担の上限。\n「医療費」…治療費と、税金・公的医療保険・本人負担の内訳（確認できた公表値と、確認できなかった項目）。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「HIV・世界の動向」…世界全体と、日本と協力覚書を結んだ国のHIVの状況（UNAIDSの推計）、移住者とHIV、入国前の健康診断。\n「病気の解説」…概要・感染経路・世界の状況・検査・予防・治療。\n「その他・資料の案内」…その他の感染症の簡単な紹介と、さらに詳しく調べるための資料。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
+    ("シートの説明", "「国別の比較」…世界の国・地域の結核・はしか・HIV・梅毒の数字（WHO）と、協力覚書・入国前の結核検査。\n「協力覚書・入国前対策」…協力覚書の一覧と、入国前・入国時の健康確認の制度、制度上の確認事項、在留外国人数。\n「入国時の検査の早見」…国・在留資格・感染症・時期ごとに、どの制度で検査が義務かを判定するきまりと、4つの病気×制度のまとめ。\n「4つの比較」…4つの病気を1つの表で比べます。\n「公費の支援」…検査・予防・治療で使える公費の制度の一覧と、病気ごとの説明、HIVの治療の自己負担の上限。\n「医療費」…治療費と、税金・公的医療保険・本人負担の内訳（確認できた公表値と、確認できなかった項目）。費用の期間、病気ごとの代表例の試算、外国人の場合の制度。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「HIV・世界の動向」…世界全体と、日本と協力覚書を結んだ国のHIVの状況（UNAIDSの推計）、移住者とHIV、入国前の健康診断。\n「病気の解説」…概要・感染経路・世界の状況・検査・予防・治療。\n「その他・資料の案内」…その他の感染症の簡単な紹介と、さらに詳しく調べるための資料。\n「制度の課題を考える」…6つの問いについて、確認された事実・制度上の課題・未確認事項。\n「ことばの説明・病気のカード」…むずかしいことばの説明と、4つの病気の短い説明。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
     ("確定値", "国が1年分の届出を集計し直した数。"),
     ("速報値", "毎週や3か月ごとに出る途中の数。あとから変わることがあります。表では黄色で示しています。"),
     ("届出数", "医師が感染症と診断して保健所に届け出た数。検査を受けていない人などは入らないため、実際に感染している人の数とは同じではありません。"),
