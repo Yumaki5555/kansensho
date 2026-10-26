@@ -83,6 +83,10 @@
   .kj-hl td { outline: 2px solid var(--color-fg-muted); outline-offset: -2px; }
   .kj-fail { display: flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
   .kj-fail::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+  .kj-tile > h3 { margin: 0; font-size: var(--cds-font-size-body); font-weight: var(--cds-font-weight-medium); }
+  .kj-table td.kj-name { white-space: nowrap; font-weight: var(--cds-font-weight-medium); }
+  .kj-table td.kj-muted { color: var(--color-fg-muted); }
+  .kj-table .kj-tag, .kj-table th.kj-tag { text-align: left; white-space: nowrap; color: var(--color-fg-muted); }
   .kj-foot { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.7; border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-md); }
   .kj [data-dash-source-state=empty] { color: transparent; }
   .kj [data-dash-source-state=refreshing] { opacity: 0.5; transition: opacity var(--cds-dur-slow); }
@@ -93,10 +97,11 @@
     <h1 class="kj-title">日本の感染症を知る</h1>
     <p class="kj-sub">HIV/エイズ・梅毒・はしか・結核の広がりを、国の公式資料だけでまとめました。</p>
     <p class="kj-take" id="takeaway">10年前と比べて、HIV/エイズは<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=HIV/エイズ">—</span>倍、結核は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=結核">—</span>倍に減りました。梅毒は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=梅毒">—</span>倍で、高い水準が続いています。はしかは2026年に入って急に増え、<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=はしか">—</span>で前年の同じ時期の<span class="kj-em dash-skeleton" data-source="overview" data-field="前年同期の倍" data-where="病気=はしか">—</span>倍になっています。</p>
-    <p class="kj-cap">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構）が公表している資料から作成。数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。</p>
+    <p class="kj-cap">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構）が公表している資料から作成。数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料と、日本の協力覚書についての国の資料から作りました。</p>
     <nav class="kj-nav" aria-label="ページ内の移動">
       <button type="button" class="kj-chip" data-target="overview">4つの比較</button>
       <button type="button" class="kj-chip" data-target="hiv">HIV/エイズ</button>
+      <button type="button" class="kj-chip" data-target="world">HIV/エイズ 世界の動向</button>
       <button type="button" class="kj-chip" data-target="syphilis">梅毒</button>
       <button type="button" class="kj-chip" data-target="measles">はしか</button>
       <button type="button" class="kj-chip" data-target="tb">結核</button>
@@ -189,6 +194,66 @@
     </div>
   </section>
 
+  <section class="kj-section" id="world" aria-labelledby="world-h">
+    <h2 class="kj-h2" id="world-h"><span class="kj-swatch" data-i="0"></span>HIV/エイズ 世界の動向</h2>
+    <p class="kj-lede" id="world-lede"><span>数え方：</span><span class="dash-skeleton" id="world-lede-text" data-source="notes" data-field="文" data-where="病気=HIV/エイズ（世界）&amp;種類=数え方&amp;番号=1">—</span></p>
+    <div class="kj-tiles" id="world-tiles">
+      <article class="kj-tile">
+        <h3>世界でHIVとともに生きる人</h3>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="world" data-field="感染している人" data-where="名前=世界" data-fmt="man">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">推計の幅 <span class="dash-skeleton" data-source="world" data-field="感染している人（下限）" data-where="名前=世界" data-fmt="man">—</span>〜<span class="dash-skeleton" data-source="world" data-field="感染している人（上限）" data-where="名前=世界" data-fmt="man">—</span>人</p>
+      </article>
+      <article class="kj-tile">
+        <h3>1年間に新たに感染した人</h3>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="world" data-field="新たな感染" data-where="名前=世界" data-fmt="man">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">2010年より <span class="kj-delta dash-skeleton" data-source="world" data-field="新たな感染の増減（2010年比・%）" data-where="名前=世界" data-fmt="pct">—</span></p>
+      </article>
+      <article class="kj-tile">
+        <h3>1年間にエイズで亡くなった人</h3>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="world" data-field="エイズによる死亡" data-where="名前=世界" data-fmt="man">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">2010年より <span class="kj-delta dash-skeleton" data-source="world" data-field="死亡の増減（2010年比・%）" data-where="名前=世界" data-fmt="pct">—</span></p>
+      </article>
+      <article class="kj-tile">
+        <h3>治療（抗HIV薬）を受けている人</h3>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="world" data-field="治療を受けている人（%）" data-where="名前=世界">—</span><span class="kj-unit">%</span></p>
+        <p class="kj-line">感染を知っている人 <span class="dash-skeleton" data-source="world" data-field="感染を知っている人（%）" data-where="名前=世界">—</span>%、ウイルスが抑えられている人 <span class="dash-skeleton" data-source="world" data-field="ウイルスが抑えられている人（%）" data-where="名前=世界">—</span>%（どれも、HIVとともに生きる人全体のうちの割合）</p>
+      </article>
+    </div>
+    <p class="kj-cap"><span class="dash-skeleton" data-source="world" data-field="年" data-where="名前=世界">—</span>年の推計。出典 <button type="button" class="kj-src" data-src="世界-2">世界-2</button></p>
+    <div class="kj-grid">
+      <figure class="kj-card kj-wide" id="world-change">
+        <figcaption><h3>日本と協力覚書を結んだ国：新たな感染は2010年と比べて増えた？減った？</h3><p class="kj-cap">1年間に新たに感染した人の数を、2010年と比べた増減（%）。右（赤）が増加、左（緑）が減少です。棒にふれると人数も出ます。</p></figcaption>
+        <div class="kj-plot dash-skeleton" id="world-change-chart" data-source="world"></div>
+        <p class="kj-cap" id="world-change-note"></p>
+      </figure>
+      <div class="kj-card kj-wide" id="world-table-card">
+        <h3>国ごとの数字（<span class="dash-skeleton" data-source="world" data-field="年" data-where="名前=世界">—</span>年）</h3>
+        <p class="kj-cap">「特定技能」「技能実習」は、日本がその国と外国人材の受け入れについて協力覚書（MOC）を結んでいる制度です。表は感染している人の多い順。「新たな感染」「エイズによる死亡」は1年間の人数、「15〜49歳の感染率」はその年代の人口のうち感染している人の割合です。「&lt;100」は100人未満という意味です。</p>
+        <div class="kj-scroll">
+          <table class="kj-table" id="world-table" data-source="world" data-row-key="名前">
+            <thead><tr><th data-field="名前">国</th><th data-field="協力覚書" class="kj-tag">協力覚書</th><th data-field="感染している人">感染している人</th><th data-field="15〜49歳の感染率（%）">15〜49歳の感染率</th><th data-field="新たな感染">新たな感染</th><th data-field="新たな感染の増減（2010年比・%）">2010年比</th><th data-field="エイズによる死亡">エイズによる死亡</th><th data-field="治療を受けている人（%）">治療を受けている人</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <button type="button" class="kj-src" data-src="世界-1">出典 世界-1（UNAIDS）</button>
+      </div>
+      <div class="kj-card" id="world-regions">
+        <h3>地域で比べる</h3>
+        <p class="kj-cap">協力覚書の国の多くはアジア太平洋、ウズベキスタン・キルギス・タジキスタンは東欧・中央アジアの地域に入ります。</p>
+        <div class="kj-scroll">
+          <table class="kj-table" id="world-region-table" data-source="world" data-row-key="名前">
+            <thead><tr><th data-field="名前">地域</th><th data-field="感染している人">感染している人</th><th data-field="新たな感染">新たな感染</th><th data-field="新たな感染の増減（2010年比・%）">2010年比</th><th data-field="治療を受けている人（%）">治療</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="kj-card" id="world-moc"><h3>日本の協力覚書（特定技能・技能実習）</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+      <div class="kj-card" id="world-iom"><h3>移住者とHIV（国連の機関の見方）</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+      <div class="kj-card" id="world-jpets"><h3>日本の入国前の健康診断とIOM</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+      <div class="kj-card kj-wide" id="world-cautions"><h3>この数字を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
   <section class="kj-section" id="syphilis" aria-labelledby="syphilis-h">
     <h2 class="kj-h2" id="syphilis-h"><span class="kj-swatch" data-i="1"></span>梅毒</h2>
     <p class="kj-lede" id="syphilis-lede"><span>数え方：</span><span class="dash-skeleton" id="syphilis-lede-text" data-source="notes" data-field="文" data-where="病気=梅毒&amp;種類=数え方&amp;番号=1">—</span></p>
@@ -266,11 +331,12 @@
 
   <section class="kj-section" id="sources" aria-labelledby="sources-h">
     <h2 class="kj-h2" id="sources-h">出典一覧</h2>
-    <p class="kj-cap">すべて国の公式資料です。各項目の「出典」を押すと、ここの該当する行に移動します。確認日はすべて2026年10月26日。</p>
+    <p class="kj-cap">すべて国、または国連の機関（UNAIDS・IOM）の公式資料です。各項目の「出典」を押すと、ここの該当する行に移動します。確認日はすべて2026年10月26日。</p>
     <label class="kj-filter" for="src-filter">病気で絞り込む
       <select class="kj-select" id="src-filter">
         <option value="">すべて</option>
         <option value="HIV/エイズ">HIV/エイズ</option>
+        <option value="HIV/エイズ（世界）">HIV/エイズ（世界）</option>
         <option value="梅毒">梅毒</option>
         <option value="はしか">はしか</option>
         <option value="結核">結核</option>
@@ -284,7 +350,7 @@
     </div>
   </section>
 
-  <footer class="kj-foot">このページの数字は、国の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</footer>
+  <footer class="kj-foot">このページの数字は、国（世界の動向は国連の機関）の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</footer>
 </div>
 
 <script>
@@ -735,6 +801,124 @@ function drawLede(d, N) {
   p.textContent = n ? n.文 : '—';
 }
 
+// 世界の動向（UNAIDSの推計）。大きな数は「万」で読みやすくする
+const man = (n) => (n >= 10000 ? `${fmt(Math.round(n / 1000) / 10)}万` : fmt(n));
+const showW = (v, kind) => {
+  if (v === null || v === undefined || v === '') return '—';
+  if (typeof v === 'string') return v;
+  if (kind === 'man') return man(v);
+  if (kind === 'pct') return pct(v).replace('.0%', '%');
+  return Number.isInteger(v) ? fmt(v) : String(v);
+};
+function drawWorldMarks(W) {
+  document.querySelectorAll('#world [data-source="world"][data-field]').forEach((e) => {
+    if (e.closest('table')) return;
+    if (W.status !== 'ok') {
+      if (stateOf(W) === 'error') { e.textContent = '—'; e.classList.remove('dash-skeleton'); } else e.classList.add('dash-skeleton');
+      return;
+    }
+    const w = parseWhere(e.getAttribute('data-where') || '');
+    const row = W.data.find((r) => w.every(([k, v]) => String(r[k]) === v));
+    const field = e.getAttribute('data-field');
+    const v = row ? row[field] : null;
+    e.classList.remove('dash-skeleton', 'kj-up', 'kj-down');
+    e.textContent = field === '年' && v ? String(v) : showW(v, e.dataset.fmt);
+    if (e.dataset.fmt === 'pct' && typeof v === 'number') e.classList.add(v > 0 ? 'kj-up' : 'kj-down');
+  });
+}
+
+function drawWorldChange(W) {
+  const box = document.getElementById('world-change-chart');
+  const note = document.getElementById('world-change-note');
+  if (!prep(box, W)) { note.textContent = ''; return; }
+  const key = '新たな感染の増減（2010年比・%）';
+  const all = W.data.filter((r) => r.区分 === '国');
+  const rows = all.filter((r) => typeof r[key] === 'number').sort((a, b) => b[key] - a[key]);
+  const none = all.filter((r) => typeof r[key] !== 'number').map((r) => r.名前);
+  note.textContent = none.length ? `${none.join('・')}は、UNAIDSにこの数字がないため載せていません。` : '';
+  const rowH = 24, mt = 4, mb = 24;
+  const H = mt + rows.length * rowH + mb;
+  box.style.minHeight = `${H}px`;
+  const W0 = Math.max(280, box.clientWidth);
+  const svg = svgIn(box, W0, H, '協力覚書を結んだ国の、新たな感染の2010年比の横棒グラフ');
+  const ml = measure(svg, rows.map((r) => r.名前), 'kj-rowlab') + 10;
+  // 棒の先に％を書くので、左右にその文字の幅だけ空ける。狭い画面では目盛りは0だけにする
+  const labW = (vs) => (vs.length ? measure(svg, vs.map((v) => showW(v, 'pct')), 'kj-val') + 8 : 0);
+  const negW = labW(rows.map((r) => r[key]).filter((v) => v < 0)), posW = labW(rows.map((r) => r[key]).filter((v) => v > 0));
+  const lo = Math.min(0, d3.min(rows, (r) => r[key])), hi = Math.max(0, d3.max(rows, (r) => r[key]));
+  const x = d3.scaleLinear([lo, hi], [ml + negW, W0 - posW]);
+  const ticks = W0 < 480 ? [0] : x.ticks(6);
+  const bottom = mt + rows.length * rowH;
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', (t) => x(t)).attr('x2', (t) => x(t)).attr('y1', mt).attr('y2', bottom)
+    .style('stroke', (t) => (t === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)'));
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('class', 'kj-tick').attr('x', (t) => x(t)).attr('y', bottom + 16).attr('text-anchor', 'middle').text((t) => `${t > 0 ? '+' : ''}${t}%`);
+  const tip = tipOf(box);
+  rows.forEach((r, i) => {
+    const top = mt + i * rowH, v = r[key];
+    const color = v > 0 ? 'var(--color-bad)' : 'var(--color-ok)';
+    svg.append('text').attr('class', 'kj-rowlab').attr('x', ml - 8).attr('y', top + rowH / 2).attr('dy', '0.32em').attr('text-anchor', 'end').text(r.名前);
+    svg.append('rect').attr('x', Math.min(x(0), x(v))).attr('width', Math.max(1, Math.abs(x(v) - x(0))))
+      .attr('y', top + 5).attr('height', rowH - 10).attr('rx', 2).style('fill', color);
+    svg.append('text').attr('class', 'kj-val').attr('x', v > 0 ? x(v) + 4 : x(v) - 4).attr('y', top + rowH / 2).attr('dy', '0.32em')
+      .attr('text-anchor', v > 0 ? 'start' : 'end').text(showW(v, 'pct'));
+    svg.append('rect').attr('x', 0).attr('width', W0).attr('y', top).attr('height', rowH).style('fill', 'transparent')
+      .on('pointerenter pointermove', (ev) => {
+        tip.replaceChildren(el('div', 'kj-tip-h', `${r.名前}（${r.年}年）`));
+        [['新たな感染', showW(r.新たな感染)], ['2010年比', showW(v, 'pct')], ['感染している人', showW(r.感染している人)]].forEach(([a, b]) => {
+          const row = el('div', 'kj-tip-row');
+          row.append(el('span', '', a), el('b', '', b));
+          tip.append(row);
+        });
+        tip.hidden = false;
+        const [mx, my] = d3.pointer(ev, box);
+        tip.style.left = `${Math.max(0, Math.min(box.clientWidth - tip.offsetWidth, mx + 12))}px`;
+        tip.style.top = `${Math.max(0, my - tip.offsetHeight - 10)}px`;
+      })
+      .on('pointerleave', () => hideTip(tip));
+  });
+}
+
+function drawWorldTable(id, W, rows, cols) {
+  const body = document.getElementById(id).tBodies[0];
+  if (W.status !== 'ok') {
+    body.replaceChildren();
+    if (stateOf(W) === 'error') { const r = body.insertRow(); const c = r.insertCell(); c.colSpan = cols.length; c.append(el('div', 'kj-fail', '読み込めませんでした')); }
+    return;
+  }
+  body.replaceChildren(...rows.map((r) => {
+    const tr = el('tr');
+    tr.dataset.key = r.名前;
+    cols.forEach(([col, kind], j) => {
+      const v = r[col];
+      const td = el('td', j === 0 ? 'kj-name' : col === '協力覚書' ? 'kj-tag' : '');
+      if (kind === 'pct' && typeof v === 'number') td.classList.add(v > 0 ? 'kj-up' : 'kj-down');
+      td.textContent = col.endsWith('（%）') && v !== null && v !== undefined ? `${v}%` : showW(v, kind);
+      if (v === null || v === undefined) td.classList.add('kj-muted');
+      tr.append(td);
+    });
+    return tr;
+  }));
+}
+
+function drawWorld(W, N) {
+  drawWorldMarks(W);
+  drawWorldChange(W);
+  const order = (a, b) => (typeof b.感染している人 === 'number' ? b.感染している人 : -1) - (typeof a.感染している人 === 'number' ? a.感染している人 : -1);
+  const countries = W.status === 'ok' ? W.data.filter((r) => r.区分 === '国').sort(order) : [];
+  drawWorldTable('world-table', W, countries, [['名前'], ['協力覚書'], ['感染している人', 'man'], ['15〜49歳の感染率（%）'],
+    ['新たな感染'], ['新たな感染の増減（2010年比・%）', 'pct'], ['エイズによる死亡'], ['治療を受けている人（%）']]);
+  const regions = W.status === 'ok' ? W.data.filter((r) => r.区分 !== '国') : [];
+  drawWorldTable('world-region-table', W, regions, [['名前'], ['感染している人', 'man'], ['新たな感染', 'man'], ['新たな感染の増減（2010年比・%）', 'pct'], ['治療を受けている人（%）']]);
+  const who = 'HIV/エイズ（世界）';
+  drawLede({ id: 'world', name: who }, N);
+  drawList(document.querySelector('#world-moc .kj-list'), N, who, '協力覚書');
+  drawList(document.querySelector('#world-iom .kj-list'), N, who, '移住者とHIV');
+  drawList(document.querySelector('#world-jpets .kj-list'), N, who, '入国前の健康診断');
+  drawList(document.querySelector('#world-cautions .kj-list'), N, who, '見るときの注意');
+}
+
 let srcFilter = '';
 function drawSources(S) {
   const table = document.getElementById('src-table');
@@ -783,13 +967,16 @@ function go(id) {
   dash.setLink(id);
 }
 document.querySelectorAll('.kj [data-target]').forEach((b) => b.addEventListener('click', () => go(b.dataset.target)));
+document.querySelectorAll('.kj [data-src]').forEach((b) => b.addEventListener('click', () => jumpToSource(b.dataset.src)));
 document.querySelectorAll('.kj-swatch[data-i]').forEach((s) => { s.style.background = dash.colors[Number(s.dataset.i)]; });
 
 let linked = false;
 dash.onData(() => {
   const A = dash.data('annual'), Y = dash.data('ytd2026'), B = dash.data('breakdown');
   const N = dash.data('notes'), S = dash.data('sources'), O = dash.data('overview'), YC = dash.data('ytd_change');
+  const W = dash.data('world');
   drawOverviewMarks(O);
+  drawWorld(W, N);
   DISEASES.forEach((d, i) => {
     drawSpark(d, i, A);
     drawLede(d, N);

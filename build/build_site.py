@@ -17,11 +17,11 @@ SITE_URL = "https://yumaki5555.github.io/kansensho/"
 XLSX_SRC = os.path.join(ROOT, "日本の感染症の状況_2026年10月.xlsx")
 XLSX_PUB = "kansensho_2026-10.xlsx"
 TITLE = "日本の感染症を知る"
-DESC = "HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。"
+DESC = "HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。"
 
 os.makedirs(DOCS, exist_ok=True)
 data = {n: json.load(open(os.path.join(ROOT, "data", "out", f"{n}.json"), encoding="utf-8"))
-        for n in ["annual", "ytd2026", "breakdown", "notes", "sources"]}
+        for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world"]}
 data_js = "window.KJ_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
 open(os.path.join(DOCS, "data.js"), "w", encoding="utf-8").write(data_js)
 ver = hashlib.sha1(data_js.encode("utf-8")).hexdigest()[:8]
@@ -129,8 +129,8 @@ a:focus-visible {{ outline: 2px solid var(--color-fg); outline-offset: 2px; }}
 tail = f"""
 </main>
 <footer class="site-foot"><div class="site-foot-in">
-  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。くわしくは「出典一覧」をご覧ください。</p>
-  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（4つの比較、病気ごとの詳細、見るときの注意、出典一覧のシート入り）</p>
+  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。HIV/エイズの世界の動向は国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）の公式資料。くわしくは「出典一覧」をご覧ください。</p>
+  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（4つの比較、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
   <p><a href="https://yumaki5555.github.io/">「日本を知る。」のトップへ</a></p>
 </div></footer>
 </body>

@@ -13,7 +13,8 @@ from openpyxl.utils import get_column_letter
 sys.stdout.reconfigure(encoding="utf-8")
 data_dir, out_path = sys.argv[1], sys.argv[2]
 load = lambda n: json.load(open(os.path.join(data_dir, f"{n}.json"), encoding="utf-8"))  # noqa: E731
-annual, ytd, breakdown, notes, sources = (load(n) for n in ["annual", "ytd2026", "breakdown", "notes", "sources"])
+annual, ytd, breakdown, notes, sources, world = (load(n) for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world"])
+WORLD = "HIV/エイズ（世界）"
 
 FONT = "游ゴシック"
 GREEN = "28765B"
@@ -199,6 +200,54 @@ for name, sheet, display, main, ymain in SHEETS:
     ws.page_setup.fitToHeight = 0
     ws.sheet_properties.pageSetUpPr.fitToPage = True
 
+# HIV/エイズの世界の動向（UNAIDSの推計）
+wsw = wb.create_sheet("HIV・世界の動向", wb.sheetnames.index("HIV・エイズ") + 1)
+wsw.sheet_view.showGridLines = False
+wsw.cell(row=1, column=1, value="HIV/エイズ 世界の動向").font = f_title
+wsw.row_dimensions[1].height = 26
+r = para(wsw, 2, "数え方：" + notes_of(WORLD, "数え方")[0]["文"], f_note, cols=13, per_line=110)
+r += 1
+wcols = ["区分", "協力覚書", "感染している人", "感染している人（下限）", "感染している人（上限）", "15〜49歳の感染率（%）", "新たな感染",
+         "新たな感染の増減（2010年比・%）", "エイズによる死亡", "死亡の増減（2010年比・%）", "感染を知っている人（%）",
+         "治療を受けている人（%）", "ウイルスが抑えられている人（%）"]
+for part, rows_w in [(f"世界と地域（{world[0]['年']}年）", [w for w in world if w["区分"] != "国"]),
+                     (f"日本と協力覚書を結んだ国（{world[0]['年']}年、感染している人の多い順）",
+                      sorted([w for w in world if w["区分"] == "国"], key=lambda w: -(w["感染している人"] if isinstance(w["感染している人"], (int, float)) else -1)))]:
+    r = section(wsw, r, part)
+    r = header(wsw, r, ["名前"] + wcols + ["出典ID"])
+    for w in rows_w:
+        put(wsw, r, 1, w["名前"], f_bold, fill_soft)
+        for j, c in enumerate(wcols, 2):
+            v = w[c]
+            if v is None:
+                put(wsw, r, j, "—" if c != "協力覚書" else "", f_note, align=Alignment(horizontal="right"))
+            elif isinstance(v, str):
+                put(wsw, r, j, v, align=Alignment(horizontal="right" if c not in ("区分", "協力覚書") else "left", wrap_text=True))
+            else:
+                put(wsw, r, j, v, fmt='+0;-0;0' if "増減" in c else ("0.0" if isinstance(v, float) else "#,##0"))
+        put(wsw, r, len(wcols) + 2, w["出典ID"])
+        r += 1
+    r += 1
+r = para(wsw, r, "「<100」は100人未満、「—」はUNAIDSに数字がないことを表します。増減（2010年比・%）と割合（%）はUNAIDSの資料に書かれた値です。", f_note, cols=13, per_line=110)
+r += 1
+for kind, head in [("協力覚書", "日本の協力覚書（特定技能・技能実習）"), ("移住者とHIV", "移住者とHIV（国連の機関の見方）"),
+                   ("入国前の健康診断", "日本の入国前の健康診断とIOM")]:
+    r = section(wsw, r, head)
+    for n in notes_of(WORLD, kind):
+        r = para(wsw, r, f"{n['番号']}. {n['文']}" + (f"（出典 {n['出典ID']}）" if n["出典ID"] else ""), cols=13, per_line=110)
+    r += 1
+r = section(wsw, r, "この数字を見るときの注意")
+for n in notes_of(WORLD, "見るときの注意"):
+    r = para(wsw, r, f"・{n['文']}", cols=13, per_line=110)
+wsw.column_dimensions["A"].width = 26
+for i, w in enumerate([8, 22, 13, 12, 12, 12, 12, 13, 12, 13, 12, 12, 13, 10], 2):
+    wsw.column_dimensions[get_column_letter(i)].width = w
+wsw.freeze_panes = "B4"
+wsw.page_setup.orientation = "landscape"
+wsw.page_setup.fitToWidth = 1
+wsw.page_setup.fitToHeight = 0
+wsw.sheet_properties.pageSetUpPr.fitToPage = True
+
 # 4つの比較
 sm = wb.create_sheet("4つの比較", 1)
 sm.sheet_view.showGridLines = False
@@ -249,7 +298,7 @@ cs.column_dimensions["A"].width = 16
 cs.column_dimensions["B"].width = 110
 cs.cell(row=1, column=1, value="数字を見るときの注意").font = f_title
 r = 3
-for who in ["全体", "HIV/エイズ", "梅毒", "はしか", "結核"]:
+for who in ["全体", "HIV/エイズ", WORLD, "梅毒", "はしか", "結核"]:
     cs.cell(row=r, column=1, value=who if who != "全体" else "全体にかかわること").font = f_sec
     r += 1
     for n in [n for n in notes if n["病気"] == who and n["種類"] == "見るときの注意"]:
@@ -262,7 +311,7 @@ for who in ["全体", "HIV/エイズ", "梅毒", "はしか", "結核"]:
 # 出典一覧
 ss = wb.create_sheet("出典一覧")
 ss.sheet_view.showGridLines = False
-ss.cell(row=1, column=1, value="出典一覧（国の公式資料のみ）").font = f_title
+ss.cell(row=1, column=1, value="出典一覧（国と国連機関の公式資料のみ）").font = f_title
 para(ss, 2, "各シートの「出典ID」はこの表の番号です。URLはクリックで開けます。確認日は2026年10月26日。", f_note, cols=7)
 header(ss, 4, ["出典ID", "病気", "資料名", "発行元", "URL", "公表日・更新日", "確認日"])
 for i, w in enumerate([10, 11, 60, 30, 55, 22, 12], 1):
@@ -290,8 +339,8 @@ intro.cell(row=1, column=1, value="日本の感染症を知る：HIV/エイズ�
 rows = [
     ("作成日", "2026年10月26日（この日までに国が公表した資料をもとにしています）"),
     ("内容", "4つの感染症について、最新の人数、過去10年の動き、男女・年代・都道府県、2026年の途中経過、国の対策をまとめました。"),
-    ("使った資料", "国の公式資料だけを使いました（厚生労働省、国立健康危機管理研究機構〔JIHS〕）。HIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。"),
-    ("シートの説明", "「4つの比較」…4つの病気を1つの表で比べます。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
+    ("使った資料", "国の公式資料だけを使いました（厚生労働省、国立健康危機管理研究機構〔JIHS〕）。HIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（国連合同エイズ計画〔UNAIDS〕・国際移住機関〔IOM〕）の公式資料を使っています。"),
+    ("シートの説明", "「4つの比較」…4つの病気を1つの表で比べます。\n「HIV・エイズ」「梅毒」「はしか」「結核」…病気ごとの詳しい数字です。\n「HIV・世界の動向」…世界全体と、日本と協力覚書を結んだ国のHIVの状況（UNAIDSの推計）、移住者とHIV、入国前の健康診断。\n「見るときの注意」…数字を読むときに気をつけること。\n「出典一覧」…すべての資料名とURL。"),
     ("確定値", "国が1年分の届出を集計し直した数。"),
     ("速報値", "毎週や3か月ごとに出る途中の数。あとから変わることがあります。表では黄色で示しています。"),
     ("届出数", "医師が感染症と診断して保健所に届け出た数。検査を受けていない人などは入らないため、実際に感染している人の数とは同じではありません。"),

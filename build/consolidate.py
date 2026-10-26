@@ -36,7 +36,7 @@ CAUTIONS = {
         "「確定値」は、国が1年分の届出を集計し直した数です。「速報値」は、毎週や3か月ごとに出る途中の数で、あとから届出が追加されて変わることがあります。たとえば梅毒の2024年は、速報値14,663例が確定値では14,829例になりました。",
         "最新の確定値が出ている年は病気ごとに違います。HIV/エイズと結核は2025年、梅毒とはしかは2024年までです（2025年は速報値）。",
         "「2026年の途中経過」は、病気によって期間が違います。HIV/エイズは1〜6月ごろ（第1・第2四半期）、梅毒・はしか・結核は10月11日（第41週）までで、それぞれ前の年の同じ時期と比べています。",
-        "出典は国の公式資料（厚生労働省、国立健康危機管理研究機構）だけを使いました。ただしHIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。",
+        "出典は国の公式資料（厚生労働省、国立健康危機管理研究機構）だけを使いました。ただしHIV/エイズの年報は、厚生労働省のページから案内されている「エイズ予防情報ネット」（国の委託先）に置かれているものを使っています。HIV/エイズの「世界の動向」だけは、国連の機関（UNAIDS・IOM）の公式資料を使っています。",
         "前年比や「10年前と比べて何倍か」などは、資料の数字からこのまとめで計算したものです。",
     ],
     "HIV/エイズ": [
@@ -164,6 +164,26 @@ for key, name, prefix in DISEASES:
         sources.append({"出典ID": S(s["id"]), "病気": name, "資料名": s["title"], "発行元": s["publisher"],
                         "URL": s["url"], "公表日・更新日": s.get("published") or "記載なし", "確認日": s.get("accessed") or "2026-10-26"})
 
+# HIV/エイズの世界の動向（UNAIDSの推計と、IOM・日本の協力覚書の資料）
+WORLD = "HIV/エイズ（世界）"
+world = []
+wd = json.load(open(os.path.join(src_dir, "world_hiv.json"), encoding="utf-8"))
+WCOLS = [("plhiv", "感染している人"), ("plhiv_low", "感染している人（下限）"), ("plhiv_high", "感染している人（上限）"),
+         ("prev", "15〜49歳の感染率（%）"), ("new", "新たな感染"), ("deaths", "エイズによる死亡"),
+         ("chg_new", "新たな感染の増減（2010年比・%）"), ("chg_deaths", "死亡の増減（2010年比・%）"),
+         ("know", "感染を知っている人（%）"), ("art", "治療を受けている人（%）"), ("vls", "ウイルスが抑えられている人（%）")]
+for r in wd["rows"]:
+    world.append({"区分": r["kind"], "名前": r["name"], "英語名": r["en"], "協力覚書": r.get("moc"), "年": wd["data_year"],
+                  **{label: r.get(k) for k, label in WCOLS}, "出典ID": sid("世界", r["source_id"])})
+notes.append({"病気": WORLD, "種類": "数え方", "表": None, "文": wd["metric_note"], "出典ID": None})
+for kind, items in wd["notes"].items():
+    for n in items:
+        n = n if isinstance(n, dict) else {"text": n, "source_id": None}
+        notes.append({"病気": WORLD, "種類": kind, "表": None, "文": n["text"], "出典ID": sid("世界", n.get("source_id"))})
+for s in wd["sources"]:
+    sources.append({"出典ID": sid("世界", s["id"]), "病気": WORLD, "資料名": s["title"], "発行元": s["publisher"],
+                    "URL": s["url"], "公表日・更新日": s.get("published") or "記載なし", "確認日": s.get("accessed") or "2026-10-26"})
+
 for who, items in CAUTIONS.items():
     for t in items:
         notes.append({"病気": who, "種類": "見るときの注意", "表": None, "文": t, "出典ID": None})
@@ -171,6 +191,7 @@ for who, items in CAUTIONS.items():
 # 文章の中の仮の出典番号（S12など）を、出典一覧の番号（結核-12など）に置きかえる
 import re
 PREFIX = {name: prefix for _, name, prefix in DISEASES}
+PREFIX[WORLD] = "世界"
 for n in notes:
     if n["病気"] in PREFIX:
         n["文"] = re.sub(r"(?<![A-Za-z0-9])S(\d+)(?![0-9])", lambda m: f"{PREFIX[n['病気']]}-{m.group(1)}", n["文"])
@@ -187,11 +208,13 @@ keys = [(b["病気"], b["表"], b["区分"], b["列"]) for b in breakdown]
 assert len(keys) == len(set(keys)), "内訳の行が重複しています"
 akeys = [(a["病気"], a["年"], a["指標"]) for a in annual]
 assert len(akeys) == len(set(akeys))
-used = {x["出典ID"] for x in annual + ytd + breakdown + notes if x["出典ID"]}
+wkeys = [w["名前"] for w in world]
+assert len(wkeys) == len(set(wkeys))
+used = {x["出典ID"] for x in annual + ytd + breakdown + notes + world if x["出典ID"]}
 known = {s["出典ID"] for s in sources}
 assert used <= known, used - known
 
-for fname, rows in [("annual", annual), ("ytd2026", ytd), ("breakdown", breakdown), ("notes", notes), ("sources", sources)]:
+for fname, rows in [("annual", annual), ("ytd2026", ytd), ("breakdown", breakdown), ("notes", notes), ("sources", sources), ("world", world)]:
     with open(os.path.join(out_dir, f"{fname}.json"), "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=0)
     print(fname, len(rows), "rows", os.path.getsize(os.path.join(out_dir, f"{fname}.json")), "bytes")

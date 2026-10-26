@@ -1,0 +1,586 @@
+{
+ "data_year": 2025,
+ "metric_note": "国連合同エイズ計画（UNAIDS）が各国と一緒に作った推計値（2026年版の推計で、2025年の数字）。届出で数えた数ではなく、調査や報告のデータをもとに計算した「おおよその数」です。「感染している人」はHIVとともに生きている人の数、「新たな感染」はその1年間に新たにHIVに感染した人、「エイズによる死亡」はその1年間にエイズに関連する病気で亡くなった人の推計です。",
+ "rows": [
+  {
+   "kind": "世界",
+   "name": "世界",
+   "en": "World",
+   "moc": null,
+   "plhiv": 41000000,
+   "plhiv_low": 35300000,
+   "plhiv_high": 47500000,
+   "prev": 0.7,
+   "new": 1200000,
+   "deaths": 570000,
+   "chg_new": -42,
+   "chg_deaths": -57,
+   "know": 88,
+   "art": 78,
+   "vls": 74,
+   "source_id": "S2"
+  },
+  {
+   "kind": "国",
+   "name": "フィリピン",
+   "en": "Philippines",
+   "moc": "特定技能・技能実習",
+   "plhiv": 250000,
+   "plhiv_low": 210000,
+   "plhiv_high": 290000,
+   "prev": 0.4,
+   "new": 34000,
+   "deaths": 2700,
+   "chg_new": 627,
+   "chg_deaths": 713,
+   "know": 62,
+   "art": 41,
+   "vls": 40,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ベトナム",
+   "en": "Viet Nam",
+   "moc": "特定技能・技能実習",
+   "plhiv": 270000,
+   "plhiv_low": 240000,
+   "plhiv_high": 310000,
+   "prev": 0.4,
+   "new": 6100,
+   "deaths": 4100,
+   "chg_new": -58,
+   "chg_deaths": -14,
+   "know": 94,
+   "art": 75,
+   "vls": 72,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "カンボジア",
+   "en": "Cambodia",
+   "moc": "特定技能・技能実習",
+   "plhiv": 76000,
+   "plhiv_low": 64000,
+   "plhiv_high": 87000,
+   "prev": 0.5,
+   "new": 960,
+   "deaths": 1000,
+   "chg_new": -59,
+   "chg_deaths": -40,
+   "know": 95,
+   "art": 95,
+   "vls": 93,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ネパール",
+   "en": "Nepal",
+   "moc": "特定技能・技能実習",
+   "plhiv": 35000,
+   "plhiv_low": 31000,
+   "plhiv_high": 38000,
+   "prev": 0.1,
+   "new": 550,
+   "deaths": 570,
+   "chg_new": -79,
+   "chg_deaths": -75,
+   "know": 92,
+   "art": 79,
+   "vls": 77,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ミャンマー",
+   "en": "Myanmar",
+   "moc": "特定技能・技能実習",
+   "plhiv": 310000,
+   "plhiv_low": 270000,
+   "plhiv_high": 340000,
+   "prev": 0.9,
+   "new": 9500,
+   "deaths": 4400,
+   "chg_new": -43,
+   "chg_deaths": -63,
+   "know": 84,
+   "art": 73,
+   "vls": 70,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "モンゴル",
+   "en": "Mongolia",
+   "moc": "特定技能・技能実習",
+   "plhiv": 700,
+   "plhiv_low": 620,
+   "plhiv_high": 780,
+   "prev": "<0.1",
+   "new": "<100",
+   "deaths": "<100",
+   "chg_new": 5,
+   "chg_deaths": 31,
+   "know": null,
+   "art": 42,
+   "vls": null,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "スリランカ",
+   "en": "Sri Lanka",
+   "moc": "特定技能・技能実習",
+   "plhiv": 8700,
+   "plhiv_low": 7800,
+   "plhiv_high": 9600,
+   "prev": "<0.1",
+   "new": 860,
+   "deaths": "<200",
+   "chg_new": 135,
+   "chg_deaths": -47,
+   "know": 66,
+   "art": 52,
+   "vls": 46,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "インドネシア",
+   "en": "Indonesia",
+   "moc": "特定技能・技能実習",
+   "plhiv": 560000,
+   "plhiv_low": 500000,
+   "plhiv_high": 610000,
+   "prev": 0.3,
+   "new": 21000,
+   "deaths": 18000,
+   "chg_new": -57,
+   "chg_deaths": 29,
+   "know": 67,
+   "art": 48,
+   "vls": 45,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "バングラデシュ",
+   "en": "Bangladesh",
+   "moc": "特定技能・技能実習",
+   "plhiv": 19000,
+   "plhiv_low": 17000,
+   "plhiv_high": 21000,
+   "prev": "<0.1",
+   "new": 1500,
+   "deaths": 570,
+   "chg_new": 84,
+   "chg_deaths": 135,
+   "know": 63,
+   "art": 44,
+   "vls": 40,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ウズベキスタン",
+   "en": "Uzbekistan",
+   "moc": "特定技能・技能実習",
+   "plhiv": 63000,
+   "plhiv_low": 51000,
+   "plhiv_high": 81000,
+   "prev": 0.2,
+   "new": null,
+   "deaths": null,
+   "chg_new": null,
+   "chg_deaths": null,
+   "know": 84,
+   "art": 75,
+   "vls": 68,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "パキスタン",
+   "en": "Pakistan",
+   "moc": "特定技能・技能実習",
+   "plhiv": 340000,
+   "plhiv_low": 310000,
+   "plhiv_high": 370000,
+   "prev": 0.2,
+   "new": 44000,
+   "deaths": 14000,
+   "chg_new": 222,
+   "chg_deaths": 553,
+   "know": 25,
+   "art": 18,
+   "vls": null,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "タイ",
+   "en": "Thailand",
+   "moc": "特定技能・技能実習",
+   "plhiv": 620000,
+   "plhiv_low": 560000,
+   "plhiv_high": 690000,
+   "prev": 1.1,
+   "new": 7300,
+   "deaths": 8400,
+   "chg_new": -66,
+   "chg_deaths": -80,
+   "know": 90,
+   "art": 82,
+   "vls": 81,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "インド",
+   "en": "India",
+   "moc": "特定技能・技能実習",
+   "plhiv": 2600000,
+   "plhiv_low": 2100000,
+   "plhiv_high": 3100000,
+   "prev": 0.2,
+   "new": 60000,
+   "deaths": 25000,
+   "chg_new": -52,
+   "chg_deaths": -86,
+   "know": 88,
+   "art": 77,
+   "vls": 74,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "マレーシア",
+   "en": "Malaysia",
+   "moc": "特定技能",
+   "plhiv": 85000,
+   "plhiv_low": 76000,
+   "plhiv_high": 94000,
+   "prev": 0.3,
+   "new": 2900,
+   "deaths": 2000,
+   "chg_new": -53,
+   "chg_deaths": -41,
+   "know": 66,
+   "art": 63,
+   "vls": 55,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ラオス",
+   "en": "Lao People's Democratic Republic",
+   "moc": "特定技能・技能実習",
+   "plhiv": 23000,
+   "plhiv_low": 20000,
+   "plhiv_high": 25000,
+   "prev": 0.5,
+   "new": 1300,
+   "deaths": "<500",
+   "chg_new": 11,
+   "chg_deaths": 36,
+   "know": 75,
+   "art": 64,
+   "vls": 63,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "キルギス",
+   "en": "Kyrgyzstan",
+   "moc": "特定技能",
+   "plhiv": 14000,
+   "plhiv_low": 13000,
+   "plhiv_high": 15000,
+   "prev": 0.3,
+   "new": 1100,
+   "deaths": "<500",
+   "chg_new": 106,
+   "chg_deaths": 10,
+   "know": 77,
+   "art": 55,
+   "vls": null,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "タジキスタン",
+   "en": "Tajikistan",
+   "moc": "特定技能",
+   "plhiv": 16000,
+   "plhiv_low": 14000,
+   "plhiv_high": 19000,
+   "prev": 0.2,
+   "new": "<500",
+   "deaths": "<500",
+   "chg_new": -69,
+   "chg_deaths": -58,
+   "know": 83,
+   "art": 76,
+   "vls": 70,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "ブータン",
+   "en": "Bhutan",
+   "moc": "技能実習",
+   "plhiv": 1200,
+   "plhiv_low": 1000,
+   "plhiv_high": 1400,
+   "prev": 0.2,
+   "new": "<100",
+   "deaths": "<100",
+   "chg_new": 1,
+   "chg_deaths": -49,
+   "know": 82,
+   "art": 69,
+   "vls": 62,
+   "source_id": "S1"
+  },
+  {
+   "kind": "地域",
+   "name": "アジア太平洋",
+   "en": "Asia and Pacific",
+   "moc": null,
+   "plhiv": 7100000,
+   "plhiv_low": 6300000,
+   "plhiv_high": 8000000,
+   "prev": 0.2,
+   "new": 280000,
+   "deaths": 120000,
+   "chg_new": -21,
+   "chg_deaths": -59,
+   "know": 81,
+   "art": 72,
+   "vls": 69,
+   "source_id": "S1"
+  },
+  {
+   "kind": "地域",
+   "name": "東欧・中央アジア",
+   "en": "Eastern Europe and Central Asia",
+   "moc": null,
+   "plhiv": 2000000,
+   "plhiv_low": 1800000,
+   "plhiv_high": 2200000,
+   "prev": 1.1,
+   "new": 120000,
+   "deaths": 43000,
+   "chg_new": 17,
+   "chg_deaths": 11,
+   "know": 83,
+   "art": 56,
+   "vls": 48,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "東ティモール",
+   "en": "Timor-Leste",
+   "moc": "技能実習",
+   "plhiv": 2200,
+   "plhiv_low": 1900,
+   "plhiv_high": 2600,
+   "prev": 0.3,
+   "new": "<200",
+   "deaths": "<100",
+   "chg_new": 26,
+   "chg_deaths": -30,
+   "know": 89,
+   "art": 66,
+   "vls": 46,
+   "source_id": "S1"
+  },
+  {
+   "kind": "国",
+   "name": "フィジー",
+   "en": "Fiji",
+   "moc": "技能実習",
+   "plhiv": 9100,
+   "plhiv_low": 7200,
+   "plhiv_high": 12000,
+   "prev": 1.6,
+   "new": 1700,
+   "deaths": "<500",
+   "chg_new": 1121,
+   "chg_deaths": 1172,
+   "know": 39,
+   "art": 22,
+   "vls": null,
+   "source_id": "S1"
+  }
+ ],
+ "notes": {
+  "協力覚書": [
+   {
+    "text": "日本は、外国人材の受け入れについて、送り出す国と「協力覚書」（MOC）を作っています。「特定技能」では17か国です（公表順に、フィリピン、カンボジア、ネパール、ミャンマー、モンゴル、スリランカ、インドネシア、ベトナム、バングラデシュ、ウズベキスタン、パキスタン、タイ、インド、マレーシア、ラオス、キルギス、タジキスタン）。",
+    "source_id": "S3"
+   },
+   {
+    "text": "特定技能でいちばん新しいのはタジキスタンで、2024年8月8日に協力覚書に署名しました。",
+    "source_id": "S4"
+   },
+   {
+    "text": "「技能実習」でも17か国と協力覚書があります。新しい順に、フィジー（2025年11月13日）、東ティモール（2024年10月8日）、ネパール、インドネシア、タイ、パキスタン、ウズベキスタン、ブータン、ミャンマー、スリランカ、バングラデシュ、モンゴル、ラオス、フィリピン、インド、カンボジア、ベトナム（2017年6月6日）です。",
+    "source_id": "S5"
+   },
+   {
+    "text": "両方の制度で覚書がある国は14か国。技能実習だけの国はブータン・東ティモール・フィジー、特定技能だけの国はマレーシア・キルギス・タジキスタンです。このページでは、合わせて20か国を載せています。",
+    "source_id": null
+   }
+  ],
+  "移住者とHIV": [
+   {
+    "text": "国際移住機関（IOM）は、移住すること自体でHIVにかかりやすくなるわけではないとしつつ、多くの場合、移住者は社会・文化・経済・環境の面で弱い立場に置かれ、HIVにかかりやすくなると説明しています。",
+    "source_id": "S10"
+   },
+   {
+    "text": "IOMは、医療や福祉を受けにくいこと、移住者とHIVへの偏見や差別、強制的な検査やHIVとともに生きる人の移動を制限する法律が、移住者のHIVへの弱さを増やし続けていると指摘しています。",
+    "source_id": "S10"
+   },
+   {
+    "text": "IOMは、HIVの検査は本人の意思で受けるもので、秘密が守られ、相談の支えがあるべきだとしています。また、陽性とわかった人は、国籍や在留資格にかかわらず質の高い医療を受けられるべきだとしています（2018年の世界エイズデーの発表）。",
+    "source_id": "S11"
+   },
+   {
+    "text": "同じ発表でIOMは各国に、HIVを理由とした入国制限の見直しと、誰もが必要な医療を受けられる仕組み（ユニバーサル・ヘルス・カバレッジ）を進めることを求めています。",
+    "source_id": "S11"
+   },
+   {
+    "text": "UNAIDSによると、HIVとともに生きる人の入国や滞在に何らかの制限を続けている国・地域は46でした（2021年10月の発表。UNAIDSの公式ページで確認できたいちばん新しい数です）。",
+    "source_id": "S12"
+   }
+  ],
+  "入国前の健康診断": [
+   {
+    "text": "日本は、結核の患者が多い国から中長期で住む予定の人に、入国前に結核を発病していないことを求める「入国前結核スクリーニング（JPETS）」を始めています。指定された現地の医療機関で、医師の診察と胸のレントゲン検査を受けます。",
+    "source_id": "S6"
+   },
+   {
+    "text": "証明書の提出が必要になったのは、フィリピンとネパールが2025年6月23日から、ベトナムが2025年9月1日からです。インドネシアは2026年11月2日に受付が始まり、2027年1月4日から提出が必要になる予定です。ミャンマーと中国は、開始に向けて調整中です（2026年9月25日更新）。",
+    "source_id": "S6"
+   },
+   {
+    "text": "特定技能の外国人、EPA（経済連携協定）の看護師・介護福祉士、JETプログラムの参加者などは、当面のあいだ対象外とされています。",
+    "source_id": "S6"
+   },
+   {
+    "text": "国連IOMは日本政府と連携し、この制度の導入と運用を技術面で支えています（情報管理システムの開発・運用、現地の医療機関への研修、胸部レントゲン検査の精度管理）。",
+    "source_id": "S8"
+   },
+   {
+    "text": "指定された現地の医療機関には、IOMの健診センター（フィリピンのマニラ、ネパールのカトマンズとダマク、ベトナムのハノイとホーチミン）も入っています。",
+    "source_id": "S7"
+   },
+   {
+    "text": "2024年2月、IOMと出入国在留管理庁が協力覚書を結び、協力する分野の一つに「日本への入国前結核スクリーニングの支援」が入りました。",
+    "source_id": "S9"
+   },
+   {
+    "text": "この制度で調べるのは結核です。厚生労働省のページに、HIVの検査は書かれていません。",
+    "source_id": "S6"
+   }
+  ],
+  "見るときの注意": [
+   "UNAIDSの数字は計算で出した推計で、幅があります（例：世界で感染している人は3,530万〜4,750万人）。ページでは真ん中の値を載せています。",
+   "日本の数字（このページの「HIV/エイズ」の届出数）は「その年に新しく報告された数」で、UNAIDSの「1年間に新たに感染した人（推計）」とは数え方が違うため、そのまま比べられません。",
+   "UNAIDSのデータ（AIDSinfo）では、日本の推計値は空欄で、公表されていません。",
+   "「<100」「<500」などは、人数が少ないため「100人未満」のように幅で示された値です。感染している人が少ない国（モンゴル・ブータンなど）は、わずかな人数の変化でも2010年比の％が大きく動きます。",
+   "ここに載せた数字は国全体の推計です。日本に来て働く人や暮らす人のHIVの状況を表すものではありません。",
+   "ウズベキスタンは、新たな感染とエイズによる死亡の推計がUNAIDSに載っていません。パキスタン・フィジー・モンゴル・キルギスは「ウイルスが抑えられている人」の割合が載っていません。"
+  ]
+ },
+ "sources": [
+  {
+   "id": "S1",
+   "title": "AIDSinfo ファクトシート（世界・地域・国別、2025年の推計）※Factsheets から地域・国を選んで表示",
+   "publisher": "国連合同エイズ計画（UNAIDS）",
+   "url": "https://aidsinfo.unaids.org/",
+   "published": "2026-07-27（2026年版の推計）"
+  },
+  {
+   "id": "S2",
+   "title": "Global HIV & AIDS statistics — Fact sheet（2025年の世界の数字）",
+   "publisher": "国連合同エイズ計画（UNAIDS）",
+   "url": "https://www.unaids.org/en/resources/fact-sheet",
+   "published": "2026-07-27"
+  },
+  {
+   "id": "S3",
+   "title": "特定技能に関する二国間の協力覚書",
+   "publisher": "出入国在留管理庁",
+   "url": "https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00021.html",
+   "published": null
+  },
+  {
+   "id": "S4",
+   "title": "日本国とタジキスタン共和国との間の在留資格「特定技能」に係る協力覚書（MOC）の作成について",
+   "publisher": "出入国在留管理庁",
+   "url": "https://www.moj.go.jp/isa/10_00200.html",
+   "published": "記載なし（署名は2024年8月8日）"
+  },
+  {
+   "id": "S5",
+   "title": "二国間取決め（技能実習の協力覚書）",
+   "publisher": "外国人技能実習機構（OTIT）",
+   "url": "https://www.otit.go.jp/soushutsu_nikokukan/",
+   "published": null
+  },
+  {
+   "id": "S6",
+   "title": "入国前結核スクリーニングの実施について Japan Pre-Entry Tuberculosis Screening（JPETS）",
+   "publisher": "厚生労働省",
+   "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html",
+   "published": "2026-09-25 更新"
+  },
+  {
+   "id": "S7",
+   "title": "JPETS（入国前結核スクリーニング）公式サイト：指定健診医療機関",
+   "publisher": "厚生労働省",
+   "url": "https://jpets.mhlw.go.jp/jp/",
+   "published": "国ごとに更新（インドネシア 2026-10-09）"
+  },
+  {
+   "id": "S8",
+   "title": "日本と人の移動の課題（日本入国前結核スクリーニング〔JPETS〕）",
+   "publisher": "国際移住機関（IOM）駐日事務所",
+   "url": "https://japan.iom.int/japan_human_mobility",
+   "published": null
+  },
+  {
+   "id": "S9",
+   "title": "IOM事務局長 出入国在留管理庁との協力覚書（MOC）に署名",
+   "publisher": "国際移住機関（IOM）駐日事務所",
+   "url": "https://japan.iom.int/news/dg-signed-moc-with-isa",
+   "published": "2024-02-26"
+  },
+  {
+   "id": "S10",
+   "title": "HIV/AIDS and Population Mobility（情報シート「IOM Commitment to the Global Response Countering HIV」）",
+   "publisher": "国際移住機関（IOM）",
+   "url": "https://www.iom.int/resources/hiv-aids-and-population-mobility",
+   "published": null
+  },
+  {
+   "id": "S11",
+   "title": "Live Life Positively: Let Migrants Know Their HIV Status（世界エイズデーの発表）",
+   "publisher": "国際移住機関（IOM）",
+   "url": "https://www.iom.int/news/live-life-positively-let-migrants-know-their-hiv-status",
+   "published": "2018-11-30"
+  },
+  {
+   "id": "S12",
+   "title": "UNAIDS welcomes New Zealand's decision to lift travel restrictions for people living with HIV",
+   "publisher": "国連合同エイズ計画（UNAIDS）",
+   "url": "https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2021/october/new-zealand-lift-travel-restrictions-hiv",
+   "published": "2021-10-25"
+  }
+ ]
+}
