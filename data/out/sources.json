@@ -167,7 +167,7 @@
 "資料名": "性感染症報告数「年齢(5歳階級)別にみた性感染症報告数の年次推移（梅毒）」Excel（感染症発生動向調査事業年報のデータを元に作成）",
 "発行元": "厚生労働省",
 "URL": "https://www.mhlw.go.jp/content/10900000/001678695.xlsx",
-"公表日・更新日": "2026-03-24（Excelファイルの更新日時。掲載ページ https://www.mhlw.go.jp/topics/2005/04/tp0411-1.html に日付表示なし）",
+"公表日・更新日": "2026-03-24（Excelファイルの更新日時。掲載ページ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/seikansenshou/houkokusuu.html に日付表示なし）",
 "確認日": "2026-10-26"
 },
 {
@@ -562,7 +562,7 @@
 "病気": "HIV/エイズ（世界）",
 "資料名": "二国間取決め（技能実習の協力覚書）",
 "発行元": "外国人技能実習機構（OTIT）",
-"URL": "https://www.otit.go.jp/soushutsu_nikokukan/",
+"URL": "https://www.otit.go.jp/system/sender/memorandum/",
 "公表日・更新日": "記載なし",
 "確認日": "2026-10-26"
 },
@@ -760,7 +760,7 @@
 "病気": "国別の比較",
 "資料名": "Global Health Observatory：梅毒（妊婦健診で梅毒が陽性だった割合・報告された梅毒の数・先天梅毒の率。各国の報告）",
 "発行元": "世界保健機関（WHO）",
-"URL": "https://www.who.int/data/gho/data/themes/topics/sexually-transmitted-infections",
+"URL": "https://www.who.int/data/gho/data/themes/topics/data-on-syphilis",
 "公表日・更新日": "2026-10-26確認",
 "確認日": "2026-10-26"
 },
@@ -787,7 +787,7 @@
 "病気": "入国前対策",
 "資料名": "送出国政府窓口と二国間取決め（技能実習の協力覚書一覧）",
 "発行元": "外国人技能実習機構（OTIT）",
-"URL": "https://www.otit.go.jp/soushutsu_nikokukan/",
+"URL": "https://www.otit.go.jp/system/sender/memorandum/",
 "公表日・更新日": "記載なし",
 "確認日": "2026-10-26"
 },

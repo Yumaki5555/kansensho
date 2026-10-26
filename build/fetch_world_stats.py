@@ -221,7 +221,7 @@ out = {
         {"id": "W3", "title": "Global Health Observatory：HIV（UNAIDSの推計。HIVとともに生きる人・新たな感染・15〜49歳の感染率）", "publisher": "世界保健機関（WHO）／国連合同エイズ計画（UNAIDS）",
          "url": "https://www.who.int/data/gho/data/themes/hiv-aids", "published": f"{HIV_Y}年分まで掲載（{CHECKED}確認）", "data": GHO.format(IND["plhiv"])},
         {"id": "W4", "title": "Global Health Observatory：梅毒（妊婦健診で梅毒が陽性だった割合・報告された梅毒の数・先天梅毒の率。各国の報告）", "publisher": "世界保健機関（WHO）",
-         "url": "https://www.who.int/data/gho/data/themes/topics/sexually-transmitted-infections", "published": f"{CHECKED}確認", "data": GHO.format(IND["syph_anc"])},
+         "url": "https://www.who.int/data/gho/data/themes/topics/data-on-syphilis", "published": f"{CHECKED}確認", "data": GHO.format(IND["syph_anc"])},
         {"id": "W5", "title": "Standard country or area codes for statistical use（M49。国・地域の区分）", "publisher": "国際連合統計部（UNSD）",
          "url": M49_URL, "published": "記載なし", "data": M49_URL},
     ],

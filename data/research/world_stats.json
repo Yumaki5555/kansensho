@@ -8389,7 +8389,7 @@
    "id": "W4",
    "title": "Global Health Observatory：梅毒（妊婦健診で梅毒が陽性だった割合・報告された梅毒の数・先天梅毒の率。各国の報告）",
    "publisher": "世界保健機関（WHO）",
-   "url": "https://www.who.int/data/gho/data/themes/topics/sexually-transmitted-infections",
+   "url": "https://www.who.int/data/gho/data/themes/topics/data-on-syphilis",
    "published": "2026-10-26確認",
    "data": "https://ghoapi.azureedge.net/api/PercposANC?$filter=SpatialDimType%20eq%20%27COUNTRY%27"
   },

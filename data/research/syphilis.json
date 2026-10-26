@@ -136,7 +136,7 @@
     {"text": "厚生労働省がポスター・チラシや政府広報の動画を作り、コンドームの使用による予防や、早めの検査・受診による早期発見・早期治療を呼びかけている。", "source_id": "S8"}
   ],
   "sources": [
-    {"id": "S1", "title": "性感染症報告数「年齢(5歳階級)別にみた性感染症報告数の年次推移（梅毒）」Excel（感染症発生動向調査事業年報のデータを元に作成）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/content/10900000/001678695.xlsx", "published": "2026-03-24（Excelファイルの更新日時。掲載ページ https://www.mhlw.go.jp/topics/2005/04/tp0411-1.html に日付表示なし）", "accessed": "2026-10-26"},
+    {"id": "S1", "title": "性感染症報告数「年齢(5歳階級)別にみた性感染症報告数の年次推移（梅毒）」Excel（感染症発生動向調査事業年報のデータを元に作成）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/content/10900000/001678695.xlsx", "published": "2026-03-24（Excelファイルの更新日時。掲載ページ https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/seikansenshou/houkokusuu.html に日付表示なし）", "accessed": "2026-10-26"},
     {"id": "S2", "title": "感染症法に基づく梅毒の届出状況2024年（2025年11月15日現在）", "publisher": "国立健康危機管理研究機構（JIHS）国立感染症研究所", "url": "https://id-info.jihs.go.jp/surveillance/idss/target-diseases/syphilis/2024/20260428Syphilis.pdf", "published": "2026-04-28", "accessed": "2026-10-26"},
     {"id": "S3", "title": "感染症発生動向調査事業年報 2024 第4-1表「報告数，年齢階級・性別・都道府県・全全数把握対象疾患別」（梅毒シート）", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/syulist/Syu_04_1.xlsx", "published": "2026-03-02", "accessed": "2026-10-26"},
     {"id": "S4", "title": "感染症発生動向調査年別一覧（全数把握 五類）-2024-（梅毒の病型別・先天梅毒の年別報告数）", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/year-data/05/index.html", "published": "2026-03-02", "accessed": "2026-10-26"},
