@@ -1,0 +1,7 @@
+# GitHubに送らない（公開しない）もの
+.claude/
+__pycache__/
+*.tmp
+# 手元の作業用Excel（公開するのは docs/ に入れたコピー）
+/日本の感染症の状況_*.xlsx
+~$*.xlsx

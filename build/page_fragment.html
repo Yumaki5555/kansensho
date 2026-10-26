@@ -1,0 +1,813 @@
+<style>
+  /* 縦に読む1本のページ：見出しの要約 → 4つの比較 → 病気ごとの詳細 → 注意 → 出典 */
+  .kj { max-width: 74rem; margin-inline: auto; display: grid; gap: var(--cds-gap-xl); font-family: var(--font-anthropic-sans); color: var(--color-fg); }
+  .kj-hero { display: grid; gap: var(--cds-gap-sm); }
+  .kj-title { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.5); line-height: 1.25; margin: 0; text-wrap: balance; }
+  .kj-sub { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+  .kj-take { margin: 0; max-width: 46em; font-size: var(--cds-font-size-body); line-height: 1.9; }
+  .kj .kj-em { font-weight: 600; font-variant-numeric: tabular-nums; }
+  .kj-cap { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.6; }
+  .kj-nav { display: flex; flex-wrap: wrap; gap: var(--cds-gap-xs); }
+  .kj-chip { font: inherit; font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: 999px; background: var(--color-panel); color: var(--color-fg); cursor: pointer; }
+  .kj-chip:hover { border-color: var(--color-fg-muted); }
+  .kj-chip:focus-visible, .kj-more:focus-visible, .kj-src:focus-visible, .kj-select:focus-visible { outline: 2px solid var(--color-fg); outline-offset: 2px; }
+  .kj-section { display: grid; gap: var(--cds-gap-md); scroll-margin-top: var(--cds-gap-lg); }
+  .kj-h2 { display: flex; align-items: center; gap: var(--cds-gap-sm); margin: 0; font-size: var(--cds-font-size-title); font-weight: var(--cds-font-weight-medium); text-wrap: balance; }
+  .kj-lede { margin: 0; max-width: 60em; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.75; }
+  .kj-swatch { flex: none; width: 0.75rem; height: 0.75rem; border-radius: 3px; display: inline-block; }
+  .kj-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15.5rem), 1fr)); gap: var(--cds-gap-md); }
+  .kj-tile, .kj-card { min-width: 0; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); }
+  .kj-tile { display: flex; flex-direction: column; gap: var(--cds-gap-sm); }
+  .kj-tile-head { display: flex; align-items: center; gap: var(--cds-gap-xs); }
+  .kj-tile-head h3, .kj-card h3 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+  .kj-big-line { margin: 0; display: flex; align-items: baseline; gap: 0.25rem; }
+  .kj-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: calc(var(--cds-font-size-title) * 1.6); line-height: 1.1; font-variant-numeric: tabular-nums; }
+  .kj-unit { color: var(--color-fg-muted); font-size: var(--cds-font-size-body); }
+  .kj-line { margin: 0; font-size: var(--cds-font-size-caption); line-height: 1.7; font-variant-numeric: tabular-nums; }
+  .kj-up { color: var(--color-bad); }
+  .kj-down { color: var(--color-ok); }
+  .kj-delta { font-weight: 600; }
+  .kj-spark { height: 44px; }
+  .kj-tile-ytd { border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-sm); display: grid; gap: 0.15rem; margin-top: auto; }
+  .kj-more { align-self: flex-start; font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .kj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); gap: var(--cds-gap-md); align-items: start; }
+  .kj-wide { grid-column: 1 / -1; }
+  .kj-tables { display: contents; }
+  .kj-card { display: grid; gap: var(--cds-gap-sm); margin: 0; }
+  .kj-card figcaption { display: grid; gap: 0.2rem; }
+  .kj-legend { display: flex; flex-wrap: wrap; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .kj-legend span { display: inline-flex; align-items: center; gap: 0.3rem; }
+  .kj-legend i { width: 0.7rem; height: 0.7rem; border-radius: 2px; display: inline-block; }
+  .kj-legend i.kj-soku-key { opacity: 0.45; outline: 1px dashed var(--color-fg-muted); outline-offset: 1px; }
+  .kj-plot { position: relative; min-height: 280px; }
+  .kj-plot-rate { min-height: 220px; }
+  .kj-plot-age { min-height: 240px; }
+  .kj-plot svg { display: block; overflow: visible; }
+  .kj-tick { font-size: var(--cds-font-size-caption); fill: var(--color-fg-muted); }
+  .kj-tick-soku { font-size: 10px; }
+  .kj-rowlab { font-size: var(--cds-font-size-caption); fill: var(--color-fg); }
+  .kj-val { font-size: var(--cds-font-size-caption); fill: var(--color-fg); font-variant-numeric: tabular-nums; }
+  .kj-ref { font-size: var(--cds-font-size-caption); fill: var(--color-fg-muted); }
+  .kj-tip { position: absolute; z-index: 3; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); line-height: 1.6; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .kj-tip-h { color: var(--cds-text-secondary); }
+  .kj-tip-row { display: flex; align-items: center; gap: 0.35rem; }
+  .kj-tip-row i { width: 0.55rem; height: 0.55rem; border-radius: 2px; display: inline-block; }
+  .kj-tip-row b { margin-left: auto; padding-left: 0.8rem; font-weight: 600; }
+  .kj-ytd-body { display: grid; gap: var(--cds-gap-md); min-height: 6rem; }
+  .kj-ytd { display: grid; gap: 0.35rem; }
+  .kj-ytd-head { display: flex; justify-content: space-between; align-items: baseline; gap: var(--cds-gap-sm); font-size: var(--cds-font-size-caption); }
+  .kj-pill { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .kj-bar-line { display: grid; grid-template-columns: 7.5em minmax(0, 1fr) auto; align-items: center; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); }
+  .kj-bar-name { color: var(--color-fg-muted); }
+  .kj-track { height: 12px; border-radius: 4px; background: transparent; }
+  .kj-fill { height: 100%; border-radius: 4px; min-width: 2px; }
+  .kj-bar-val { font-variant-numeric: tabular-nums; min-width: 4.5em; text-align: right; }
+  .kj-scroll { overflow-x: auto; }
+  .kj-table { width: 100%; border-collapse: collapse; font-size: var(--cds-font-size-caption); font-variant-numeric: tabular-nums; }
+  .kj-table th, .kj-table td { padding: 6px 8px; border-bottom: 1px solid var(--color-border-line); text-align: right; vertical-align: top; }
+  .kj-table th:first-child, .kj-table td:first-child { text-align: left; }
+  .kj-table thead th { color: var(--color-fg-muted); font-weight: var(--cds-font-weight-medium); white-space: nowrap; }
+  .kj-table tbody tr:last-child td { border-bottom: 0; }
+  .kj-details summary { cursor: pointer; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .kj-details p { margin: 0.4rem 0 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.75; }
+  .kj-list { margin: 0; padding-left: 1.4em; display: grid; gap: var(--cds-gap-sm); line-height: 1.8; font-size: var(--cds-font-size-body); }
+  .kj-list-sm { font-size: var(--cds-font-size-caption); line-height: 1.75; }
+  .kj-src { justify-self: start; font: inherit; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); background: none; border: 0; padding: 0; text-decoration: underline; text-underline-offset: 2px; cursor: pointer; white-space: nowrap; }
+  .kj-filter { display: flex; flex-wrap: wrap; align-items: center; gap: var(--cds-gap-xs); font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+  .kj-select { font: inherit; color: var(--color-fg); background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: 2px 6px; }
+  .kj-srcbox { max-height: 32rem; overflow: auto; padding: 0; }
+  .kj-srcbox .kj-table th, .kj-srcbox .kj-table td { text-align: left; }
+  .kj-srcbox .kj-table thead th { position: sticky; top: 0; background: var(--color-panel); z-index: 1; }
+  .kj-srcbox .kj-table td:nth-child(3) { min-width: 16em; }
+  .kj-srcbox a { color: var(--color-fg); word-break: break-all; }
+  .kj-hl td { outline: 2px solid var(--color-fg-muted); outline-offset: -2px; }
+  .kj-fail { display: flex; align-items: center; justify-content: center; gap: 0.4rem; min-height: inherit; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+  .kj-fail::before { content: ""; width: 0.375rem; height: 0.375rem; border-radius: 50%; background: var(--color-bad); }
+  .kj-foot { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); line-height: 1.7; border-top: 1px solid var(--color-border-line); padding-top: var(--cds-pad-md); }
+  .kj [data-dash-source-state=empty] { color: transparent; }
+  .kj [data-dash-source-state=refreshing] { opacity: 0.5; transition: opacity var(--cds-dur-slow); }
+</style>
+
+<div class="kj">
+  <header class="kj-hero" id="top">
+    <h1 class="kj-title">日本の感染症を知る</h1>
+    <p class="kj-sub">HIV/エイズ・梅毒・はしか・結核の広がりを、国の公式資料だけでまとめました。</p>
+    <p class="kj-take" id="takeaway">10年前と比べて、HIV/エイズは<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=HIV/エイズ">—</span>倍、結核は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=結核">—</span>倍に減りました。梅毒は<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=梅毒">—</span>倍で、高い水準が続いています。はしかは2026年に入って急に増え、<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=はしか">—</span>で前年の同じ時期の<span class="kj-em dash-skeleton" data-source="overview" data-field="前年同期の倍" data-where="病気=はしか">—</span>倍になっています。</p>
+    <p class="kj-cap">2026年10月26日時点で国（厚生労働省・国立健康危機管理研究機構）が公表している資料から作成。数字はすべて医師の届出などにもとづく「報告された数」で、実際に感染している人の数とは同じではありません。</p>
+    <nav class="kj-nav" aria-label="ページ内の移動">
+      <button type="button" class="kj-chip" data-target="overview">4つの比較</button>
+      <button type="button" class="kj-chip" data-target="hiv">HIV/エイズ</button>
+      <button type="button" class="kj-chip" data-target="syphilis">梅毒</button>
+      <button type="button" class="kj-chip" data-target="measles">はしか</button>
+      <button type="button" class="kj-chip" data-target="tb">結核</button>
+      <button type="button" class="kj-chip" data-target="cautions">見るときの注意</button>
+      <button type="button" class="kj-chip" data-target="sources">出典</button>
+    </nav>
+  </header>
+
+  <section class="kj-section" id="overview" aria-labelledby="overview-h">
+    <h2 class="kj-h2" id="overview-h">4つの病気の今</h2>
+    <p class="kj-cap">大きな数字は、最新の確定値（国が1年分を集計し直した数）です。小さな棒グラフは10年ほどの動きで、薄い棒は速報値です。</p>
+    <div class="kj-tiles">
+      <article class="kj-tile" id="tile-hiv">
+        <div class="kj-tile-head"><span class="kj-swatch" data-i="0"></span><h3>HIV/エイズ</h3></div>
+        <p class="kj-cap">新たに報告されたHIV感染者とエイズ患者（<span class="dash-skeleton" data-source="overview" data-field="最新確定年" data-where="病気=HIV/エイズ">—</span>年・確定値）</p>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="overview" data-field="最新値" data-where="病気=HIV/エイズ">—</span><span class="kj-unit">件</span></p>
+        <p class="kj-line">前年より <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年比" data-where="病気=HIV/エイズ">—</span></p>
+        <div class="kj-spark dash-skeleton" id="spark-hiv" data-source="annual"></div>
+        <p class="kj-line"><span class="dash-skeleton" data-source="overview" data-field="最初の年" data-where="病気=HIV/エイズ">—</span>年は<span class="dash-skeleton" data-source="overview" data-field="最初の値" data-where="病気=HIV/エイズ">—</span>件。10年で<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=HIV/エイズ">—</span>倍に。</p>
+        <div class="kj-tile-ytd">
+          <p class="kj-cap">2026年の途中経過（速報）・<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=HIV/エイズ">—</span></p>
+          <p class="kj-line"><span class="kj-em dash-skeleton" data-source="overview" data-field="途中" data-where="病気=HIV/エイズ">—</span>件（前年同期 <span class="dash-skeleton" data-source="overview" data-field="途中前年同期" data-where="病気=HIV/エイズ">—</span>件） <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年同期比" data-where="病気=HIV/エイズ">—</span></p>
+        </div>
+        <button type="button" class="kj-more" data-target="hiv">HIV/エイズをくわしく見る</button>
+      </article>
+
+      <article class="kj-tile" id="tile-syphilis">
+        <div class="kj-tile-head"><span class="kj-swatch" data-i="1"></span><h3>梅毒</h3></div>
+        <p class="kj-cap">医師が届け出た患者の数（<span class="dash-skeleton" data-source="overview" data-field="最新確定年" data-where="病気=梅毒">—</span>年・確定値）</p>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="overview" data-field="最新値" data-where="病気=梅毒">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">前年より <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年比" data-where="病気=梅毒">—</span></p>
+        <div class="kj-spark dash-skeleton" id="spark-syphilis" data-source="annual"></div>
+        <p class="kj-line"><span class="dash-skeleton" data-source="overview" data-field="最初の年" data-where="病気=梅毒">—</span>年は<span class="dash-skeleton" data-source="overview" data-field="最初の値" data-where="病気=梅毒">—</span>人。10年で<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=梅毒">—</span>倍に。<span class="dash-skeleton" data-source="overview" data-field="速報年" data-where="病気=梅毒">—</span>年（速報値）は<span class="dash-skeleton" data-source="overview" data-field="速報値" data-where="病気=梅毒">—</span>人。</p>
+        <div class="kj-tile-ytd">
+          <p class="kj-cap">2026年の途中経過（速報）・<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=梅毒">—</span></p>
+          <p class="kj-line"><span class="kj-em dash-skeleton" data-source="overview" data-field="途中" data-where="病気=梅毒">—</span>人（前年同期 <span class="dash-skeleton" data-source="overview" data-field="途中前年同期" data-where="病気=梅毒">—</span>人） <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年同期比" data-where="病気=梅毒">—</span></p>
+        </div>
+        <button type="button" class="kj-more" data-target="syphilis">梅毒をくわしく見る</button>
+      </article>
+
+      <article class="kj-tile" id="tile-measles">
+        <div class="kj-tile-head"><span class="kj-swatch" data-i="2"></span><h3>はしか（麻しん）</h3></div>
+        <p class="kj-cap">医師が届け出た患者の数（<span class="dash-skeleton" data-source="overview" data-field="最新確定年" data-where="病気=はしか">—</span>年・確定値）</p>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="overview" data-field="最新値" data-where="病気=はしか">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">前年より <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年比" data-where="病気=はしか">—</span></p>
+        <div class="kj-spark dash-skeleton" id="spark-measles" data-source="annual"></div>
+        <p class="kj-line"><span class="dash-skeleton" data-source="overview" data-field="速報年" data-where="病気=はしか">—</span>年（速報値）は<span class="kj-em dash-skeleton" data-source="overview" data-field="速報値" data-where="病気=はしか">—</span>人に増えました。</p>
+        <div class="kj-tile-ytd">
+          <p class="kj-cap">2026年の途中経過（速報）・<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=はしか">—</span></p>
+          <p class="kj-line"><span class="kj-em dash-skeleton" data-source="overview" data-field="途中" data-where="病気=はしか">—</span>人（前年同期 <span class="dash-skeleton" data-source="overview" data-field="途中前年同期" data-where="病気=はしか">—</span>人） <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年同期比" data-where="病気=はしか">—</span></p>
+        </div>
+        <button type="button" class="kj-more" data-target="measles">はしかをくわしく見る</button>
+      </article>
+
+      <article class="kj-tile" id="tile-tb">
+        <div class="kj-tile-head"><span class="kj-swatch" data-i="3"></span><h3>結核</h3></div>
+        <p class="kj-cap">新たに登録された結核患者の数（<span class="dash-skeleton" data-source="overview" data-field="最新確定年" data-where="病気=結核">—</span>年・確定値）</p>
+        <p class="kj-big-line"><span class="kj-big dash-skeleton" data-source="overview" data-field="最新値" data-where="病気=結核">—</span><span class="kj-unit">人</span></p>
+        <p class="kj-line">前年より <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年比" data-where="病気=結核">—</span></p>
+        <div class="kj-spark dash-skeleton" id="spark-tb" data-source="annual"></div>
+        <p class="kj-line"><span class="dash-skeleton" data-source="overview" data-field="最初の年" data-where="病気=結核">—</span>年は<span class="dash-skeleton" data-source="overview" data-field="最初の値" data-where="病気=結核">—</span>人。10年で<span class="kj-em dash-skeleton" data-source="overview" data-field="10年前と比べて(倍)" data-where="病気=結核">—</span>倍に。</p>
+        <div class="kj-tile-ytd">
+          <p class="kj-cap">2026年の途中経過（速報）・<span class="dash-skeleton" data-source="overview" data-field="途中の期間" data-where="病気=結核">—</span>・医師の届出の数で、発病していない感染者も含みます</p>
+          <p class="kj-line"><span class="kj-em dash-skeleton" data-source="overview" data-field="途中" data-where="病気=結核">—</span>件（前年同期 <span class="dash-skeleton" data-source="overview" data-field="途中前年同期" data-where="病気=結核">—</span>件） <span class="kj-delta dash-skeleton" data-source="overview" data-field="前年同期比" data-where="病気=結核">—</span></p>
+        </div>
+        <button type="button" class="kj-more" data-target="tb">結核をくわしく見る</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="kj-section" id="hiv" aria-labelledby="hiv-h">
+    <h2 class="kj-h2" id="hiv-h"><span class="kj-swatch" data-i="0"></span>HIV/エイズ</h2>
+    <p class="kj-lede" id="hiv-lede"><span>数え方：</span><span class="dash-skeleton" id="hiv-lede-text" data-source="notes" data-field="文" data-where="病気=HIV/エイズ&amp;種類=数え方&amp;番号=1">—</span></p>
+    <div class="kj-grid">
+      <figure class="kj-card kj-wide" id="hiv-annual">
+        <figcaption><h3>年ごとの推移</h3><p class="kj-cap">新たに報告された数（件）。すべて確定値です。</p></figcaption>
+        <div class="kj-legend" id="hiv-annual-legend"></div>
+        <div class="kj-plot dash-skeleton" id="hiv-annual-chart" data-source="annual"></div>
+      </figure>
+      <div class="kj-card" id="hiv-ytd"><h3>2026年の途中経過（速報）</h3><div class="kj-ytd-body dash-skeleton" id="hiv-ytd-body" data-source="ytd2026 ytd_change"></div></div>
+      <figure class="kj-card" id="hiv-age">
+        <figcaption><h3 id="hiv-age-title">年代別</h3><p class="kj-cap">棒にふれると人数が出ます。</p></figcaption>
+        <div class="kj-legend" id="hiv-age-legend"></div>
+        <div class="kj-plot kj-plot-age dash-skeleton" id="hiv-age-chart" data-source="breakdown"></div>
+      </figure>
+      <div class="kj-tables" id="hiv-tables" data-source="breakdown notes"></div>
+      <div class="kj-card" id="hiv-features"><h3>最近の特徴</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card" id="hiv-measures"><h3>国の主な対策</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card kj-wide" id="hiv-cautions"><h3>この数字を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
+  <section class="kj-section" id="syphilis" aria-labelledby="syphilis-h">
+    <h2 class="kj-h2" id="syphilis-h"><span class="kj-swatch" data-i="1"></span>梅毒</h2>
+    <p class="kj-lede" id="syphilis-lede"><span>数え方：</span><span class="dash-skeleton" id="syphilis-lede-text" data-source="notes" data-field="文" data-where="病気=梅毒&amp;種類=数え方&amp;番号=1">—</span></p>
+    <div class="kj-grid">
+      <figure class="kj-card kj-wide" id="syphilis-annual">
+        <figcaption><h3>年ごとの推移</h3><p class="kj-cap">医師が届け出た人数。点線の薄い棒は速報値です。</p></figcaption>
+        <div class="kj-legend" id="syphilis-annual-legend"></div>
+        <div class="kj-plot dash-skeleton" id="syphilis-annual-chart" data-source="annual"></div>
+      </figure>
+      <div class="kj-card" id="syphilis-ytd"><h3>2026年の途中経過（速報）</h3><div class="kj-ytd-body dash-skeleton" id="syphilis-ytd-body" data-source="ytd2026 ytd_change"></div></div>
+      <figure class="kj-card" id="syphilis-age">
+        <figcaption><h3 id="syphilis-age-title">年代別</h3><p class="kj-cap">棒にふれると人数が出ます。</p></figcaption>
+        <div class="kj-legend" id="syphilis-age-legend"></div>
+        <div class="kj-plot kj-plot-age dash-skeleton" id="syphilis-age-chart" data-source="breakdown"></div>
+      </figure>
+      <div class="kj-tables" id="syphilis-tables" data-source="breakdown notes"></div>
+      <div class="kj-card" id="syphilis-features"><h3>最近の特徴</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card" id="syphilis-measures"><h3>国の主な対策</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card kj-wide" id="syphilis-cautions"><h3>この数字を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
+  <section class="kj-section" id="measles" aria-labelledby="measles-h">
+    <h2 class="kj-h2" id="measles-h"><span class="kj-swatch" data-i="2"></span>はしか（麻しん）</h2>
+    <p class="kj-lede" id="measles-lede"><span>数え方：</span><span class="dash-skeleton" id="measles-lede-text" data-source="notes" data-field="文" data-where="病気=はしか&amp;種類=数え方&amp;番号=1">—</span></p>
+    <div class="kj-grid">
+      <figure class="kj-card kj-wide" id="measles-annual">
+        <figcaption><h3>年ごとの推移</h3><p class="kj-cap">医師が届け出た人数。点線の薄い棒は速報値です。</p></figcaption>
+        <div class="kj-legend" id="measles-annual-legend"></div>
+        <div class="kj-plot dash-skeleton" id="measles-annual-chart" data-source="annual"></div>
+      </figure>
+      <div class="kj-card" id="measles-ytd"><h3>2026年の途中経過（速報）</h3><div class="kj-ytd-body dash-skeleton" id="measles-ytd-body" data-source="ytd2026 ytd_change"></div></div>
+      <figure class="kj-card" id="measles-age">
+        <figcaption><h3 id="measles-age-title">年代別</h3><p class="kj-cap">年代ごとの人数です。</p></figcaption>
+        <div class="kj-legend" id="measles-age-legend"></div>
+        <div class="kj-plot kj-plot-age dash-skeleton" id="measles-age-chart" data-source="breakdown"></div>
+      </figure>
+      <div class="kj-tables" id="measles-tables" data-source="breakdown notes"></div>
+      <div class="kj-card" id="measles-features"><h3>最近の特徴</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card" id="measles-measures"><h3>国の主な対策</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card kj-wide" id="measles-cautions"><h3>この数字を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
+  <section class="kj-section" id="tb" aria-labelledby="tb-h">
+    <h2 class="kj-h2" id="tb-h"><span class="kj-swatch" data-i="3"></span>結核</h2>
+    <p class="kj-lede" id="tb-lede"><span>数え方：</span><span class="dash-skeleton" id="tb-lede-text" data-source="notes" data-field="文" data-where="病気=結核&amp;種類=数え方&amp;番号=1">—</span></p>
+    <div class="kj-grid">
+      <figure class="kj-card kj-wide" id="tb-annual">
+        <figcaption><h3>年ごとの推移</h3><p class="kj-cap">その年に新しく登録された患者の数。すべて確定値です。</p></figcaption>
+        <div class="kj-legend" id="tb-annual-legend"></div>
+        <div class="kj-plot dash-skeleton" id="tb-annual-chart" data-source="annual"></div>
+      </figure>
+      <figure class="kj-card kj-wide" id="tb-rate">
+        <figcaption><h3>罹患率（りかんりつ）の推移</h3><p class="kj-cap">人口10万人あたり、1年間に新しく結核になった人の数。点線は国が「低まん延」とする目安です。</p></figcaption>
+        <div class="kj-plot kj-plot-rate dash-skeleton" id="tb-rate-chart" data-source="annual"></div>
+      </figure>
+      <div class="kj-card" id="tb-ytd"><h3>2026年の途中経過（速報）</h3><div class="kj-ytd-body dash-skeleton" id="tb-ytd-body" data-source="ytd2026 ytd_change notes"></div></div>
+      <figure class="kj-card" id="tb-age">
+        <figcaption><h3 id="tb-age-title">年代別</h3><p class="kj-cap">棒にふれると罹患率も出ます。</p></figcaption>
+        <div class="kj-legend" id="tb-age-legend"></div>
+        <div class="kj-plot kj-plot-age dash-skeleton" id="tb-age-chart" data-source="breakdown"></div>
+      </figure>
+      <div class="kj-tables" id="tb-tables" data-source="breakdown notes"></div>
+      <div class="kj-card" id="tb-features"><h3>最近の特徴</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card" id="tb-measures"><h3>国の主な対策</h3><ol class="kj-list" data-source="notes"></ol></div>
+      <div class="kj-card kj-wide" id="tb-cautions"><h3>この数字を見るときの注意</h3><ul class="kj-list kj-list-sm" data-source="notes"></ul></div>
+    </div>
+  </section>
+
+  <section class="kj-section" id="cautions" aria-labelledby="cautions-h">
+    <h2 class="kj-h2" id="cautions-h">数字を見るときの注意</h2>
+    <div class="kj-card"><ul class="kj-list" id="cautions-list" data-source="notes"></ul></div>
+  </section>
+
+  <section class="kj-section" id="sources" aria-labelledby="sources-h">
+    <h2 class="kj-h2" id="sources-h">出典一覧</h2>
+    <p class="kj-cap">すべて国の公式資料です。各項目の「出典」を押すと、ここの該当する行に移動します。確認日はすべて2026年10月26日。</p>
+    <label class="kj-filter" for="src-filter">病気で絞り込む
+      <select class="kj-select" id="src-filter">
+        <option value="">すべて</option>
+        <option value="HIV/エイズ">HIV/エイズ</option>
+        <option value="梅毒">梅毒</option>
+        <option value="はしか">はしか</option>
+        <option value="結核">結核</option>
+      </select>
+    </label>
+    <div class="kj-card kj-srcbox">
+      <table class="kj-table" id="src-table" data-source="sources" data-row-key="出典ID">
+        <thead><tr><th data-field="出典ID">出典ID</th><th data-field="病気">病気</th><th data-field="資料名">資料名</th><th data-field="発行元">発行元</th><th data-field="公表日・更新日">公表日・更新日</th><th data-field="URL">URL</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer class="kj-foot">このページの数字は、国の公表資料を一つずつ読み取って作りました。前年比や「何倍か」は、資料の数字からこのページで計算しています。同じ内容をExcelの表にもまとめています。</footer>
+</div>
+
+<script>
+const DISEASES = [
+  { id: 'hiv', name: 'HIV/エイズ', stack: ['HIV感染者', 'エイズ患者'], age: ['HIV感染者', 'エイズ患者'], ageExtra: [], unit: '件' },
+  { id: 'syphilis', name: '梅毒', bars: '合計', extra: ['男性', '女性'], age: ['男性', '女性'], ageExtra: ['合計'], unit: '人' },
+  { id: 'measles', name: 'はしか', bars: '届出数', age: ['届出数'], ageExtra: [], unit: '人' },
+  { id: 'tb', name: '結核', bars: '新登録患者数', rate: '罹患率（人口10万対）', age: ['新登録患者数'], ageExtra: ['構成比(%)', '罹患率（人口10万対）'], unit: '人' },
+];
+const LOW_BURDEN = 10; // 国の「低まん延」の目安（罹患率10以下）
+
+dash.calc('overview', {
+  inputs: ['annual', 'ytd2026'],
+  title: '4つの病気の要約',
+  description: '病気ごとに、最新の確定値・前年比(%)・10年前と比べた倍率、2026年途中経過の前年同期比(%)と倍率を計算。',
+  fn: (annual, ytd2026) => {
+    const main = { 'HIV/エイズ': '合計', '梅毒': '合計', 'はしか': '届出数', '結核': '新登録患者数' };
+    const ymain = { 'HIV/エイズ': '合計', '梅毒': '合計', 'はしか': '届出数', '結核': '届出数（発病していない感染者も含む）' };
+    const v = (x) => Number(x);
+    return Object.keys(main).map((d) => {
+      const rows = annual.filter((r) => r.病気 === d && r.指標 === main[d]).sort((a, b) => v(a.年) - v(b.年));
+      const fin = rows.filter((r) => r.区分 === '確定');
+      const last = fin[fin.length - 1], prev = fin[fin.length - 2], first = fin[0];
+      const soku = rows.filter((r) => r.区分 === '速報').pop();
+      const y = ytd2026.find((r) => r.病気 === d && r.指標 === ymain[d]);
+      return {
+        病気: d, 指標: main[d], 最新確定年: v(last.年), 最新値: v(last.値), 前年値: v(prev.値),
+        前年比: Math.round((v(last.値) / v(prev.値) - 1) * 1000) / 10,
+        最初の年: v(first.年), 最初の値: v(first.値),
+        '10年前と比べて(倍)': Math.round((v(last.値) / v(first.値)) * 10) / 10,
+        速報年: soku ? v(soku.年) : null, 速報値: soku ? v(soku.値) : null,
+        途中の期間: y.期間, 途中の指標: y.指標, 途中: v(y['2026年']), 途中前年同期: v(y.前年同期),
+        前年同期比: Math.round((v(y['2026年']) / v(y.前年同期) - 1) * 1000) / 10,
+        前年同期の倍: Math.round((v(y['2026年']) / v(y.前年同期)) * 10) / 10,
+      };
+    });
+  },
+});
+
+dash.calc('ytd_change', {
+  inputs: ['ytd2026'],
+  title: '途中経過の前年同期比',
+  description: '2026年の途中経過を、前の年の同じ時期と比べた増減率(%)。',
+  fn: (ytd2026) => ytd2026.map((r) => ({ 病気: r.病気, 指標: r.指標, 前年同期比: Math.round((Number(r['2026年']) / Number(r.前年同期) - 1) * 1000) / 10 })),
+});
+
+const fmt = d3.format(',');
+const num = (v) => (v === null || v === undefined || v === '' ? null : Number(v));
+const enc = (s) => String(s).replace(/%/g, '%25').replace(/&/g, '%26').replace(/=/g, '%3D');
+const whereOf = (o) => Object.entries(o).map(([k, v]) => `${enc(k)}=${enc(v)}`).join('&');
+const parseWhere = (s) => s.split('&').map((p) => p.split('=').map((x) => decodeURIComponent(x)));
+const pct = (n) => `${n > 0 ? '+' : ''}${n.toFixed(1)}%`;
+const RATE = /率|人口10万対|%/;
+const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function el(tag, cls, text) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (text !== undefined) e.textContent = text;
+  return e;
+}
+function mark(e, source, field, where) {
+  e.setAttribute('data-source', source);
+  if (field) e.setAttribute('data-field', field);
+  if (where) e.setAttribute('data-where', whereOf(where));
+  return e;
+}
+function show(v, col) {
+  const n = num(v);
+  if (n === null || Number.isNaN(n)) return v === null || v === undefined ? '—' : String(v);
+  if (col === '順位') return String(n);
+  if (col && RATE.test(col)) return Math.abs(n * 10 - Math.round(n * 10)) < 1e-9 ? n.toFixed(1) : String(n);
+  return Number.isInteger(n) ? fmt(n) : String(n);
+}
+function stateOf(...ds) {
+  if (ds.some((x) => ['error', 'declined', 'connect', 'missing'].includes(x.status))) return 'error';
+  return ds.every((x) => x.status === 'ok') ? 'ok' : 'loading';
+}
+function failIn(box) {
+  box.replaceChildren(el('div', 'kj-fail', '読み込めませんでした'));
+  box.classList.remove('dash-skeleton');
+}
+// データの状態に合わせて箱を準備する。描けるときだけ true
+function prep(box, ...ds) {
+  const st = stateOf(...ds);
+  if (st === 'ok') { box.classList.remove('dash-skeleton'); box.querySelectorAll(':scope > .kj-fail').forEach((f) => f.remove()); return true; }
+  if (st === 'error') failIn(box);
+  else { box.replaceChildren(); box.classList.add('dash-skeleton'); }
+  return false;
+}
+const yearsOf = (rows) => [...new Set(rows.map((r) => num(r.年)))].sort((a, b) => a - b);
+const valOf = (rows, y, m) => { const r = rows.find((x) => num(x.年) === y && x.指標 === m); return r ? num(r.値) : null; };
+const statusOf = (rows, y) => (rows.find((x) => num(x.年) === y) || {}).区分;
+
+function svgIn(box, W, H, label) {
+  const svg = d3.select(box).selectAll('svg').data([0]).join('svg')
+    .attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`).attr('role', 'img').attr('aria-label', label);
+  svg.selectAll('*').remove();
+  return svg;
+}
+function measure(svg, texts, cls) {
+  const t = svg.append('text').attr('class', cls || 'kj-tick').attr('x', -9999).attr('y', -9999);
+  let w = 0;
+  texts.forEach((s) => { t.text(s); w = Math.max(w, t.node().getComputedTextLength()); });
+  t.remove();
+  return w;
+}
+function tipOf(box) {
+  let t = box.querySelector('.kj-tip');
+  if (!t) { t = el('div', 'kj-tip'); t.hidden = true; box.append(t); }
+  return t;
+}
+function showTip(tip, box, ev, title, lines) {
+  tip.replaceChildren(el('div', 'kj-tip-h', title));
+  lines.forEach(([name, value, color, col]) => {
+    const row = el('div', 'kj-tip-row');
+    if (color) { const i = el('i'); i.style.background = color; row.append(i); }
+    row.append(el('span', '', name), el('b', '', show(value, col || name)));
+    tip.append(row);
+  });
+  tip.hidden = false;
+  const [mx, my] = d3.pointer(ev, box);
+  const w = tip.offsetWidth, h = tip.offsetHeight;
+  tip.style.left = `${Math.max(0, Math.min(box.clientWidth - w, mx + 12))}px`;
+  tip.style.top = `${Math.max(0, my - h - 10)}px`;
+}
+const hideTip = (tip) => { tip.hidden = true; };
+function legend(id, items) {
+  const box = document.getElementById(id);
+  if (!box) return;
+  box.replaceChildren(...items.map(([name, color, soku]) => {
+    const s = el('span');
+    const i = el('i', soku ? 'kj-soku-key' : '');
+    i.style.background = color;
+    s.append(i, document.createTextNode(name));
+    return s;
+  }));
+}
+
+// 見出し・タイルの数字
+const FIELD_FMT = {
+  最新確定年: String, 最初の年: String, 速報年: String, 途中の期間: String, 途中の指標: String,
+  前年比: pct, 前年同期比: pct,
+  '10年前と比べて(倍)': (n) => n.toFixed(1), 前年同期の倍: (n) => n.toFixed(1),
+};
+function drawOverviewMarks(O) {
+  document.querySelectorAll('.kj [data-source="overview"][data-field]').forEach((e) => {
+    if (O.status !== 'ok') {
+      if (stateOf(O) === 'error') { e.textContent = '—'; e.classList.remove('dash-skeleton'); } else e.classList.add('dash-skeleton');
+      return;
+    }
+    const field = e.getAttribute('data-field');
+    const w = parseWhere(e.getAttribute('data-where') || '');
+    const row = O.data.find((r) => w.every(([k, v]) => String(r[k]) === v));
+    e.classList.remove('dash-skeleton', 'kj-up', 'kj-down');
+    const v = row ? row[field] : null;
+    if (v === null || v === undefined) { e.textContent = '—'; return; }
+    e.textContent = (FIELD_FMT[field] || fmt)(v);
+    if (field === '前年比' || field === '前年同期比') e.classList.add(v > 0 ? 'kj-up' : 'kj-down');
+  });
+}
+
+function drawSpark(d, i, A) {
+  const box = document.getElementById(`spark-${d.id}`);
+  if (!prep(box, A)) return;
+  const rows = A.data.filter((r) => r.病気 === d.name);
+  const years = yearsOf(rows);
+  const total = (y) => (d.stack ? d3.sum(d.stack, (m) => valOf(rows, y, m) || 0) : valOf(rows, y, d.bars));
+  const W = Math.max(160, box.clientWidth), H = 44;
+  const svg = svgIn(box, W, H, `${d.name}の年ごとの推移`);
+  const x = d3.scaleBand(years, [0, W]).padding(0.25);
+  const y = d3.scaleLinear([0, d3.max(years, total)], [H - 1, 2]);
+  svg.selectAll('rect').data(years).join('rect')
+    .attr('x', (yr) => x(yr)).attr('width', x.bandwidth())
+    .attr('y', (yr) => y(total(yr))).attr('height', (yr) => Math.max(1, y(0) - y(total(yr))))
+    .attr('rx', 2).style('fill', dash.colors[i]).style('fill-opacity', (yr) => (statusOf(rows, yr) === '速報' ? 0.4 : 1));
+}
+
+function drawAnnual(d, A) {
+  const box = document.getElementById(`${d.id}-annual-chart`);
+  const series = d.stack || [d.bars];
+  const legendItems = series.length > 1 ? series.map((m, k) => [m, dash.colors[k]]) : [];
+  if (!prep(box, A)) { legend(`${d.id}-annual-legend`, []); return; }
+  const rows = A.data.filter((r) => r.病気 === d.name);
+  const years = yearsOf(rows);
+  if (years.some((yr) => statusOf(rows, yr) === '速報')) legendItems.push(['速報値', dash.colors[0], true]);
+  legend(`${d.id}-annual-legend`, legendItems);
+  const total = (yr) => d3.sum(series, (m) => valOf(rows, yr, m) || 0);
+  const W = Math.max(280, box.clientWidth), H = 280, mt = 22, mb = 40, mr = 8;
+  const svg = svgIn(box, W, H, `${d.name}の年ごとの推移の棒グラフ`);
+  const y = d3.scaleLinear([0, d3.max(years, total)], [H - mb, mt]).nice(4);
+  const ticks = y.ticks(4);
+  const ml = measure(svg, ticks.map(fmt)) + 10;
+  const x = d3.scaleBand(years, [ml, W - mr]).padding(0.28);
+  const bw = x.bandwidth();
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', ml).attr('x2', W - mr).attr('y1', (t) => y(t)).attr('y2', (t) => y(t))
+    .style('stroke', (t) => (t === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)')).style('stroke-width', 1);
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('class', 'kj-tick').attr('x', ml - 8).attr('y', (t) => y(t)).attr('dy', '0.32em').attr('text-anchor', 'end').text(fmt);
+  const g = svg.append('g');
+  years.forEach((yr) => {
+    let base = 0;
+    const soku = statusOf(rows, yr) === '速報';
+    series.forEach((m, k) => {
+      const v = valOf(rows, yr, m) || 0;
+      g.append('rect').attr('x', x(yr)).attr('width', bw)
+        .attr('y', y(base + v)).attr('height', Math.max(0, y(base) - y(base + v))).attr('rx', series.length > 1 ? 0 : 3)
+        .style('fill', dash.colors[k]).style('fill-opacity', soku ? 0.38 : 1)
+        .style('stroke', soku ? dash.colors[k] : 'none').style('stroke-dasharray', soku ? '3 2' : null);
+      base += v;
+    });
+  });
+  const every = Math.max(1, Math.ceil((measure(svg, ['2025']) + 8) / x.step()));
+  years.forEach((yr, i) => {
+    if ((years.length - 1 - i) % every !== 0) return;
+    svg.append('text').attr('class', 'kj-tick').attr('x', x(yr) + bw / 2).attr('y', H - mb + 16).attr('text-anchor', 'middle').text(String(yr));
+    if (statusOf(rows, yr) === '速報') svg.append('text').attr('class', 'kj-tick kj-tick-soku').attr('x', x(yr) + bw / 2).attr('y', H - mb + 30).attr('text-anchor', 'middle').text('速報');
+  });
+  const labelAll = measure(svg, years.map((yr) => fmt(total(yr))), 'kj-val') + 6 <= x.step();
+  years.forEach((yr, i) => {
+    const last = i === years.length - 1;
+    if (!labelAll && !last) return;
+    svg.append('text').attr('class', 'kj-val')
+      .attr('x', labelAll ? x(yr) + bw / 2 : x(yr) + bw).attr('text-anchor', labelAll ? 'middle' : 'end')
+      .attr('y', y(labelAll || i === 0 ? total(yr) : Math.max(total(yr), total(years[i - 1]))) - 6).text(fmt(total(yr)));
+  });
+  const tip = tipOf(box);
+  svg.append('g').selectAll('rect').data(years).join('rect')
+    .attr('x', (yr) => x(yr) - (x.step() - bw) / 2).attr('width', x.step()).attr('y', mt).attr('height', H - mb - mt)
+    .style('fill', 'transparent')
+    .on('pointerenter pointermove', (ev, yr) => {
+      const lines = series.map((m, k) => [m, valOf(rows, yr, m), series.length > 1 ? dash.colors[k] : null]);
+      if (d.stack) lines.push(['合計', total(yr)]);
+      (d.extra || []).forEach((m) => lines.push([m, valOf(rows, yr, m)]));
+      showTip(tip, box, ev, `${yr}年（${statusOf(rows, yr)}値）`, lines);
+    })
+    .on('pointerleave', () => hideTip(tip));
+}
+
+function drawRate(d, A) {
+  const box = document.getElementById(`${d.id}-rate-chart`);
+  if (!box || !prep(box, A)) return;
+  const rows = A.data.filter((r) => r.病気 === d.name && r.指標 === d.rate).sort((a, b) => num(a.年) - num(b.年));
+  const years = rows.map((r) => num(r.年));
+  const W = Math.max(280, box.clientWidth), H = 220, mt = 20, mb = 28, mr = 28;
+  const svg = svgIn(box, W, H, `${d.name}の罹患率の推移の折れ線グラフ`);
+  const y = d3.scaleLinear([0, Math.max(d3.max(rows, (r) => num(r.値)), LOW_BURDEN)], [H - mb, mt]).nice(4);
+  const ticks = y.ticks(4);
+  const ml = measure(svg, ticks.map(String)) + 10;
+  const x = d3.scalePoint(years, [ml + 14, W - mr]);
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', ml).attr('x2', W - 4).attr('y1', (t) => y(t)).attr('y2', (t) => y(t))
+    .style('stroke', (t) => (t === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)'));
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('class', 'kj-tick').attr('x', ml - 8).attr('y', (t) => y(t)).attr('dy', '0.32em').attr('text-anchor', 'end').text(String);
+  svg.append('line').attr('x1', ml).attr('x2', W - 4).attr('y1', y(LOW_BURDEN)).attr('y2', y(LOW_BURDEN))
+    .style('stroke', 'var(--cds-chart-reference)').style('stroke-dasharray', '4 3');
+  // 近年は線が目安より下にあるので、文字は右端の目安線の上に置く
+  svg.append('text').attr('class', 'kj-ref').attr('x', W - 4).attr('y', y(LOW_BURDEN) - 6).attr('text-anchor', 'end').text(W < 480 ? '低まん延の目安' : `低まん延の目安（${LOW_BURDEN}以下）`);
+  svg.append('path').datum(rows)
+    .attr('d', d3.line().x((r) => x(num(r.年))).y((r) => y(num(r.値))))
+    .style('fill', 'none').style('stroke', dash.colors[0]).style('stroke-width', 2).style('stroke-linecap', 'round').style('stroke-linejoin', 'round');
+  svg.append('g').selectAll('circle').data(rows).join('circle')
+    .attr('cx', (r) => x(num(r.年))).attr('cy', (r) => y(num(r.値))).attr('r', 3).style('fill', dash.colors[0]);
+  const lastR = rows[rows.length - 1];
+  svg.append('text').attr('class', 'kj-val').attr('x', x(num(lastR.年))).attr('y', y(num(lastR.値)) - 9).attr('text-anchor', 'middle').text(show(lastR.値, d.rate));
+  const every = Math.max(1, Math.ceil((measure(svg, ['2025']) + 8) / x.step()));
+  years.forEach((yr, i) => {
+    if ((years.length - 1 - i) % every !== 0) return;
+    svg.append('text').attr('class', 'kj-tick').attr('x', x(yr)).attr('y', H - mb + 18).attr('text-anchor', 'middle').text(String(yr));
+  });
+  const tip = tipOf(box);
+  svg.append('g').selectAll('rect').data(rows).join('rect')
+    .attr('x', (r) => x(num(r.年)) - x.step() / 2).attr('width', x.step()).attr('y', mt).attr('height', H - mb - mt)
+    .style('fill', 'transparent')
+    .on('pointerenter pointermove', (ev, r) => showTip(tip, box, ev, `${r.年}年`, [['罹患率（人口10万対）', r.値]]))
+    .on('pointerleave', () => hideTip(tip));
+}
+
+function drawAge(d, B) {
+  const box = document.getElementById(`${d.id}-age-chart`);
+  const multi = d.age.length > 1;
+  legend(`${d.id}-age-legend`, multi ? d.age.map((s, k) => [s, dash.colors[k]]) : []);
+  if (!prep(box, B)) return;
+  const all = B.data.filter((r) => r.病気 === d.name && r.種類 === '年代別' && r.区分 !== '総数');
+  if (all.length) document.getElementById(`${d.id}-age-title`).textContent = all[0].表;
+  const labels = [...new Set(all.map((r) => r.区分))];
+  const v = (l, s) => num((all.find((r) => r.区分 === l && r.列 === s) || {}).値);
+  const rowH = multi ? 26 : 22, barH = multi ? 9 : 13, mt = 4, mb = 24;
+  const H = mt + labels.length * rowH + mb;
+  box.style.minHeight = `${H}px`;
+  const W = Math.max(260, box.clientWidth);
+  const svg = svgIn(box, W, H, `${d.name}の年代別の横棒グラフ`);
+  const vmax = d3.max(labels, (l) => d3.max(d.age, (s) => v(l, s) || 0)) || 1;
+  const ml = measure(svg, labels, 'kj-rowlab') + 10;
+  const mr = multi ? 14 : measure(svg, [fmt(vmax)], 'kj-val') + 10;
+  const x = d3.scaleLinear([0, vmax], [ml, W - mr]).nice(W < 420 ? 3 : 5);
+  const ticks = x.ticks(W < 420 ? 3 : 5);
+  const bottom = mt + labels.length * rowH;
+  svg.append('g').selectAll('line').data(ticks).join('line')
+    .attr('x1', (t) => x(t)).attr('x2', (t) => x(t)).attr('y1', mt).attr('y2', bottom)
+    .style('stroke', (t) => (t === 0 ? 'var(--cds-chart-axis)' : 'var(--cds-chart-grid)'));
+  svg.append('g').selectAll('text').data(ticks).join('text')
+    .attr('class', 'kj-tick').attr('x', (t) => x(t)).attr('y', bottom + 16)
+    .attr('text-anchor', (t, i) => (i === ticks.length - 1 && x(t) > W - 20 ? 'end' : 'middle')).text(fmt);
+  const tip = tipOf(box);
+  labels.forEach((l, i) => {
+    const top = mt + i * rowH;
+    const block = multi ? barH * 2 + 2 : barH;
+    svg.append('text').attr('class', 'kj-rowlab').attr('x', ml - 8).attr('y', top + rowH / 2).attr('dy', '0.32em').attr('text-anchor', 'end').text(l);
+    d.age.forEach((s, k) => {
+      const val = v(l, s) || 0;
+      svg.append('rect').attr('x', ml).attr('y', top + (rowH - block) / 2 + k * (barH + 2))
+        .attr('width', Math.max(val > 0 ? 1 : 0, x(val) - ml)).attr('height', barH).attr('rx', 2).style('fill', dash.colors[k]);
+      if (!multi) svg.append('text').attr('class', 'kj-val').attr('x', x(val) + 4).attr('y', top + rowH / 2).attr('dy', '0.32em').text(fmt(val));
+    });
+    svg.append('rect').attr('x', 0).attr('width', W).attr('y', top).attr('height', rowH).style('fill', 'transparent')
+      .on('pointerenter pointermove', (ev) => {
+        const lines = d.age.map((s, k) => [s, v(l, s), multi ? dash.colors[k] : null]);
+        d.ageExtra.forEach((s) => lines.push([s, v(l, s)]));
+        showTip(tip, box, ev, l, lines);
+      })
+      .on('pointerleave', () => hideTip(tip));
+  });
+}
+
+function drawYtd(d, Y, YC, N) {
+  const box = document.getElementById(`${d.id}-ytd-body`);
+  const inputs = d.id === 'tb' ? [Y, YC, N] : [Y, YC];
+  if (!prep(box, ...inputs)) return;
+  const rows = Y.data.filter((r) => r.病気 === d.name);
+  if (!rows.length) return;
+  const max = d3.max(rows, (r) => Math.max(num(r['2026年']) || 0, num(r.前年同期) || 0)) || 1;
+  const period = mark(el('p', 'kj-cap', rows[0].期間), 'ytd2026', '期間', { 病気: d.name, 指標: rows[0].指標 });
+  box.replaceChildren(period);
+  rows.forEach((r) => {
+    const blk = el('div', 'kj-ytd');
+    const head = el('div', 'kj-ytd-head');
+    const ch = YC.data.find((c) => c.病気 === d.name && c.指標 === r.指標);
+    head.append(el('span', '', r.指標));
+    if (ch) {
+      const n = num(ch.前年同期比);
+      const pill = el('span', `kj-pill ${n > 0 ? 'kj-up' : 'kj-down'}`, '前年同期より ');
+      pill.append(mark(el('span', '', pct(n)), 'ytd_change', '前年同期比', { 病気: d.name, 指標: r.指標 }));
+      head.append(pill);
+    }
+    blk.append(head);
+    [['2026年', '2026年', dash.colors[0]], ['前年の同じ時期', '前年同期', 'var(--cds-chart-muted)']].forEach(([name, field, color]) => {
+      const line = el('div', 'kj-bar-line');
+      const track = el('div', 'kj-track');
+      const fill = el('div', 'kj-fill');
+      fill.style.width = `${((num(r[field]) || 0) / max) * 100}%`;
+      fill.style.background = color;
+      track.append(fill);
+      const val = el('span', 'kj-bar-val');
+      val.append(mark(el('span', '', fmt(num(r[field]))), 'ytd2026', field, { 病気: d.name, 指標: r.指標 }), document.createTextNode(d.id === 'tb' ? '件' : d.unit));
+      line.append(el('span', 'kj-bar-name', name), track, val);
+      blk.append(line);
+    });
+    box.append(blk);
+  });
+  if (d.id === 'tb') {
+    N.data.filter((n) => n.病気 === d.name && n.種類 === '表の注' && n.表 === '2026年の途中経過').forEach((n) => {
+      box.append(mark(el('p', 'kj-cap', n.文), 'notes', '文', { 病気: n.病気, 種類: n.種類, 表: n.表, 番号: n.番号 }));
+    });
+  }
+}
+
+function drawTables(d, B, N) {
+  const wrap = document.getElementById(`${d.id}-tables`);
+  const st = stateOf(B, N);
+  if (st !== 'ok') {
+    wrap.replaceChildren();
+    const c = el('div', 'kj-card');
+    c.style.minHeight = '8rem';
+    if (st === 'error') failIn(c); else c.classList.add('dash-skeleton');
+    wrap.append(c);
+    return;
+  }
+  const rows = B.data.filter((r) => r.病気 === d.name && r.種類 !== '年代別' && String(r.ページ) !== 'false');
+  const titles = [...new Set(rows.map((r) => r.表))];
+  wrap.replaceChildren(...titles.map((t, ti) => {
+    const tr = rows.filter((r) => r.表 === t);
+    const cols = [...new Set(tr.map((r) => r.列))];
+    const labels = [...new Set(tr.map((r) => r.区分))];
+    const card = el('div', 'kj-card');
+    card.id = `${d.id}-table-${ti + 1}`;
+    card.append(el('h3', '', t));
+    const sc = el('div', 'kj-scroll');
+    const table = el('table', 'kj-table');
+    const hr = table.createTHead().insertRow();
+    hr.append(el('th', '', tr[0].種類 === '都道府県' ? '都道府県' : ''));
+    cols.forEach((c) => hr.append(el('th', '', c)));
+    const body = table.createTBody();
+    labels.forEach((l) => {
+      const row = body.insertRow();
+      row.insertCell().textContent = l;
+      cols.forEach((c) => {
+        const cell = row.insertCell();
+        const r = tr.find((x) => x.区分 === l && x.列 === c);
+        cell.textContent = r ? show(r.値, c) : '—';
+        if (r) mark(cell, 'breakdown', '値', { 病気: d.name, 表: t, 区分: l, 列: c });
+      });
+    });
+    sc.append(table);
+    card.append(sc);
+    const ns = N.data.filter((n) => n.病気 === d.name && n.種類 === '表の注' && n.表 === t);
+    if (ns.length) {
+      const det = el('details', 'kj-details');
+      det.append(el('summary', '', '表の注'));
+      ns.forEach((n) => det.append(mark(el('p', '', n.文), 'notes', '文', { 病気: n.病気, 種類: n.種類, 表: n.表, 番号: n.番号 })));
+      card.append(det);
+    }
+    const src = tr[0].出典ID;
+    if (src) {
+      const b = el('button', 'kj-src', `出典 ${src}`);
+      b.type = 'button';
+      b.addEventListener('click', () => jumpToSource(src));
+      card.append(b);
+    }
+    return card;
+  }));
+}
+
+function drawList(list, N, who, kind) {
+  if (!list) return;
+  if (!prep(list, N)) return;
+  const items = N.data.filter((n) => n.病気 === who && n.種類 === kind).sort((a, b) => num(a.番号) - num(b.番号));
+  list.replaceChildren(...items.map((n) => {
+    const li = el('li');
+    li.append(mark(el('span', '', n.文), 'notes', '文', { 病気: n.病気, 種類: n.種類, 番号: n.番号 }));
+    if (n.出典ID) {
+      const b = el('button', 'kj-src', `出典 ${n.出典ID}`);
+      b.type = 'button';
+      b.addEventListener('click', () => jumpToSource(n.出典ID));
+      li.append(' ', b);
+    }
+    return li;
+  }));
+}
+
+function drawLede(d, N) {
+  const p = document.getElementById(`${d.id}-lede-text`);
+  if (N.status !== 'ok') { if (stateOf(N) === 'error') { p.textContent = '—'; p.classList.remove('dash-skeleton'); } return; }
+  const n = N.data.find((x) => x.病気 === d.name && x.種類 === '数え方');
+  p.classList.remove('dash-skeleton');
+  p.textContent = n ? n.文 : '—';
+}
+
+let srcFilter = '';
+function drawSources(S) {
+  const table = document.getElementById('src-table');
+  const body = table.tBodies[0];
+  if (S.status !== 'ok') {
+    body.replaceChildren();
+    if (stateOf(S) === 'error') { const r = body.insertRow(); const c = r.insertCell(); c.colSpan = 6; c.append(el('div', 'kj-fail', '読み込めませんでした')); }
+    return;
+  }
+  const cols = ['出典ID', '病気', '資料名', '発行元', '公表日・更新日'];
+  body.replaceChildren(...S.data.filter((s) => !srcFilter || s.病気 === srcFilter).map((s) => {
+    const tr = el('tr');
+    tr.dataset.key = s.出典ID;
+    cols.forEach((c) => tr.append(el('td', '', s[c] === null || s[c] === undefined ? '—' : String(s[c]))));
+    const td = el('td');
+    const url = String(s.URL || '');
+    if (/^https:\/\//.test(url)) {
+      const a = el('a', '', url);
+      a.href = url;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      td.append(a);
+    } else td.textContent = url || '—';
+    tr.append(td);
+    return tr;
+  }));
+}
+function jumpToSource(id) {
+  const sel = document.getElementById('src-filter');
+  if (srcFilter) { srcFilter = ''; sel.value = ''; drawSources(dash.data('sources')); }
+  const row = document.querySelector(`#src-table tr[data-key="${CSS.escape(id)}"]`);
+  if (!row) return;
+  row.scrollIntoView({ block: 'center', behavior: reduce ? 'auto' : 'smooth' });
+  row.classList.add('kj-hl');
+  setTimeout(() => row.classList.remove('kj-hl'), 2500);
+}
+document.getElementById('src-filter').addEventListener('change', (ev) => {
+  srcFilter = ev.target.value;
+  drawSources(dash.data('sources'));
+});
+
+function go(id) {
+  const target = document.getElementById(id);
+  if (!target) return;
+  target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  dash.setLink(id);
+}
+document.querySelectorAll('.kj [data-target]').forEach((b) => b.addEventListener('click', () => go(b.dataset.target)));
+document.querySelectorAll('.kj-swatch[data-i]').forEach((s) => { s.style.background = dash.colors[Number(s.dataset.i)]; });
+
+let linked = false;
+dash.onData(() => {
+  const A = dash.data('annual'), Y = dash.data('ytd2026'), B = dash.data('breakdown');
+  const N = dash.data('notes'), S = dash.data('sources'), O = dash.data('overview'), YC = dash.data('ytd_change');
+  drawOverviewMarks(O);
+  DISEASES.forEach((d, i) => {
+    drawSpark(d, i, A);
+    drawLede(d, N);
+    drawAnnual(d, A);
+    if (d.rate) drawRate(d, A);
+    drawYtd(d, Y, YC, N);
+    drawAge(d, B);
+    drawTables(d, B, N);
+    drawList(document.querySelector(`#${d.id}-features .kj-list`), N, d.name, '特徴');
+    drawList(document.querySelector(`#${d.id}-measures .kj-list`), N, d.name, '対策');
+    drawList(document.querySelector(`#${d.id}-cautions .kj-list`), N, d.name, '見るときの注意');
+  });
+  drawList(document.getElementById('cautions-list'), N, '全体', '見るときの注意');
+  drawSources(S);
+  if (!linked && [A, B, N, S].every((x) => x.status === 'ok')) {
+    linked = true;
+    const named = location.hash && document.getElementById(location.hash.slice(1));
+    if (named) named.scrollIntoView();
+  }
+});
+</script>

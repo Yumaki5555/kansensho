@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>サムネイルの元</title>
+<!-- SNSで共有したときのサムネイル（1200×630）の元。直したら Edge で撮り直す（README参照） -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Noto+Serif+JP:wght@600&display=swap">
+<style>
+html,body{margin:0;width:1200px;height:630px;overflow:hidden}
+body{background:#f6f7f5;color:#1c2321;font-family:"Noto Sans JP",sans-serif;position:relative}
+.box{position:absolute;inset:56px 72px;display:flex;flex-direction:column;justify-content:center;gap:22px}
+.kicker{font-size:30px;font-weight:700;color:#59645f;letter-spacing:.06em}
+h1{margin:0;font-family:"Noto Serif JP",serif;font-weight:600;font-size:104px;line-height:1.1;letter-spacing:.02em}
+.lead{margin:0;font-size:36px;font-weight:500;color:#2b3431}
+.chips{display:flex;gap:16px;margin-top:14px}
+.chip{display:flex;align-items:center;gap:12px;padding:12px 22px;border:2px solid #dde3df;border-radius:999px;background:#fff;font-size:32px;font-weight:700}
+.chip i{width:22px;height:22px;border-radius:5px;display:inline-block}
+.pulse{position:absolute;right:64px;top:70px;width:300px;height:120px}
+</style>
+</head>
+<body>
+<svg class="pulse" viewBox="0 0 300 120" aria-hidden="true"><path d="M4 64h70l22-46 40 92 22-46h138" fill="none" stroke="#2f6cb3" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" opacity=".85"/></svg>
+<div class="box">
+  <div class="kicker">日本を知る。</div>
+  <h1>日本の感染症を知る</h1>
+  <p class="lead">増えている？減っている？ 国の公式資料でグラフにしました。</p>
+  <div class="chips">
+    <span class="chip"><i style="background:#2f6cb3"></i>HIV/エイズ</span>
+    <span class="chip"><i style="background:#c2532d"></i>梅毒</span>
+    <span class="chip"><i style="background:#a87a12"></i>はしか</span>
+    <span class="chip"><i style="background:#3b8a56"></i>結核</span>
+  </div>
+</div>
+</body>
+</html>
