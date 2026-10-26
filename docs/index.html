@@ -668,7 +668,12 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
   .kj-outline-head .kj-band-k { justify-self: start; }
   .kj-outline-head h2 { margin: 2px 0 0; font-size: clamp(1.625rem, 1.25rem + 1.6vw, 2.375rem); font-weight: 700; line-height: 1.3; word-break: auto-phrase; }
   .kj-outline-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  @media (max-width: 1099px) { .kj-outline-list { grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); } }
+  /* 中くらいの幅（5つが横に並ばない幅）では、1つずつ横長の行にする（2段目に1つだけ残らないように） */
+  @media (max-width: 1099px) {
+    .kj-outline-list { grid-template-columns: 1fr; gap: 8px; }
+    .kj .kj-outline-list a { grid-template-columns: 9.5rem minmax(0, 1fr) minmax(0, 1.3fr) auto; grid-template-rows: auto; align-items: center; column-gap: 14px; padding: 10px 14px; }
+    .kj-ol-fact b { font-size: 1.375rem; }
+  }
   .kj .kj-outline-list a { display: grid; grid-template-rows: auto auto 1fr auto; gap: 6px; height: 100%; padding: 12px 14px 14px; border-radius: 14px; background: var(--color-panel); border: 1.5px solid var(--color-border-line); color: var(--color-fg); text-decoration: none; transition: transform .15s, box-shadow .15s, border-color .15s; }
   .kj .kj-outline-list a:hover { border-color: var(--kj-link); box-shadow: 0 6px 18px rgba(20, 40, 60, .12); transform: translateY(-2px); }
   @media (prefers-reduced-motion: reduce) { .kj .kj-outline-list a, .kj .kj-outline-list a:hover { transition: none; transform: none; } }
