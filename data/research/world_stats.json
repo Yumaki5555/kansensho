@@ -1,0 +1,8405 @@
+{
+ "checked": "2026-10-26",
+ "years": {
+  "tb": 2024,
+  "measles": 2025,
+  "hiv": 2025,
+  "syphilis_from": 2020
+ },
+ "rows": [
+  {
+   "iso3": "ABW",
+   "name": "アルバ（オランダ領）",
+   "en": "Aruba",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 8.3,
+    "rate_lo": 6.8,
+    "rate_hi": 10,
+    "num": 9,
+    "num_lo": 7,
+    "num_hi": 11,
+    "pop": 108064,
+    "prev_year": 2023,
+    "prev_rate": 3.7,
+    "prev_num": 4
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "AFG",
+   "name": "アフガニスタン",
+   "en": "Afghanistan",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 203,
+    "rate_lo": 116,
+    "rate_hi": 400,
+    "num": 87000,
+    "num_lo": 50000,
+    "num_hi": 171000,
+    "pop": 42647488,
+    "prev_year": 2023,
+    "prev_rate": 204,
+    "prev_num": 84000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 18260.0,
+    "prev_year": 2024,
+    "prev_cases": 9769.0,
+    "per_m": 428.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 10000.0,
+    "plhiv_text": "10000 [1800 - 60 000]",
+    "new": 1100.0,
+    "new_text": "1100 [<200 - 7600]",
+    "prev_new": 1000.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - 0.2]"
+   }
+  },
+  {
+   "iso3": "AGO",
+   "name": "アンゴラ",
+   "en": "Angola",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 373,
+    "rate_lo": 243,
+    "rate_hi": 545,
+    "num": 141000,
+    "num_lo": 92000,
+    "num_hi": 207000,
+    "pop": 37885846,
+    "prev_year": 2023,
+    "prev_rate": 383,
+    "prev_num": 141000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2043.0,
+    "prev_year": 2024,
+    "prev_cases": 619.0,
+    "per_m": 53.9,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 370000.0,
+    "plhiv_text": "370 000 [320 000 - 430 000]",
+    "new": 21000.0,
+    "new_text": "21 000 [15 000 - 31 000]",
+    "prev_new": 21000.0,
+    "prev15_49": 1.6,
+    "prev15_49_text": "1.6 [1.4 - 1.8]"
+   }
+  },
+  {
+   "iso3": "AIA",
+   "name": "アンギラ（英国領）",
+   "en": "Anguilla",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 0,
+    "rate_lo": 0,
+    "rate_hi": 0,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 14594,
+    "prev_year": 2023,
+    "prev_rate": 2.3,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "ALB",
+   "name": "アルバニア",
+   "en": "Albania",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 15,
+    "rate_lo": 12,
+    "rate_hi": 18,
+    "num": 410,
+    "num_lo": 320,
+    "num_hi": 510,
+    "pop": 2791762,
+    "prev_year": 2023,
+    "prev_rate": 15,
+    "prev_num": 420
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 20.0,
+    "prev_year": 2024,
+    "prev_cases": 212.0,
+    "per_m": 7.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1600.0,
+    "plhiv_text": "1600 [1400 - 1900]",
+    "new": "<200",
+    "new_text": "<200 [<100 - <200]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "AND",
+   "name": "アンドラ",
+   "en": "Andorra",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.9,
+    "rate_lo": 4,
+    "rate_hi": 5.9,
+    "num": 4,
+    "num_lo": 3,
+    "num_hi": 5,
+    "pop": 81941,
+    "prev_year": 2023,
+    "prev_rate": 4.9,
+    "prev_num": 4
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "ARE",
+   "name": "アラブ首長国連邦",
+   "en": "United Arab Emirates",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 0.63,
+    "rate_lo": 0.51,
+    "rate_hi": 0.76,
+    "num": 70,
+    "num_lo": 57,
+    "num_hi": 84,
+    "pop": 11027123,
+    "prev_year": 2023,
+    "prev_rate": 0.76,
+    "prev_num": 81
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 234.0,
+    "prev_year": 2024,
+    "prev_cases": 559.0,
+    "per_m": 21.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1400.0,
+    "plhiv_text": "1400 [1200 - 1600]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 4.95
+    }
+   }
+  },
+  {
+   "iso3": "ARG",
+   "name": "アルゼンチン",
+   "en": "Argentina",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 44,
+    "rate_lo": 36,
+    "rate_hi": 53,
+    "num": 20000,
+    "num_lo": 16000,
+    "num_hi": 24000,
+    "pop": 45696155,
+    "prev_year": 2023,
+    "prev_rate": 39,
+    "prev_num": 18000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 36.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 0.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 150000.0,
+    "plhiv_text": "150 000 [140 000 - 160 000]",
+    "new": 5900.0,
+    "new_text": "5900 [5100 - 6500]",
+    "prev_new": 5900.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 6.031329554
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 221.31
+    }
+   }
+  },
+  {
+   "iso3": "ARM",
+   "name": "アルメニア",
+   "en": "Armenia",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 19,
+    "rate_lo": 15,
+    "rate_hi": 22,
+    "num": 550,
+    "num_lo": 450,
+    "num_hi": 670,
+    "pop": 2973835,
+    "prev_year": 2023,
+    "prev_rate": 21,
+    "prev_num": 620
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 45.0,
+    "prev_year": 2024,
+    "prev_cases": 561.0,
+    "per_m": 15.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 7800.0,
+    "plhiv_text": "7800 [7300 - 8300]",
+    "new": 620.0,
+    "new_text": "620 [550 - 690]",
+    "prev_new": 620.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.05
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 8.92
+    }
+   }
+  },
+  {
+   "iso3": "ASM",
+   "name": "米領サモア",
+   "en": "American Samoa",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 3.7,
+    "rate_lo": 3,
+    "rate_hi": 4.5,
+    "num": 2,
+    "num_lo": 1,
+    "num_hi": 2,
+    "pop": 46769,
+    "prev_year": 2023,
+    "prev_rate": 3.9,
+    "prev_num": 2
+   }
+  },
+  {
+   "iso3": "ATG",
+   "name": "アンティグア・バーブーダ",
+   "en": "Antigua and Barbuda",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 1.1,
+    "rate_lo": 0.87,
+    "rate_hi": 1.3,
+    "num": 1,
+    "num_lo": 1,
+    "num_hi": 1,
+    "pop": 93772,
+    "prev_year": 2023,
+    "prev_rate": 1.1,
+    "prev_num": 1
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 860.0,
+    "plhiv_text": "860 [750 - 970]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 1.2,
+    "prev15_49_text": "1.2 [1 - 1.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.73
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "AUS",
+   "name": "オーストラリア",
+   "en": "Australia",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 6.9,
+    "rate_lo": 5.6,
+    "rate_hi": 8.3,
+    "num": 1900,
+    "num_lo": 1500,
+    "num_hi": 2200,
+    "pop": 26713208,
+    "prev_year": 2023,
+    "prev_rate": 6.2,
+    "prev_num": 1600
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 181.0,
+    "prev_year": 2024,
+    "prev_cases": 57.0,
+    "per_m": 6.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 31000.0,
+    "plhiv_text": "31 000 [27 000 - 35 000]",
+    "new": "<500",
+    "new_text": "<500 [<200 - 620]",
+    "prev_new": "<500",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [<0.1 - 0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2022,
+     "value": 6036.0
+    }
+   }
+  },
+  {
+   "iso3": "AUT",
+   "name": "オーストリア",
+   "en": "Austria",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.9,
+    "rate_lo": 4,
+    "rate_hi": 5.9,
+    "num": 450,
+    "num_lo": 370,
+    "num_hi": 540,
+    "pop": 9120817,
+    "prev_year": 2023,
+    "prev_rate": 5.3,
+    "prev_num": 480
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 152.0,
+    "prev_year": 2024,
+    "prev_cases": 542.0,
+    "per_m": 16.7,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "AZE",
+   "name": "アゼルバイジャン",
+   "en": "Azerbaijan",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 64,
+    "rate_lo": 50,
+    "rate_hi": 80,
+    "num": 6600,
+    "num_lo": 5200,
+    "num_hi": 8300,
+    "pop": 10336574,
+    "prev_year": 2023,
+    "prev_rate": 66,
+    "prev_num": 6800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 10.0,
+    "prev_year": 2024,
+    "prev_cases": 18584.0,
+    "per_m": 1.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 12000.0,
+    "plhiv_text": "12 000 [9900 - 15 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 780]",
+    "prev_new": "<500",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 20.0
+    }
+   }
+  },
+  {
+   "iso3": "BDI",
+   "name": "ブルンジ",
+   "en": "Burundi",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 83,
+    "rate_lo": 51,
+    "rate_hi": 160,
+    "num": 12000,
+    "num_lo": 7100,
+    "num_hi": 22000,
+    "pop": 14047782,
+    "prev_year": 2023,
+    "prev_rate": 86,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 795.0,
+    "prev_year": 2024,
+    "prev_cases": 2741.0,
+    "per_m": 56.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 82000.0,
+    "plhiv_text": "82 000 [75 000 - 95 000]",
+    "new": 1600.0,
+    "new_text": "1600 [1300 - 2200]",
+    "prev_new": 1700.0,
+    "prev15_49": 0.8,
+    "prev15_49_text": "0.8 [0.7 - 0.9]"
+   }
+  },
+  {
+   "iso3": "BEL",
+   "name": "ベルギー",
+   "en": "Belgium",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 2.7,
+    "rate_lo": 2.2,
+    "rate_hi": 3.3,
+    "num": 320,
+    "num_lo": 260,
+    "num_hi": 390,
+    "pop": 11738764,
+    "prev_year": 2023,
+    "prev_rate": 2.5,
+    "prev_num": 290
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 371.0,
+    "prev_year": 2024,
+    "prev_cases": 526.0,
+    "per_m": 31.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 20000.0,
+    "plhiv_text": "20 000 [17 000 - 22 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 660]",
+    "prev_new": "<500",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.2]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 2545.0
+    }
+   }
+  },
+  {
+   "iso3": "BEN",
+   "name": "ベナン",
+   "en": "Benin",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 40,
+    "rate_lo": 24,
+    "rate_hi": 76,
+    "num": 5800,
+    "num_lo": 3500,
+    "num_hi": 11000,
+    "pop": 14462723,
+    "prev_year": 2023,
+    "prev_rate": 42,
+    "prev_num": 5900
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 747.0,
+    "prev_year": 2024,
+    "prev_cases": 785.0,
+    "per_m": 51.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 68000.0,
+    "plhiv_text": "68 000 [57 000 - 81 000]",
+    "new": 920.0,
+    "new_text": "920 [<500 - 1800]",
+    "prev_new": 1200.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.5 - 0.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.04
+    }
+   }
+  },
+  {
+   "iso3": "BFA",
+   "name": "ブルキナファソ",
+   "en": "Burkina Faso",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 57,
+    "rate_lo": 35,
+    "rate_hi": 109,
+    "num": 13000,
+    "num_lo": 8200,
+    "num_hi": 26000,
+    "pop": 23548779,
+    "prev_year": 2023,
+    "prev_rate": 58,
+    "prev_num": 13000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4099.0,
+    "prev_year": 2024,
+    "prev_cases": 4397.0,
+    "per_m": 174.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 91000.0,
+    "plhiv_text": "91 000 [77 000 - 110 000]",
+    "new": 1600.0,
+    "new_text": "1600 [970 - 2900]",
+    "prev_new": 1500.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.6]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.4
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 1.94547
+    }
+   }
+  },
+  {
+   "iso3": "BGD",
+   "name": "バングラデシュ",
+   "en": "Bangladesh",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 221,
+    "rate_lo": 161,
+    "rate_hi": 291,
+    "num": 384000,
+    "num_lo": 279000,
+    "num_hi": 505000,
+    "pop": 173562368,
+    "prev_year": 2023,
+    "prev_rate": 221,
+    "prev_num": 379000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 132.0,
+    "prev_year": 2024,
+    "prev_cases": 247.0,
+    "per_m": 0.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 19000.0,
+    "plhiv_text": "19 000 [17 000 - 21 000]",
+    "new": 1500.0,
+    "new_text": "1500 [1300 - 1700]",
+    "prev_new": 1500.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2021,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "BGR",
+   "name": "ブルガリア",
+   "en": "Bulgaria",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 12,
+    "rate_lo": 10,
+    "rate_hi": 15,
+    "num": 830,
+    "num_lo": 680,
+    "num_hi": 1000,
+    "pop": 6757686,
+    "prev_year": 2023,
+    "prev_rate": 17,
+    "prev_num": 1100
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2.0,
+    "prev_year": 2024,
+    "prev_cases": 27.0,
+    "per_m": 0.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 4400.0,
+    "plhiv_text": "4400 [3600 - 4900]",
+    "new": "<500",
+    "new_text": "<500 [<200 - <500]",
+    "prev_new": "<500",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 348.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 22.73
+    }
+   }
+  },
+  {
+   "iso3": "BHR",
+   "name": "バーレーン",
+   "en": "Bahrain",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 12,
+    "rate_lo": 9.8,
+    "rate_hi": 15,
+    "num": 190,
+    "num_lo": 160,
+    "num_hi": 230,
+    "pop": 1607051,
+    "prev_year": 2023,
+    "prev_rate": 14,
+    "prev_num": 220
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 7.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 4.4,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "BHS",
+   "name": "バハマ",
+   "en": "Bahamas",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 18,
+    "rate_lo": 15,
+    "rate_hi": 22,
+    "num": 73,
+    "num_lo": 59,
+    "num_hi": 88,
+    "pop": 401287,
+    "prev_year": 2023,
+    "prev_rate": 8.8,
+    "prev_num": 35
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3900.0,
+    "plhiv_text": "3900 [3400 - 4300]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 1.0,
+    "prev15_49_text": "1 [0.9 - 1.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2020,
+     "value": 1.18
+    }
+   }
+  },
+  {
+   "iso3": "BIH",
+   "name": "ボスニア・ヘルツェゴビナ",
+   "en": "Bosnia and Herzegovina",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 21,
+    "rate_lo": 17,
+    "rate_hi": 25,
+    "num": 650,
+    "num_lo": 530,
+    "num_hi": 780,
+    "pop": 3164245,
+    "prev_year": 2023,
+    "prev_rate": 20,
+    "prev_num": 640
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 103.0,
+    "prev_year": 2024,
+    "prev_cases": 7957.0,
+    "per_m": 32.6,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "BLR",
+   "name": "ベラルーシ",
+   "en": "Belarus",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 17,
+    "rate_lo": 14,
+    "rate_hi": 20,
+    "num": 1500,
+    "num_lo": 1200,
+    "num_hi": 1800,
+    "pop": 9056702,
+    "prev_year": 2023,
+    "prev_rate": 19,
+    "prev_num": 1700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 63.0,
+    "prev_year": 2024,
+    "prev_cases": 754.0,
+    "per_m": 7.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.02
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "BLZ",
+   "name": "ベリーズ",
+   "en": "Belize",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 34,
+    "rate_lo": 27,
+    "rate_hi": 41,
+    "num": 140,
+    "num_lo": 110,
+    "num_hi": 170,
+    "pop": 417069,
+    "prev_year": 2023,
+    "prev_rate": 34,
+    "prev_num": 140
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 44.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 105.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3400.0,
+    "plhiv_text": "3400 [3000 - 3900]",
+    "new": "<500",
+    "new_text": "<500 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": 1.1,
+    "prev15_49_text": "1.1 [0.9 - 1.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.41
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 189.33
+    }
+   }
+  },
+  {
+   "iso3": "BMU",
+   "name": "バミューダ（英国領）",
+   "en": "Bermuda",
+   "region": "北アメリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.1,
+    "rate_lo": 2.5,
+    "rate_hi": 3.7,
+    "num": 2,
+    "num_lo": 2,
+    "num_hi": 2,
+    "pop": 64634,
+    "prev_year": 2023,
+    "prev_rate": 3.1,
+    "prev_num": 2
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "BOL",
+   "name": "ボリビア",
+   "en": "Bolivia (Plurinational State of)",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 114,
+    "rate_lo": 93,
+    "rate_hi": 137,
+    "num": 14000,
+    "num_lo": 11000,
+    "num_hi": 17000,
+    "pop": 12413309,
+    "prev_year": 2023,
+    "prev_rate": 105,
+    "prev_num": 13000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 539.0,
+    "prev_year": 2024,
+    "prev_cases": 4.0,
+    "per_m": 43.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 40000.0,
+    "plhiv_text": "40 000 [35 000 - 48 000]",
+    "new": 2400.0,
+    "new_text": "2400 [1900 - 3100]",
+    "prev_new": 2400.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 156.66
+    }
+   }
+  },
+  {
+   "iso3": "BRA",
+   "name": "ブラジル",
+   "en": "Brazil",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 49,
+    "rate_lo": 40,
+    "rate_hi": 61,
+    "num": 104000,
+    "num_lo": 84000,
+    "num_hi": 129000,
+    "pop": 211998579,
+    "prev_year": 2023,
+    "prev_rate": 49,
+    "prev_num": 103000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 38.0,
+    "prev_year": 2024,
+    "prev_cases": 5.0,
+    "per_m": 0.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1200000.0,
+    "plhiv_text": "1 200 000 [1 100 000 - 1 300 000]",
+    "new": 69000.0,
+    "new_text": "69 000 [57 000 - 78 000]",
+    "prev_new": 68000.0,
+    "prev15_49": 0.8,
+    "prev15_49_text": "0.8 [0.7 - 0.8]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 1033.777027872
+    }
+   }
+  },
+  {
+   "iso3": "BRB",
+   "name": "バルバドス",
+   "en": "Barbados",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 1,
+    "rate_lo": 0.82,
+    "rate_hi": 1.2,
+    "num": 3,
+    "num_lo": 2,
+    "num_hi": 3,
+    "pop": 282468,
+    "prev_year": 2023,
+    "prev_rate": 0.71,
+    "prev_num": 2
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 2300.0,
+    "plhiv_text": "2300 [2000 - 2600]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <200]",
+    "prev_new": "<100",
+    "prev15_49": 1.1,
+    "prev15_49_text": "1.1 [0.9 - 1.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.39
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "BRN",
+   "name": "ブルネイ",
+   "en": "Brunei Darussalam",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 65,
+    "rate_lo": 53,
+    "rate_hi": 78,
+    "num": 300,
+    "num_lo": 240,
+    "num_hi": 360,
+    "pop": 462726,
+    "prev_year": 2023,
+    "prev_rate": 72,
+    "prev_num": 330
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.294261893
+    }
+   }
+  },
+  {
+   "iso3": "BTN",
+   "name": "ブータン",
+   "en": "Bhutan",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 191,
+    "rate_lo": 156,
+    "rate_hi": 231,
+    "num": 1500,
+    "num_lo": 1200,
+    "num_hi": 1800,
+    "pop": 791519,
+    "prev_year": 2023,
+    "prev_rate": 179,
+    "prev_num": 1400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1200.0,
+    "plhiv_text": "1200 [1000 - 1400]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.45
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 543.90054
+    }
+   }
+  },
+  {
+   "iso3": "BWA",
+   "name": "ボツワナ",
+   "en": "Botswana",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 143,
+    "rate_lo": 86,
+    "rate_hi": 280,
+    "num": 3600,
+    "num_lo": 2200,
+    "num_hi": 7000,
+    "pop": 2521126,
+    "prev_year": 2023,
+    "prev_rate": 175,
+    "prev_num": 4400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 3.0,
+    "prev_year": 2024,
+    "prev_cases": 3.0,
+    "per_m": 1.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 350000.0,
+    "plhiv_text": "350 000 [330 000 - 370 000]",
+    "new": 3200.0,
+    "new_text": "3200 [2600 - 4000]",
+    "prev_new": 3400.0,
+    "prev15_49": 14.7,
+    "prev15_49_text": "14.7 [12.9 - 15.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.44
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 529.42
+    }
+   }
+  },
+  {
+   "iso3": "CAF",
+   "name": "中央アフリカ",
+   "en": "Central African Republic",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 419,
+    "rate_lo": 260,
+    "rate_hi": 789,
+    "num": 22000,
+    "num_lo": 14000,
+    "num_hi": 42000,
+    "pop": 5330691,
+    "prev_year": 2023,
+    "prev_rate": 428,
+    "prev_num": 22000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 612.0,
+    "prev_year": 2024,
+    "prev_cases": 125.0,
+    "per_m": 114.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 96000.0,
+    "plhiv_text": "96 000 [70 000 - 140 000]",
+    "new": 2800.0,
+    "new_text": "2800 [640 - 9100]",
+    "prev_new": 4200.0,
+    "prev15_49": 2.4,
+    "prev15_49_text": "2.4 [1.6 - 3.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 6.65
+    }
+   }
+  },
+  {
+   "iso3": "CAN",
+   "name": "カナダ",
+   "en": "Canada",
+   "region": "北アメリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 6.2,
+    "rate_lo": 5,
+    "rate_hi": 7.5,
+    "num": 2500,
+    "num_lo": 2000,
+    "num_hi": 3000,
+    "pop": 39742434,
+    "prev_year": 2023,
+    "prev_rate": 6.2,
+    "prev_num": 2400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5072.0,
+    "prev_year": 2024,
+    "prev_cases": 147.0,
+    "per_m": 127.6,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2022,
+     "value": 18979.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 14.53
+    }
+   }
+  },
+  {
+   "iso3": "CHE",
+   "name": "スイス",
+   "en": "Switzerland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 5.4,
+    "rate_lo": 4.4,
+    "rate_hi": 6.5,
+    "num": 480,
+    "num_lo": 390,
+    "num_hi": 580,
+    "pop": 8921971,
+    "prev_year": 2023,
+    "prev_rate": 5.4,
+    "prev_num": 470
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 51.0,
+    "prev_year": 2024,
+    "prev_cases": 97.0,
+    "per_m": 5.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 18000.0,
+    "plhiv_text": "18 000 [15 000 - 21 000]",
+    "new": "<500",
+    "new_text": "<500 [<100 - <500]",
+    "prev_new": "<500",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 1.2
+    }
+   }
+  },
+  {
+   "iso3": "CHL",
+   "name": "チリ",
+   "en": "Chile",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 19,
+    "rate_lo": 16,
+    "rate_hi": 23,
+    "num": 3800,
+    "num_lo": 3100,
+    "num_hi": 4500,
+    "pop": 19764765,
+    "prev_year": 2023,
+    "prev_rate": 20,
+    "prev_num": 3800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 93000.0,
+    "plhiv_text": "93 000 [84 000 - 100 000]",
+    "new": 3500.0,
+    "new_text": "3500 [2900 - 4200]",
+    "prev_new": 3600.0,
+    "prev15_49": 0.7,
+    "prev15_49_text": "0.7 [0.6 - 0.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.66
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 39.6175585
+    }
+   }
+  },
+  {
+   "iso3": "CHN",
+   "name": "中国",
+   "en": "China",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 49,
+    "rate_lo": 40,
+    "rate_hi": 59,
+    "num": 696000,
+    "num_lo": 567000,
+    "num_hi": 839000,
+    "pop": 1419321279,
+    "prev_year": 2023,
+    "prev_rate": 52,
+    "prev_num": 741000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1770.0,
+    "prev_year": 2024,
+    "prev_cases": 1272.0,
+    "per_m": 1.2,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2020,
+     "value": 0.4
+    },
+    "cs_rate": {
+     "year": 2020,
+     "value": 9.99
+    }
+   }
+  },
+  {
+   "iso3": "CIV",
+   "name": "コートジボワール",
+   "en": "Côte d'Ivoire",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 99,
+    "rate_lo": 60,
+    "rate_hi": 192,
+    "num": 32000,
+    "num_lo": 19000,
+    "num_hi": 61000,
+    "pop": 31934226,
+    "prev_year": 2023,
+    "prev_rate": 103,
+    "prev_num": 32000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1013.0,
+    "prev_year": 2024,
+    "prev_cases": 1872.0,
+    "per_m": 31.7,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "CMR",
+   "name": "カメルーン",
+   "en": "Cameroon",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 132,
+    "rate_lo": 80,
+    "rate_hi": 257,
+    "num": 38000,
+    "num_lo": 23000,
+    "num_hi": 75000,
+    "pop": 29123749,
+    "prev_year": 2023,
+    "prev_rate": 137,
+    "prev_num": 39000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4117.0,
+    "prev_year": 2024,
+    "prev_cases": 863.0,
+    "per_m": 141.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 540000.0,
+    "plhiv_text": "540 000 [510 000 - 600 000]",
+    "new": 21000.0,
+    "new_text": "21 000 [18 000 - 26 000]",
+    "prev_new": 20000.0,
+    "prev15_49": 2.7,
+    "prev15_49_text": "2.7 [2.6 - 2.8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 5.74
+    }
+   }
+  },
+  {
+   "iso3": "COD",
+   "name": "コンゴ民主共和国",
+   "en": "Democratic Republic of the Congo",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 377,
+    "rate_lo": 231,
+    "rate_hi": 724,
+    "num": 412000,
+    "num_lo": 252000,
+    "num_hi": 792000,
+    "pop": 109276257,
+    "prev_year": 2023,
+    "prev_rate": 385,
+    "prev_num": 407000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 89100.0,
+    "prev_year": 2024,
+    "prev_cases": 109419.0,
+    "per_m": 815.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 570000.0,
+    "plhiv_text": "570 000 [470 000 - 710 000]",
+    "new": 23000.0,
+    "new_text": "23 000 [14 000 - 43 000]",
+    "prev_new": 24000.0,
+    "prev15_49": 0.7,
+    "prev15_49_text": "0.7 [0.6 - 0.9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 7.78
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 414.96
+    }
+   }
+  },
+  {
+   "iso3": "COG",
+   "name": "コンゴ共和国",
+   "en": "Congo",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 302,
+    "rate_lo": 185,
+    "rate_hi": 582,
+    "num": 19000,
+    "num_lo": 12000,
+    "num_hi": 37000,
+    "pop": 6332966,
+    "prev_year": 2023,
+    "prev_rate": 298,
+    "prev_num": 18000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 519.0,
+    "prev_year": 2024,
+    "prev_cases": 483.0,
+    "per_m": 82.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 130000.0,
+    "plhiv_text": "130 000 [100 000 - 170 000]",
+    "new": 10000.0,
+    "new_text": "10 000 [5600 - 17 000]",
+    "prev_new": 9700.0,
+    "prev15_49": 3.2,
+    "prev15_49_text": "3.2 [2.3 - 4.1]"
+   }
+  },
+  {
+   "iso3": "COK",
+   "name": "クック諸島",
+   "en": "Cook Islands",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 7.3,
+    "rate_lo": 5.9,
+    "rate_hi": 8.8,
+    "num": 1,
+    "num_lo": 1,
+    "num_hi": 1,
+    "pop": 13724,
+    "prev_year": 2023,
+    "prev_rate": 28,
+    "prev_num": 4
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "COL",
+   "name": "コロンビア",
+   "en": "Colombia",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 49,
+    "rate_lo": 40,
+    "rate_hi": 59,
+    "num": 26000,
+    "num_lo": 21000,
+    "num_hi": 31000,
+    "pop": 52886359,
+    "prev_year": 2023,
+    "prev_rate": 46,
+    "prev_num": 24000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 240000.0,
+    "plhiv_text": "240 000 [190 000 - 320 000]",
+    "new": 11000.0,
+    "new_text": "11 000 [6800 - 21 000]",
+    "prev_new": 11000.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.5 - 0.9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 3.678231862
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 214.76
+    }
+   }
+  },
+  {
+   "iso3": "COM",
+   "name": "コモロ",
+   "en": "Comoros",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 22,
+    "rate_lo": 13,
+    "rate_hi": 42,
+    "num": 190,
+    "num_lo": 110,
+    "num_hi": 360,
+    "pop": 866636,
+    "prev_year": 2023,
+    "prev_rate": 26,
+    "prev_num": 220
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2.0,
+    "prev_year": 2024,
+    "prev_cases": 17.0,
+    "per_m": 2.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": "<500",
+    "plhiv_text": "<500 [<200 - 910]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <200]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.16
+    }
+   }
+  },
+  {
+   "iso3": "CPV",
+   "name": "カーボベルデ",
+   "en": "Cabo Verde",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 47,
+    "rate_lo": 38,
+    "rate_hi": 57,
+    "num": 250,
+    "num_lo": 200,
+    "num_hi": 300,
+    "pop": 524877,
+    "prev_year": 2023,
+    "prev_rate": 53,
+    "prev_num": 280
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3900.0,
+    "plhiv_text": "3900 [3300 - 4800]",
+    "new": "<500",
+    "new_text": "<500 [<200 - <500]",
+    "prev_new": "<500",
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.8 - 1.1]"
+   }
+  },
+  {
+   "iso3": "CRI",
+   "name": "コスタリカ",
+   "en": "Costa Rica",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 9.3,
+    "rate_lo": 7.5,
+    "rate_hi": 11,
+    "num": 480,
+    "num_lo": 380,
+    "num_hi": 590,
+    "pop": 5129913,
+    "prev_year": 2023,
+    "prev_rate": 9.5,
+    "prev_num": 490
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 23000.0,
+    "plhiv_text": "23 000 [21 000 - 26 000]",
+    "new": 1300.0,
+    "new_text": "1300 [1000 - 1500]",
+    "prev_new": 1300.0,
+    "prev15_49": 0.7,
+    "prev15_49_text": "0.7 [0.6 - 0.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.94
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 414.141854484
+    }
+   }
+  },
+  {
+   "iso3": "CUB",
+   "name": "キューバ",
+   "en": "Cuba",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 11,
+    "rate_lo": 9.3,
+    "rate_hi": 14,
+    "num": 1300,
+    "num_lo": 1000,
+    "num_hi": 1500,
+    "pop": 10979793,
+    "prev_year": 2023,
+    "prev_rate": 8.1,
+    "prev_num": 890
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 42000.0,
+    "plhiv_text": "42 000 [36 000 - 46 000]",
+    "new": 1700.0,
+    "new_text": "1700 [1200 - 2000]",
+    "prev_new": 1700.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.5 - 0.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.24
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 21.02
+    }
+   }
+  },
+  {
+   "iso3": "CUW",
+   "name": "キュラソー（オランダ領）",
+   "en": "Curaçao",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 2.8,
+    "rate_lo": 2.3,
+    "rate_hi": 3.3,
+    "num": 5,
+    "num_lo": 4,
+    "num_hi": 6,
+    "pop": 185473,
+    "prev_year": 2023,
+    "prev_rate": 2.8,
+    "prev_num": 5
+   }
+  },
+  {
+   "iso3": "CYM",
+   "name": "ケイマン諸島（英国領）",
+   "en": "Cayman Islands",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.9,
+    "rate_lo": 4,
+    "rate_hi": 5.9,
+    "num": 4,
+    "num_lo": 3,
+    "num_hi": 4,
+    "pop": 74462,
+    "prev_year": 2023,
+    "prev_rate": 4.1,
+    "prev_num": 3
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "CYP",
+   "name": "キプロス",
+   "en": "Cyprus",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 5.5,
+    "rate_lo": 4.5,
+    "rate_hi": 6.7,
+    "num": 75,
+    "num_lo": 61,
+    "num_hi": 91,
+    "pop": 1358283,
+    "prev_year": 2023,
+    "prev_rate": 7.2,
+    "prev_num": 96
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 24.0,
+    "prev_year": 2024,
+    "prev_cases": 28.0,
+    "per_m": 17.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 95.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "CZE",
+   "name": "チェコ",
+   "en": "Czechia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.9,
+    "rate_lo": 4,
+    "rate_hi": 6,
+    "num": 530,
+    "num_lo": 430,
+    "num_hi": 640,
+    "pop": 10735865,
+    "prev_year": 2023,
+    "prev_rate": 4.9,
+    "prev_num": 530
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 40.0,
+    "prev_year": 2024,
+    "prev_cases": 35.0,
+    "per_m": 3.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 784.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "DEU",
+   "name": "ドイツ",
+   "en": "Germany",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 5.4,
+    "rate_lo": 4.9,
+    "rate_hi": 6,
+    "num": 4600,
+    "num_lo": 4100,
+    "num_hi": 5100,
+    "pop": 84552247,
+    "prev_year": 2023,
+    "prev_rate": 5.6,
+    "prev_num": 4700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 234.0,
+    "prev_year": 2024,
+    "prev_cases": 645.0,
+    "per_m": 2.8,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 9123.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.43
+    }
+   }
+  },
+  {
+   "iso3": "DJI",
+   "name": "ジブチ",
+   "en": "Djibouti",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 495,
+    "rate_lo": 403,
+    "rate_hi": 596,
+    "num": 5800,
+    "num_lo": 4700,
+    "num_hi": 7000,
+    "pop": 1168719,
+    "prev_year": 2023,
+    "prev_rate": 477,
+    "prev_num": 5500
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 13.0,
+    "prev_year": 2024,
+    "prev_cases": 60.0,
+    "per_m": 11.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 6900.0,
+    "plhiv_text": "6900 [5000 - 11 000]",
+    "new": "<500",
+    "new_text": "<500 [<200 - 590]",
+    "prev_new": "<500",
+    "prev15_49": 0.7,
+    "prev15_49_text": "0.7 [0.5 - 1.1]"
+   }
+  },
+  {
+   "iso3": "DMA",
+   "name": "ドミニカ国",
+   "en": "Dominica",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.5,
+    "rate_lo": 3.7,
+    "rate_hi": 5.5,
+    "num": 3,
+    "num_lo": 2,
+    "num_hi": 4,
+    "pop": 66212,
+    "prev_year": 2023,
+    "prev_rate": 6,
+    "prev_num": 4
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2022,
+     "value": 1.3
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 534.76
+    }
+   }
+  },
+  {
+   "iso3": "DNK",
+   "name": "デンマーク",
+   "en": "Denmark",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.2,
+    "rate_lo": 2.6,
+    "rate_hi": 3.9,
+    "num": 190,
+    "num_lo": 160,
+    "num_hi": 230,
+    "pop": 5977402,
+    "prev_year": 2023,
+    "prev_rate": 3.5,
+    "prev_num": 210
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 12.0,
+    "prev_year": 2024,
+    "prev_cases": 25.0,
+    "per_m": 2.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 672.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "DOM",
+   "name": "ドミニカ共和国",
+   "en": "Dominican Republic",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 51,
+    "rate_lo": 42,
+    "rate_hi": 62,
+    "num": 5800,
+    "num_lo": 4700,
+    "num_hi": 7000,
+    "pop": 11427554,
+    "prev_year": 2023,
+    "prev_rate": 50,
+    "prev_num": 5600
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 88000.0,
+    "plhiv_text": "88 000 [69 000 - 100 000]",
+    "new": 4500.0,
+    "new_text": "4500 [2900 - 5700]",
+    "prev_new": 4100.0,
+    "prev15_49": 1.0,
+    "prev15_49_text": "1 [0.8 - 1.2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 126.52
+    }
+   }
+  },
+  {
+   "iso3": "DZA",
+   "name": "アルジェリア",
+   "en": "Algeria",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 54,
+    "rate_lo": 44,
+    "rate_hi": 65,
+    "num": 25000,
+    "num_lo": 20000,
+    "num_hi": 30000,
+    "pop": 46814312,
+    "prev_year": 2023,
+    "prev_rate": 55,
+    "prev_num": 25000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2928.0,
+    "prev_year": 2024,
+    "prev_cases": 488.0,
+    "per_m": 62.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 29000.0,
+    "plhiv_text": "29 000 [27 000 - 31 000]",
+    "new": 2700.0,
+    "new_text": "2700 [2400 - 3000]",
+    "prev_new": 2500.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "ECU",
+   "name": "エクアドル",
+   "en": "Ecuador",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 66,
+    "rate_lo": 54,
+    "rate_hi": 80,
+    "num": 12000,
+    "num_lo": 9800,
+    "num_hi": 14000,
+    "pop": 18135477,
+    "prev_year": 2023,
+    "prev_rate": 59,
+    "prev_num": 11000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 56000.0,
+    "plhiv_text": "56 000 [50 000 - 64 000]",
+    "new": 2000.0,
+    "new_text": "2000 [1500 - 2800]",
+    "prev_new": 2100.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.54
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 91.28
+    }
+   }
+  },
+  {
+   "iso3": "EGY",
+   "name": "エジプト",
+   "en": "Egypt",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 10,
+    "rate_lo": 8,
+    "rate_hi": 12,
+    "num": 12000,
+    "num_lo": 9300,
+    "num_hi": 14000,
+    "pop": 116538257,
+    "prev_year": 2023,
+    "prev_rate": 10,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 107.0,
+    "prev_year": 2024,
+    "prev_cases": 91.0,
+    "per_m": 0.9,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 61000.0,
+    "plhiv_text": "61 000 [45 000 - 83 000]",
+    "new": 6300.0,
+    "new_text": "6300 [3900 - 10 000]",
+    "prev_new": 6100.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - 0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.01
+    }
+   }
+  },
+  {
+   "iso3": "ERI",
+   "name": "エリトリア",
+   "en": "Eritrea",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 115,
+    "rate_lo": 93,
+    "rate_hi": 138,
+    "num": 4100,
+    "num_lo": 3300,
+    "num_hi": 4900,
+    "pop": 3535603,
+    "prev_year": 2023,
+    "prev_rate": 149,
+    "prev_num": 5200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 27.0,
+    "prev_year": 2024,
+    "prev_cases": 10.0,
+    "per_m": 7.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 12000.0,
+    "plhiv_text": "12 000 [10 000 - 15 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 550]",
+    "prev_new": "<500",
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.3 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.62332531
+    }
+   }
+  },
+  {
+   "iso3": "ESP",
+   "name": "スペイン",
+   "en": "Spain",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 7.9,
+    "rate_lo": 6.5,
+    "rate_hi": 9.6,
+    "num": 3800,
+    "num_lo": 3100,
+    "num_hi": 4600,
+    "pop": 47910532,
+    "prev_year": 2023,
+    "prev_rate": 9.7,
+    "prev_num": 4700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 398.0,
+    "prev_year": 2024,
+    "prev_cases": 227.0,
+    "per_m": 8.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 160000.0,
+    "plhiv_text": "160 000 [130 000 - 180 000]",
+    "new": 3100.0,
+    "new_text": "3100 [2200 - 3700]",
+    "prev_new": 3100.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 10591.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 1.55
+    }
+   }
+  },
+  {
+   "iso3": "EST",
+   "name": "エストニア",
+   "en": "Estonia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 8.2,
+    "rate_lo": 6.7,
+    "rate_hi": 9.9,
+    "num": 110,
+    "num_lo": 91,
+    "num_hi": 130,
+    "pop": 1360550,
+    "prev_year": 2023,
+    "prev_rate": 9.1,
+    "prev_num": 120
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 11.0,
+    "prev_year": 2024,
+    "prev_cases": 4.0,
+    "per_m": 8.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 6600.0,
+    "plhiv_text": "6600 [5800 - 8000]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <200]",
+    "prev_new": "<100",
+    "prev15_49": 0.7,
+    "prev15_49_text": "0.7 [0.6 - 0.9]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 50.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "ETH",
+   "name": "エチオピア",
+   "en": "Ethiopia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 141,
+    "rate_lo": 74,
+    "rate_hi": 229,
+    "num": 186000,
+    "num_lo": 97000,
+    "num_hi": 302000,
+    "pop": 132059780,
+    "prev_year": 2023,
+    "prev_rate": 143,
+    "prev_num": 184000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5572.0,
+    "prev_year": 2024,
+    "prev_cases": 31044.0,
+    "per_m": 42.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 660000.0,
+    "plhiv_text": "660 000 [560 000 - 790 000]",
+    "new": 9500.0,
+    "new_text": "9500 [5100 - 18 000]",
+    "prev_new": 10000.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.5 - 0.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.82
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 5.48
+    }
+   }
+  },
+  {
+   "iso3": "FIN",
+   "name": "フィンランド",
+   "en": "Finland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.7,
+    "rate_lo": 3,
+    "rate_hi": 4.5,
+    "num": 210,
+    "num_lo": 170,
+    "num_hi": 250,
+    "pop": 5617315,
+    "prev_year": 2023,
+    "prev_rate": 3.7,
+    "prev_num": 210
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.2,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 456.0
+    }
+   }
+  },
+  {
+   "iso3": "FJI",
+   "name": "フィジー",
+   "en": "Fiji",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 104,
+    "rate_lo": 84,
+    "rate_hi": 125,
+    "num": 960,
+    "num_lo": 780,
+    "num_hi": 1200,
+    "pop": 928779,
+    "prev_year": 2023,
+    "prev_rate": 72,
+    "prev_num": 660
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 9100.0,
+    "plhiv_text": "9100 [7200 - 12 000]",
+    "new": 1700.0,
+    "new_text": "1700 [1300 - 2400]",
+    "prev_new": 1600.0,
+    "prev15_49": 1.6,
+    "prev15_49_text": "1.6 [1.3 - 2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2022,
+     "value": 333.88982
+    }
+   }
+  },
+  {
+   "iso3": "FRA",
+   "name": "フランス",
+   "en": "France",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 7.8,
+    "rate_lo": 7.4,
+    "rate_hi": 8.1,
+    "num": 5200,
+    "num_lo": 5000,
+    "num_hi": 5400,
+    "pop": 66548536,
+    "prev_year": 2023,
+    "prev_rate": 8.3,
+    "prev_num": 5500
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 873.0,
+    "prev_year": 2024,
+    "prev_cases": 483.0,
+    "per_m": 13.1,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 2025.0
+    }
+   }
+  },
+  {
+   "iso3": "FSM",
+   "name": "ミクロネシア連邦",
+   "en": "Micronesia (Federated States of)",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 264,
+    "rate_lo": 215,
+    "rate_hi": 318,
+    "num": 300,
+    "num_lo": 240,
+    "num_hi": 360,
+    "pop": 113161,
+    "prev_year": 2023,
+    "prev_rate": 397,
+    "prev_num": 450
+   }
+  },
+  {
+   "iso3": "GAB",
+   "name": "ガボン",
+   "en": "Gabon",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 371,
+    "rate_lo": 226,
+    "rate_hi": 720,
+    "num": 9400,
+    "num_lo": 5700,
+    "num_hi": 18000,
+    "pop": 2538949,
+    "prev_year": 2023,
+    "prev_rate": 380,
+    "prev_num": 9400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5.0,
+    "prev_year": 2024,
+    "prev_cases": 32.0,
+    "per_m": 2.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 50000.0,
+    "plhiv_text": "50 000 [41 000 - 60 000]",
+    "new": 1500.0,
+    "new_text": "1500 [770 - 2600]",
+    "prev_new": 1600.0,
+    "prev15_49": 2.6,
+    "prev15_49_text": "2.6 [2.1 - 3.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.49
+    }
+   }
+  },
+  {
+   "iso3": "GBR",
+   "name": "英国",
+   "en": "United Kingdom of Great Britain and Northern Ireland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 9.7,
+    "rate_lo": 9,
+    "rate_hi": 10,
+    "num": 6700,
+    "num_lo": 6200,
+    "num_hi": 7200,
+    "pop": 69138194,
+    "prev_year": 2023,
+    "prev_rate": 8.6,
+    "prev_num": 5900
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1347.0,
+    "prev_year": 2024,
+    "prev_cases": 3426.0,
+    "per_m": 19.5,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "GEO",
+   "name": "ジョージア",
+   "en": "Georgia",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 45,
+    "rate_lo": 37,
+    "rate_hi": 54,
+    "num": 1700,
+    "num_lo": 1400,
+    "num_hi": 2100,
+    "pop": 3807667,
+    "prev_year": 2023,
+    "prev_rate": 51,
+    "prev_num": 1900
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 526.0,
+    "prev_year": 2024,
+    "prev_cases": 350.0,
+    "per_m": 138.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 9300.0,
+    "plhiv_text": "9300 [6900 - 12 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 600]",
+    "prev_new": "<500",
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.3 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.23
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 7.72
+    }
+   }
+  },
+  {
+   "iso3": "GHA",
+   "name": "ガーナ",
+   "en": "Ghana",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 126,
+    "rate_lo": 55,
+    "rate_hi": 225,
+    "num": 43000,
+    "num_lo": 19000,
+    "num_hi": 77000,
+    "pop": 34427413,
+    "prev_year": 2023,
+    "prev_rate": 129,
+    "prev_num": 44000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1794.0,
+    "prev_year": 2024,
+    "prev_cases": 1944.0,
+    "per_m": 52.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 340000.0,
+    "plhiv_text": "340 000 [290 000 - 400 000]",
+    "new": 14000.0,
+    "new_text": "14 000 [8700 - 24 000]",
+    "prev_new": 16000.0,
+    "prev15_49": 1.4,
+    "prev15_49_text": "1.4 [1.2 - 1.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.0
+    }
+   }
+  },
+  {
+   "iso3": "GIN",
+   "name": "ギニア",
+   "en": "Guinea",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 178,
+    "rate_lo": 109,
+    "rate_hi": 341,
+    "num": 26000,
+    "num_lo": 16000,
+    "num_hi": 50000,
+    "pop": 14754779,
+    "prev_year": 2023,
+    "prev_rate": 178,
+    "prev_num": 26000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 567.0,
+    "prev_year": 2024,
+    "prev_cases": 577.0,
+    "per_m": 38.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 130000.0,
+    "plhiv_text": "130 000 [110 000 - 160 000]",
+    "new": 3800.0,
+    "new_text": "3800 [2400 - 7100]",
+    "prev_new": 4400.0,
+    "prev15_49": 1.3,
+    "prev15_49_text": "1.3 [1.1 - 1.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.9
+    }
+   }
+  },
+  {
+   "iso3": "GMB",
+   "name": "ガンビア",
+   "en": "Gambia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 138,
+    "rate_lo": 99,
+    "rate_hi": 184,
+    "num": 3800,
+    "num_lo": 2700,
+    "num_hi": 5100,
+    "pop": 2759984,
+    "prev_year": 2023,
+    "prev_rate": 142,
+    "prev_num": 3800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 13.0,
+    "prev_year": 2024,
+    "prev_cases": 8.0,
+    "per_m": 4.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 24000.0,
+    "plhiv_text": "24 000 [19 000 - 30 000]",
+    "new": 1100.0,
+    "new_text": "1100 [560 - 2100]",
+    "prev_new": 1200.0,
+    "prev15_49": 1.3,
+    "prev15_49_text": "1.3 [1 - 1.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 8.99
+    }
+   }
+  },
+  {
+   "iso3": "GNB",
+   "name": "ギニアビサウ",
+   "en": "Guinea-Bissau",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 176,
+    "rate_lo": 108,
+    "rate_hi": 337,
+    "num": 3900,
+    "num_lo": 2400,
+    "num_hi": 7400,
+    "pop": 2201346,
+    "prev_year": 2023,
+    "prev_rate": 178,
+    "prev_num": 3800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 35000.0,
+    "plhiv_text": "35 000 [31 000 - 41 000]",
+    "new": 930.0,
+    "new_text": "930 [620 - 1400]",
+    "prev_new": 1100.0,
+    "prev15_49": 2.1,
+    "prev15_49_text": "2.1 [1.9 - 2.4]"
+   }
+  },
+  {
+   "iso3": "GNQ",
+   "name": "赤道ギニア",
+   "en": "Equatorial Guinea",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 199,
+    "rate_lo": 121,
+    "rate_hi": 386,
+    "num": 3800,
+    "num_lo": 2300,
+    "num_hi": 7300,
+    "pop": 1892525,
+    "prev_year": 2023,
+    "prev_rate": 203,
+    "prev_num": 3800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 79.0,
+    "prev_year": 2024,
+    "prev_cases": 463.0,
+    "per_m": 41.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2020,
+     "value": 2.17
+    }
+   }
+  },
+  {
+   "iso3": "GRC",
+   "name": "ギリシャ",
+   "en": "Greece",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.6,
+    "rate_lo": 2.9,
+    "rate_hi": 4.3,
+    "num": 360,
+    "num_lo": 290,
+    "num_hi": 430,
+    "pop": 10047812,
+    "prev_year": 2023,
+    "prev_rate": 5.6,
+    "prev_num": 580
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4.0,
+    "prev_year": 2024,
+    "prev_cases": 38.0,
+    "per_m": 0.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 17000.0,
+    "plhiv_text": "17 000 [14 000 - 19 000]",
+    "new": 560.0,
+    "new_text": "560 [<500 - 660]",
+    "prev_new": 570.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 911.0
+    }
+   }
+  },
+  {
+   "iso3": "GRD",
+   "name": "グレナダ",
+   "en": "Grenada",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 1.7,
+    "rate_lo": 1.4,
+    "rate_hi": 2.1,
+    "num": 2,
+    "num_lo": 2,
+    "num_hi": 2,
+    "pop": 117199,
+    "prev_year": 2023,
+    "prev_rate": 4.3,
+    "prev_num": 5
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "GRL",
+   "name": "グリーンランド（デンマーク領）",
+   "en": "Greenland",
+   "region": "北アメリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 139,
+    "rate_lo": 113,
+    "rate_hi": 168,
+    "num": 78,
+    "num_lo": 63,
+    "num_hi": 94,
+    "pop": 55847,
+    "prev_year": 2023,
+    "prev_rate": 110,
+    "prev_num": 61
+   }
+  },
+  {
+   "iso3": "GTM",
+   "name": "グアテマラ",
+   "en": "Guatemala",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 28,
+    "rate_lo": 23,
+    "rate_hi": 34,
+    "num": 5200,
+    "num_lo": 4200,
+    "num_hi": 6300,
+    "pop": 18406356,
+    "prev_year": 2023,
+    "prev_rate": 29,
+    "prev_num": 5300
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.1,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.02
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 6.95352
+    }
+   }
+  },
+  {
+   "iso3": "GUM",
+   "name": "グアム（米国領）",
+   "en": "Guam",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 55,
+    "rate_lo": 45,
+    "rate_hi": 66,
+    "num": 92,
+    "num_lo": 75,
+    "num_hi": 110,
+    "pop": 167772,
+    "prev_year": 2023,
+    "prev_rate": 42,
+    "prev_num": 69
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "GUY",
+   "name": "ガイアナ",
+   "en": "Guyana",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 67,
+    "rate_lo": 54,
+    "rate_hi": 80,
+    "num": 550,
+    "num_lo": 450,
+    "num_hi": 670,
+    "pop": 831082,
+    "prev_year": 2023,
+    "prev_rate": 66,
+    "prev_num": 550
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 11000.0,
+    "plhiv_text": "11 000 [7900 - 17 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 950]",
+    "prev_new": "<500",
+    "prev15_49": 1.4,
+    "prev15_49_text": "1.4 [1 - 2.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.017157073
+    }
+   }
+  },
+  {
+   "iso3": "HKG",
+   "name": "中国（香港）",
+   "en": "China, Hong Kong SAR",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 66,
+    "rate_lo": 54,
+    "rate_hi": 80,
+    "num": 4900,
+    "num_lo": 4000,
+    "num_hi": 5900,
+    "pop": 7414911,
+    "prev_year": 2023,
+    "prev_rate": 67,
+    "prev_num": 5000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 10.0,
+    "prev_year": 2024,
+    "prev_cases": 9.0,
+    "per_m": 1.3,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "HND",
+   "name": "ホンジュラス",
+   "en": "Honduras",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 38,
+    "rate_lo": 31,
+    "rate_hi": 45,
+    "num": 4100,
+    "num_lo": 3300,
+    "num_hi": 4900,
+    "pop": 10825694,
+    "prev_year": 2023,
+    "prev_rate": 38,
+    "prev_num": 4000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 19000.0,
+    "plhiv_text": "19 000 [17 000 - 21 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 540]",
+    "prev_new": "<500",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.11
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 98.66
+    }
+   }
+  },
+  {
+   "iso3": "HRV",
+   "name": "クロアチア",
+   "en": "Croatia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 6.6,
+    "rate_lo": 5.4,
+    "rate_hi": 8,
+    "num": 260,
+    "num_lo": 210,
+    "num_hi": 310,
+    "pop": 3875319,
+    "prev_year": 2023,
+    "prev_rate": 8.4,
+    "prev_num": 330
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 7.0,
+    "prev_year": 2024,
+    "prev_cases": 33.0,
+    "per_m": 1.8,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 36.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 3.11
+    }
+   }
+  },
+  {
+   "iso3": "HTI",
+   "name": "ハイチ",
+   "en": "Haiti",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 175,
+    "rate_lo": 143,
+    "rate_hi": 211,
+    "num": 21000,
+    "num_lo": 17000,
+    "num_hi": 25000,
+    "pop": 11772562,
+    "prev_year": 2023,
+    "prev_rate": 185,
+    "prev_num": 22000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 150000.0,
+    "plhiv_text": "150 000 [130 000 - 170 000]",
+    "new": 4400.0,
+    "new_text": "4400 [2900 - 7100]",
+    "prev_new": 4900.0,
+    "prev15_49": 1.6,
+    "prev15_49_text": "1.6 [1.4 - 1.8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.01
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 76.196500712
+    }
+   }
+  },
+  {
+   "iso3": "HUN",
+   "name": "ハンガリー",
+   "en": "Hungary",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 5.6,
+    "rate_lo": 4.5,
+    "rate_hi": 6.7,
+    "num": 540,
+    "num_lo": 440,
+    "num_hi": 650,
+    "pop": 9676124,
+    "prev_year": 2023,
+    "prev_rate": 6.5,
+    "prev_num": 630
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 3.0,
+    "prev_year": 2024,
+    "prev_cases": 18.0,
+    "per_m": 0.3,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 1208.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 14.83
+    }
+   }
+  },
+  {
+   "iso3": "IDN",
+   "name": "インドネシア",
+   "en": "Indonesia",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 382,
+    "rate_lo": 319,
+    "rate_hi": 433,
+    "num": 1080000,
+    "num_lo": 905000,
+    "num_hi": 1230000,
+    "pop": 283487922,
+    "prev_year": 2023,
+    "prev_rate": 388,
+    "prev_num": 1090000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 36590.0,
+    "prev_year": 2024,
+    "prev_cases": 6328.0,
+    "per_m": 129.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 560000.0,
+    "plhiv_text": "560 000 [500 000 - 610 000]",
+    "new": 21000.0,
+    "new_text": "21 000 [19 000 - 23 000]",
+    "prev_new": 23000.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.3 - 0.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.14
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 7.18
+    }
+   }
+  },
+  {
+   "iso3": "IND",
+   "name": "インド",
+   "en": "India",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 187,
+    "rate_lo": 160,
+    "rate_hi": 218,
+    "num": 2710000,
+    "num_lo": 2330000,
+    "num_hi": 3160000,
+    "pop": 1450935788,
+    "prev_year": 2023,
+    "prev_rate": 192,
+    "prev_num": 2760000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 17995.0,
+    "prev_year": 2024,
+    "prev_cases": 18530.0,
+    "per_m": 12.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 2600000.0,
+    "plhiv_text": "2 600 000 [2 100 000 - 3 100 000]",
+    "new": 60000.0,
+    "new_text": "60 000 [29 000 - 110 000]",
+    "prev_new": null,
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.04
+    }
+   }
+  },
+  {
+   "iso3": "IRL",
+   "name": "アイルランド",
+   "en": "Ireland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 6.2,
+    "rate_lo": 5,
+    "rate_hi": 7.4,
+    "num": 320,
+    "num_lo": 260,
+    "num_hi": 390,
+    "pop": 5255016,
+    "prev_year": 2023,
+    "prev_rate": 4.8,
+    "prev_num": 250
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 51.0,
+    "prev_year": 2024,
+    "prev_cases": 207.0,
+    "per_m": 9.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 9500.0,
+    "plhiv_text": "9500 [8300 - 10 000]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 864.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "IRN",
+   "name": "イラン",
+   "en": "Iran (Islamic Republic of)",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 10,
+    "rate_lo": 8.5,
+    "rate_hi": 13,
+    "num": 9600,
+    "num_lo": 7800,
+    "num_hi": 12000,
+    "pop": 91567739,
+    "prev_year": 2023,
+    "prev_rate": 11,
+    "prev_num": 10000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1072.0,
+    "prev_year": 2024,
+    "prev_cases": 449.0,
+    "per_m": 11.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "IRQ",
+   "name": "イラク",
+   "en": "Iraq",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 21,
+    "rate_lo": 17,
+    "rate_hi": 26,
+    "num": 9800,
+    "num_lo": 7900,
+    "num_hi": 12000,
+    "pop": 46042013,
+    "prev_year": 2023,
+    "prev_rate": 23,
+    "prev_num": 11000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 143.0,
+    "prev_year": 2024,
+    "prev_cases": 32494.0,
+    "per_m": 3.1,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "ISL",
+   "name": "アイスランド",
+   "en": "Iceland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3,
+    "rate_lo": 2.5,
+    "rate_hi": 3.6,
+    "num": 12,
+    "num_lo": 10,
+    "num_hi": 14,
+    "pop": 393395,
+    "prev_year": 2023,
+    "prev_rate": 3.6,
+    "prev_num": 14
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": "<500",
+    "plhiv_text": "<500 [<500 - 520]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [<0.1 - 0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 73.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "ISR",
+   "name": "イスラエル",
+   "en": "Israel",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 2.4,
+    "rate_lo": 2,
+    "rate_hi": 2.9,
+    "num": 230,
+    "num_lo": 190,
+    "num_hi": 280,
+    "pop": 9387024,
+    "prev_year": 2023,
+    "prev_rate": 2.8,
+    "prev_num": 260
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 3.5
+    }
+   }
+  },
+  {
+   "iso3": "ITA",
+   "name": "イタリア",
+   "en": "Italy",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 5,
+    "rate_lo": 4.1,
+    "rate_hi": 6,
+    "num": 3000,
+    "num_lo": 2400,
+    "num_hi": 3600,
+    "pop": 59342869,
+    "prev_year": 2023,
+    "prev_rate": 5.4,
+    "prev_num": 3200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 533.0,
+    "prev_year": 2024,
+    "prev_cases": 1045.0,
+    "per_m": 9.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 150000.0,
+    "plhiv_text": "150 000 [130 000 - 170 000]",
+    "new": 3700.0,
+    "new_text": "3700 [2600 - 4300]",
+    "prev_new": 3700.0,
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 2538.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 1.58
+    }
+   }
+  },
+  {
+   "iso3": "JAM",
+   "name": "ジャマイカ",
+   "en": "Jamaica",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 2.3,
+    "rate_lo": 1.8,
+    "rate_hi": 2.7,
+    "num": 64,
+    "num_lo": 52,
+    "num_hi": 78,
+    "pop": 2839171,
+    "prev_year": 2023,
+    "prev_rate": 4.3,
+    "prev_num": 120
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 28000.0,
+    "plhiv_text": "28 000 [26 000 - 31 000]",
+    "new": null,
+    "new_text": null,
+    "prev_new": 1100.0,
+    "prev15_49": 1.1,
+    "prev15_49_text": "1.1 [1 - 1.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.83
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 57.1
+    }
+   }
+  },
+  {
+   "iso3": "JOR",
+   "name": "ヨルダン",
+   "en": "Jordan",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 3.5,
+    "rate_lo": 2.8,
+    "rate_hi": 4.2,
+    "num": 400,
+    "num_lo": 330,
+    "num_hi": 490,
+    "pop": 11552878,
+    "prev_year": 2023,
+    "prev_rate": 3.3,
+    "prev_num": 370
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 14.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "JPN",
+   "name": "日本",
+   "en": "Japan",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 9.8,
+    "rate_lo": 8,
+    "rate_hi": 12,
+    "num": 12000,
+    "num_lo": 9800,
+    "num_hi": 15000,
+    "pop": 123753041,
+    "prev_year": 2023,
+    "prev_rate": 9.8,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 265.0,
+    "prev_year": 2024,
+    "prev_cases": 45.0,
+    "per_m": 2.1,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "KAZ",
+   "name": "カザフスタン",
+   "en": "Kazakhstan",
+   "region": "中央アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 45,
+    "rate_lo": 36,
+    "rate_hi": 54,
+    "num": 9200,
+    "num_lo": 7500,
+    "num_hi": 11000,
+    "pop": 20592573,
+    "prev_year": 2023,
+    "prev_rate": 49,
+    "prev_num": 10000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4240.0,
+    "prev_year": 2024,
+    "prev_cases": 28147.0,
+    "per_m": 205.9,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 44000.0,
+    "plhiv_text": "44 000 [39 000 - 49 000]",
+    "new": 1800.0,
+    "new_text": "1800 [1400 - 2900]",
+    "prev_new": 2000.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.3 - 0.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.07
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 2.68
+    }
+   }
+  },
+  {
+   "iso3": "KEN",
+   "name": "ケニア",
+   "en": "Kenya",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 207,
+    "rate_lo": 109,
+    "rate_hi": 339,
+    "num": 117000,
+    "num_lo": 61000,
+    "num_hi": 191000,
+    "pop": 56432943,
+    "prev_year": 2023,
+    "prev_rate": 214,
+    "prev_num": 119000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 751.0,
+    "prev_year": 2024,
+    "prev_cases": 1417.0,
+    "per_m": 13.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1500000.0,
+    "plhiv_text": "1 500 000 [1 400 000 - 1 700 000]",
+    "new": 14000.0,
+    "new_text": "14 000 [9600 - 20 000]",
+    "prev_new": 18000.0,
+    "prev15_49": 3.2,
+    "prev15_49_text": "3.2 [3.1 - 3.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.947312506
+    }
+   }
+  },
+  {
+   "iso3": "KGZ",
+   "name": "キルギス",
+   "en": "Kyrgyzstan",
+   "region": "中央アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 128,
+    "rate_lo": 99,
+    "rate_hi": 159,
+    "num": 9200,
+    "num_lo": 7100,
+    "num_hi": 11000,
+    "pop": 7186014,
+    "prev_year": 2023,
+    "prev_rate": 131,
+    "prev_num": 9300
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 8962.0,
+    "prev_year": 2024,
+    "prev_cases": 14380.0,
+    "per_m": 1247.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 14000.0,
+    "plhiv_text": "14 000 [13 000 - 15 000]",
+    "new": 1100.0,
+    "new_text": "1100 [990 - 1200]",
+    "prev_new": 1100.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.3 - 0.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.03
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 2.6
+    }
+   }
+  },
+  {
+   "iso3": "KHM",
+   "name": "カンボジア",
+   "en": "Cambodia",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 272,
+    "rate_lo": 205,
+    "rate_hi": 365,
+    "num": 48000,
+    "num_lo": 36000,
+    "num_hi": 64000,
+    "pop": 17638793,
+    "prev_year": 2023,
+    "prev_rate": 276,
+    "prev_num": 48000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4613.0,
+    "prev_year": 2024,
+    "prev_cases": 666.0,
+    "per_m": 261.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 76000.0,
+    "plhiv_text": "76 000 [64 000 - 87 000]",
+    "new": 960.0,
+    "new_text": "960 [880 - 1000]",
+    "prev_new": 1200.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.6]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.09
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 181.81
+    }
+   }
+  },
+  {
+   "iso3": "KIR",
+   "name": "キリバス",
+   "en": "Kiribati",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 945,
+    "rate_lo": 769,
+    "rate_hi": 1140,
+    "num": 1300,
+    "num_lo": 1000,
+    "num_hi": 1500,
+    "pop": 134524,
+    "prev_year": 2023,
+    "prev_rate": 908,
+    "prev_num": 1200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "KNA",
+   "name": "セントクリストファー・ネービス",
+   "en": "Saint Kitts and Nevis",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 1.1,
+    "rate_lo": 0.93,
+    "rate_hi": 1.4,
+    "num": 1,
+    "num_lo": 0,
+    "num_hi": 1,
+    "pop": 46842,
+    "prev_year": 2023,
+    "prev_rate": 2.1,
+    "prev_num": 1
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": "<500",
+    "plhiv_text": "<500 [<500 - <500]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.6 - 1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "KOR",
+   "name": "韓国",
+   "en": "Republic of Korea",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 35,
+    "rate_lo": 32,
+    "rate_hi": 37,
+    "num": 18000,
+    "num_lo": 17000,
+    "num_hi": 19000,
+    "pop": 51717598,
+    "prev_year": 2023,
+    "prev_rate": 38,
+    "prev_num": 20000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 78.0,
+    "prev_year": 2024,
+    "prev_cases": 49.0,
+    "per_m": 1.5,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "KWT",
+   "name": "クウェート",
+   "en": "Kuwait",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 10,
+    "rate_lo": 8.5,
+    "rate_hi": 13,
+    "num": 520,
+    "num_lo": 420,
+    "num_hi": 620,
+    "pop": 4934510,
+    "prev_year": 2023,
+    "prev_rate": 11,
+    "prev_num": 530
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2.0,
+    "prev_year": 2024,
+    "prev_cases": 7.0,
+    "per_m": 0.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1700.0,
+    "plhiv_text": "1700 [1600 - 1800]",
+    "new": "<500",
+    "new_text": "<500 [<500 - <500]",
+    "prev_new": "<500",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "LAO",
+   "name": "ラオス",
+   "en": "Lao People's Democratic Republic",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 127,
+    "rate_lo": 77,
+    "rate_hi": 189,
+    "num": 9900,
+    "num_lo": 6000,
+    "num_hi": 15000,
+    "pop": 7769822,
+    "prev_year": 2023,
+    "prev_rate": 132,
+    "prev_num": 10000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 3855.0,
+    "prev_year": 2024,
+    "prev_cases": 1.0,
+    "per_m": 496.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 23000.0,
+    "plhiv_text": "23 000 [20 000 - 25 000]",
+    "new": 1300.0,
+    "new_text": "1300 [1200 - 1400]",
+    "prev_new": 1300.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.5]"
+   }
+  },
+  {
+   "iso3": "LBN",
+   "name": "レバノン",
+   "en": "Lebanon",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 13,
+    "rate_lo": 10,
+    "rate_hi": 15,
+    "num": 740,
+    "num_lo": 600,
+    "num_hi": 890,
+    "pop": 5805970,
+    "prev_year": 2023,
+    "prev_rate": 12,
+    "prev_num": 700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 15.0,
+    "prev_year": 2024,
+    "prev_cases": 74.0,
+    "per_m": 2.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3100.0,
+    "plhiv_text": "3100 [2500 - 3600]",
+    "new": "<500",
+    "new_text": "<500 [<500 - <500]",
+    "prev_new": "<500",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "LBR",
+   "name": "リベリア",
+   "en": "Liberia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 207,
+    "rate_lo": 126,
+    "rate_hi": 402,
+    "num": 12000,
+    "num_lo": 7100,
+    "num_hi": 23000,
+    "pop": 5612815,
+    "prev_year": 2023,
+    "prev_rate": 215,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 769.0,
+    "prev_year": 2024,
+    "prev_cases": 1053.0,
+    "per_m": 137.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 56000.0,
+    "plhiv_text": "56 000 [46 000 - 68 000]",
+    "new": 2900.0,
+    "new_text": "2900 [1800 - 4500]",
+    "prev_new": 3000.0,
+    "prev15_49": 1.5,
+    "prev15_49_text": "1.5 [1.2 - 1.8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.03
+    }
+   }
+  },
+  {
+   "iso3": "LBY",
+   "name": "リビア",
+   "en": "Libya",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 63,
+    "rate_lo": 36,
+    "rate_hi": 138,
+    "num": 4700,
+    "num_lo": 2700,
+    "num_hi": 10000,
+    "pop": 7381021,
+    "prev_year": 2023,
+    "prev_rate": 57,
+    "prev_num": 4200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 207.0,
+    "per_m": null,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 7500.0,
+    "plhiv_text": "7500 [6700 - 8400]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 530]",
+    "prev_new": "<500",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.1]"
+   }
+  },
+  {
+   "iso3": "LCA",
+   "name": "セントルシア",
+   "en": "Saint Lucia",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 0.56,
+    "rate_lo": 0.45,
+    "rate_hi": 0.67,
+    "num": 1,
+    "num_lo": 1,
+    "num_hi": 1,
+    "pop": 179741,
+    "prev_year": 2023,
+    "prev_rate": 1.1,
+    "prev_num": 2
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 640.0,
+    "plhiv_text": "640 [540 - 730]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2021,
+     "value": 2.25
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 422.83
+    }
+   }
+  },
+  {
+   "iso3": "LKA",
+   "name": "スリランカ",
+   "en": "Sri Lanka",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 59,
+    "rate_lo": 35,
+    "rate_hi": 119,
+    "num": 14000,
+    "num_lo": 8100,
+    "num_hi": 28000,
+    "pop": 23103568,
+    "prev_year": 2023,
+    "prev_rate": 57,
+    "prev_num": 13000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2.0,
+    "prev_year": 2024,
+    "prev_cases": 298.0,
+    "per_m": 0.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 8700.0,
+    "plhiv_text": "8700 [7800 - 9600]",
+    "new": 860.0,
+    "new_text": "860 [720 - 990]",
+    "prev_new": 810.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.052737148
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 6.34
+    }
+   }
+  },
+  {
+   "iso3": "LSO",
+   "name": "レソト",
+   "en": "Lesotho",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 548,
+    "rate_lo": 304,
+    "rate_hi": 837,
+    "num": 13000,
+    "num_lo": 7100,
+    "num_hi": 20000,
+    "pop": 2337432,
+    "prev_year": 2023,
+    "prev_rate": 584,
+    "prev_num": 14000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 8.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 3.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 260000.0,
+    "plhiv_text": "260 000 [240 000 - 290 000]",
+    "new": 3300.0,
+    "new_text": "3300 [2300 - 4500]",
+    "prev_new": 3400.0,
+    "prev15_49": 16.3,
+    "prev15_49_text": "16.3 [15.6 - 16.9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 3.21
+    }
+   }
+  },
+  {
+   "iso3": "LTU",
+   "name": "リトアニア",
+   "en": "Lithuania",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 31,
+    "rate_lo": 25,
+    "rate_hi": 37,
+    "num": 890,
+    "num_lo": 720,
+    "num_hi": 1100,
+    "pop": 2859108,
+    "prev_year": 2023,
+    "prev_rate": 34,
+    "prev_num": 970
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 11.0,
+    "prev_year": 2024,
+    "prev_cases": 30.0,
+    "per_m": 3.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3800.0,
+    "plhiv_text": "3800 [3400 - 4200]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.2]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 75.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 4.85
+    }
+   }
+  },
+  {
+   "iso3": "LUX",
+   "name": "ルクセンブルク",
+   "en": "Luxembourg",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 7.5,
+    "rate_lo": 6.1,
+    "rate_hi": 9,
+    "num": 50,
+    "num_lo": 41,
+    "num_hi": 61,
+    "pop": 673034,
+    "prev_year": 2023,
+    "prev_rate": 7.6,
+    "prev_num": 51
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 3.0,
+    "per_m": 1.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1700.0,
+    "plhiv_text": "1700 [1500 - 1900]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.3 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 164.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 31.65
+    }
+   }
+  },
+  {
+   "iso3": "LVA",
+   "name": "ラトビア",
+   "en": "Latvia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 21,
+    "rate_lo": 17,
+    "rate_hi": 25,
+    "num": 390,
+    "num_lo": 320,
+    "num_hi": 470,
+    "pop": 1871873,
+    "prev_year": 2023,
+    "prev_rate": 22,
+    "prev_num": 410
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 6000.0,
+    "plhiv_text": "6000 [5600 - 6500]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.5 - 0.5]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 15.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "MAC",
+   "name": "中国（マカオ）",
+   "en": "China, Macao SAR",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 59,
+    "rate_lo": 48,
+    "rate_hi": 71,
+    "num": 420,
+    "num_lo": 350,
+    "num_hi": 510,
+    "pop": 720264,
+    "prev_year": 2023,
+    "prev_rate": 68,
+    "prev_num": 480
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "MAR",
+   "name": "モロッコ",
+   "en": "Morocco",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 98,
+    "rate_lo": 79,
+    "rate_hi": 118,
+    "num": 37000,
+    "num_lo": 30000,
+    "num_hi": 45000,
+    "pop": 38081170,
+    "prev_year": 2023,
+    "prev_rate": 97,
+    "prev_num": 36000
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 26000.0,
+    "plhiv_text": "26 000 [24 000 - 29 000]",
+    "new": 1100.0,
+    "new_text": "1100 [880 - 1400]",
+    "prev_new": 1100.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2022,
+     "value": 0.3
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 6.7179
+    }
+   }
+  },
+  {
+   "iso3": "MCO",
+   "name": "モナコ",
+   "en": "Monaco",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 0.82,
+    "rate_lo": 0.66,
+    "rate_hi": 0.98,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 38632,
+    "prev_year": 2023,
+    "prev_rate": 0.86,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": null,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "MDA",
+   "name": "モルドバ",
+   "en": "Republic of Moldova",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 64,
+    "rate_lo": 52,
+    "rate_hi": 77,
+    "num": 2000,
+    "num_lo": 1600,
+    "num_hi": 2400,
+    "pop": 3034960,
+    "prev_year": 2023,
+    "prev_rate": 70,
+    "prev_num": 2100
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 193.0,
+    "prev_year": 2024,
+    "prev_cases": 216.0,
+    "per_m": 63.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 17000.0,
+    "plhiv_text": "17 000 [15 000 - 20 000]",
+    "new": 1000.0,
+    "new_text": "1000 [730 - 1400]",
+    "prev_new": 1100.0,
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.8 - 1.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.43
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 26.56
+    }
+   }
+  },
+  {
+   "iso3": "MDG",
+   "name": "マダガスカル",
+   "en": "Madagascar",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 224,
+    "rate_lo": 138,
+    "rate_hi": 424,
+    "num": 72000,
+    "num_lo": 44000,
+    "num_hi": 136000,
+    "pop": 31964951,
+    "prev_year": 2023,
+    "prev_rate": 220,
+    "prev_num": 69000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2454.0,
+    "prev_year": 2024,
+    "prev_cases": 104.0,
+    "per_m": 76.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 150000.0,
+    "plhiv_text": "150 000 [120 000 - 180 000]",
+    "new": 26000.0,
+    "new_text": "26 000 [20 000 - 31 000]",
+    "prev_new": 23000.0,
+    "prev15_49": 0.8,
+    "prev15_49_text": "0.8 [0.7 - 0.9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 1.562560734
+    }
+   }
+  },
+  {
+   "iso3": "MDV",
+   "name": "モルディブ",
+   "en": "Maldives",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 40,
+    "rate_lo": 32,
+    "rate_hi": 48,
+    "num": 210,
+    "num_lo": 170,
+    "num_hi": 250,
+    "pop": 527794,
+    "prev_year": 2023,
+    "prev_rate": 36,
+    "prev_num": 190
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": "<100",
+    "plhiv_text": "<100 [<100 - <200]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2022,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "MEX",
+   "name": "メキシコ",
+   "en": "Mexico",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 28,
+    "rate_lo": 23,
+    "rate_hi": 34,
+    "num": 37000,
+    "num_lo": 30000,
+    "num_hi": 44000,
+    "pop": 130861014,
+    "prev_year": 2023,
+    "prev_rate": 28,
+    "prev_num": 36000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 6579.0,
+    "prev_year": 2024,
+    "prev_cases": 7.0,
+    "per_m": 50.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 430000.0,
+    "plhiv_text": "430 000 [380 000 - 490 000]",
+    "new": 22000.0,
+    "new_text": "22 000 [16 000 - 30 000]",
+    "prev_new": 22000.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.6]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 43.51
+    }
+   }
+  },
+  {
+   "iso3": "MHL",
+   "name": "マーシャル諸島",
+   "en": "Marshall Islands",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 411,
+    "rate_lo": 334,
+    "rate_hi": 495,
+    "num": 150,
+    "num_lo": 130,
+    "num_hi": 190,
+    "pop": 37545,
+    "prev_year": 2023,
+    "prev_rate": 928,
+    "prev_num": 360
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.12
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 126.74
+    }
+   }
+  },
+  {
+   "iso3": "MKD",
+   "name": "北マケドニア",
+   "en": "North Macedonia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 11,
+    "rate_lo": 9.2,
+    "rate_hi": 14,
+    "num": 210,
+    "num_lo": 170,
+    "num_hi": 250,
+    "pop": 1823010,
+    "prev_year": 2023,
+    "prev_rate": 11,
+    "prev_num": 210
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 5.9
+    }
+   }
+  },
+  {
+   "iso3": "MLI",
+   "name": "マリ",
+   "en": "Mali",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 51,
+    "rate_lo": 31,
+    "rate_hi": 97,
+    "num": 12000,
+    "num_lo": 7600,
+    "num_hi": 24000,
+    "pop": 24478588,
+    "prev_year": 2023,
+    "prev_rate": 52,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 251.0,
+    "prev_year": 2024,
+    "prev_cases": 368.0,
+    "per_m": 10.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 95000.0,
+    "plhiv_text": "95 000 [71 000 - 120 000]",
+    "new": 4400.0,
+    "new_text": "4400 [3000 - 6900]",
+    "prev_new": 4500.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.4 - 0.8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 4.03
+    }
+   }
+  },
+  {
+   "iso3": "MLT",
+   "name": "マルタ",
+   "en": "Malta",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 15,
+    "rate_lo": 12,
+    "rate_hi": 18,
+    "num": 82,
+    "num_lo": 67,
+    "num_hi": 99,
+    "pop": 539598,
+    "prev_year": 2023,
+    "prev_rate": 13,
+    "prev_num": 68
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 10.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 950.0,
+    "plhiv_text": "950 [790 - 1100]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 123.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "MMR",
+   "name": "ミャンマー",
+   "en": "Myanmar",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 482,
+    "rate_lo": 307,
+    "rate_hi": 742,
+    "num": 263000,
+    "num_lo": 167000,
+    "num_hi": 404000,
+    "pop": 54500093,
+    "prev_year": 2023,
+    "prev_rate": 482,
+    "prev_num": 261000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 9.0,
+    "prev_year": 2024,
+    "prev_cases": 30.0,
+    "per_m": 0.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 310000.0,
+    "plhiv_text": "310 000 [270 000 - 340 000]",
+    "new": 9500.0,
+    "new_text": "9500 [8500 - 11 000]",
+    "prev_new": 9900.0,
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.7 - 1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.65
+    }
+   }
+  },
+  {
+   "iso3": "MNE",
+   "name": "モンテネグロ",
+   "en": "Montenegro",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 16,
+    "rate_lo": 13,
+    "rate_hi": 20,
+    "num": 100,
+    "num_lo": 83,
+    "num_hi": 130,
+    "pop": 638476,
+    "prev_year": 2023,
+    "prev_rate": 17,
+    "prev_num": 110
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 12.0,
+    "prev_year": 2024,
+    "prev_cases": 35.0,
+    "per_m": 18.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 530.0,
+    "plhiv_text": "530 [<500 - 630]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "MNG",
+   "name": "モンゴル",
+   "en": "Mongolia",
+   "region": "東アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 446,
+    "rate_lo": 240,
+    "rate_hi": 713,
+    "num": 16000,
+    "num_lo": 8400,
+    "num_hi": 25000,
+    "pop": 3475537,
+    "prev_year": 2023,
+    "prev_rate": 448,
+    "prev_num": 15000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 13846.0,
+    "prev_year": 2024,
+    "prev_cases": 12.0,
+    "per_m": 3983.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 700.0,
+    "plhiv_text": "700 [620 - 780]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.29
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 22.51
+    }
+   }
+  },
+  {
+   "iso3": "MNP",
+   "name": "北マリアナ諸島（米国領）",
+   "en": "Northern Mariana Islands",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 35,
+    "rate_lo": 28,
+    "rate_hi": 42,
+    "num": 15,
+    "num_lo": 13,
+    "num_hi": 19,
+    "pop": 44279,
+    "prev_year": 2023,
+    "prev_rate": 75,
+    "prev_num": 34
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "MOZ",
+   "name": "モザンビーク",
+   "en": "Mozambique",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 361,
+    "rate_lo": 220,
+    "rate_hi": 537,
+    "num": 125000,
+    "num_lo": 76000,
+    "num_hi": 186000,
+    "pop": 34631768,
+    "prev_year": 2023,
+    "prev_rate": 361,
+    "prev_num": 121000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 823.0,
+    "prev_year": 2024,
+    "prev_cases": 1237.0,
+    "per_m": 23.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 2500000.0,
+    "plhiv_text": "2 500 000 [2 300 000 - 2 700 000]",
+    "new": 77000.0,
+    "new_text": "77 000 [55 000 - 100 000]",
+    "prev_new": 83000.0,
+    "prev15_49": 11.0,
+    "prev15_49_text": "11 [10.2 - 11.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.31
+    }
+   }
+  },
+  {
+   "iso3": "MRT",
+   "name": "モーリタニア",
+   "en": "Mauritania",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 65,
+    "rate_lo": 40,
+    "rate_hi": 125,
+    "num": 3400,
+    "num_lo": 2100,
+    "num_hi": 6500,
+    "pop": 5169393,
+    "prev_year": 2023,
+    "prev_rate": 70,
+    "prev_num": 3500
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 102.0,
+    "prev_year": 2024,
+    "prev_cases": 1107.0,
+    "per_m": 19.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 5800.0,
+    "plhiv_text": "5800 [4900 - 7100]",
+    "new": "<200",
+    "new_text": "<200 [<100 - <500]",
+    "prev_new": "<500",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.2]"
+   }
+  },
+  {
+   "iso3": "MSR",
+   "name": "モントセラト（英国領）",
+   "en": "Montserrat",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 0,
+    "rate_lo": 0,
+    "rate_hi": 0,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 4387,
+    "prev_year": 2023,
+    "prev_rate": 0,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "MUS",
+   "name": "モーリシャス",
+   "en": "Mauritius",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 13,
+    "rate_lo": 10,
+    "rate_hi": 15,
+    "num": 160,
+    "num_lo": 130,
+    "num_hi": 190,
+    "pop": 1271172,
+    "prev_year": 2023,
+    "prev_rate": 12,
+    "prev_num": 160
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 10000.0,
+    "plhiv_text": "10 000 [8900 - 12 000]",
+    "new": 630.0,
+    "new_text": "630 [<500 - 830]",
+    "prev_new": 650.0,
+    "prev15_49": 1.1,
+    "prev15_49_text": "1.1 [0.9 - 1.2]"
+   }
+  },
+  {
+   "iso3": "MWI",
+   "name": "マラウイ",
+   "en": "Malawi",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 113,
+    "rate_lo": 52,
+    "rate_hi": 196,
+    "num": 24000,
+    "num_lo": 11000,
+    "num_hi": 42000,
+    "pop": 21655289,
+    "prev_year": 2023,
+    "prev_rate": 119,
+    "prev_num": 25000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1158.0,
+    "prev_year": 2024,
+    "prev_cases": 958.0,
+    "per_m": 53.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1000000.0,
+    "plhiv_text": "1 000 000 [950 000 - 1 100 000]",
+    "new": 14000.0,
+    "new_text": "14 000 [11 000 - 19 000]",
+    "prev_new": 15000.0,
+    "prev15_49": 6.1,
+    "prev15_49_text": "6.1 [5.9 - 6.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.4
+    }
+   }
+  },
+  {
+   "iso3": "MYS",
+   "name": "マレーシア",
+   "en": "Malaysia",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 96,
+    "rate_lo": 78,
+    "rate_hi": 116,
+    "num": 34000,
+    "num_lo": 28000,
+    "num_hi": 41000,
+    "pop": 35557672,
+    "prev_year": 2023,
+    "prev_rate": 97,
+    "prev_num": 34000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 917.0,
+    "prev_year": 2024,
+    "prev_cases": 3791.0,
+    "per_m": 25.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 85000.0,
+    "plhiv_text": "85 000 [76 000 - 94 000]",
+    "new": 2900.0,
+    "new_text": "2900 [2500 - 3200]",
+    "prev_new": 3000.0,
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.3 - 0.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.11
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 10.63
+    }
+   }
+  },
+  {
+   "iso3": "NAM",
+   "name": "ナミビア",
+   "en": "Namibia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 422,
+    "rate_lo": 236,
+    "rate_hi": 600,
+    "num": 13000,
+    "num_lo": 7100,
+    "num_hi": 18000,
+    "pop": 3030137,
+    "prev_year": 2023,
+    "prev_rate": 432,
+    "prev_num": 13000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 264.0,
+    "prev_year": 2024,
+    "prev_cases": 15.0,
+    "per_m": 87.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 220000.0,
+    "plhiv_text": "220 000 [200 000 - 250 000]",
+    "new": 3900.0,
+    "new_text": "3900 [3100 - 5000]",
+    "prev_new": 4000.0,
+    "prev15_49": 8.5,
+    "prev15_49_text": "8.5 [8.1 - 9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.97
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 296.2
+    }
+   }
+  },
+  {
+   "iso3": "NCL",
+   "name": "ニューカレドニア（フランス領）",
+   "en": "New Caledonia",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 18,
+    "rate_lo": 15,
+    "rate_hi": 22,
+    "num": 52,
+    "num_lo": 43,
+    "num_hi": 63,
+    "pop": 292634,
+    "prev_year": 2023,
+    "prev_rate": 17,
+    "prev_num": 49
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "NER",
+   "name": "ニジェール",
+   "en": "Niger",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 86,
+    "rate_lo": 53,
+    "rate_hi": 164,
+    "num": 23000,
+    "num_lo": 14000,
+    "num_hi": 44000,
+    "pop": 27032412,
+    "prev_year": 2023,
+    "prev_rate": 83,
+    "prev_num": 22000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 17686.0,
+    "prev_year": 2024,
+    "prev_cases": 2362.0,
+    "per_m": 654.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 32000.0,
+    "plhiv_text": "32 000 [29 000 - 36 000]",
+    "new": 1500.0,
+    "new_text": "1500 [1200 - 2000]",
+    "prev_new": 1400.0,
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.87
+    }
+   }
+  },
+  {
+   "iso3": "NGA",
+   "name": "ナイジェリア",
+   "en": "Nigeria",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 219,
+    "rate_lo": 143,
+    "rate_hi": 311,
+    "num": 510000,
+    "num_lo": 333000,
+    "num_hi": 724000,
+    "pop": 232679479,
+    "prev_year": 2023,
+    "prev_rate": 219,
+    "prev_num": 499000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 21270.0,
+    "prev_year": 2024,
+    "prev_cases": 14999.0,
+    "per_m": 91.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 2000000.0,
+    "plhiv_text": "2 000 000 [1 800 000 - 2 300 000]",
+    "new": 64000.0,
+    "new_text": "64 000 [50 000 - 92 000]",
+    "prev_new": 62000.0,
+    "prev15_49": 1.2,
+    "prev15_49_text": "1.2 [1.1 - 1.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.15
+    }
+   }
+  },
+  {
+   "iso3": "NIC",
+   "name": "ニカラグア",
+   "en": "Nicaragua",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 43,
+    "rate_lo": 35,
+    "rate_hi": 52,
+    "num": 3000,
+    "num_lo": 2400,
+    "num_hi": 3600,
+    "pop": 6916136,
+    "prev_year": 2023,
+    "prev_rate": 44,
+    "prev_num": 3000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.151978354
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 17.35
+    }
+   }
+  },
+  {
+   "iso3": "NIU",
+   "name": "ニウエ",
+   "en": "Niue",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 55,
+    "rate_lo": 45,
+    "rate_hi": 66,
+    "num": 1,
+    "num_lo": 1,
+    "num_hi": 1,
+    "pop": 1818,
+    "prev_year": 2023,
+    "prev_rate": 0,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "NLD",
+   "name": "オランダ",
+   "en": "Netherlands (Kingdom of the)",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.7,
+    "rate_lo": 4,
+    "rate_hi": 5.5,
+    "num": 860,
+    "num_lo": 740,
+    "num_hi": 1000,
+    "pop": 18228738,
+    "prev_year": 2023,
+    "prev_rate": 4.5,
+    "prev_num": 820
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 539.0,
+    "prev_year": 2024,
+    "prev_cases": 202.0,
+    "per_m": 29.6,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 2097.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "NOR",
+   "name": "ノルウェー",
+   "en": "Norway",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.3,
+    "rate_lo": 2.6,
+    "rate_hi": 3.9,
+    "num": 180,
+    "num_lo": 150,
+    "num_hi": 220,
+    "pop": 5576659,
+    "prev_year": 2023,
+    "prev_rate": 2.8,
+    "prev_num": 160
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4.0,
+    "prev_year": 2024,
+    "prev_cases": 10.0,
+    "per_m": 0.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 5300.0,
+    "plhiv_text": "5300 [4300 - 6500]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <200]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 208.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "NPL",
+   "name": "ネパール",
+   "en": "Nepal",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 227,
+    "rate_lo": 129,
+    "rate_hi": 350,
+    "num": 67000,
+    "num_lo": 38000,
+    "num_hi": 104000,
+    "pop": 29651067,
+    "prev_year": 2023,
+    "prev_rate": 231,
+    "prev_num": 69000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 24.0,
+    "prev_year": 2024,
+    "prev_cases": 113.0,
+    "per_m": 0.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 35000.0,
+    "plhiv_text": "35 000 [31 000 - 38 000]",
+    "new": 550.0,
+    "new_text": "550 [<500 - 610]",
+    "prev_new": 600.0,
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.67
+    }
+   }
+  },
+  {
+   "iso3": "NRU",
+   "name": "ナウル",
+   "en": "Nauru",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 161,
+    "rate_lo": 131,
+    "rate_hi": 194,
+    "num": 19,
+    "num_lo": 16,
+    "num_hi": 23,
+    "pop": 11944,
+    "prev_year": 2023,
+    "prev_rate": 152,
+    "prev_num": 18
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "NZL",
+   "name": "ニュージーランド",
+   "en": "New Zealand",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 7.9,
+    "rate_lo": 6.5,
+    "rate_hi": 9.6,
+    "num": 410,
+    "num_lo": 340,
+    "num_hi": 500,
+    "pop": 5213941,
+    "prev_year": 2023,
+    "prev_rate": 6.7,
+    "prev_num": 350
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 58.0,
+    "prev_year": 2024,
+    "prev_cases": 1.0,
+    "per_m": 11.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 4000.0,
+    "plhiv_text": "4000 [3500 - 4500]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 209253.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 8.57
+    }
+   }
+  },
+  {
+   "iso3": "OMN",
+   "name": "オマーン",
+   "en": "Oman",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 11,
+    "rate_lo": 9.3,
+    "rate_hi": 14,
+    "num": 600,
+    "num_lo": 490,
+    "num_hi": 730,
+    "pop": 5281542,
+    "prev_year": 2023,
+    "prev_rate": 14,
+    "prev_num": 700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5.0,
+    "prev_year": 2024,
+    "prev_cases": 13.0,
+    "per_m": 0.9,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 3600.0,
+    "plhiv_text": "3600 [3100 - 4100]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <200]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "PAK",
+   "name": "パキスタン",
+   "en": "Pakistan",
+   "region": "南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 266,
+    "rate_lo": 186,
+    "rate_hi": 355,
+    "num": 669000,
+    "num_lo": 468000,
+    "num_hi": 893000,
+    "pop": 251269166,
+    "prev_year": 2023,
+    "prev_rate": 267,
+    "prev_num": 662000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 20741.0,
+    "prev_year": 2024,
+    "prev_cases": 24709.0,
+    "per_m": 82.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 340000.0,
+    "plhiv_text": "340 000 [310 000 - 370 000]",
+    "new": 44000.0,
+    "new_text": "44 000 [40 000 - 48 000]",
+    "prev_new": 41000.0,
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.3]"
+   }
+  },
+  {
+   "iso3": "PAN",
+   "name": "パナマ",
+   "en": "Panama",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 63,
+    "rate_lo": 51,
+    "rate_hi": 76,
+    "num": 2800,
+    "num_lo": 2300,
+    "num_hi": 3400,
+    "pop": 4515582,
+    "prev_year": 2023,
+    "prev_rate": 61,
+    "prev_num": 2700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 33000.0,
+    "plhiv_text": "33 000 [31 000 - 37 000]",
+    "new": 1500.0,
+    "new_text": "1500 [1300 - 1700]",
+    "prev_new": 1500.0,
+    "prev15_49": 1.2,
+    "prev15_49_text": "1.2 [1.1 - 1.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.86
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 421.73
+    }
+   }
+  },
+  {
+   "iso3": "PER",
+   "name": "ペルー",
+   "en": "Peru",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 139,
+    "rate_lo": 107,
+    "rate_hi": 220,
+    "num": 48000,
+    "num_lo": 37000,
+    "num_hi": 75000,
+    "pop": 34217854,
+    "prev_year": 2023,
+    "prev_rate": 149,
+    "prev_num": 50000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 140000.0,
+    "plhiv_text": "140 000 [120 000 - 170 000]",
+    "new": 6600.0,
+    "new_text": "6600 [5000 - 9600]",
+    "prev_new": 6800.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.6]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.88
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 56.68
+    }
+   }
+  },
+  {
+   "iso3": "PHL",
+   "name": "フィリピン",
+   "en": "Philippines",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 625,
+    "rate_lo": 344,
+    "rate_hi": 1020,
+    "num": 724000,
+    "num_lo": 399000,
+    "num_hi": 1180000,
+    "pop": 115843666,
+    "prev_year": 2023,
+    "prev_rate": 632,
+    "prev_num": 726000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 5042.0,
+    "prev_year": 2024,
+    "prev_cases": 3844.0,
+    "per_m": 43.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 250000.0,
+    "plhiv_text": "250 000 [210 000 - 290 000]",
+    "new": 34000.0,
+    "new_text": "34 000 [28 000 - 39 000]",
+    "prev_new": 30000.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.3 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.76
+    }
+   }
+  },
+  {
+   "iso3": "PLW",
+   "name": "パラオ",
+   "en": "Palau",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 28,
+    "rate_lo": 23,
+    "rate_hi": 34,
+    "num": 5,
+    "num_lo": 4,
+    "num_hi": 6,
+    "pop": 17696,
+    "prev_year": 2023,
+    "prev_rate": 85,
+    "prev_num": 15
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 3.09
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "PNG",
+   "name": "パプアニューギニア",
+   "en": "Papua New Guinea",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 664,
+    "rate_lo": 392,
+    "rate_hi": 1370,
+    "num": 70000,
+    "num_lo": 41000,
+    "num_hi": 145000,
+    "pop": 10576504,
+    "prev_year": 2023,
+    "prev_rate": 647,
+    "prev_num": 67000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 47.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 110000.0,
+    "plhiv_text": "110 000 [95 000 - 130 000]",
+    "new": null,
+    "new_text": null,
+    "prev_new": null,
+    "prev15_49": 1.5,
+    "prev15_49_text": "1.5 [1.3 - 1.8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 3.82
+    },
+    "cs_rate": {
+     "year": 2022,
+     "value": 4275.96038
+    }
+   }
+  },
+  {
+   "iso3": "POL",
+   "name": "ポーランド",
+   "en": "Poland",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 11,
+    "rate_lo": 9.2,
+    "rate_hi": 14,
+    "num": 4400,
+    "num_lo": 3500,
+    "num_hi": 5300,
+    "pop": 38539206,
+    "prev_year": 2023,
+    "prev_rate": 13,
+    "prev_num": 5100
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 120.0,
+    "prev_year": 2024,
+    "prev_cases": 272.0,
+    "per_m": 3.1,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 2986.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.73
+    }
+   }
+  },
+  {
+   "iso3": "PRI",
+   "name": "プエルトリコ（米国領）",
+   "en": "Puerto Rico",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 0.55,
+    "rate_lo": 0.45,
+    "rate_hi": 0.66,
+    "num": 18,
+    "num_lo": 14,
+    "num_hi": 21,
+    "pop": 3242203,
+    "prev_year": 2023,
+    "prev_rate": 0.81,
+    "prev_num": 26
+   }
+  },
+  {
+   "iso3": "PRK",
+   "name": "北朝鮮",
+   "en": "Democratic People's Republic of Korea",
+   "region": "東アジア",
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": null
+   }
+  },
+  {
+   "iso3": "PRT",
+   "name": "ポルトガル",
+   "en": "Portugal",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 15,
+    "rate_lo": 12,
+    "rate_hi": 18,
+    "num": 1500,
+    "num_lo": 1200,
+    "num_hi": 1800,
+    "pop": 10425302,
+    "prev_year": 2023,
+    "prev_rate": 16,
+    "prev_num": 1700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 21.0,
+    "prev_year": 2024,
+    "prev_cases": 35.0,
+    "per_m": 2.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 52000.0,
+    "plhiv_text": "52 000 [46 000 - 57 000]",
+    "new": 510.0,
+    "new_text": "510 [<500 - 600]",
+    "prev_new": 500.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 1153.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 16.34
+    }
+   }
+  },
+  {
+   "iso3": "PRY",
+   "name": "パラグアイ",
+   "en": "Paraguay",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 81,
+    "rate_lo": 66,
+    "rate_hi": 98,
+    "num": 5600,
+    "num_lo": 4600,
+    "num_hi": 6800,
+    "pop": 6929154,
+    "prev_year": 2023,
+    "prev_rate": 76,
+    "prev_num": 5200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 50.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 7.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 24000.0,
+    "plhiv_text": "24 000 [23 000 - 26 000]",
+    "new": 1400.0,
+    "new_text": "1400 [1300 - 1600]",
+    "prev_new": 1400.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.5 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 4.63
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 374.900933807
+    }
+   }
+  },
+  {
+   "iso3": "PSE",
+   "name": "パレスチナ",
+   "en": "occupied Palestinian territory, including east Jerusalem",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 0.29,
+    "rate_lo": 0.23,
+    "rate_hi": 0.35,
+    "num": 16,
+    "num_lo": 13,
+    "num_hi": 19,
+    "pop": 5495436,
+    "prev_year": 2023,
+    "prev_rate": 0.4,
+    "prev_num": 22
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "PYF",
+   "name": "フランス領ポリネシア",
+   "en": "French Polynesia",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 24,
+    "rate_lo": 19,
+    "rate_hi": 28,
+    "num": 67,
+    "num_lo": 54,
+    "num_hi": 80,
+    "pop": 281799,
+    "prev_year": 2023,
+    "prev_rate": 19,
+    "prev_num": 54
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "QAT",
+   "name": "カタール",
+   "en": "Qatar",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 37,
+    "rate_lo": 30,
+    "rate_hi": 44,
+    "num": 1100,
+    "num_lo": 910,
+    "num_hi": 1300,
+    "pop": 3048426,
+    "prev_year": 2023,
+    "prev_rate": 40,
+    "prev_num": 1200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 26.0,
+    "prev_year": 2024,
+    "prev_cases": 55.0,
+    "per_m": 8.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1000.0,
+    "plhiv_text": "1000 [940 - 1200]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <500]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.13
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 28.86
+    }
+   }
+  },
+  {
+   "iso3": "ROU",
+   "name": "ルーマニア",
+   "en": "Romania",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 60,
+    "rate_lo": 49,
+    "rate_hi": 73,
+    "num": 11000,
+    "num_lo": 9300,
+    "num_hi": 14000,
+    "pop": 19015088,
+    "prev_year": 2023,
+    "prev_rate": 62,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 6837.0,
+    "prev_year": 2024,
+    "prev_cases": 25505.0,
+    "per_m": 359.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 19000.0,
+    "plhiv_text": "19 000 [17 000 - 22 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 640]",
+    "prev_new": 530.0,
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.2]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 569.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 5.87
+    }
+   }
+  },
+  {
+   "iso3": "RUS",
+   "name": "ロシア",
+   "en": "Russian Federation",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 34,
+    "rate_lo": 18,
+    "rate_hi": 56,
+    "num": 49000,
+    "num_lo": 25000,
+    "num_hi": 81000,
+    "pop": 144820422,
+    "prev_year": 2023,
+    "prev_rate": 38,
+    "prev_num": 55000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 6627.0,
+    "prev_year": 2024,
+    "prev_cases": 22455.0,
+    "per_m": 45.8,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "RWA",
+   "name": "ルワンダ",
+   "en": "Rwanda",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 62,
+    "rate_lo": 44,
+    "rate_hi": 83,
+    "num": 8800,
+    "num_lo": 6200,
+    "num_hi": 12000,
+    "pop": 14256561,
+    "prev_year": 2023,
+    "prev_rate": 62,
+    "prev_num": 8700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 396.0,
+    "prev_year": 2024,
+    "prev_cases": 53.0,
+    "per_m": 27.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 230000.0,
+    "plhiv_text": "230 000 [220 000 - 270 000]",
+    "new": 2300.0,
+    "new_text": "2300 [1500 - 3600]",
+    "prev_new": 2500.0,
+    "prev15_49": 1.9,
+    "prev15_49_text": "1.9 [1.8 - 1.9]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.57
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 131.11
+    }
+   }
+  },
+  {
+   "iso3": "SAU",
+   "name": "サウジアラビア",
+   "en": "Saudi Arabia",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 8.4,
+    "rate_lo": 7.6,
+    "rate_hi": 9.3,
+    "num": 2900,
+    "num_lo": 2600,
+    "num_hi": 3100,
+    "pop": 33962761,
+    "prev_year": 2023,
+    "prev_rate": 8.4,
+    "prev_num": 2800
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 826.0,
+    "prev_year": 2024,
+    "prev_cases": 1260.0,
+    "per_m": 24.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 14000.0,
+    "plhiv_text": "14 000 [13 000 - 16 000]",
+    "new": 1300.0,
+    "new_text": "1300 [1000 - 1800]",
+    "prev_new": 1100.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "SDN",
+   "name": "スーダン",
+   "en": "Sudan",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 47,
+    "rate_lo": 29,
+    "rate_hi": 70,
+    "num": 24000,
+    "num_lo": 15000,
+    "num_hi": 35000,
+    "pop": 50448966,
+    "prev_year": 2023,
+    "prev_rate": 50,
+    "prev_num": 25000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 7708.0,
+    "prev_year": 2024,
+    "prev_cases": 1337.0,
+    "per_m": 152.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 50000.0,
+    "plhiv_text": "50 000 [36 000 - 67 000]",
+    "new": 5300.0,
+    "new_text": "5300 [3300 - 7900]",
+    "prev_new": 5100.0,
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [0.1 - 0.2]"
+   }
+  },
+  {
+   "iso3": "SEN",
+   "name": "セネガル",
+   "en": "Senegal",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 132,
+    "rate_lo": 80,
+    "rate_hi": 258,
+    "num": 24000,
+    "num_lo": 15000,
+    "num_hi": 48000,
+    "pop": 18501996,
+    "prev_year": 2023,
+    "prev_rate": 133,
+    "prev_num": 24000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 127.0,
+    "prev_year": 2024,
+    "prev_cases": 496.0,
+    "per_m": 6.9,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 52000.0,
+    "plhiv_text": "52 000 [45 000 - 58 000]",
+    "new": null,
+    "new_text": null,
+    "prev_new": null,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.3 - 0.4]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2022,
+     "value": 0.8
+    }
+   }
+  },
+  {
+   "iso3": "SGP",
+   "name": "シンガポール",
+   "en": "Singapore",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 43,
+    "rate_lo": 35,
+    "rate_hi": 52,
+    "num": 2500,
+    "num_lo": 2100,
+    "num_hi": 3000,
+    "pop": 5832385,
+    "prev_year": 2023,
+    "prev_rate": 41,
+    "prev_num": 2400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 12.0,
+    "per_m": null,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 7800.0,
+    "plhiv_text": "7800 [6100 - 9100]",
+    "new": "<200",
+    "new_text": "<200 [<100 - <200]",
+    "prev_new": "<200",
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [<0.1 - 0.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.40348464
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 36.045778138
+    }
+   }
+  },
+  {
+   "iso3": "SLB",
+   "name": "ソロモン諸島",
+   "en": "Solomon Islands",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 123,
+    "rate_lo": 100,
+    "rate_hi": 148,
+    "num": 1000,
+    "num_lo": 820,
+    "num_hi": 1200,
+    "pop": 819192,
+    "prev_year": 2023,
+    "prev_rate": 97,
+    "prev_num": 780
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 659.61
+    }
+   }
+  },
+  {
+   "iso3": "SLE",
+   "name": "シエラレオネ",
+   "en": "Sierra Leone",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 372,
+    "rate_lo": 228,
+    "rate_hi": 717,
+    "num": 32000,
+    "num_lo": 20000,
+    "num_hi": 62000,
+    "pop": 8642023,
+    "prev_year": 2023,
+    "prev_rate": 380,
+    "prev_num": 32000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 207.0,
+    "prev_year": 2024,
+    "prev_cases": 129.0,
+    "per_m": 24.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 92000.0,
+    "plhiv_text": "92 000 [75 000 - 120 000]",
+    "new": 2700.0,
+    "new_text": "2700 [1400 - 6000]",
+    "prev_new": 3400.0,
+    "prev15_49": 1.5,
+    "prev15_49_text": "1.5 [1.3 - 2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2022,
+     "value": 0.8
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 878.61
+    }
+   }
+  },
+  {
+   "iso3": "SLV",
+   "name": "エルサルバドル",
+   "en": "El Salvador",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 116,
+    "rate_lo": 94,
+    "rate_hi": 139,
+    "num": 7300,
+    "num_lo": 6000,
+    "num_hi": 8800,
+    "pop": 6338193,
+    "prev_year": 2023,
+    "prev_rate": 86,
+    "prev_num": 5400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 23000.0,
+    "plhiv_text": "23 000 [21 000 - 25 000]",
+    "new": 600.0,
+    "new_text": "600 [<500 - 760]",
+    "prev_new": 640.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.4 - 0.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.238663484
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 116.56
+    }
+   }
+  },
+  {
+   "iso3": "SMR",
+   "name": "サンマリノ",
+   "en": "San Marino",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 0,
+    "rate_lo": 0,
+    "rate_hi": 0,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 33582,
+    "prev_year": 2023,
+    "prev_rate": 0,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "SOM",
+   "name": "ソマリア",
+   "en": "Somalia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 151,
+    "rate_lo": 89,
+    "rate_hi": 314,
+    "num": 29000,
+    "num_lo": 17000,
+    "num_hi": 60000,
+    "pop": 19009144,
+    "prev_year": 2023,
+    "prev_rate": 157,
+    "prev_num": 29000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1867.0,
+    "prev_year": 2024,
+    "prev_cases": 1529.0,
+    "per_m": 98.2,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 7100.0,
+    "plhiv_text": "7100 [6200 - 8300]",
+    "new": "<200",
+    "new_text": "<200 [<100 - <500]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "SRB",
+   "name": "セルビア",
+   "en": "Serbia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 8.7,
+    "rate_lo": 7.1,
+    "rate_hi": 10,
+    "num": 590,
+    "num_lo": 480,
+    "num_hi": 710,
+    "pop": 6736222,
+    "prev_year": 2023,
+    "prev_rate": 20,
+    "prev_num": 1300
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 204.0,
+    "prev_year": 2024,
+    "prev_cases": 892.0,
+    "per_m": 30.3,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 4000.0,
+    "plhiv_text": "4000 [3300 - 4700]",
+    "new": "<200",
+    "new_text": "<200 [<200 - <200]",
+    "prev_new": "<200",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - 0.1]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 6.77
+    }
+   }
+  },
+  {
+   "iso3": "SSD",
+   "name": "南スーダン",
+   "en": "South Sudan",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 320,
+    "rate_lo": 197,
+    "rate_hi": 605,
+    "num": 38000,
+    "num_lo": 24000,
+    "num_hi": 72000,
+    "pop": 11943418,
+    "prev_year": 2023,
+    "prev_rate": 326,
+    "prev_num": 37000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 138.0,
+    "prev_year": 2024,
+    "prev_cases": 3114.0,
+    "per_m": 11.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 150000.0,
+    "plhiv_text": "150 000 [120 000 - 180 000]",
+    "new": 6100.0,
+    "new_text": "6100 [3500 - 8800]",
+    "prev_new": 6500.0,
+    "prev15_49": 1.4,
+    "prev15_49_text": "1.4 [1.2 - 1.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 4.63
+    }
+   }
+  },
+  {
+   "iso3": "STP",
+   "name": "サントメ・プリンシペ",
+   "en": "Sao Tome and Principe",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 87,
+    "rate_lo": 71,
+    "rate_hi": 105,
+    "num": 210,
+    "num_lo": 170,
+    "num_hi": 250,
+    "pop": 235536,
+    "prev_year": 2023,
+    "prev_rate": 73,
+    "prev_num": 170
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1000.0,
+    "plhiv_text": "1000 [810 - 1300]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.5 - 0.8]"
+   }
+  },
+  {
+   "iso3": "SUR",
+   "name": "スリナム",
+   "en": "Suriname",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 34,
+    "rate_lo": 28,
+    "rate_hi": 41,
+    "num": 210,
+    "num_lo": 170,
+    "num_hi": 260,
+    "pop": 634427,
+    "prev_year": 2023,
+    "prev_rate": 31,
+    "prev_num": 200
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 8100.0,
+    "plhiv_text": "8100 [7200 - 9100]",
+    "new": "<500",
+    "new_text": "<500 [<500 - 580]",
+    "prev_new": "<500",
+    "prev15_49": 1.6,
+    "prev15_49_text": "1.6 [1.4 - 1.8]"
+   }
+  },
+  {
+   "iso3": "SVK",
+   "name": "スロバキア",
+   "en": "Slovakia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.3,
+    "rate_lo": 2.7,
+    "rate_hi": 3.9,
+    "num": 180,
+    "num_lo": 150,
+    "num_hi": 220,
+    "pop": 5506752,
+    "prev_year": 2023,
+    "prev_rate": 4.6,
+    "prev_num": 250
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 4.0,
+    "prev_year": 2024,
+    "prev_cases": 4.0,
+    "per_m": 0.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 695.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 8.23
+    }
+   }
+  },
+  {
+   "iso3": "SVN",
+   "name": "スロベニア",
+   "en": "Slovenia",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 2.6,
+    "rate_lo": 2.1,
+    "rate_hi": 3.1,
+    "num": 54,
+    "num_lo": 44,
+    "num_hi": 65,
+    "pop": 2118697,
+    "prev_year": 2023,
+    "prev_rate": 4.7,
+    "prev_num": 100
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 3.0,
+    "prev_year": 2024,
+    "prev_cases": 17.0,
+    "per_m": 1.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1000.0,
+    "plhiv_text": "1000 [850 - 1200]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <100]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 78.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "SWE",
+   "name": "スウェーデン",
+   "en": "Sweden",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.3,
+    "rate_lo": 2.7,
+    "rate_hi": 4,
+    "num": 350,
+    "num_lo": 290,
+    "num_hi": 420,
+    "pop": 10607003,
+    "prev_year": 2023,
+    "prev_rate": 3.8,
+    "prev_num": 400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 9.0,
+    "prev_year": 2024,
+    "prev_cases": 38.0,
+    "per_m": 0.8,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 565.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "SWZ",
+   "name": "エスワティニ",
+   "en": "Eswatini",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 319,
+    "rate_lo": 166,
+    "rate_hi": 492,
+    "num": 4000,
+    "num_lo": 2100,
+    "num_hi": 6100,
+    "pop": 1242822,
+    "prev_year": 2023,
+    "prev_rate": 326,
+    "prev_num": 4000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 210000.0,
+    "plhiv_text": "210 000 [200 000 - 240 000]",
+    "new": 2000.0,
+    "new_text": "2000 [1500 - 2800]",
+    "prev_new": 2300.0,
+    "prev15_49": 22.4,
+    "prev15_49_text": "22.4 [22 - 22.7]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 1.960784314
+    }
+   }
+  },
+  {
+   "iso3": "SXM",
+   "name": "シント・マールテン（オランダ領）",
+   "en": "Sint Maarten (Dutch part)",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 6.9,
+    "rate_lo": 5.6,
+    "rate_hi": 8.3,
+    "num": 3,
+    "num_lo": 2,
+    "num_hi": 4,
+    "pop": 43349,
+    "prev_year": 2023,
+    "prev_rate": 7,
+    "prev_num": 3
+   }
+  },
+  {
+   "iso3": "SYC",
+   "name": "セーシェル",
+   "en": "Seychelles",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 17,
+    "rate_lo": 14,
+    "rate_hi": 20,
+    "num": 22,
+    "num_lo": 18,
+    "num_hi": 27,
+    "pop": 130425,
+    "prev_year": 2023,
+    "prev_rate": 18,
+    "prev_num": 23
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.65
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "SYR",
+   "name": "シリア",
+   "en": "Syrian Arab Republic",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 23,
+    "rate_lo": 18,
+    "rate_hi": 27,
+    "num": 5600,
+    "num_lo": 4600,
+    "num_hi": 6800,
+    "pop": 24672756,
+    "prev_year": 2023,
+    "prev_rate": 23,
+    "prev_num": 5500
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 109.0,
+    "prev_year": 2024,
+    "prev_cases": 128.0,
+    "per_m": 4.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1000.0,
+    "plhiv_text": "1000 [880 - 1100]",
+    "new": "<100",
+    "new_text": "<100 [<100 - <200]",
+    "prev_new": "<100",
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "TCA",
+   "name": "タークス・カイコス諸島（英国領）",
+   "en": "Turks and Caicos Islands",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 8.6,
+    "rate_lo": 7,
+    "rate_hi": 10,
+    "num": 4,
+    "num_lo": 3,
+    "num_hi": 5,
+    "pop": 46531,
+    "prev_year": 2023,
+    "prev_rate": 15,
+    "prev_num": 7
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "TCD",
+   "name": "チャド",
+   "en": "Chad",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 118,
+    "rate_lo": 73,
+    "rate_hi": 222,
+    "num": 24000,
+    "num_lo": 15000,
+    "num_hi": 45000,
+    "pop": 20299127,
+    "prev_year": 2023,
+    "prev_rate": 120,
+    "prev_num": 23000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 495.0,
+    "prev_year": 2024,
+    "prev_cases": 6978.0,
+    "per_m": 24.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 120000.0,
+    "plhiv_text": "120 000 [96 000 - 140 000]",
+    "new": 3300.0,
+    "new_text": "3300 [2000 - 5700]",
+    "prev_new": 3800.0,
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.7 - 1.1]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 2.92
+    }
+   }
+  },
+  {
+   "iso3": "TGO",
+   "name": "トーゴ",
+   "en": "Togo",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 48,
+    "rate_lo": 29,
+    "rate_hi": 93,
+    "num": 4500,
+    "num_lo": 2800,
+    "num_hi": 8800,
+    "pop": 9515236,
+    "prev_year": 2023,
+    "prev_rate": 47,
+    "prev_num": 4400
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 928.0,
+    "prev_year": 2024,
+    "prev_cases": 353.0,
+    "per_m": 97.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 100000.0,
+    "plhiv_text": "100 000 [86 000 - 120 000]",
+    "new": 2100.0,
+    "new_text": "2100 [1200 - 3900]",
+    "prev_new": 2500.0,
+    "prev15_49": 1.6,
+    "prev15_49_text": "1.6 [1.3 - 2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.73
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 17.41
+    }
+   }
+  },
+  {
+   "iso3": "THA",
+   "name": "タイ",
+   "en": "Thailand",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 146,
+    "rate_lo": 106,
+    "rate_hi": 181,
+    "num": 104000,
+    "num_lo": 76000,
+    "num_hi": 130000,
+    "pop": 71668014,
+    "prev_year": 2023,
+    "prev_rate": 149,
+    "prev_num": 107000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 913.0,
+    "prev_year": 2024,
+    "prev_cases": 8202.0,
+    "per_m": 12.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 620000.0,
+    "plhiv_text": "620 000 [560 000 - 690 000]",
+    "new": 7300.0,
+    "new_text": "7300 [6600 - 8000]",
+    "prev_new": 8000.0,
+    "prev15_49": 1.1,
+    "prev15_49_text": "1.1 [0.8 - 1.2]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.72
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 279.08
+    }
+   }
+  },
+  {
+   "iso3": "TJK",
+   "name": "タジキスタン",
+   "en": "Tajikistan",
+   "region": "中央アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 75,
+    "rate_lo": 56,
+    "rate_hi": 92,
+    "num": 7900,
+    "num_lo": 6000,
+    "num_hi": 9700,
+    "pop": 10590931,
+    "prev_year": 2023,
+    "prev_rate": 76,
+    "prev_num": 7900
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2246.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 212.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 16000.0,
+    "plhiv_text": "16 000 [14 000 - 19 000]",
+    "new": "<500",
+    "new_text": "<500 [<200 - 630]",
+    "prev_new": "<500",
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2021,
+     "value": 0.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.4
+    }
+   }
+  },
+  {
+   "iso3": "TKL",
+   "name": "トケラウ",
+   "en": "Tokelau",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 13,
+    "rate_lo": 10,
+    "rate_hi": 16,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 2510,
+    "prev_year": 2023,
+    "prev_rate": 0,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": null,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "TKM",
+   "name": "トルクメニスタン",
+   "en": "Turkmenistan",
+   "region": "中央アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 40,
+    "rate_lo": 32,
+    "rate_hi": 48,
+    "num": 3000,
+    "num_lo": 2400,
+    "num_hi": 3600,
+    "pop": 7494492,
+    "prev_year": 2023,
+    "prev_rate": 41,
+    "prev_num": 3000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "TLS",
+   "name": "東ティモール",
+   "en": "Timor-Leste",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 496,
+    "rate_lo": 300,
+    "rate_hi": 973,
+    "num": 6900,
+    "num_lo": 4200,
+    "num_hi": 14000,
+    "pop": 1400636,
+    "prev_year": 2023,
+    "prev_rate": 455,
+    "prev_num": 6300
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 2.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 2200.0,
+    "plhiv_text": "2200 [1900 - 2600]",
+    "new": "<200",
+    "new_text": "<200 [<100 - <500]",
+    "prev_new": "<200",
+    "prev15_49": 0.3,
+    "prev15_49_text": "0.3 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.83
+    }
+   }
+  },
+  {
+   "iso3": "TON",
+   "name": "トンガ",
+   "en": "Tonga",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 1.9,
+    "rate_lo": 1.6,
+    "rate_hi": 2.3,
+    "num": 2,
+    "num_lo": 2,
+    "num_hi": 2,
+    "pop": 104169,
+    "prev_year": 2023,
+    "prev_rate": 7.6,
+    "prev_num": 8
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "TTO",
+   "name": "トリニダード・トバゴ",
+   "en": "Trinidad and Tobago",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 27,
+    "rate_lo": 22,
+    "rate_hi": 32,
+    "num": 400,
+    "num_lo": 330,
+    "num_hi": 490,
+    "pop": 1507783,
+    "prev_year": 2023,
+    "prev_rate": 25,
+    "prev_num": 370
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 11000.0,
+    "plhiv_text": "11 000 [10 000 - 12 000]",
+    "new": "<500",
+    "new_text": "<500 [<500 - <500]",
+    "prev_new": "<500",
+    "prev15_49": 0.9,
+    "prev15_49_text": "0.9 [0.9 - 1]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2023,
+     "value": 23.270245113
+    }
+   }
+  },
+  {
+   "iso3": "TUN",
+   "name": "チュニジア",
+   "en": "Tunisia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 39,
+    "rate_lo": 31,
+    "rate_hi": 47,
+    "num": 4700,
+    "num_lo": 3900,
+    "num_hi": 5700,
+    "pop": 12277102,
+    "prev_year": 2023,
+    "prev_rate": 38,
+    "prev_num": 4700
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 7.0,
+    "prev_year": 2024,
+    "prev_cases": 16.0,
+    "per_m": 0.6,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 8600.0,
+    "plhiv_text": "8600 [6100 - 13 000]",
+    "new": 740.0,
+    "new_text": "740 [<500 - 1300]",
+    "prev_new": 740.0,
+    "prev15_49": 0.1,
+    "prev15_49_text": "0.1 [<0.1 - 0.2]"
+   }
+  },
+  {
+   "iso3": "TUR",
+   "name": "トルコ",
+   "en": "Türkiye",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 13,
+    "rate_lo": 11,
+    "rate_hi": 16,
+    "num": 11000,
+    "num_lo": 9300,
+    "num_hi": 14000,
+    "pop": 87473816,
+    "prev_year": 2023,
+    "prev_rate": 14,
+    "prev_num": 12000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 228.0,
+    "prev_year": 2024,
+    "prev_cases": 1582.0,
+    "per_m": 2.6,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2024,
+     "value": 4.16
+    }
+   }
+  },
+  {
+   "iso3": "TUV",
+   "name": "ツバル",
+   "en": "Tuvalu",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 223,
+    "rate_lo": 182,
+    "rate_hi": 269,
+    "num": 22,
+    "num_lo": 18,
+    "num_hi": 26,
+    "pop": 9645,
+    "prev_year": 2023,
+    "prev_rate": 163,
+    "prev_num": 16
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.38
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "TZA",
+   "name": "タンザニア",
+   "en": "United Republic of Tanzania",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 172,
+    "rate_lo": 67,
+    "rate_hi": 326,
+    "num": 118000,
+    "num_lo": 46000,
+    "num_hi": 224000,
+    "pop": 68560157,
+    "prev_year": 2023,
+    "prev_rate": 183,
+    "prev_num": 122000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 99.0,
+    "prev_year": 2024,
+    "prev_cases": 992.0,
+    "per_m": 1.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1800000.0,
+    "plhiv_text": "1 800 000 [1 600 000 - 2 000 000]",
+    "new": 34000.0,
+    "new_text": "34 000 [24 000 - 48 000]",
+    "prev_new": 43000.0,
+    "prev15_49": 3.4,
+    "prev15_49_text": "3.4 [3.2 - 3.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.4
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 415.87
+    }
+   }
+  },
+  {
+   "iso3": "UGA",
+   "name": "ウガンダ",
+   "en": "Uganda",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 197,
+    "rate_lo": 118,
+    "rate_hi": 296,
+    "num": 99000,
+    "num_lo": 59000,
+    "num_hi": 148000,
+    "pop": 50015100,
+    "prev_year": 2023,
+    "prev_rate": 198,
+    "prev_num": 96000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 12990.0,
+    "prev_year": 2024,
+    "prev_cases": 2180.0,
+    "per_m": 259.7,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1500000.0,
+    "plhiv_text": "1 500 000 [1 400 000 - 1 700 000]",
+    "new": 34000.0,
+    "new_text": "34 000 [22 000 - 49 000]",
+    "prev_new": 38000.0,
+    "prev15_49": 4.7,
+    "prev15_49_text": "4.7 [4.5 - 5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.35
+    },
+    "cs_rate": {
+     "year": 2020,
+     "value": 863.37
+    }
+   }
+  },
+  {
+   "iso3": "UKR",
+   "name": "ウクライナ",
+   "en": "Ukraine",
+   "region": "ヨーロッパ",
+   "tb": {
+    "year": 2024,
+    "rate": 86,
+    "rate_lo": 68,
+    "rate_hi": 106,
+    "num": 33000,
+    "num_lo": 26000,
+    "num_hi": 40000,
+    "pop": 37860219,
+    "prev_year": 2023,
+    "prev_rate": 89,
+    "prev_num": 34000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1502.0,
+    "prev_year": 2024,
+    "prev_cases": 433.0,
+    "per_m": 39.7,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 0.06
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "URY",
+   "name": "ウルグアイ",
+   "en": "Uruguay",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 47,
+    "rate_lo": 38,
+    "rate_hi": 57,
+    "num": 1600,
+    "num_lo": 1300,
+    "num_hi": 1900,
+    "pop": 3386590,
+    "prev_year": 2023,
+    "prev_rate": 45,
+    "prev_num": 1500
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 13.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 3.8,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 17000.0,
+    "plhiv_text": "17 000 [15 000 - 18 000]",
+    "new": 810.0,
+    "new_text": "810 [680 - 890]",
+    "prev_new": 800.0,
+    "prev15_49": 0.6,
+    "prev15_49_text": "0.6 [0.6 - 0.7]"
+   }
+  },
+  {
+   "iso3": "USA",
+   "name": "アメリカ合衆国",
+   "en": "United States of America",
+   "region": "北アメリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 3.2,
+    "rate_lo": 2.6,
+    "rate_hi": 3.9,
+    "num": 11000,
+    "num_lo": 9100,
+    "num_hi": 13000,
+    "pop": 345426574,
+    "prev_year": 2023,
+    "prev_rate": 3.1,
+    "prev_num": 11000
+   },
+   "syphilis": {
+    "syph_cases": {
+     "year": 2023,
+     "value": 209253.0
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 105.8
+    }
+   }
+  },
+  {
+   "iso3": "UZB",
+   "name": "ウズベキスタン",
+   "en": "Uzbekistan",
+   "region": "中央アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 51,
+    "rate_lo": 41,
+    "rate_hi": 61,
+    "num": 18000,
+    "num_lo": 15000,
+    "num_hi": 22000,
+    "pop": 36361872,
+    "prev_year": 2023,
+    "prev_rate": 54,
+    "prev_num": 19000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2041.0,
+    "prev_year": 2024,
+    "prev_cases": 20940.0,
+    "per_m": 56.1,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 63000.0,
+    "plhiv_text": "63 000 [51 000 - 81 000]",
+    "new": null,
+    "new_text": null,
+    "prev_new": null,
+    "prev15_49": 0.2,
+    "prev15_49_text": "0.2 [0.2 - 0.3]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2023,
+     "value": 0.02
+    },
+    "cs_rate": {
+     "year": 2023,
+     "value": 0.0
+    }
+   }
+  },
+  {
+   "iso3": "VCT",
+   "name": "セントビンセント・グレナディーン",
+   "en": "Saint Vincent and the Grenadines",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 4.6,
+    "rate_lo": 3.7,
+    "rate_hi": 5.5,
+    "num": 5,
+    "num_lo": 4,
+    "num_hi": 6,
+    "pop": 100615,
+    "prev_year": 2023,
+    "prev_rate": 3.9,
+    "prev_num": 4
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "VEN",
+   "name": "ベネズエラ",
+   "en": "Venezuela (Bolivarian Republic of)",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 46,
+    "rate_lo": 37,
+    "rate_hi": 56,
+    "num": 13000,
+    "num_lo": 11000,
+    "num_hi": 16000,
+    "pop": 28405538,
+    "prev_year": 2023,
+    "prev_rate": 47,
+    "prev_num": 13000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 100000.0,
+    "plhiv_text": "100 000 [78 000 - 130 000]",
+    "new": 7000.0,
+    "new_text": "7000 [2800 - 11 000]",
+    "prev_new": 6400.0,
+    "prev15_49": 0.5,
+    "prev15_49_text": "0.5 [0.3 - 0.6]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 4.11
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 155.86
+    }
+   }
+  },
+  {
+   "iso3": "VGB",
+   "name": "英領バージン諸島",
+   "en": "British Virgin Islands",
+   "region": "中南米・カリブ",
+   "tb": {
+    "year": 2024,
+    "rate": 0,
+    "rate_lo": 0,
+    "rate_hi": 0,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 39469,
+    "prev_year": 2023,
+    "prev_rate": 0,
+    "prev_num": 0
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "VNM",
+   "name": "ベトナム",
+   "en": "Viet Nam",
+   "region": "東南アジア",
+   "tb": {
+    "year": 2024,
+    "rate": 182,
+    "rate_lo": 112,
+    "rate_hi": 264,
+    "num": 184000,
+    "num_lo": 113000,
+    "num_hi": 267000,
+    "pop": 100987689,
+    "prev_year": 2023,
+    "prev_rate": 185,
+    "prev_num": 185000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 11567.0,
+    "prev_year": 2024,
+    "prev_cases": 7854.0,
+    "per_m": 114.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 270000.0,
+    "plhiv_text": "270 000 [240 000 - 310 000]",
+    "new": 6100.0,
+    "new_text": "6100 [5300 - 6700]",
+    "prev_new": 6300.0,
+    "prev15_49": 0.4,
+    "prev15_49_text": "0.4 [0.4 - 0.5]"
+   }
+  },
+  {
+   "iso3": "VUT",
+   "name": "バヌアツ",
+   "en": "Vanuatu",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 44,
+    "rate_lo": 25,
+    "rate_hi": 97,
+    "num": 150,
+    "num_lo": 83,
+    "num_hi": 320,
+    "pop": 327784,
+    "prev_year": 2023,
+    "prev_rate": 45,
+    "prev_num": 140
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 4.47
+    }
+   }
+  },
+  {
+   "iso3": "WLF",
+   "name": "ウォリス・フツナ（フランス領）",
+   "en": "Wallis and Futuna",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 0,
+    "rate_lo": 0,
+    "rate_hi": 0,
+    "num": 0,
+    "num_lo": 0,
+    "num_hi": 0,
+    "pop": 11278,
+    "prev_year": 2023,
+    "prev_rate": 0.68,
+    "prev_num": 0
+   }
+  },
+  {
+   "iso3": "WSM",
+   "name": "サモア",
+   "en": "Samoa",
+   "region": "オセアニア",
+   "tb": {
+    "year": 2024,
+    "rate": 5.5,
+    "rate_lo": 4.5,
+    "rate_hi": 6.6,
+    "num": 12,
+    "num_lo": 10,
+    "num_hi": 14,
+    "pop": 218022,
+    "prev_year": 2023,
+    "prev_rate": 6,
+    "prev_num": 13
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 0.0,
+    "prev_year": 2024,
+    "prev_cases": 0.0,
+    "per_m": 0.0,
+    "pop_year": 2024
+   }
+  },
+  {
+   "iso3": "XKX",
+   "name": "コソボ",
+   "en": "XKX",
+   "region": "その他",
+   "measles": {
+    "year": 2025,
+    "cases": 72.0,
+    "prev_year": 2024,
+    "prev_cases": 1.0,
+    "per_m": null,
+    "pop_year": null
+   }
+  },
+  {
+   "iso3": "YEM",
+   "name": "イエメン",
+   "en": "Yemen",
+   "region": "西アジア・中東",
+   "tb": {
+    "year": 2024,
+    "rate": 40,
+    "rate_lo": 34,
+    "rate_hi": 46,
+    "num": 16000,
+    "num_lo": 14000,
+    "num_hi": 19000,
+    "pop": 40583151,
+    "prev_year": 2023,
+    "prev_rate": 38,
+    "prev_num": 15000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 32448.0,
+    "prev_year": 2024,
+    "prev_cases": 5992.0,
+    "per_m": 799.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 15000.0,
+    "plhiv_text": "15 000 [14 000 - 16 000]",
+    "new": 1200.0,
+    "new_text": "1200 [1000 - 1400]",
+    "prev_new": 1200.0,
+    "prev15_49": "<0.1",
+    "prev15_49_text": "<0.1 [<0.1 - <0.1]"
+   }
+  },
+  {
+   "iso3": "ZAF",
+   "name": "南アフリカ",
+   "en": "South Africa",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 389,
+    "rate_lo": 242,
+    "rate_hi": 571,
+    "num": 249000,
+    "num_lo": 155000,
+    "num_hi": 365000,
+    "pop": 64007188,
+    "prev_year": 2023,
+    "prev_rate": 427,
+    "prev_num": 270000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 2778.0,
+    "prev_year": 2024,
+    "prev_cases": 931.0,
+    "per_m": 43.4,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 7600000.0,
+    "plhiv_text": "7 600 000 [5 100 000 - 9 700 000]",
+    "new": 130000.0,
+    "new_text": "130 000 [92 000 - 180 000]",
+    "prev_new": 140000.0,
+    "prev15_49": 15.9,
+    "prev15_49_text": "15.9 [10.4 - 21.2]"
+   },
+   "syphilis": {
+    "cs_rate": {
+     "year": 2022,
+     "value": 86.16913
+    }
+   }
+  },
+  {
+   "iso3": "ZMB",
+   "name": "ザンビア",
+   "en": "Zambia",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 272,
+    "rate_lo": 166,
+    "rate_hi": 403,
+    "num": 58000,
+    "num_lo": 35000,
+    "num_hi": 86000,
+    "pop": 21314958,
+    "prev_year": 2023,
+    "prev_rate": 283,
+    "prev_num": 59000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": null,
+    "prev_year": 2024,
+    "prev_cases": 299.0,
+    "per_m": null,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1300000.0,
+    "plhiv_text": "1 300 000 [1 200 000 - 1 400 000]",
+    "new": 23000.0,
+    "new_text": "23 000 [19 000 - 29 000]",
+    "prev_new": 25000.0,
+    "prev15_49": 8.0,
+    "prev15_49_text": "8 [8 - 8]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 5.95
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 377.25
+    }
+   }
+  },
+  {
+   "iso3": "ZWE",
+   "name": "ジンバブエ",
+   "en": "Zimbabwe",
+   "region": "アフリカ",
+   "tb": {
+    "year": 2024,
+    "rate": 203,
+    "rate_lo": 129,
+    "rate_hi": 272,
+    "num": 34000,
+    "num_lo": 21000,
+    "num_hi": 45000,
+    "pop": 16634364,
+    "prev_year": 2023,
+    "prev_rate": 209,
+    "prev_num": 34000
+   },
+   "measles": {
+    "year": 2025,
+    "cases": 1671.0,
+    "prev_year": 2024,
+    "prev_cases": null,
+    "per_m": 100.5,
+    "pop_year": 2024
+   },
+   "hiv": {
+    "year": 2025,
+    "plhiv": 1300000.0,
+    "plhiv_text": "1 300 000 [1 200 000 - 1 500 000]",
+    "new": 15000.0,
+    "new_text": "15 000 [12 000 - 20 000]",
+    "prev_new": 16000.0,
+    "prev15_49": 9.3,
+    "prev15_49_text": "9.3 [9.2 - 9.5]"
+   },
+   "syphilis": {
+    "syph_anc": {
+     "year": 2024,
+     "value": 1.78
+    },
+    "cs_rate": {
+     "year": 2024,
+     "value": 143.65
+    }
+   }
+  }
+ ],
+ "sources": [
+  {
+   "id": "W1",
+   "title": "WHO Global Tuberculosis Database：結核の推計（2024年まで。Global Tuberculosis Report 2025 のデータ）",
+   "publisher": "世界保健機関（WHO）",
+   "url": "https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/data",
+   "published": "2025-11（Global Tuberculosis Report 2025）",
+   "data": "https://extranet.who.int/tme/generateCSV.asp?ds=estimates"
+  },
+  {
+   "id": "W2",
+   "title": "Global Health Observatory：Measles - number of reported cases（はしかの報告数）",
+   "publisher": "世界保健機関（WHO）",
+   "url": "https://www.who.int/data/gho/data/indicators/indicator-details/GHO/measles---number-of-reported-cases",
+   "published": "2025年分まで掲載（2026-10-26確認）",
+   "data": "https://ghoapi.azureedge.net/api/WHS3_62?$filter=SpatialDimType%20eq%20%27COUNTRY%27"
+  },
+  {
+   "id": "W3",
+   "title": "Global Health Observatory：HIV（UNAIDSの推計。HIVとともに生きる人・新たな感染・15〜49歳の感染率）",
+   "publisher": "世界保健機関（WHO）／国連合同エイズ計画（UNAIDS）",
+   "url": "https://www.who.int/data/gho/data/themes/hiv-aids",
+   "published": "2025年分まで掲載（2026-10-26確認）",
+   "data": "https://ghoapi.azureedge.net/api/HIV_0000000001?$filter=SpatialDimType%20eq%20%27COUNTRY%27"
+  },
+  {
+   "id": "W4",
+   "title": "Global Health Observatory：梅毒（妊婦健診で梅毒が陽性だった割合・報告された梅毒の数・先天梅毒の率。各国の報告）",
+   "publisher": "世界保健機関（WHO）",
+   "url": "https://www.who.int/data/gho/data/themes/topics/sexually-transmitted-infections",
+   "published": "2026-10-26確認",
+   "data": "https://ghoapi.azureedge.net/api/PercposANC?$filter=SpatialDimType%20eq%20%27COUNTRY%27"
+  },
+  {
+   "id": "W5",
+   "title": "Standard country or area codes for statistical use（M49。国・地域の区分）",
+   "publisher": "国際連合統計部（UNSD）",
+   "url": "https://unstats.un.org/unsd/methodology/m49/overview/",
+   "published": "記載なし",
+   "data": "https://unstats.un.org/unsd/methodology/m49/overview/"
+  }
+ ]
+}

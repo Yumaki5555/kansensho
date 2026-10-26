@@ -1,0 +1,403 @@
+{
+  "checked": "2026-10-26",
+  "others": [
+    {
+      "name": "風しん",
+      "feature": "風しんウイルスによる感染症で、発熱、発しん（皮ふに出る小さな赤いぶつぶつ）、首や耳の後ろのリンパ節のはれが主な症状です。妊娠20週ごろまでの女性が感染すると、生まれてくる赤ちゃんの心臓・耳・目などに障害が出る「先天性風しん症候群」の原因になることがあります。日本は2025年9月、WHO（世界保健機関）西太平洋地域事務局から、国内で風しんが流行し続けていない「排除」の状態にあると認定されました（厚生労働省）。",
+      "routes": "感染した人のせきやくしゃみのしぶき（飛まつ）を吸い込んだり、感染した人にふれたりしてうつります。発しんが出る前後1週間ほどウイルスが出るため、症状が出る前から人にうつすことがあります。",
+      "prevent": "麻しん風しん混合（MR）ワクチンが有効で、日本では1歳と小学校入学前の2回、公費の定期接種が行われています。妊娠中はこのワクチンを受けられないため、厚生労働省は妊娠前の準備として、風しんの抗体検査（免疫があるかを調べる血液検査）を受けるよう呼びかけています。なお、昭和37年4月2日〜昭和54年4月1日生まれの男性向けの「風しんの追加的対策」（クーポンによる原則無料の検査・接種）は、2025年3月31日で終わりました。",
+      "source_ids": ["他S1", "他S2", "他S3"]
+    },
+    {
+      "name": "B型肝炎",
+      "feature": "B型肝炎ウイルスが肝臓に感染して起こる病気です。微熱、食欲がない、吐き気などが続いたあと、黄だん（皮ふや白目が黄色くなること）が出ることがあり、まれに急に重くなる「劇症肝炎」になります。ウイルスが体に残り続ける状態（キャリア）になると、慢性肝炎から肝硬変や肝がんに進むことがあります。",
+      "routes": "感染した人の血液や体液にふれることでうつります。注射器の使い回しや輸血、性的接触、出産のときのお母さんから赤ちゃんへの感染（母子感染）などが主な経路です。",
+      "prevent": "B型肝炎ワクチンが有効で、日本では赤ちゃんを対象に公費の定期接種が行われています（標準は生後2か月・3か月・7〜8か月の3回）。性的接触による感染にはコンドームの使用が有効です。国はすべての人が少なくとも1回は肝炎ウイルス検査を受けることをすすめており（検査の方法は市町村や保健所に問い合わせます）、インターフェロン治療や核酸アナログ製剤（ウイルスが増えるのをおさえる薬）による治療には医療費の助成制度があります。",
+      "source_ids": ["他S4", "他S5", "他S6"]
+    },
+    {
+      "name": "C型肝炎",
+      "feature": "C型肝炎ウイルスが肝臓に感染して起こる病気です。感染してすぐの急性肝炎では、だるさ、食欲がない、吐き気、黄だんなどが出ることがあります。慢性化（長く続くこと）すると、20年ほどで肝硬変や肝がんに進むことがあり、抗ウイルス薬による治療が行われています。",
+      "routes": "感染した人の血液や体液にふれることでうつります。注射器の共用（使い回し）や性的接触などが主な経路です。",
+      "prevent": "国内で承認されたワクチンはなく、定期接種もありません。血液や体液にふれないことが大切で、性的接触による感染にはコンドームの使用が有効です。肝炎ウイルス検査で早く見つけて治療につなげることが大切で、根治（完全に治すこと）をめざすインターフェロン治療やインターフェロンフリー治療には医療費の助成制度があります。",
+      "source_ids": ["他S7", "他S6"]
+    },
+    {
+      "name": "薬剤耐性結核",
+      "feature": "結核の治療でもっともよく効く2つの薬（リファンピシンとイソニアジド）が効かない結核菌による結核を「多剤耐性結核（MDR-TB）」といいます。ほかの薬を使えば治すことができますが、費用が高く、副作用も出やすいとされています。WHOによると、2024年に治療を受けられた多剤耐性結核の人は、およそ5人に2人にとどまりました。",
+      "routes": "うつり方はふつうの結核と同じで、結核の人のせきやくしゃみで空気中にただよう菌を吸い込む「空気感染」です。薬が効かない菌は、薬の不適切な処方、質の悪い薬、治療を途中でやめることなど、結核の薬が正しく使われないことで生まれます。",
+      "prevent": "結核の薬を医師の指示どおり最後まで飲み切ることが、薬の効かない菌を生まないための基本で、日本では保健所などが服薬を見守り支える「DOTS（直接服薬確認）」を進めています。WHOは2022年から、飲み薬だけで6か月で終わる短い治療法（BPaLM/BPaL）を優先して使うようすすめています。結核そのものの予防として、日本では1歳未満の赤ちゃんにBCGワクチンの公費の定期接種が行われています。",
+      "source_ids": ["他S8", "他S9", "他S10"]
+    },
+    {
+      "name": "ポリオ",
+      "feature": "ポリオウイルスによる感染症で、「急性灰白髄炎」や「脊髄性小児まひ」とも呼ばれます。感染した人の90%以上は症状がないか軽くすみますが、0.1〜1%ほどの人に、手足に力が入らなくなるまひが起こります（JIHS）。日本では野生のポリオウイルスによる患者は1980年を最後に出ておらず、世界ではWHOが根絶（地球上からなくすこと）を目指しています。",
+      "routes": "感染した人の便に出たウイルスが口から入ること（経口感染）のほか、接触や、せき・くしゃみのしぶき（飛まつ）でうつります。",
+      "prevent": "ワクチンが有効です。日本では、不活化ポリオワクチン（ウイルスの力をなくして作ったワクチン）を含む「5種混合ワクチン」（ポリオ・ジフテリア・百日せき・破傷風・Hib感染症を予防）の公費の定期接種が生後2か月から行われ、初回3回と追加1回を受けます。",
+      "source_ids": ["他S11", "他S12"]
+    },
+    {
+      "name": "デング熱",
+      "feature": "デングウイルスによる急性の熱の出る感染症で、熱帯・亜熱帯の地域、とくに東南アジア・南アジア・中南米で多く報告されています。急な発熱、発しん、頭痛、骨や関節の痛み、吐き気などが出て、まれに出血しやすくなったりショック状態になったりして重症化することがあります。日本では毎年、海外で感染した人が報告されており、2014年には東京の代々木公園を中心に国内で感染した例も報告されました。",
+      "routes": "ウイルスを持った蚊（ネッタイシマカやヒトスジシマカ）に刺されてうつります。感染した人から他の人へ直接うつることはありません。",
+      "prevent": "蚊に刺されないことが一番の対策で、流行地では虫よけ剤を使い、長袖・長ズボンなどで肌を出さないようにします。国内で承認されたワクチンはなく、定期接種もありません。特別な治療薬はなく、症状に合わせた治療が中心です。",
+      "source_ids": ["他S13", "他S14"]
+    },
+    {
+      "name": "マラリア",
+      "feature": "マラリア原虫という小さな寄生虫による感染症で、熱帯地域を中心に流行しています。発熱、寒気、頭痛、吐き気などが出て、重くなると脳や腎臓の障害などで命に関わることがあり、とくに「熱帯熱マラリア」は重くなりやすいとされます。日本には定着していませんが、海外で感染して日本で見つかる例（輸入例）が毎年報告されています。",
+      "routes": "マラリア原虫を持った蚊（ハマダラカ）に刺されてうつります。人から人へ直接うつることはありません。",
+      "prevent": "流行地では、虫よけ剤や長袖・長ズボンで蚊に刺されないようにします。日本で承認されたワクチンはありませんが、医師が処方する予防薬（抗マラリア薬）の内服が承認されており、WHOは流行地へ行く人に、出発の数週間前に医師に相談するようすすめています。なお、WHOは流行地に住む子どもに向けて、マラリアワクチンの使用をすすめています。",
+      "source_ids": ["他S15", "他S16"]
+    },
+    {
+      "name": "腸チフス・パラチフス",
+      "feature": "サルモネラ属のチフス菌・パラチフスA菌による感染症で、衛生環境が十分に整っていない地域で広がっており、とくに南アジアなどからの報告が多いとされています。高い熱、頭痛、腹痛などが出て、重くなると腸からの出血や腸に穴があくこともあります。日本では年間数十例が報告され、そのほとんどが海外で感染した例です。",
+      "routes": "菌に汚染された水や氷、食べ物を口にすることでうつります。感染した人の便や尿に含まれる菌が、水や食べ物を汚染することが原因になります。",
+      "prevent": "流行地では十分に加熱したものを食べ、生水・氷・生野菜などを避け、食事の前に手を洗うことが大切です。日本で承認されているワクチンは腸チフス用だけで、パラチフスを防ぐ効果はありません。定期接種ではないため、流行地へ行く前には医師（渡航医学にくわしい医師など）に接種について相談します。",
+      "source_ids": ["他S17", "他S18"]
+    },
+    {
+      "name": "薬剤耐性菌（AMR）",
+      "feature": "抗菌薬（いわゆる抗生物質）などの薬が効かない、または効きにくくなることを「薬剤耐性（AMR）」といい、そうなった細菌を薬剤耐性菌と呼びます。耐性菌による感染症は治療がむずかしく、目立たないうちに広がることから「サイレントパンデミック（静かな世界的流行）」とも呼ばれます。WHOによると、2021年には世界で470万人をこえる死亡に、細菌の薬剤耐性が関わっていました。",
+      "routes": "抗菌薬を必要のない場面で使ったり、種類・量・期間が合わない使い方をしたりすることで、薬の効かない菌が生まれ、増えていきます。水や衛生環境が十分でないことや、家庭・医療機関・農場などでの感染対策が不十分なことも原因とされ、国境をこえて広がります。",
+      "prevent": "抗菌薬は細菌による感染症の薬で、かぜなどのウイルスには効きません。必要なときに限って、医師の指示どおりの量と期間で使うことが大切です。日本は「薬剤耐性（AMR）対策アクションプラン2023-2027」にもとづいて対策を進めています。",
+      "source_ids": ["他S19", "他S20", "他S21"]
+    }
+  ],
+  "guide": [
+    {
+      "category": "国内感染症",
+      "title": "感染症情報",
+      "publisher": "厚生労働省",
+      "period": "随時更新",
+      "published": "随時更新（最新の更新は2026-10-23）",
+      "content": "感染症の名前や類型（法律上の分類）から、病気ごとの説明・予防接種・発生状況・入国前結核スクリーニングなど、国の情報ページを探せます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国内感染症",
+      "title": "感染症情報提供サイト",
+      "publisher": "国立健康危機管理研究機構（JIHS）",
+      "period": "随時更新",
+      "published": "随時更新（最新の更新は2026-10-23）",
+      "content": "病気ごとの解説（概要・感染経路・予防法など）と、週報・病原体の検出情報・予防接種などの調査結果をまとめて見られます。",
+      "url": "https://id-info.jihs.go.jp/",
+      "lang": "日本語（一部英語）"
+    },
+    {
+      "category": "国内感染症",
+      "title": "感染症発生動向調査週報（IDWR）",
+      "publisher": "厚生労働省・国立健康危機管理研究機構（JIHS）",
+      "period": "毎週公表（2026年は第41週まで発行）",
+      "published": "2026-10-23（2026年第41週号）",
+      "content": "医師から届け出のあった感染症の患者数を週ごとに確認でき、速報データや過去10年との比較グラフもあります。",
+      "url": "https://id-info.jihs.go.jp/surveillance/idwr/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国内感染症",
+      "title": "感染症発生動向調査事業年報 -2024-",
+      "publisher": "厚生労働省・国立健康危機管理研究機構（JIHS）",
+      "period": "毎年公表（2024年の確定データまで）",
+      "published": "2026-03-02",
+      "content": "1年間に届け出られた感染症の確定した報告数を、集計表やグラフで確認できます（2023年以前の年報へのリンクもあります）。",
+      "url": "https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国内感染症",
+      "title": "2025年 結核登録者情報調査年報集計結果",
+      "publisher": "厚生労働省",
+      "period": "毎年公表（2025年分まで）",
+      "published": "記載なし（集計結果PDFの更新は2026-10-02）",
+      "content": "新しく登録された結核患者の数や罹患率（人口10万人あたりの新しい患者数）を、年齢別・都道府県別・外国生まれかどうかなどで確認できます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000175095_00018.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国内感染症",
+      "title": "病原微生物検出情報（IASR）",
+      "publisher": "国立健康危機管理研究機構（JIHS）",
+      "period": "毎月発行（病原体の検出グラフ・集計表は毎日更新）",
+      "published": "2026-09-24（Vol.47 No.9）",
+      "content": "全国の地方衛生研究所・保健所・検疫所から報告された病原体（ウイルスや細菌）の検出状況と、毎月の特集記事を読めます。",
+      "url": "https://id-info.jihs.go.jp/surveillance/iasr/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国内感染症",
+      "title": "予防接種情報",
+      "publisher": "国立健康危機管理研究機構（JIHS）",
+      "period": "随時更新（麻しん風しんの定期接種の実施状況は2025年度分まで）",
+      "published": "2026-10-22（最終更新日）",
+      "content": "日本の予防接種スケジュール、麻しん風しんの定期接種の実施状況（接種率）、ワクチンごとの解説資料（ファクトシート）を確認できます。",
+      "url": "https://id-info.jihs.go.jp/immunization/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Global Health Observatory（GHO）",
+      "publisher": "世界保健機関（WHO）",
+      "period": "指標ごとに随時更新",
+      "published": "記載なし",
+      "content": "WHOの保健統計の入口で、国・地域ごとの保健の指標を検索し、表やグラフで見たりダウンロードしたりできます。",
+      "url": "https://www.who.int/data/gho",
+      "lang": "英語"
+    },
+    {
+      "category": "国際統計",
+      "title": "AIDSinfo",
+      "publisher": "国連合同エイズ計画（UNAIDS）",
+      "period": "1990年〜2025年（推計値）",
+      "published": "2026-07-27（2025年分の推計を公表）",
+      "content": "HIVに関する推計値（HIVとともに生きる人の数など）を世界・地域・国ごとに見られ、国別のファクトシートや表計算ファイルも入手できます。",
+      "url": "https://aidsinfo.unaids.org/",
+      "lang": "英語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Tuberculosis data（WHO Global Tuberculosis Database）",
+      "publisher": "世界保健機関（WHO）",
+      "period": "データの種類ごとに異なる（例：月・四半期ごとの暫定届出数は2020年以降）",
+      "published": "記載なし（最新の世界結核報告書は2025年版、2025-11-12公表）",
+      "content": "国ごとの結核の推計患者数・届出数・治療成績・薬剤耐性結核などのデータをCSVでダウンロードでき、国別プロファイルも見られます。",
+      "url": "https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/data",
+      "lang": "英語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Measles reported cases and incidence（はしかの報告数と発生率）",
+      "publisher": "世界保健機関（WHO）Immunization Data Portal",
+      "period": "毎年（世界・地域の集計は毎年7月に公表、各国のデータは届き次第更新）",
+      "published": "記載なし",
+      "content": "国ごとのはしかの報告数と発生率（人口あたりの患者数）を年ごとに確認でき、月ごとの暫定データへの案内もあります。",
+      "url": "https://immunizationdata.who.int/global/wiise-detail-page/measles-reported-cases-and-incidence",
+      "lang": "英語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Rubella reported cases and incidence（風しんの報告数と発生率）",
+      "publisher": "世界保健機関（WHO）Immunization Data Portal",
+      "period": "毎年（世界・地域の集計は毎年7月に公表、各国のデータは届き次第更新）",
+      "published": "記載なし",
+      "content": "国ごとの風しんの報告数と発生率（人口あたりの患者数）を年ごとに確認できます。",
+      "url": "https://immunizationdata.who.int/global/wiise-detail-page/rubella-reported-cases-and-incidence",
+      "lang": "英語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Profil Kesehatan Indonesia 2025（インドネシア保健年報 2025年版）",
+      "publisher": "インドネシア共和国保健省（Kementerian Kesehatan）",
+      "period": "毎年公表（2025年版まで）",
+      "published": "2026-09-01",
+      "content": "インドネシアの保健の状況や保健事業の進み具合を、国と地域ごとにまとめた年報で、ページからダウンロードできます（インドネシア語）。",
+      "url": "https://kemkes.go.id/id/profil-kesehatan-indonesia-2025",
+      "lang": "インドネシア語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Annual Health Report 2081/82（ネパール年次保健報告）",
+      "publisher": "ネパール保健サービス局（Department of Health Services）",
+      "period": "毎年公表（ネパールの会計年度2081/82＝西暦2024/25年度分まで）",
+      "published": "ネパール暦2083年ジェト月24日（西暦2026年6月上旬）",
+      "content": "ネパールの国の保健事業の1年間の実績をまとめた年次報告書です（掲載ページに内容の説明はないため、くわしくは報告書本体で確認します）。",
+      "url": "https://dohs.gov.np/content/111/annual-health-report-2081-82/",
+      "lang": "英語・ネパール語"
+    },
+    {
+      "category": "国際統計",
+      "title": "Digital Disease Surveillance（DDS）ポータル",
+      "publisher": "タイ保健省 疾病管理局",
+      "period": "随時更新",
+      "published": "記載なし",
+      "content": "タイで届け出られた感染症の状況を、ダッシュボード（グラフや地図で見せる画面）で確認するための入口ページです（一部はログインが必要）。",
+      "url": "https://ddsdoe.ddc.moph.go.th/dds-portal/",
+      "lang": "タイ語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "特定技能制度",
+      "publisher": "出入国在留管理庁",
+      "period": "随時更新",
+      "published": "2026-10-26（更新情報の最新）",
+      "content": "在留資格「特定技能」の制度の説明、分野ごとの運用要領、分野ごとの受入れ見込数や在留者数などの資料を確認できます。",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "育成就労制度",
+      "publisher": "出入国在留管理庁",
+      "period": "随時更新",
+      "published": "2026-10-20（更新情報の最新）",
+      "content": "技能実習に代わる新しい制度「育成就労」の概要、運用要領、Q&A、施行日前の申請、育成就労に関する二国間の協力覚書などを確認できます。",
+      "url": "https://www.moj.go.jp/isa/applications/index_00005.html",
+      "lang": "日本語（概要資料は英語版あり）"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "特定技能に関する二国間の協力覚書",
+      "publisher": "出入国在留管理庁",
+      "period": "随時更新（2026年10月26日時点で17か国を掲載）",
+      "published": "記載なし（サーバー上の最終更新は2026-10-15）",
+      "content": "日本が特定技能について協力覚書（MOC）を結んだ国の一覧と覚書の本文（英文・和文の仮訳）、各国での手続きを確認できます。",
+      "url": "https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00021.html",
+      "lang": "日本語（覚書は英文と和文の仮訳）"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "「外国人雇用状況」の届出状況まとめ",
+      "publisher": "厚生労働省",
+      "period": "毎年10月末時点（2008年〜2025年）",
+      "published": "2026-01-30（2025年10月末時点の結果）",
+      "content": "事業主から届け出られた外国人労働者の数や雇用している事業所の数を、国籍別・在留資格別などで確認できます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/gaikokujin/gaikokujin-koyou/06.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "外国人技能実習制度について",
+      "publisher": "厚生労働省",
+      "period": "随時更新",
+      "published": "2026-07-29（更新情報の最新）",
+      "content": "技能実習制度の法令・運用要領、対象職種の追加、技能実習に関する二国間取決め（協力覚書）などを確認できます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/index.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "送出国政府窓口と二国間取決め",
+      "publisher": "外国人技能実習機構（OTIT）",
+      "period": "随時更新",
+      "published": "記載なし（掲載中で最も新しい覚書はフィジーとの覚書、2025-11-13）",
+      "content": "技能実習について、日本が送出国（人材を送り出す国）と結んだ協力覚書の一覧と、各国の政府窓口を確認できます。",
+      "url": "https://www.otit.go.jp/system/sender/memorandum/",
+      "lang": "日本語・英語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "入国前結核スクリーニング（JPETS）公式サイト",
+      "publisher": "厚生労働省",
+      "period": "対象国ごとに随時更新",
+      "published": "2026-09-25（インドネシアでの開始のお知らせ）",
+      "content": "対象国（フィリピン・ネパール・ベトナム・インドネシアなど）ごとの指定健診医療機関、手続きの流れ、よくある質問を確認できます。",
+      "url": "https://jpets.mhlw.go.jp/jp/",
+      "lang": "日本語・英語・タガログ語・ネパール語・ベトナム語・インドネシア語"
+    },
+    {
+      "category": "外国人材受入制度",
+      "title": "入国前結核スクリーニング（Japan Pre-Entry Tuberculosis Screening）",
+      "publisher": "厚生労働省",
+      "period": "随時更新",
+      "published": "2026-09-25（更新日）",
+      "content": "制度の目的、対象国と開始時期、在留資格の申請時に必要な「結核非発病証明書」など、国の説明と通知を確認できます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "厚生労働科学研究成果データベース",
+      "publisher": "国立保健医療科学院",
+      "period": "1997年度以降の研究報告書（概要版）を随時追加",
+      "published": "記載なし",
+      "content": "厚生労働科学研究費などで行われた研究の報告書を、キーワードや研究分野から検索して読めます。",
+      "url": "https://mhlw-grants.niph.go.jp/",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "国民医療費",
+      "publisher": "厚生労働省",
+      "period": "毎年度（2023年度分まで）",
+      "published": "2025-10-10（令和5年度の概況）",
+      "content": "1年間に病気やけがの治療にかかった医療費の総額を、制度別・年齢別・病気の種類別・都道府県別などで確認できます。",
+      "url": "https://www.mhlw.go.jp/toukei/list/37-21.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "医療費の動向調査（MEDIAS）",
+      "publisher": "厚生労働省",
+      "period": "月報（診療月の約4〜5か月後）と年報（2025年度分まで）",
+      "published": "2026-08-28（令和7年度 医療費の動向）",
+      "content": "医療保険などで支払われた医療費（概算医療費）の動きを、月ごと・年度ごと、入院・外来・歯科・調剤などに分けて確認できます。",
+      "url": "https://www.mhlw.go.jp/bunya/iryouhoken/database/zenpan/iryou_doukou.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "患者調査",
+      "publisher": "厚生労働省",
+      "period": "3年ごと（最新の公表は2023年調査）",
+      "published": "記載なし",
+      "content": "医療機関にかかっている患者の推計数や受療率（人口10万人あたりの患者数）を、病気の種類別・都道府県別などで確認できます。",
+      "url": "https://www.mhlw.go.jp/toukei/list/10-20.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "NDBオープンデータ",
+      "publisher": "厚生労働省",
+      "period": "第11回は2024年度のレセプト（診療報酬明細書）など。第12回（月次公開分）は2025年度4〜6月分",
+      "published": "2026-10-06（第12回の月次公開分）",
+      "content": "全国のレセプト（医療機関が保険者に出す請求明細）や特定健診のデータから作った、診療行為や薬剤などの基礎的な集計表を見られます。",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "令和8年度診療報酬改定について（診療報酬点数表）",
+      "publisher": "厚生労働省",
+      "period": "令和8年度（2026年度）改定",
+      "published": "2026-03-05（実施上の留意事項の通知。その後も訂正版を掲載）",
+      "content": "医科・歯科・調剤の診療報酬点数表（診察や検査、治療ごとの公定価格）と、算定のルールを確認できます。",
+      "url": "https://www.mhlw.go.jp/stf/newpage_67729.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "薬価基準収載品目リスト及び後発医薬品に関する情報について",
+      "publisher": "厚生労働省",
+      "period": "2026年10月14日適用分まで",
+      "published": "記載なし（2026年10月14日適用分を掲載）",
+      "content": "健康保険で使える医薬品の一覧と公定価格（薬価）を、内用薬・注射薬・外用薬などに分けてExcelやPDFで確認できます。",
+      "url": "https://www.mhlw.go.jp/topics/2026/04/tp20260401-01.html",
+      "lang": "日本語"
+    },
+    {
+      "category": "医療費・公費",
+      "title": "結核医療費助成について（医療費公費負担制度）",
+      "publisher": "東京都保健医療局",
+      "period": "現行制度",
+      "published": "2024-03-29（更新日）",
+      "content": "東京都で結核の治療を受けるときの医療費の公費負担（感染症法第37条・第37条の2）の対象と、保健所への申請方法を確認できます。",
+      "url": "https://www.hokeniryo.metro.tokyo.lg.jp/kansen/tomin/josei/joseinituite",
+      "lang": "日本語"
+    }
+  ],
+  "sources": [
+    {"id": "他S1", "title": "風しん（2025年9月26日掲載の「世界保健機関西太平洋地域事務局による風しんの排除認定の報告について」を含む）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/index.html", "published": "記載なし（ページ内の最新の掲載は2026-01-13）", "checked": "2026-10-26"},
+    {"id": "他S2", "title": "風しん", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/rubella/index.html", "published": "2025-04-28（更新日）", "checked": "2026-10-26"},
+    {"id": "他S3", "title": "風しんの追加的対策について", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/index_00001.html", "published": "2025-03-31（終了のお知らせ）", "checked": "2026-10-26"},
+    {"id": "他S4", "title": "B型肝炎", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/hepatitis-b/index.html", "published": "2025-10-23（更新日）", "checked": "2026-10-26"},
+    {"id": "他S5", "title": "B型肝炎ワクチン", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/hepatitis-b/index.html", "published": "記載なし", "checked": "2026-10-26"},
+    {"id": "他S6", "title": "肝炎総合対策の推進（肝炎ウイルス検査・医療費助成）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kanen/index.html", "published": "記載なし（トピックスの最新掲載は2026-10-22）", "checked": "2026-10-26"},
+    {"id": "他S7", "title": "C型肝炎", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/hepatitis-c/index.html", "published": "2025-11-26（更新日）", "checked": "2026-10-26"},
+    {"id": "他S8", "title": "Tuberculosis（ファクトシート。Drug-resistant TB の項）", "publisher": "世界保健機関（WHO）", "url": "https://www.who.int/news-room/fact-sheets/detail/tuberculosis", "published": "2026-03-24", "checked": "2026-10-26"},
+    {"id": "他S9", "title": "結核（DOTSの推進、結核登録者情報調査年報）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index.html", "published": "記載なし", "checked": "2026-10-26"},
+    {"id": "他S10", "title": "結核", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/tuberculosis/index.html", "published": "2025-09-25（更新日）", "checked": "2026-10-26"},
+    {"id": "他S11", "title": "ポリオ", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/poliomyelitis/index.html", "published": "2025-05-23（更新日）", "checked": "2026-10-26"},
+    {"id": "他S12", "title": "5種混合ワクチン", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/dpt-ipv-hib/index.html", "published": "記載なし", "checked": "2026-10-26"},
+    {"id": "他S13", "title": "デング熱", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/dengue-fever/index.html", "published": "2025-07-24（更新日）", "checked": "2026-10-26"},
+    {"id": "他S14", "title": "デング熱", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000131101.html", "published": "記載なし", "checked": "2026-10-26"},
+    {"id": "他S15", "title": "マラリア", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/malaria/index.html", "published": "2025-08-28（更新日）", "checked": "2026-10-26"},
+    {"id": "他S16", "title": "Malaria（ファクトシート）", "publisher": "世界保健機関（WHO）", "url": "https://www.who.int/news-room/fact-sheets/detail/malaria", "published": "2025-12-04", "checked": "2026-10-26"},
+    {"id": "他S17", "title": "腸チフス・パラチフス", "publisher": "国立健康危機管理研究機構（JIHS）", "url": "https://id-info.jihs.go.jp/infectious-diseases/typhoid-and-paratyphoid-fevers/index.html", "published": "2026-01-28（更新日）", "checked": "2026-10-26"},
+    {"id": "他S18", "title": "腸チフス、パラチフス（Typhoid Fever, Paratyphoid Fever）", "publisher": "厚生労働省検疫所（FORTH）", "url": "https://www.forth.go.jp/moreinfo/topics/name11.html", "published": "記載なし", "checked": "2026-10-26"},
+    {"id": "他S19", "title": "薬剤耐性（AMR）対策（薬剤耐性（AMR）対策アクションプラン2023-2027 ほか）", "publisher": "厚生労働省", "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000120172.html", "published": "記載なし（お知らせの最新掲載は2026-10-21）", "checked": "2026-10-26"},
+    {"id": "他S20", "title": "AMR臨床リファレンスセンター（抗菌薬とは？）", "publisher": "国立健康危機管理研究機構（JIHS）国立国際医療センター AMR臨床リファレンスセンター", "url": "https://amr.jihs.go.jp/", "published": "記載なし（新着情報の最新は2026-10-26）", "checked": "2026-10-26"},
+    {"id": "他S21", "title": "Antimicrobial resistance（ファクトシート）", "publisher": "世界保健機関（WHO）", "url": "https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance", "published": "2026-07-16", "checked": "2026-10-26"}
+  ]
+}

@@ -16,13 +16,13 @@ DOCS = os.path.join(ROOT, "docs")
 SITE_URL = "https://yumaki5555.github.io/kansensho/"
 XLSX_SRC = os.path.join(ROOT, "日本の感染症の状況_2026年10月.xlsx")
 XLSX_PUB = "kansensho_2026-10.xlsx"
-TITLE = "日本の感染症を知る"
-DESC = "HIV/エイズ・梅毒・はしか・結核は、増えている？減っている？ 国の公式資料をもとに、10年の動きや2026年の最新状況をグラフと表で比べられます。HIV/エイズは、日本と協力覚書を結んだ国など世界の動向も。検査・予防・治療で使える公費の支援もまとめました。"
+TITLE = "世界の感染症と日本の水際対策"
+DESC = "HIV・梅毒・はしか・結核の感染状況、外国人材の受入制度、入国前の健康確認、国内の医療費を公的資料で比較。どの国でどの感染症が多いか（WHO）、日本と協力覚書を結んだ国、入国前の結核検査（JPETS）、国内の患者数の推移、公費の支援と治療費を、出典つきのグラフと表で確かめられます。"
 AS_OF = "2026年10月26日時点"
 
 os.makedirs(DOCS, exist_ok=True)
 data = {n: json.load(open(os.path.join(ROOT, "data", "out", f"{n}.json"), encoding="utf-8"))
-        for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi"]}
+        for n in ["annual", "ytd2026", "breakdown", "notes", "sources", "world", "kouhi", "countries", "entry", "costs", "info", "others", "guide"]}
 data_js = "window.KJ_DATA = " + json.dumps(data, ensure_ascii=False, separators=(",", ":")) + ";\n"
 open(os.path.join(DOCS, "data.js"), "w", encoding="utf-8").write(data_js)
 ver = hashlib.sha1(data_js.encode("utf-8")).hexdigest()[:8]
@@ -34,11 +34,11 @@ head = f"""<!DOCTYPE html>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>{TITLE}｜HIV/エイズ・梅毒・はしか・結核の今</title>
+<title>{TITLE}｜HIV・梅毒・はしか・結核</title>
 <meta name="description" content="{DESC}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="日本を知る。">
-<meta property="og:title" content="{TITLE}｜HIV/エイズ・梅毒・はしか・結核の今">
+<meta property="og:title" content="{TITLE}｜HIV・梅毒・はしか・結核">
 <meta property="og:description" content="{DESC}">
 <meta property="og:url" content="{SITE_URL}">
 <meta property="og:image" content="{SITE_URL}ogp.png">
@@ -132,8 +132,8 @@ a:focus-visible {{ outline: 3px solid var(--color-fg); outline-offset: 2px; }}
 tail = f"""
 </main>
 <footer class="site-foot"><div class="site-foot-in">
-  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）などの公式資料。HIV/エイズの世界の動向は国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）の公式資料。結核の医療費助成の一部は東京都の公式ページ。くわしくは「出典一覧」をご覧ください。</p>
-  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（4つの比較、公費の支援、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧のシート入り）</p>
+  <p>出典：厚生労働省、国立健康危機管理研究機構（JIHS）、出入国在留管理庁、外国人技能実習機構、e-Gov法令検索などの公式資料。国別の数字と世界の動向は世界保健機関（WHO）・国連合同エイズ計画（UNAIDS）・国際移住機関（IOM）・国連統計部の公式資料。結核の医療費助成の一部などは自治体の公式ページ。くわしくは「出典一覧」をご覧ください。</p>
+  <p>同じ内容のExcelの表：<a href="{XLSX_PUB}" download>{XLSX_PUB}</a>（国別の比較、協力覚書・入国前対策、4つの比較、公費の支援、医療費、病気ごとの詳細、HIV/エイズの世界の動向、見るときの注意、出典一覧などのシート入り）</p>
   <p><a href="https://yumaki5555.github.io/">「日本を知る。」のトップへ</a></p>
 </div></footer>
 </body>

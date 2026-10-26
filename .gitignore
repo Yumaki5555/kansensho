@@ -5,3 +5,4 @@ __pycache__/
 # 手元の作業用Excel（公開するのは docs/ に入れたコピー）
 /日本の感染症の状況_*.xlsx
 ~$*.xlsx
+build/_dl/
