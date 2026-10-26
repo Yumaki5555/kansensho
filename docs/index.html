@@ -208,6 +208,8 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
   .kj-contents { display: contents; }
   .kj-card, .kj-fig { min-width: 0; margin: 0; background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: 12px; padding: 20px; display: grid; gap: 12px; align-content: start; }
   @media (max-width: 560px) { .kj-card, .kj-fig { padding: 16px 14px; } }
+  /* カードの中身が広い表に押し広げられないように（広い表は .kj-scroll の中で横に動かす） */
+  .kj-card > *, .kj-fig > *, .kj-section > *, .kj-view > * { min-width: 0; }
   .kj-fig-head { display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: 8px 12px; }
   .kj-fig-head > div:first-child { display: grid; gap: 4px; min-width: 0; flex: 1 1 18rem; }
   .kj-fig-tools { display: flex; flex-wrap: wrap; gap: 6px; flex: none; }
@@ -444,7 +446,12 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
   .kj-srcwrap { container-type: inline-size; }
   .kj-srctable th, .kj-srctable td { text-align: left !important; }
   .kj-srctable td { font-size: 0.875rem; }
-  .kj-srctable td.kj-src-name { min-width: 18em; }
+  .kj-srctable thead th { white-space: normal; }
+  .kj-srctable td.kj-src-name { min-width: 20em; }
+  .kj-srctable td.kj-src-kind { min-width: 9em; }
+  .kj-srctable td:last-child { min-width: 14em; max-width: 22em; font-size: 0.8125rem; }
+  .kj-src-title { color: var(--color-fg); font-weight: 600; }
+  .kj-src-meta { color: var(--color-fg-muted); font-size: 0.8125rem; }
   .kj-srctable a { word-break: break-all; }
   @container (max-width: 48rem) {
     .kj-srctable thead { display: none; }
@@ -454,6 +461,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
     .kj-srctable td[data-label]::before { content: attr(data-label) "："; color: var(--color-fg-muted); font-size: 0.8125rem; }
     .kj-srctable td.kj-src-id { font-size: 1rem; font-weight: 700; }
     .kj-srctable td.kj-src-id::before { content: none; }
+    .kj-srctable td:last-child { max-width: none; }
   }
   .kj-count { font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
 
@@ -821,10 +829,13 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         <label class="kj-field" for="src-q"><span>キーワード</span><input type="search" class="kj-input" id="src-q" placeholder="例：年報、IDWR、自立支援" autocomplete="off"></label>
       </div>
       <p class="kj-count" id="src-count" aria-live="polite"></p>
+      <p class="kj-cap">「対象年」は、このページで使った数字の対象年です（数字に使っていない資料は「—」）。</p>
+      <div class="kj-scroll">
       <table class="kj-table kj-srctable" id="src-table">
-        <thead><tr><th>出典ID</th><th>病気</th><th>資料の種類</th><th>資料名</th><th>発行元</th><th>公表日・更新日</th><th>このページで使った数字の対象年（数字に使っていない資料は「—」）</th><th>リンク</th></tr></thead>
+        <thead><tr><th>出典ID</th><th>資料名・発行元・公表日</th><th>病気・資料の種類</th><th>対象年</th><th>リンク</th></tr></thead>
         <tbody></tbody>
       </table>
+      </div>
     </div>
   </section>
   </main>
@@ -1147,6 +1158,7 @@ function plotLines(svg, F, cfg) {
     if (sokuYears.has(yr)) g.append('text').attr('class', 'kj-tick-soku').attr('x', x(yr)).attr('y', F.y0 + F.h - mb + 32).attr('text-anchor', 'middle').text('速報');
   });
   // 線と点
+  const placed = [];
   cfg.series.forEach((s, k) => {
     const ps = s.points.filter((p) => p.y !== null && p.y !== undefined);
     const conf = ps.filter((p) => !p.soku);
@@ -1178,19 +1190,29 @@ function plotLines(svg, F, cfg) {
       }
       if (s.endText) show = show.filter((p) => p !== ps[ps.length - 1]);
       const right = F.x0 + F.w;
-      show.forEach((p) => {
+      // 大事な順（速報値 → 最新の確定値 → いちばん多い年 → 最初の年 → ほか）に置き、重なる文字は上下を入れかえるか省く
+      const lastConfP = conf[conf.length - 1], maxP = d3.greatest(conf, (q) => q.y);
+      const pri = (p) => (p.soku ? 0 : p === lastConfP ? 1 : p === maxP ? 2 : p === conf[0] ? 3 : 4);
+      [...show].sort((a, b) => pri(a) - pri(b)).forEach((p) => {
         const t = f(p.y);
         const w = measure(svg, [t], 'kj-val');
         const px = x(p.x);
         const anchor = px + w / 2 > right ? 'end' : px - w / 2 < ml ? 'start' : 'middle';
-        g.append('text').attr('class', `kj-val${p.soku ? ' kj-val-soku' : ''}`).attr('x', anchor === 'end' ? Math.min(px + 6, right) : anchor === 'start' ? px - 6 : px)
-          .attr('y', p.soku || p.y < 0 ? y(p.y) + 20 : y(p.y) - 10).attr('text-anchor', anchor).text(t);
+        const ax = anchor === 'end' ? Math.min(px + 6, right) : anchor === 'start' ? px - 6 : px;
+        const x0 = anchor === 'end' ? ax - w : anchor === 'start' ? ax : ax - w / 2, x1 = x0 + w;
+        const above = y(p.y) - 10, below = y(p.y) + 20;
+        const tries = p.soku || p.y < 0 ? [below, above] : [above, below];
+        const hit = (ty) => placed.some((q) => x0 < q.x1 + 3 && x1 > q.x0 - 3 && ty - 12 < q.y1 && ty + 3 > q.y0);
+        const ty = tries.find((v) => !hit(v));
+        if (ty === undefined) return;
+        placed.push({ x0, x1, y0: ty - 12, y1: ty + 3 });
+        g.append('text').attr('class', `kj-val${p.soku ? ' kj-val-soku' : ''}`).attr('x', ax).attr('y', ty).attr('text-anchor', anchor).text(t);
       });
     }
   });
   // 右はしの名前と値（重ならないように少しずらす）
   const lab = ends.map((s) => { const ps = s.points.filter((p) => p.y !== null && p.y !== undefined); const p = ps[ps.length - 1]; return { s, p, y: y(p.y) }; }).sort((a, b) => a.y - b.y);
-  for (let i = 1; i < lab.length; i++) if (lab[i].y - lab[i - 1].y < 16) lab[i].y = lab[i - 1].y + 16;
+  for (let i = 1; i < lab.length; i++) if (lab[i].y - lab[i - 1].y < 19) lab[i].y = lab[i - 1].y + 19;
   const over = lab.length ? lab[lab.length - 1].y - (F.y0 + F.h - mb) : 0;
   if (over > 0) lab.forEach((l) => { l.y -= over; });
   lab.forEach((l) => {
@@ -1615,7 +1637,7 @@ function drawAge(box, d, opt = {}) {
   const all = B.data.filter((r) => r.病気 === d.name && r.種類 === '年代別' && r.区分 !== '総数');
   const labels = [...new Set(all.map((r) => r.区分))];
   const v = (l, s) => num((all.find((r) => r.区分 === l && r.列 === s) || {}).値);
-  const rowH = multi ? 34 : 24, barH = multi ? 12 : 14, mt = 4, mb = 26;
+  const rowH = multi ? 40 : 24, barH = multi ? 13 : 14, gap = multi ? 6 : 0, mt = 4, mb = 26;
   const H = mt + labels.length * rowH + mb;
   const W = opt.width || Math.max(280, box.clientWidth);
   const svg = svgIn(box, W, H, `${d.label}の年代別の横棒グラフ`);
@@ -1634,11 +1656,11 @@ function drawAge(box, d, opt = {}) {
   const tip = tipOf(box);
   labels.forEach((l, i) => {
     const top = mt + i * rowH;
-    const block = multi ? barH * 2 + 3 : barH;
+    const block = multi ? barH * 2 + gap : barH;
     svg.append('text').attr('class', 'kj-rowlab').attr('x', ml - 8).attr('y', top + rowH / 2).attr('dy', '0.32em').attr('text-anchor', 'end').text(l);
     d.age.forEach((s, k) => {
       const val = v(l, s) || 0;
-      const by = top + (rowH - block) / 2 + k * (barH + 3);
+      const by = top + (rowH - block) / 2 + k * (barH + gap);
       svg.append('rect').attr('x', ml).attr('y', by).attr('width', Math.max(val > 0 ? 1 : 0, x(val) - ml)).attr('height', barH).attr('rx', 2).style('fill', c).style('fill-opacity', k ? 0.45 : 1);
       svg.append('text').attr('class', 'kj-val').style('font-size', multi ? '11.5px' : null).attr('x', x(val) + 4).attr('y', by + barH / 2).attr('dy', '0.34em').text(fmt(val));
     });
@@ -1998,7 +2020,7 @@ function renderKouhi() {
 }
 function renderKouhiMap() {
   const box = $('#kouhi-map-box');
-  const mode = kouhiMode || (ROOT.clientWidth < 720 ? 'cards' : 'table');
+  const mode = kouhiMode || (ROOT.clientWidth < 900 ? 'cards' : 'table');
   $$('#kouhi-mode button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === mode)));
   const scenes = [...new Set(K.data.map((r) => r.場面))];
   const cell = (d, r) => h('div', { class: 'kj-kcell' }, mark(levelBadge(r.目安), 'kouhi', '目安', { 病気: d.name, 場面: r.場面 }), mark(h('span', {}, r.内容), 'kouhi', '内容', { 病気: d.name, 場面: r.場面 }),
@@ -2156,8 +2178,10 @@ function drawSources() {
   const rows = S.data.filter((s) => (!srcFilter || s.病気 === srcFilter) && (!srcTypeF || srcType(s) === srcTypeF) && (!q || normKana(Object.values(s).join(' ')).includes(q)));
   body.replaceChildren(...rows.map((s) => {
     const tr = h('tr', { id: `src-${s.出典ID}`, 'data-key': s.出典ID });
-    tr.append(h('td', { class: 'kj-src-id kj-name' }, s.出典ID), h('td', { 'data-label': '病気' }, s.病気), h('td', { 'data-label': '種類' }, srcType(s)), h('td', { class: 'kj-src-name', 'data-label': '資料名' }, s.資料名),
-      h('td', { 'data-label': '発行元' }, s.発行元), h('td', { 'data-label': '公表日・更新日' }, String(s['公表日・更新日'] || '—')), h('td', { 'data-label': '対象年' }, SRC_YEARS.get(s.出典ID) || '—'));
+    tr.append(h('td', { class: 'kj-src-id kj-name' }, s.出典ID),
+      h('td', { class: 'kj-src-name' }, h('div', { class: 'kj-src-title' }, s.資料名), h('div', { class: 'kj-src-meta' }, `発行元：${s.発行元}`), h('div', { class: 'kj-src-meta' }, `公表日・更新日：${String(s['公表日・更新日'] || '—')}`)),
+      h('td', { class: 'kj-src-kind' }, h('div', {}, s.病気), h('div', { class: 'kj-src-meta' }, srcType(s))),
+      h('td', { class: 'kj-nowrap', 'data-label': '対象年' }, SRC_YEARS.get(s.出典ID) || '—'));
     const td = h('td', { 'data-label': 'リンク' });
     const url = String(s.URL || '');
     if (/^https:\/\//.test(url)) td.append(h('a', { href: url, target: '_blank', rel: 'noopener noreferrer' }, url)); else td.textContent = url || '—';
@@ -2256,8 +2280,8 @@ function route(first) {
   const changed = showView(view);
   closePanels();
   if (!target || VIEW_INFO[id]) {
-    if (first && view !== 'home') { window.scrollTo(0, 0); if (document.readyState !== 'complete') window.addEventListener('load', () => setTimeout(() => window.scrollTo(0, 0), 0), { once: true }); }
-    if (!first) { window.scrollTo({ top: 0, behavior: 'auto' }); const hd = $(`#${view} .kj-h2, #${view} .kj-h1`); if (hd) hd.focus({ preventScroll: true }); }
+    if (first && view !== 'home') { toPageTop(); if (document.readyState !== 'complete') window.addEventListener('load', () => setTimeout(toPageTop, 0), { once: true }); }
+    if (!first) { toPageTop(); const hd = $(`#${view} .kj-h2, #${view} .kj-h1`); if (hd) hd.focus({ preventScroll: true }); }
     return;
   }
   reveal(target);
@@ -2266,6 +2290,12 @@ function route(first) {
     if (target.tagName === 'DETAILS') { const s = target.querySelector('summary'); if (s) s.focus({ preventScroll: true }); }
     flash(target);
   }, 40);
+}
+// ページの先頭へ。ふつうのページでは window を、ダッシュボードのように別の箱が動く場合はその箱を戻す
+function toPageTop(smooth) {
+  const behavior = smooth && !reduce ? 'smooth' : 'auto';
+  window.scrollTo({ top: 0, behavior });
+  if (ROOT.getBoundingClientRect().top < 0) ROOT.scrollIntoView({ block: 'start', behavior });
 }
 function goTo(id) {
   const cur = (() => { try { return decodeURIComponent(location.hash.slice(1)); } catch (e) { return location.hash.slice(1); } })();
@@ -2314,8 +2344,8 @@ document.addEventListener('keydown', (ev) => {
   if (ev.key === '/' && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { ev.preventDefault(); openSearch(); }
 });
 const toTop = $('#kj-totop');
-toTop.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' }); const hd = $(`#${currentView} .kj-h2, #${currentView} .kj-h1`); if (hd) hd.focus({ preventScroll: true }); });
-window.addEventListener('scroll', () => { toTop.hidden = window.scrollY < 700; }, { passive: true });
+toTop.addEventListener('click', () => { toPageTop(true); const hd = $(`#${currentView} .kj-h2, #${currentView} .kj-h1`); if (hd) hd.focus({ preventScroll: true }); });
+document.addEventListener('scroll', () => { toTop.hidden = ROOT.getBoundingClientRect().top > -700; }, { passive: true, capture: true });
 if (window.ResizeObserver) new ResizeObserver(measureHead).observe($('#kj-top'));
 
 // 検索：見出し・説明・表の行・国名・出典から探す。ひらがな・カタカナ、全角・半角の違いは気にしない
