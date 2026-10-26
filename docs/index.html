@@ -60,7 +60,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
 .site-bar a { display: inline-flex; align-items: center; min-height: 40px; }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="data.js?v=c2fb8e9a"></script>
+<script src="data.js?v=d64d7da4"></script>
 <script>window.KJ_SITE = { name: "世界の感染症と日本の水際対策", url: "https://yumaki5555.github.io/kansensho/", asOf: "2026年10月26日時点", xlsx: "kansensho_2026-10.xlsx" };</script>
 <script>
 // ページ本体（claude.ai 版と共通）にデータを渡す小さな仕組み
@@ -588,6 +588,19 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
   .kj-calc-row { display: grid; grid-template-columns: minmax(0, 12em) 1fr auto; gap: 8px; align-items: center; font-size: 0.9375rem; }
   .kj-calc-row b { font-variant-numeric: tabular-nums; text-align: right; min-width: 7em; }
   @media (max-width: 560px) { .kj-calc-row { grid-template-columns: 1fr auto; } .kj-calc-row .kj-track { grid-column: 1 / -1; } }
+  .kj-calc-year-t td:not(:first-child), .kj-calc-year-t th { white-space: nowrap; }
+  .kj-calc-year-t td:first-child { min-width: 7em; }
+  .kj-calc-year-t td small { display: block; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); font-weight: 400; }
+  /* 狭い画面：見出しを1行目、3つの金額を2行目に並べる */
+  @media (max-width: 560px) {
+    .kj-calc-year-t, .kj-calc-year-t thead, .kj-calc-year-t tbody { display: block; }
+    .kj-calc-year-t tr { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--color-border-line); }
+    .kj-calc-year-t tbody tr:last-child { border-bottom: 0; }
+    .kj-calc-year-t th, .kj-calc-year-t td { border-bottom: 0; padding: 6px 4px; }
+    .kj-calc-year-t th:first-child { display: none; }
+    .kj-calc-year-t td:first-child { grid-column: 1 / -1; min-width: 0; padding-bottom: 0; }
+    .kj-calc-year-t td small { display: inline; margin-left: .5em; }
+  }
   /* 資料の案内 */
   .kj-guide-list { display: grid; gap: 10px; list-style: none; margin: 0; padding: 0; }
   .kj-guide-list > li { border: 1px solid var(--color-border-line); border-radius: 12px; background: var(--color-panel); padding: 12px 16px; display: grid; gap: 4px; }
@@ -833,7 +846,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         <div class="kj-seg" role="group" aria-label="グラフの指標" id="compare-mode">
           <button type="button" data-mode="count" aria-pressed="true">報告数</button>
           <button type="button" data-mode="yoy" aria-pressed="false">前年比</button>
-          <button type="button" data-mode="ten" aria-pressed="false">10年前比</button>
+          <button type="button" data-mode="ten" aria-pressed="false">基準年比</button>
         </div>
         <div class="kj-seg" role="group" aria-label="グラフの形" id="compare-shape">
           <button type="button" data-shape="bar" aria-pressed="true">棒グラフ</button>
@@ -1114,9 +1127,9 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
       <p class="kj-cap">前年比や「何倍か」は、資料の数字からこのサイトで計算しています（Excelの表も同じ計算です）。</p>
       <dl class="kj-formula">
         <div><dt>前年比（%）</dt><dd>（最新の確定値 ÷ その前の年の確定値 − 1）× 100。小数第1位まで。</dd></div>
-        <div><dt>10年前比（倍）</dt><dd>最新の確定値 ÷ 10年分の最初の年の確定値。小数第1位まで。「10年前の年」は、最新の確定値の年から数えて10年分の最初の年です（<span id="guide-first-years">—</span>）。</dd></div>
+        <div><dt>基準年比（倍）</dt><dd>最新の確定値 ÷ データ収録開始年の確定値。小数第1位まで。対象の基準年は病気によって異なります（<span id="guide-first-years">—</span>）。</dd></div>
         <div><dt>前年同期比（%）</dt><dd>（2026年の途中経過 ÷ 前の年の同じ時期 − 1）× 100。小数第1位まで。</dd></div>
-        <div><dt>グラフの「10年前比」・「前年比」</dt><dd>上と同じ計算を年ごとに行ったものです。速報値の年は、速報値で計算しています（「速報」と表示）。</dd></div>
+        <div><dt>グラフの「基準年比」・「前年比」</dt><dd>上と同じ計算を年ごとに行ったものです。速報値の年は、速報値で計算しています（「速報」と表示）。</dd></div>
       </dl>
     </div>
     <div class="kj-card" id="guide-count">
@@ -1267,7 +1280,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
 /* ===== 病気の設定（色は全画面で同じ：HIV=1、梅毒=2、はしか=3、結核=4） ===== */
 const DISEASES = [
   { id: 'hiv', i: 0, name: 'HIV/エイズ', label: 'HIV/エイズ', unit: '件', main: '合計', subs: ['HIV感染者', 'エイズ患者'], age: ['HIV感染者', 'エイズ患者'], ageExtra: [], what: '新たに報告されたHIV感染者とエイズ患者', annualCap: '新たに報告された数（件）。すべて確定値です。' },
-  { id: 'syphilis', i: 1, name: '梅毒', label: '梅毒', unit: '人', main: '合計', subs: ['男性', '女性'], age: ['男性', '女性'], ageExtra: ['合計'], what: '医師が届け出た患者の数', annualCap: '医師が届け出た人数。点線と白抜きの点は速報値です。' },
+  { id: 'syphilis', i: 1, name: '梅毒', label: '梅毒', unit: '人', main: '合計', subs: ['男性', '女性', '性別不明'], age: ['男性', '女性'], ageExtra: ['性別不明', '合計'], what: '医師が届け出た患者の数', annualCap: '医師が届け出た人数。点線と白抜きの点は速報値です。' },
   { id: 'measles', i: 2, name: 'はしか', label: 'はしか（麻しん）', unit: '人', main: '届出数', subs: [], age: ['届出数'], ageExtra: [], what: '医師が届け出た患者の数', annualCap: '医師が届け出た人数。点線と白抜きの点は速報値です。' },
   { id: 'tb', i: 3, name: '結核', label: '結核', unit: '人', main: '新登録患者数', subs: [], rate: '罹患率（人口10万対）', age: ['新登録患者数'], ageExtra: ['構成比(%)', '罹患率（人口10万対）'], what: '新たに登録された結核患者の数', annualCap: 'その年に新しく登録された患者の数。すべて確定値です。' },
 ];
@@ -1278,7 +1291,7 @@ const SITE = Object.assign({ name: '世界の感染症と日本の水際対策',
 dash.calc('overview', {
   inputs: ['annual', 'ytd2026'],
   title: '4つの病気の要約',
-  description: '病気ごとに、最新の確定値・前年比(%)・10年前と比べた倍率、2026年途中経過の前年同期比(%)と倍率を計算。',
+  description: '病気ごとに、最新の確定値・前年比(%)・収録開始年と比べた倍率、2026年途中経過の前年同期比(%)と倍率を計算。',
   fn: (annual, ytd2026) => {
     const main = { 'HIV/エイズ': '合計', '梅毒': '合計', 'はしか': '届出数', '結核': '新登録患者数' };
     const ymain = { 'HIV/エイズ': '合計', '梅毒': '合計', 'はしか': '届出数', '結核': '届出数（発病していない感染者も含む）' };
@@ -1368,6 +1381,9 @@ const span = (ys) => { const a = d3.min(ys), b = d3.max(ys); return a === b ? `$
 /* ===== データの入れ物 ===== */
 let A, Y, B, N, S, W, K, O, YC; // 年ごと・途中経過・内訳・文・出典・世界・公費・要約・途中経過の比
 let C = { data: [] }, E = { data: [] }, CO = { data: [] }, I = { data: [] }, OT = { data: [] }, GD = { data: [] }; // 国別・入国前対策・医療費・病気の解説・その他の感染症・資料の案内
+const UNKNOWN_SEX = '性別不明'; // 梅毒の男女別で、性別がわからない人
+// はしかの人口100万人あたりの目安：報告の年（m）と、分母に使ったWHOの結核推計の人口の年（p）
+const measPop = () => { const r = C.data.find((x) => x.はしか_人口の年) || {}; return { m: r.はしか_年 || '—', p: r.はしか_人口の年 || '—' }; };
 let SRC = new Map();
 const notesOf = (who, kind, table) => N.data.filter((n) => n.病気 === who && n.種類 === kind && (table === undefined || n.表 === table)).sort((a, b) => num(a.番号) - num(b.番号));
 
@@ -1892,14 +1908,14 @@ function renderHome() {
       h('p', { class: 'kj-big-line' }, mark(h('span', { class: 'kj-big' }, fmt(o.最新値)), 'overview', '最新値', { 病気: d.name }), h('span', { class: 'kj-unit' }, d.unit)),
       h('dl', { class: 'kj-stats' },
         h('div', {}, h('dt', {}, '前年比'), h('dd', {}, delta(o.前年比, pct(o.前年比))), h('small', {}, `${o.最新確定年 - 1}年は${fmt(o.前年値)}${d.unit}`)),
-        h('div', {}, h('dt', {}, '10年前比'), h('dd', {}, delta(o['10年前と比べて(倍)'] - 1, ratio(o['10年前と比べて(倍)']))), h('small', {}, `${o.最初の年}年は${fmt(o.最初の値)}${d.unit}`))),
+        h('div', {}, h('dt', {}, '基準年比'), h('dd', {}, delta(o['10年前と比べて(倍)'] - 1, ratio(o['10年前と比べて(倍)']))), h('small', {}, `${o.最初の年}年は${fmt(o.最初の値)}${d.unit}`))),
       spark, soku,
       h('a', { class: 'kj-btn', href: `#${d.id}`, 'data-nav': '' }, `${d.label}を詳しく見る →`));
     return card;
   }));
   const T = (name) => O.data.find((r) => r.病気 === name);
   const t = $('#takeaway-text');
-  t.replaceChildren('10年前と比べて、HIV/エイズは', h('b', { class: 'kj-em' }, T('HIV/エイズ')['10年前と比べて(倍)'].toFixed(1)), '倍、結核は', h('b', { class: 'kj-em' }, T('結核')['10年前と比べて(倍)'].toFixed(1)),
+  t.replaceChildren('収録開始年と比べて、HIV/エイズは', h('b', { class: 'kj-em' }, T('HIV/エイズ')['10年前と比べて(倍)'].toFixed(1)), '倍、結核は', h('b', { class: 'kj-em' }, T('結核')['10年前と比べて(倍)'].toFixed(1)),
     '倍に減りました。梅毒は', h('b', { class: 'kj-em' }, T('梅毒')['10年前と比べて(倍)'].toFixed(1)), '倍で、高い水準が続いています。はしかは2026年に入って急に増え、', T('はしか').途中の期間,
     'で前年の同じ時期の', h('b', { class: 'kj-em' }, T('はしか').前年同期の倍.toFixed(1)), '倍になっています。');
   drawList($('#home-data-list'), '全体', '見るときの注意');
@@ -1910,7 +1926,7 @@ let compareMode = 'count';
 const MODE = {
   count: { title: '報告数の推移', cap: '病気ごとに人数の規模が違うため、グラフを分けています（縦の目盛りは病気ごとに違います）。斜線の棒（折れ線では点線と白抜きの点）は速報値です。棒にふれる・タップすると、前年との差や出典も出ます。', file: '報告数の推移' },
   yoy: { title: '前年比（前の年と比べた増減）', cap: '前の年と比べて何%増えたか・減ったかです。0%の線より上が増加、下が減少。病気ごとに縦の目盛りが違います。速報値の年は速報値で計算しています。', file: '前年比' },
-  ten: { title: '10年前比（最初の年を1としたときの倍率）', cap: 'HIV/エイズ・結核は2016年、梅毒・はしかは2015年を「1倍」として、何倍になったかを比べます。点線の「1倍」より上は最初の年より多い、下は少ないという意味です。「折れ線」にすると4つの病気を同じグラフに重ねます（はしかは年による差がとても大きいため、折れ線の縦の目盛りは「0.5倍→1倍→2倍」のように、倍になるごとに同じ幅で並べています）。', file: '10年前比' },
+  ten: { title: '基準年比（最初の年を1としたときの倍率）', cap: 'HIV/エイズ・結核は2016年、梅毒・はしかは2015年を「1倍」として、何倍になったかを比べます。点線の「1倍」より上は最初の年より多い、下は少ないという意味です。「折れ線」にすると4つの病気を同じグラフに重ねます（はしかは年による差がとても大きいため、折れ線の縦の目盛りは「0.5倍→1倍→2倍」のように、倍になるごとに同じ幅で並べています）。', file: '基準年比' },
 };
 function comparePanels() {
   return DISEASES.map((d) => {
@@ -1939,7 +1955,7 @@ function domTip(d, yr, metric) {
   const isRate = RATE.test(m);
   const vs = (n) => (isRate ? show(n, m) : `${fmt(n)}${d.unit}`);
   const lines = [[m === '合計' ? `合計（${d.what}）` : m, vs(v), colorOf(d)]];
-  if (m === d.main) d.subs.forEach((nm) => { const r = rows.find((q) => q.指標 === nm); if (r) lines.push([`うち${nm}`, `${fmt(num(r.値))}${d.unit}`]); });
+  if (m === d.main) d.subs.forEach((nm) => { const r = rows.find((q) => q.指標 === nm); if (r && !(nm === UNKNOWN_SEX && !num(r.値))) lines.push([`うち${nm}`, `${fmt(num(r.値))}${d.unit}`]); });
   if (d.rate && !isRate) { const r = rows.find((q) => q.指標 === d.rate); if (r) lines.push(['罹患率（人口10万人あたり）', show(r.値, d.rate)]); }
   if (isRate) { const r = rows.find((q) => q.指標 === d.main); if (r) lines.push([d.main, `${fmt(num(r.値))}${d.unit}`]); }
   if (prev) { const pv = num(prev.値), df = Math.round((v - pv) * 10) / 10; lines.push([`前年との差（${yr - 1}年 ${vs(pv)}）`, `${df > 0 ? '+' : ''}${isRate ? df.toFixed(1) : fmt(df)}（${pct((v / pv - 1) * 100)}）`]); }
@@ -1970,7 +1986,7 @@ function drawCompare(box, opt = {}) {
           if (b.y === null) return null;
           const t = domTip(p.d, b.x);
           if (!t) return null;
-          t.lines.unshift([compareMode === 'yoy' ? '前年比' : `10年前比（${p.points[0].x}年＝1倍）`, compareMode === 'yoy' ? pct(b.y) : `${b.y.toFixed(2)}倍`, colorOf(p.d)]);
+          t.lines.unshift([compareMode === 'yoy' ? '前年比' : `基準年比（${p.points[0].x}年＝1倍）`, compareMode === 'yoy' ? pct(b.y) : `${b.y.toFixed(2)}倍`, colorOf(p.d)]);
           return t;
         },
       });
@@ -1979,7 +1995,7 @@ function drawCompare(box, opt = {}) {
   }
   if (compareMode === 'ten') {
     const H = opt.height || (W < 520 ? 380 : 420);
-    const svg = svgIn(box, W, H, '4つの病気の10年前比の折れ線グラフ');
+    const svg = svgIn(box, W, H, '4つの病気の基準年比の折れ線グラフ');
     plotLines(svg, { x0: 0, y0: 0, w: W, h: H }, {
       years, unit: '単位：倍（最初の年＝1。目盛りは1倍→2倍→4倍…が同じ幅）', tickFmt: (t) => `${t}倍`, ref: { y: 1, label: '最初の年と同じ（1倍）', below: true, left: true }, box: opt.exporting ? null : box,
       log: [0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50],
@@ -2107,7 +2123,7 @@ function renderDisease(d) {
   const keys = h('dl', { class: 'kj-keys' },
     h('div', { class: 'kj-key' }, h('dt', {}, `日本の最新の確定値（${o.最新確定年}年）`), h('dd', {}, fmt(o.最新値), h('small', {}, ` ${d.unit}`)), h('p', {}, d.what)),
     h('div', { class: 'kj-key' }, h('dt', {}, '前年比'), h('dd', {}, delta(o.前年比, pct(o.前年比))), h('p', {}, `${o.最新確定年 - 1}年（確定値）は${fmt(o.前年値)}${d.unit}`)),
-    h('div', { class: 'kj-key' }, h('dt', {}, '10年前比'), h('dd', {}, delta(o['10年前と比べて(倍)'] - 1, ratio(o['10年前と比べて(倍)']))), h('p', {}, `${o.最初の年}年（確定値）は${fmt(o.最初の値)}${d.unit}`)),
+    h('div', { class: 'kj-key' }, h('dt', {}, '基準年比'), h('dd', {}, delta(o['10年前と比べて(倍)'] - 1, ratio(o['10年前と比べて(倍)']))), h('p', {}, `${o.最初の年}年（確定値）は${fmt(o.最初の値)}${d.unit}`)),
     h('div', { class: 'kj-key', style: 'border-style:dashed' }, h('dt', {}, h('span', { class: 'kj-tag kj-tag-soku' }, '速報値'), ` 2026年の途中経過`), h('dd', {}, fmt(o.途中), h('small', {}, ` ${d.id === 'tb' ? '件' : d.unit}`)), h('p', {}, `${o.途中の期間}。前年同期 ${fmt(o.途中前年同期)}（`, delta(o.前年同期比, pct(o.前年同期比)), '）')));
   const toc = h('nav', { class: 'kj-toc kj-toc-n', 'aria-label': 'このページの中の移動' }, ...DSECS.map(([k, t]) => h('a', { href: `#${d.id}-${k}`, 'data-nav': '' }, t)));
 
@@ -2239,7 +2255,8 @@ function figHead(title, cap, exportKey) {
 function annualSeries(d) {
   const c = colorOf(d);
   if (!d.subs.length) return [{ name: d.main, color: c, points: mainPoints(d), labels: 'all', width: 2.75, shape: 0 }];
-  return [d.main, ...d.subs].map((m, k) => ({ name: m, color: c, opacity: k ? (k === 1 ? 0.6 : 0.42) : 1, width: k ? 1.75 : 3, shape: k, points: mainPoints(d, m), labels: k ? null : 'all',
+  // 性別不明（毎年0〜2人）は線にすると0の近くに重なるため、折れ線には描かない（表とふれたときの説明に出す）
+  return [d.main, ...d.subs.filter((m) => m !== UNKNOWN_SEX)].map((m, k) => ({ name: m, color: c, opacity: k ? (k === 1 ? 0.6 : 0.42) : 1, width: k ? 1.75 : 3, shape: k, points: mainPoints(d, m), labels: k ? null : 'all',
     endText: `${m} ${fmt(mainPoints(d, m).slice(-1)[0].y)}${mainPoints(d, m).slice(-1)[0].soku ? '（速報）' : ''}`, labelColor: k ? 'var(--color-fg-muted)' : c }));
 }
 // 積み上げの内訳（HIV感染者＋エイズ患者、男性＋女性）。足して合計に合わない分は「性別不明」などとして灰色で示す
@@ -2247,7 +2264,7 @@ function annualParts(d, yr) {
   const c = colorOf(d);
   const get = (m) => { const r = A.data.find((q) => q.病気 === d.name && q.指標 === m && num(q.年) === yr); return r ? num(r.値) : null; };
   const total = get(d.main);
-  const ps = d.subs.map((m, k) => ({ name: m, v: get(m), color: c, hex: HEX[d.i], opacity: k ? 0.45 : 1 }));
+  const ps = d.subs.filter((m) => m !== UNKNOWN_SEX).map((m, k) => ({ name: m, v: get(m), color: c, hex: HEX[d.i], opacity: k ? 0.45 : 1 }));
   if (total === null || ps.some((p) => p.v === null)) return [];
   const rest = total - d3.sum(ps, (p) => p.v);
   if (rest > 0) ps.push({ name: d.id === 'syphilis' ? '性別不明' : 'その他', v: rest, color: 'var(--cds-chart-reference)', hex: '#6f7a75', opacity: 1 });
@@ -2327,7 +2344,7 @@ function drawAge(box, d, opt = {}) {
     if (!opt.exporting) svg.append('rect').attr('class', 'kj-hit').attr('x', 0).attr('width', W).attr('y', top).attr('height', rowH).style('fill', 'transparent')
       .on('pointerenter pointermove', (ev) => {
         const lines = d.age.map((s) => [s, show(v(l, s), s), c]);
-        d.ageExtra.forEach((s) => lines.push([s, show(v(l, s), s)]));
+        d.ageExtra.forEach((s) => { if (!(s === UNKNOWN_SEX && !v(l, s))) lines.push([s, show(v(l, s), s)]); });
         showTip(tip, box, ev, l, lines);
       })
       .on('pointerleave', (ev) => leaveTip(ev, tip));
@@ -2439,7 +2456,9 @@ const CM = {
   ] },
   measles: { src: 'WHO-2', kind: '報告値', m: [
     { k: 'はしか_報告数', yk: 'はしか_年', t: 'はしかの報告数（1年間）', short: 'はしかの報告数', f: fNum, unit: '人', kind: '報告値', prev: 'はしか_前年の報告数', def: '各国がWHOに報告した、1年間のはしかの患者の数。' },
-    { k: 'はしか_100万人あたり', yk: 'はしか_年', t: '人口100万人あたりの報告数（目安・このサイトで計算）', short: '人口100万人あたりのはしか報告数', f: (v) => v.toFixed(1), unit: '', kind: '報告値をもとにこのサイトで計算', def: 'はしかの報告数を、WHOが結核の推計で使った人口で割った目安（このサイトで計算）。' },
+    // 分母の人口はWHOの結核推計の人口（はしかの報告と同じ年の人口ではない）。年はデータから入れる
+    { k: 'はしか_100万人あたり', yk: 'はしか_年', get t() { return `人口100万人あたりの報告数（目安・${measPop().p}年の人口で計算）`; }, short: '人口100万人あたりのはしか報告数（目安）', f: (v) => v.toFixed(1), unit: '', kind: '報告値をもとにこのサイトで計算（暫定の目安）',
+      get def() { const y = measPop(); return `はしかの${y.m}年の報告数を、WHOが結核の推計で使った${y.p}年の人口で割った目安（このサイトで計算）。${y.m === y.p ? '' : `${y.m}年の人口で割った正式な率ではないため、暫定の目安として見てください。`}`; } },
   ] },
   tb: { src: 'WHO-1', kind: '推計値', m: [
     { k: '結核_罹患率', yk: '結核_年', t: '結核の罹患率（人口10万人あたり・推計）', short: '結核の罹患率', f: fRate, unit: '', kind: '推計値', prev: '結核_前年の罹患率', lo: '結核_罹患率_下限', hi: '結核_罹患率_上限', def: '人口10万人あたり、1年間に新たに結核になった人の数（WHOの推計）。' },
@@ -2908,15 +2927,16 @@ function renderCost() {
   indexDirty = true;
 }
 const COST_N = '医療費';
-// 高額療養費（70歳未満・令和8年8月診療分から）の1か月の上限。出典 費用-2・費用-3
+// 高額療養費（70歳未満・令和8年8月〜令和9年7月診療分）の1か月の上限・多数回該当（tasu）・年間上限（year、8月〜翌年7月）。出典 費用-2・費用-3
 const KOGAKU = [
-  { k: 'a', t: '年収約1,160万円〜', base: 270300, th: 901000 },
-  { k: 'i', t: '年収約770万〜約1,160万円', base: 179100, th: 597000 },
-  { k: 'u', t: '年収約370万〜約770万円', base: 85800, th: 286000 },
-  { k: 'e', t: '〜年収約370万円', base: 61500, th: null },
-  { k: 'o', t: '住民税がかからない人', base: 36900, th: null },
+  { k: 'a', t: '年収約1,160万円〜', base: 270300, th: 901000, tasu: 140100, year: 1680000 },
+  { k: 'i', t: '年収約770万〜約1,160万円', base: 179100, th: 597000, tasu: 93000, year: 1110000 },
+  { k: 'u', t: '年収約370万〜約770万円', base: 85800, th: 286000, tasu: 44400, year: 530000 },
+  { k: 'e', t: '〜年収約370万円', base: 61500, th: null, tasu: 44400, year: 530000 },
+  { k: 'o', t: '住民税がかからない人', base: 36900, th: null, tasu: 24600, year: 290000 },
 ];
-const kCap = (kb, M) => (kb.th ? kb.base + Math.max(0, M - kb.th) * 0.01 : kb.base);
+// multi：直近12か月に上限に達した月が3か月以上あり、4か月目以降（多数回該当）のときは、決まった額の上限
+const kCap = (kb, M, multi) => (multi ? kb.tasu : kb.th ? kb.base + Math.max(0, M - kb.th) * 0.01 : kb.base);
 const PAY = [['保険給付', 'var(--kj-c1)', '#1f5fa8'], ['公費（税）', 'var(--kj-c3)', '#0e8278'], ['本人負担', 'var(--kj-c5)', '#8a6d00']];
 // 制度のきまりから、1か月の医療費を「保険給付・公費・本人負担」に分ける（試算）
 const CASES = [
@@ -2925,15 +2945,50 @@ const CASES = [
   { id: 'tb_in', name: '結核の入院（入院の勧告・第37条）', d: 'tb' },
   { id: 'ins', name: '健康保険だけ（梅毒・はしかなど）', d: 'syphilis' },
 ];
+// 1か月分を円未満まで計算する（own は健康保険で本人が払う分＝高額療養費のあと。公費の制度ではそのうち本人の分が self）
+function payRaw(kind, M, o) {
+  const cap = kCap(o.kb, M, o.multi);
+  const own = Math.min(M * o.rate, cap);
+  let self = own;
+  if (kind === 'hiv') self = Math.min(M * 0.1, o.jcap, own);
+  if (kind === 'tb_out') self = Math.min(M * 0.05, own);
+  if (kind === 'tb_in') self = o.high ? Math.min(20000, own) : 0;
+  return { ins: M - own, own, self, capUsed: M * o.rate > cap };
+}
+// 円未満を丸めても、保険＋公費＋本人＝医療費の総額となるよう残額で調整（公費のない「健康保険だけ」は本人、それ以外は公費で調整）
+function roundSplit(kind, M, ins, self) {
+  const total = Math.round(M);
+  const insurer = Math.max(0, Math.min(total, Math.round(ins)));
+  const patient = kind === 'ins' ? total - insurer : Math.max(0, Math.min(total - insurer, Math.round(self)));
+  return { M: total, ins: insurer, pub: total - insurer - patient, self: patient };
+}
 function paySplit(kind, M, o) {
-  const own = Math.min(M * o.rate, kCap(o.kb, M)); // 健康保険で本人が払う分（高額療養費のあと）
-  const ins = M - own;
-  let self = own, pub = 0;
-  if (kind === 'hiv') { self = Math.min(M * 0.1, o.jcap, own); pub = own - self; }
-  if (kind === 'tb_out') { self = Math.min(M * 0.05, own); pub = own - self; }
-  if (kind === 'tb_in') { self = o.high ? Math.min(20000, own) : 0; pub = own - self; }
-  const r = (v) => Math.round(v);
-  return { M: r(M), ins: r(ins), pub: r(pub), self: r(self), capUsed: M * o.rate > kCap(o.kb, M) };
+  const p = payRaw(kind, M, o);
+  return { ...roundSplit(kind, M, p.ins, p.self), capUsed: p.capUsed };
+}
+// 同じ医療費の月が、8月から翌年7月まで12か月続いた場合の目安。
+// 多数回該当：直近12か月に上限に達した月が3か月以上あれば4か月目から（o.multi のときは、8月より前から続いているものとして1か月目から）。
+// 年間上限：1年間の自己負担が年間上限を超えた分は保険者から払い戻し（還付）。公費の制度と一緒に使うときの扱いは国の資料で確認できないため「健康保険だけ」にだけ使う
+function yearSplit(kind, M, o) {
+  const months = [];
+  let hits = o.multi ? 3 : 0;
+  for (let i = 1; i <= 12; i++) {
+    const multi = hits >= 3;
+    const p = payRaw(kind, M, { ...o, multi });
+    if (p.capUsed) hits++;
+    months.push({ i, multi, ...p });
+  }
+  const sum = (k) => d3.sum(months, (m) => m[k]);
+  const own = sum('own'), cap = o.kb.year;
+  const refund = kind === 'ins' ? Math.max(0, own - cap) : 0;
+  const groups = [];
+  months.forEach((m) => {
+    const g = groups[groups.length - 1];
+    if (g && g.multi === m.multi && g.capUsed === m.capUsed) g.to = m.i;
+    else groups.push({ from: m.i, to: m.i, multi: m.multi, capUsed: m.capUsed, s: roundSplit(kind, M, m.ins, m.self) });
+  });
+  return { groups, own, cap, refund, overCap: own > cap, firstMulti: (months.find((m) => m.multi) || {}).i, anyHit: months.some((m) => m.capUsed),
+    total: roundSplit(kind, M * 12, sum('ins') + refund, sum('self') - refund), refundYen: Math.round(refund) };
 }
 const CALC_SRC = { hiv: ['費用-11', '費用-12', '費用-2'], tb_out: ['費用-13', '費用-24'], tb_in: ['費用-13', '費用-24', '費用-2'], ins: ['費用-2'] };
 // グラフ用の例（金額は資料の価格・点数からの例。病気どうしの医療費の大きさを比べるものではない）
@@ -3017,7 +3072,34 @@ EXPORTS.cost = () => ({ title: COST_CHARTS[costChart].t, file: `医療費_${{ sp
   legend: costChart === 'split' ? PAY.map(([n, , hx]) => ({ type: 'bar', name: n, hex: hx })) : [], source: srcText(costChart === 'split' ? [...new Set(Object.values(CALC_SRC).flat())] : (costChart === 'hiv' ? ['費用-7'] : ['費用-4', '費用-6'])), draw: drawCostChart });
 
 /* --- 医療費の内訳の試算 --- */
-const calc = { c: 'hiv', M: 212823, rate: 0.3, kb: 2, j: 4, high: false };
+const calc = { c: 'hiv', M: 212823, rate: 0.3, kb: 2, j: 4, high: false, multi: false };
+// 1年間（8月〜翌年7月）続いた場合の目安の表と説明
+function calcYear(y, o) {
+  const kb = o.kb;
+  const months = (g) => (g.from === g.to ? `${g.from}か月目` : `${g.from}〜${g.to}か月目`);
+  const capName = (g) => (!g.capUsed ? '上限に届かない月' : g.multi ? `多数回該当の上限 ${fmt(kb.tasu)}円` : '月の上限');
+  const t = el('table', 'kj-table kj-calc-year-t');
+  t.createTHead().insertRow().append(h('th', { class: 'kj-left' }, ''), ...PAY.map(([n]) => h('th', {}, n)));
+  const body = t.createTBody();
+  const row = (label, sub, s, strong) => { const r = body.insertRow(); r.append(h('td', { class: 'kj-left' }, strong ? h('b', {}, label) : label, h('small', {}, sub)), ...['ins', 'pub', 'self'].map((k) => h('td', {}, strong ? h('b', {}, `${fmt(s[k])}円`) : `${fmt(s[k])}円`))); };
+  y.groups.forEach((g) => row(months(g), `1か月あたり・${capName(g)}`, g.s));
+  if (y.refundYen > 0) row('年間上限をこえた分', '払い戻し（還付）', { ins: y.refundYen, pub: 0, self: -y.refundYen });
+  row('1年間の合計', `医療費 ${fmt(y.total.M)}円`, y.total, true);
+  const notes = [
+    '毎月同じ医療費がかかり、同じ健康保険に12か月続けて入っている場合の目安です（「年間」は8月から翌年7月まで）。',
+    !y.anyHit ? `医療費の${Math.round(o.rate * 10)}割が月の上限に届かないため、高額療養費・多数回該当にはなりません。`
+      : calc.multi ? `8月より前から多数回該当が続いているものとして、1か月目から多数回該当の上限（${fmt(kb.tasu)}円）で計算しています。`
+        : y.firstMulti ? `直近12か月に上限に達した月が3か月になるため、${y.firstMulti}か月目からは多数回該当の上限（${fmt(kb.tasu)}円）で計算しています。` : '',
+    calc.c === 'ins'
+      ? (y.overCap ? `1年間の自己負担 ${fmt(Math.round(y.own))}円が年間上限 ${fmt(y.cap)}円をこえるため、こえた ${fmt(y.refundYen)}円は保険者から払い戻されます（還付）。`
+        : `1年間の自己負担 ${fmt(Math.round(y.own))}円は、年間上限 ${fmt(y.cap)}円以下です。`)
+      : `健康保険の自己負担（公費と本人の分の合計）は1年間で ${fmt(Math.round(y.own))}円です（年間上限 ${fmt(y.cap)}円）。年間上限を公費の制度と一緒に使うときに、払い戻しが公費と本人のどちらの分になるかは国の資料で確認できなかったため、この目安には入れていません。`,
+    kb.k === 'e' ? '年収約200万円以下（健康保険の標準報酬月額15万円以下、国民健康保険の旧ただし書き所得86万円以下）と確認できた人は、年間上限が41万円になり、令和9年8月以降に払い戻されます（この目安には入れていません）。' : '',
+    '家族の分の合算、保険を変わった場合、月の途中の変化は入れていません。',
+  ].filter(Boolean);
+  return h('div', { class: 'kj-calc-out', id: 'calc-year' }, h('p', {}, h('b', {}, '同じ医療費の月が1年間（8月〜翌年7月）続いた場合の目安（試算）')),
+    h('div', { class: 'kj-scroll' }, t), h('ul', { class: 'kj-list kj-list-sm' }, ...notes.map((n) => h('li', {}, n))));
+}
 function renderCalc() {
   const box = $('#cost-calc-box');
   $('#cost-calc').hidden = false;
@@ -3026,24 +3108,28 @@ function renderCalc() {
   const amount = h('input', { class: 'kj-input', type: 'number', min: '0', step: '100', inputmode: 'numeric', id: 'calc-m', value: String(calc.M), style: 'min-width:9em' });
   amount.addEventListener('change', () => { const v = Number(amount.value); if (v >= 0) { calc.M = v; renderCalc(); } });
   const c = CASES.find((x) => x.id === calc.c);
-  const o = { rate: calc.rate, kb: KOGAKU[calc.kb], jcap: jrows[calc.j] ? num(jrows[calc.j].値) : 0, high: calc.high };
+  const o = { rate: calc.rate, kb: KOGAKU[calc.kb], jcap: jrows[calc.j] ? num(jrows[calc.j].値) : 0, high: calc.high, multi: calc.multi };
   const s = paySplit(calc.c, calc.M, o);
   const bar = (k, j) => h('div', { class: 'kj-calc-row' }, h('span', {}, h('i', { style: `display:inline-block;width:.8rem;height:.8rem;border-radius:2px;background:${PAY[j][1]};margin-right:.4rem` }), PAY[j][0]),
     h('div', { class: 'kj-track', style: 'background:var(--cds-chart-grid)' }, h('div', { class: 'kj-fill', style: `width:${s.M ? (s[k] / s.M) * 100 : 0}%;background:${PAY[j][1]}` })), h('b', {}, `${fmt(s[k])}円`));
   const rule = CO.data.find((r) => r.区分 === '試算のきまり' && new RegExp(c.id === 'hiv' ? '^HIVの通院' : c.id === 'tb_out' ? '^結核の通院' : c.id === 'tb_in' ? '^結核の入院' : '^健康保険だけ').test(r.項目 || ''));
   box.replaceChildren(
-    h('p', { class: 'kj-callout kj-callout-info', style: 'margin:0' }, h('span', {}, h('b', {}, 'これは実際の額（実績値）ではなく、制度のきまりからの試算です。'), '1か月の医療費の総額を入れると、健康保険（高額療養費を含む）と公費の制度で、だれがいくら払うかを計算します。70歳未満の人だけを計算します（70歳以上は上限のきまりが違うため計算しません）。家族の分の合算、4回目からの上限（多数回）、年間の上限、入院中の食事代、自治体独自の助成は入れていません。')),
+    h('p', { class: 'kj-callout kj-callout-info', style: 'margin:0' }, h('span', {}, h('b', {}, 'これは実際の額（実績値）ではなく、制度のきまりからの試算です。'), '1か月の医療費の総額を入れると、健康保険（高額療養費を含む）と公費の制度で、だれがいくら払うかを計算します。70歳未満の人だけを計算します（70歳以上は上限のきまりが違うため計算しません）。4か月目からの上限（多数回該当）は下で選べます。年間の上限は、下の「1年間続いた場合の目安」で計算します。家族の分の合算、入院中の食事代、自治体独自の助成は入れていません。')),
     h('div', { class: 'kj-controls' },
       h('label', { class: 'kj-field' }, h('span', {}, '使う制度'), sel('calc-c', CASES.map((x) => [x.id, x.name]), calc.c, (v) => { calc.c = v; })),
       h('label', { class: 'kj-field' }, h('span', {}, '1か月の医療費の総額（円）'), amount),
       h('label', { class: 'kj-field' }, h('span', {}, '窓口負担の割合'), sel('calc-r', [[0.3, '3割（小学生〜69歳）'], [0.2, '2割（小学校に入る前）']], calc.rate, (v) => { calc.rate = Number(v); })),
       h('label', { class: 'kj-field' }, h('span', {}, '所得（高額療養費の区分）'), sel('calc-k', KOGAKU.map((x, i) => [i, x.t]), calc.kb, (v) => { calc.kb = Number(v); }))),
-    calc.c === 'hiv' ? h('div', { class: 'kj-controls' }, h('label', { class: 'kj-field' }, h('span', {}, '自立支援医療の所得区分（1か月の上限）'), sel('calc-j', jrows.map((r, i) => [i, `${r.区分}：${fmt(num(r.値))}円`]), calc.j, (v) => { calc.j = Number(v); }))) : null,
-    calc.c === 'tb_in' ? h('div', { class: 'kj-controls' }, h('label', { class: 'kj-field' }, h('span', {}, '世帯の住民税の所得割の合計'), sel('calc-h', [['0', '56万4千円以下（本人負担なし）'], ['1', '56万4千円を超える（1か月2万円まで本人負担）']], calc.high ? '1' : '0', (v) => { calc.high = v === '1'; }))) : null,
-    h('div', { class: 'kj-calc-out', 'aria-live': 'polite' }, h('p', {}, `医療費の総額 ${fmt(s.M)}円 の内訳（試算）`), bar('ins', 0), bar('pub', 1), bar('self', 2),
-      h('p', { class: 'kj-cap' }, s.capUsed ? '高額療養費の上限を超えたため、超えた分は保険給付に入れて計算しています。' : '高額療養費の上限は超えていません。', ' 公費（税）は、国と自治体が税金から払う分です（保険給付の中にも税金は入っていますが、ここでは分けられません）。')),
+    h('div', { class: 'kj-controls' },
+      h('label', { class: 'kj-field' }, h('span', {}, '直近12か月で高額療養費の上限に達した月'), sel('calc-n', [['0', '2か月以下（通常の上限）'], ['1', '3か月以上（4か月目からの多数回該当）']], calc.multi ? '1' : '0', (v) => { calc.multi = v === '1'; })),
+      calc.c === 'hiv' ? h('label', { class: 'kj-field' }, h('span', {}, '自立支援医療の所得区分（1か月の上限）'), sel('calc-j', jrows.map((r, i) => [i, `${r.区分}：${fmt(num(r.値))}円`]), calc.j, (v) => { calc.j = Number(v); })) : null,
+      calc.c === 'tb_in' ? h('label', { class: 'kj-field' }, h('span', {}, '世帯の市町村民税の所得割の合計'), sel('calc-h', [['0', '56万4千円以下（本人負担なし）'], ['1', '56万4千円を超える（1か月2万円まで本人負担）']], calc.high ? '1' : '0', (v) => { calc.high = v === '1'; })) : null),
+    h('div', { class: 'kj-calc-out', 'aria-live': 'polite' }, h('p', {}, `医療費の総額 ${fmt(s.M)}円 の内訳（1か月・試算）`), bar('ins', 0), bar('pub', 1), bar('self', 2),
+      h('p', { class: 'kj-cap' }, s.capUsed ? (calc.multi ? `多数回該当の上限（${fmt(o.kb.tasu)}円）を超えたため、超えた分は保険給付に入れて計算しています。` : '高額療養費の上限を超えたため、超えた分は保険給付に入れて計算しています。') : '高額療養費の上限は超えていません。', ' 公費（税）は、国と自治体が税金から払う分です（保険給付の中にも税金は入っていますが、ここでは分けられません）。')),
+    calcYear(yearSplit(calc.c, calc.M, o), o),
     h('details', { class: 'kj-details' }, h('summary', {}, '計算のしかたと根拠'), rule ? h('ul', { class: 'kj-list kj-list-sm' }, ...(() => { try { return JSON.parse(rule.値); } catch (e) { return []; } })().map((t) => h('li', {}, t))) : null,
-      rule && rule.注 ? h('p', {}, rule.注) : null, h('p', {}, '高額療養費の上限（70歳未満・令和8年8月診療分から）：', KOGAKU.map((x) => `${x.t} ${fmt(x.base)}円${x.th ? `＋（医療費−${fmt(x.th)}円）×1%` : ''}`).join('／')),
+      rule && rule.注 ? h('p', {}, rule.注) : null, h('p', {}, '高額療養費の上限（70歳未満・令和8年8月〜令和9年7月診療分。〈 〉は多数回該当、［ ］は年間上限）：', KOGAKU.map((x) => `${x.t} ${fmt(x.base)}円${x.th ? `＋（医療費−${fmt(x.th)}円）×1%` : ''}〈${fmt(x.tasu)}円〉［${fmt(x.year)}円］`).join('／')),
+      h('p', {}, '多数回該当：直近12か月の間に高額療養費に該当した月が3か月以上あると、4か月目からは上限が下がります。年間上限：月ごとの自己負担が積み上がって年間の上限額に達したあとは、それ以上の分は保険者から払い戻し（還付）を受けられます（年間は8月から翌年7月まで）。'),
       h('p', { class: 'kj-cite' }, ...srcBtns(CALC_SRC[calc.c].join('・')), ...srcBtns('費用-3'))));
 }
 

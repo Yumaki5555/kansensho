@@ -1,0 +1,279 @@
+﻿区分,出典ID・名前,資料名,URL,リンク先が開けるか,確認のしかた,確認日
+出典一覧,HIV-1,第167回エイズ動向委員会 委員長コメント《令和7年 HIV感染者・エイズ患者の年間新規報告数（確定値）》,https://api-net.jfap.or.jp/status/japan/data/2026/2609/20260916_coment_kak.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-2,令和7（2025）年エイズ発生動向 －概要－,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/r07gaiyo.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-3,令和7年エイズ発生動向年報 表1 令和7（2025）年に報告されたHIV感染者及びAIDS患者の内訳,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/hyo-01.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-4,令和7年エイズ発生動向年報 表3-1 HIV感染者及びAIDS患者の年次推移（国籍別、性別）,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/hyo-03.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-5,令和7年エイズ発生動向年報 表6-1 年齢階級別年次推移（HIV感染者、AIDS患者）,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/hyo-061.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-6,令和7年エイズ発生動向年報 表10-1 報告地別年次推移及び累計等（HIV感染者・合計）,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/hyo-101.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-7,令和7年エイズ発生動向年報 表10-4 報告地別年次推移及び累計等（AIDS患者・合計）,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/hyo-104.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-8,令和7年エイズ発生動向年報（参考）保健所等におけるHIV抗体検査及びHIV郵送検査件数,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/kensa.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-9,令和7年エイズ発生動向年報（参考）保健所等における相談件数,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/soudan.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-10,第167回エイズ動向委員会 委員長コメント《R8年 第1・2四半期》,https://api-net.jfap.or.jp/status/japan/data/2026/2609/20260916_coment.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-11,令和8年第1・第2四半期 エイズ動向委員会報告 資料（Excel：表1-1Q・表1-2Q・表2 累計ほか）,https://api-net.jfap.or.jp/status/japan/data/2026/2609/20260916.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-12,第166回エイズ動向委員会 委員長コメント《令和7年 HIV感染者・エイズ患者の年間新規報告数（速報値）》,https://api-net.jfap.or.jp/status/japan/data/2026/2603/20260326_coment.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-13,第164回エイズ動向委員会 委員長コメント《令和6年 HIV感染者・エイズ患者の年間新規報告数（速報値）》,https://api-net.jfap.or.jp/status/japan/data/2025/2503/20250328_coment.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-14,HIVとエイズ,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/aids/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-15,後天性免疫不全症候群に関する特定感染症予防指針の改正のポイント,https://www.mhlw.go.jp/content/001593105.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-16,後天性免疫不全症候群に関する特定感染症予防指針の全部改正について（感感発1110第3号）,https://www.mhlw.go.jp/content/001593106.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-17,令和5（2023）年エイズ発生動向 －概要－（厚生労働省サイト掲載分）,https://www.mhlw.go.jp/content/10906000/001534119.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,HIV-18,令和7（2025）年エイズ発生動向年報 掲載ページ（年報一覧）,https://api-net.jfap.or.jp/status/japan/nenpo.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-1,性感染症報告数「年齢(5歳階級)別にみた性感染症報告数の年次推移（梅毒）」Excel（感染症発生動向調査事業年報のデータを元に作成）,https://www.mhlw.go.jp/content/10900000/001678695.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-2,感染症法に基づく梅毒の届出状況2024年（2025年11月15日現在）,https://id-info.jihs.go.jp/surveillance/idss/target-diseases/syphilis/2024/20260428Syphilis.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-3,感染症発生動向調査事業年報 2024 第4-1表「報告数，年齢階級・性別・都道府県・全全数把握対象疾患別」（梅毒シート）,https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/syulist/Syu_04_1.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-4,感染症発生動向調査年別一覧（全数把握 五類）-2024-（梅毒の病型別・先天梅毒の年別報告数）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/year-data/05/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-5,感染症発生動向調査週報（IDWR）2026年第41週（第41号）梅毒 累積報告数,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2026/idwr2026-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-6,感染症発生動向調査週報（IDWR）2025年第41週（第41号）梅毒 累積報告数（前年同時期の比較用）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/idwr2025-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-7,感染症発生動向調査週報（IDWR）2025年第52週（第52号）梅毒 累積報告数（2025年の速報値）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2025/idwr2025-52.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-8,梅毒（発生状況のグラフ「梅毒報告数の推移（2010〜2025年）」、啓発ツール）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/seikansenshou/syphilis.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-9,日本の梅毒症例の動向について「感染症発生動向調査で届け出られた梅毒の概要（2026年9月30日現在）」,https://id-info.jihs.go.jp/surveillance/idss/target-diseases/syphilis/notification/syphilis2026q3.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-10,【概要】性感染症に関する特定感染症予防指針の改正のポイント,https://www.mhlw.go.jp/content/10900000/001595214.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-11,梅毒に関するQ&A（Q4 検査について）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/syphilis_qa.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,梅毒-12,感染症発生動向調査週報（IDWR）2024年第52週（第52号）梅毒 累積報告数（2024年の速報値・確定値との比較用）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/idwr2024-52.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-1,感染症発生動向調査年別一覧（全数把握 五類）－2024－（2024年は2025年11月15日現在報告数）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/year-data/05/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-2,感染症発生動向調査事業年報 2024年 第4-1表 報告数，年齢階級・性別・都道府県・全全数把握対象疾患別（麻しんシート）,https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/syulist/Syu_04_1.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-3,感染症発生動向調査事業年報 2024年 第7-1表 報告数，都道府県・性別・全全数把握対象疾患・感染地域別,https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/syulist/Syu_07_1.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-4,病原微生物検出情報（IASR）Vol.46 No.7（No.545）特集「麻疹 2025年5月現在」（表1 麻疹患者の予防接種歴別届出数）,https://id-info.jihs.go.jp/surveillance/iasr/pathogens/vol46/545/Vol46-7_no545.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-5,麻しん速報グラフ 2024年第52週（2025年1月7日現在）,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2024/meas24-52.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-6,麻しん速報グラフ 2025年第52週（2026年1月6日現在）,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2025/meas25-52.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-7,麻しん速報グラフ 2026年第41週（2026年10月14日現在）,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2026/meas26-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-8,麻しん速報グラフ 2025年第41週（2025年10月15日現在）,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2025/meas25-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-9,令和7年度麻しん風しん定期予防接種の実施状況の調査結果について（最終評価）表1-1 第1期・表1-2 第2期,https://id-info.jihs.go.jp/immunization/statistics/coverage/routine-immunization-mr/2025/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-10,令和6年度麻しん風しん定期予防接種の実施状況の調査結果について（最終評価）表1-1 第1期・表1-2 第2期,https://id-info.jihs.go.jp/immunization/statistics/coverage/routine-immunization-mr/2024/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-11,麻しんの発生に関するリスクアセスメント（2026年第一版）（2026年3月19日時点）,https://id-info.jihs.go.jp/risk-assessment/measles/measles_ra_2026_1.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-12,麻しんの現状と対策について（報告）第103回厚生科学審議会感染症部会 資料3,https://www.mhlw.go.jp/content/10906000/001696698.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-13,IDWR 2026年第20号＜注目すべき感染症＞麻しん（2026年5月20日現在）,https://id-info.jihs.go.jp/surveillance/idwr/featured/2026/20/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-14,麻しん（はしか）｜厚生労働省,https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,はしか-15,麻しんに関する特定感染症予防指針（平成19年12月28日、平成31年4月19日一部改正・適用）,https://www.mhlw.go.jp/content/000503060.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-1,2025年 結核登録者情報調査年報集計結果（PDF・34ページ。表4-1 新登録結核患者数及び罹患率の年次推移、表5-1・表6-1 年齢階級別、表5-7〜5-9 外国生まれ・日本生まれ、表2・表7-1・表7-2 都道府県別、表3 死亡数及び死亡率）,https://www.mhlw.go.jp/content/10900000/001755866.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-2,2025年 結核登録者情報調査年報集計結果について（解説ページ）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000175095_00018.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-3,令和7（2025）年 人口動態統計（確定数）の概況 第8表 死因簡単分類別にみた性別死亡数（01200 結核）,https://www.mhlw.go.jp/toukei/saikin/hw/jinkou/kakutei25/dl/05_gaikyouR07.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-4,IDWR速報データ 2026年第41週 全数把握疾患、報告数、累積報告数、都道府県別（CSV・結核の列）,https://id-info.jihs.go.jp/surveillance/idwr/provisional/2026/41/2026-41-zensu.csv,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-5,IDWR速報データ 2025年第41週 全数把握疾患、報告数、累積報告数、都道府県別（CSV・結核の列）,https://id-info.jihs.go.jp/surveillance/idwr/provisional/2025/41/2025-41-zensu.csv,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-6,感染症週報（IDWR）2026年第41週（10月5日〜10月11日）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2026/idwr2026-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-7,結核（結核対策のページ）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-8,第17回厚生科学審議会結核部会 資料1「具体的な目標等について」,https://www.mhlw.go.jp/content/10900000/001758610.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-9,第17回厚生科学審議会結核部会 資料2-1「結核に関する特定感染症予防指針の改正について」,https://www.mhlw.go.jp/content/10900000/001758611.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-10,BCGワクチン,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/bcg/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-11,入国前結核スクリーニングの実施について,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-12,感染症発生動向調査年別一覧（全数把握 一類〜三類）2024,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/year-data/01-03/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,結核-13,感染症法に基づく医師及び獣医師の届出について（結核の届出基準）,https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou11/01-02-02.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-1,AIDSinfo ファクトシート（世界・地域・国別、2025年の推計）※Factsheets から地域・国を選んで表示,https://aidsinfo.unaids.org/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-2,Global HIV & AIDS statistics — Fact sheet（2025年の世界の数字）,https://www.unaids.org/en/resources/fact-sheet,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-3,特定技能に関する二国間の協力覚書,https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00021.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-4,日本国とタジキスタン共和国との間の在留資格「特定技能」に係る協力覚書（MOC）の作成について,https://www.moj.go.jp/isa/10_00200.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-5,二国間取決め（技能実習の協力覚書）,https://www.otit.go.jp/system/sender/memorandum/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-6,入国前結核スクリーニングの実施について Japan Pre-Entry Tuberculosis Screening（JPETS）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-7,JPETS（入国前結核スクリーニング）公式サイト：指定健診医療機関,https://jpets.mhlw.go.jp/jp/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-8,日本と人の移動の課題（日本入国前結核スクリーニング〔JPETS〕）,https://japan.iom.int/japan_human_mobility,開ける,アプリ内ブラウザで開いて表示を確認（題名「日本と人の移動の課題 | IOM Japan」）,2026-10-27
+出典一覧,世界-9,IOM事務局長 出入国在留管理庁との協力覚書（MOC）に署名,https://japan.iom.int/news/dg-signed-moc-with-isa,開ける,アプリ内ブラウザで同じサイト内から取得し200・題名「IOM事務局長 出入国在留管理庁との協力覚書（MOC）に署名」を確認,2026-10-27
+出典一覧,世界-10,HIV/AIDS and Population Mobility（情報シート「IOM Commitment to the Global Response Countering HIV」）,https://www.iom.int/resources/hiv-aids-and-population-mobility,開ける,IOMの資料PDF（mhd_infosheet_hiv_10.05.2019_en.pdf）へ自動で転送され、ファイルとして配布されることを確認,2026-10-27
+出典一覧,世界-11,Live Life Positively: Let Migrants Know Their HIV Status（世界エイズデーの発表）,https://www.iom.int/news/live-life-positively-let-migrants-know-their-hiv-status,開ける,アプリ内ブラウザで開いて表示を確認（題名「Live Life Positively: Let Migrants Know Their HIV Status」）,2026-10-27
+出典一覧,世界-12,UNAIDS welcomes New Zealand's decision to lift travel restrictions for people living with HIV,https://www.unaids.org/en/resources/presscentre/pressreleaseandstatementarchive/2021/october/new-zealand-lift-travel-restrictions-hiv,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-13,育成就労に関する二国間の協力覚書,https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00002.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,世界-14,外国人育成就労制度について,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/index_00029.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-1,感染症の予防及び感染症の患者に対する医療に関する法律（感染症法）第6条・第17条・第19条・第26条・第37条・第37条の2・第39条・第58条,https://laws.e-gov.go.jp/law/410AC0000000114,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 410AC0000000114 が「感染症の予防及び感染症の患者に対する医療に関する法律」として存在することを確認,2026-10-27
+出典一覧,公費-2,結核医療費助成について（医療費公費負担制度）,https://www.hokeniryo.metro.tokyo.lg.jp/kansen/tomin/josei/joseinituite,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-3,自立支援医療制度の概要,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/jiritsu/gaiyo.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-4,自立支援医療（更生医療）の概要（対象となる障害と治療の例）,https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/kousei.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-5,自立支援医療における患者負担の基本的な枠組み（「重度かつ継続」の範囲と負担上限月額）,https://www.mhlw.go.jp/content/001717102.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-6,後天性免疫不全症候群に関する特定感染症予防指針の改正に向けた検討について（主な論点⑥ 曝露前予防）,https://www.mhlw.go.jp/content/10906000/001478423.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-7,母子保健に関する最近の動きについて（第8回こども家庭審議会成育医療等分科会 資料1-1：妊婦健診の検査項目と公費負担の現状）,https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/effb25c5-a638-4fda-8e4d-320fb344dbdb/2bf3f2f9/20260306_councils_shingikai_seiiku_iryou_effb25c5_03.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-8,予防接種に関する「よくある質問」（定期接種の対象疾病と費用）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kihonteki_keikaku/index_00001.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,公費-9,麻しん及び風しんの定期の予防接種に係る対応について（事務連絡）,https://www.mhlw.go.jp/content/10900000/001440529.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,WHO-1,WHO Global Tuberculosis Database：結核の推計（2024年まで。Global Tuberculosis Report 2025 のデータ）,https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/data,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,WHO-2,Global Health Observatory：Measles - number of reported cases（はしかの報告数）,https://www.who.int/data/gho/data/indicators/indicator-details/GHO/measles---number-of-reported-cases,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,WHO-3,Global Health Observatory：HIV（UNAIDSの推計。HIVとともに生きる人・新たな感染・15〜49歳の感染率）,https://www.who.int/data/gho/data/themes/hiv-aids,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,WHO-4,Global Health Observatory：梅毒（妊婦健診で梅毒が陽性だった割合・報告された梅毒の数・先天梅毒の率。各国の報告）,https://www.who.int/data/gho/data/themes/topics/data-on-syphilis,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,WHO-5,Standard country or area codes for statistical use（M49。国・地域の区分）,https://unstats.un.org/unsd/methodology/m49/overview/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-1,特定技能に関する二国間の協力覚書（17か国の協力覚書の英文・和文PDFを掲載）,https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00021.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-2,送出国政府窓口と二国間取決め（技能実習の協力覚書一覧）,https://www.otit.go.jp/system/sender/memorandum/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-3,技能実習に関する二国間取決め（協力覚書）（国別ページから英文・和文仮訳PDF）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000180648.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-4,育成就労に関する二国間の協力覚書（6か国の英文・和文仮訳PDF）,https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00002.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-5,育成就労に関する二国間取決め（協力覚書（ＭＯＣ））,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000180648_00012.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-6,育成就労に関する二国間取決め（協力覚書（MOC））,https://www.otit.go.jp/employment_for_skill_development/moc/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-7,インドネシアとの協力覚書（技能実習）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000188516_00011.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-8,入国前結核スクリーニングの実施について Japan Pre-Entry Tuberculosis Screening（JPETS）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-9,入国前結核スクリーニングの実施に関するガイドライン,https://www.mhlw.go.jp/content/001469285.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-10,入国前結核スクリーニング（JPETS）Q&A,https://www.mhlw.go.jp/content/001469359.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-11,インドネシアにおける入国前結核スクリーニングを開始します（報道発表資料）,https://www.mhlw.go.jp/content/001752086.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-12,入国前結核スクリーニング 特設サイト（指定健診医療機関・お知らせ）,https://jpets.mhlw.go.jp/jp/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-13,日本入国前結核健診の手引き（英文 Technical Instructions を参考に和文にしたもの）,https://www.mhlw.go.jp/content/001365232.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-14,【重要】入国前結核スクリーニング（フィリピン、ネパール、ベトナム及びインドネシアの国籍を有する方）,https://www.moj.go.jp/isa/10_00219.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-15,特定技能外国人受入れに関する運用要領（令和8年10月）,https://www.moj.go.jp/isa/content/001468647.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-16,特定技能関係の申請・届出様式一覧（参考様式第1-3号 健康診断個人票〔別紙「受診者の申告書」を含む〕Word版 https://www.moj.go.jp/isa/content/001338973.docx を確認）,https://www.moj.go.jp/isa/applications/ssw/10_00020.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-17,育成就労制度 運用要領 ～関係者の皆さまへ～（令和8年8月）,https://www.moj.go.jp/isa/content/001467946.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-18,育成就労外国人健康診断個人票（参考様式第1-3号、日本語・英語併記）,https://www.otit.go.jp/upload/docs/%E2%91%A2%EF%BC%881-3%E5%8F%B7%EF%BC%89%E8%82%B2%E6%88%90%E5%B0%B1%E5%8A%B4%E5%A4%96%E5%9B%BD%E4%BA%BA%E5%81%A5%E5%BA%B7%E8%A8%BA%E6%96%AD%E5%80%8B%E4%BA%BA%E7%A5%A8%EF%BC%88%E8%A6%8F%E5%89%87%E7%AC%AC8%E6%9D%A1%E7%AC%AC15%E5%8F%B7%E9%96%A2%E4%BF%82%EF%BC%89_E_0831.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-19,育成就労計画認定施行日前申請,https://www.otit.go.jp/employment_for_skill_development/cat/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-20,技能実習制度 運用要領 ～関係者の皆さまへ～（令和8年4月）,https://www.moj.go.jp/isa/content/930005219.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-21,技能実習生に対する健康診断（結核関係）について（依頼）,https://www.otit.go.jp/upload/docs/300618-4.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-22,在留資格「留学」（提出書類・申請に当たっての留意事項）,https://www.moj.go.jp/isa/applications/status/student.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,制度-23,出入国管理及び難民認定法（第5条 上陸の拒否）,https://laws.e-gov.go.jp/law/326CO0000000319,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 326CO0000000319 が「出入国管理及び難民認定法」として存在することを確認,2026-10-27
+出典一覧,制度-24,感染症の予防及び感染症の患者に対する医療に関する法律（第6条 定義等）,https://laws.e-gov.go.jp/law/410AC0000000114,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 410AC0000000114 が「感染症の予防及び感染症の患者に対する医療に関する法律」として存在することを確認,2026-10-27
+出典一覧,制度-25,検疫法（第2条 検疫感染症）,https://laws.e-gov.go.jp/law/326AC0000000201,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 326AC0000000201 が「検疫法」として存在することを確認,2026-10-27
+出典一覧,制度-26,検疫法施行令（第1条 政令で定める検疫感染症）,https://laws.e-gov.go.jp/law/326CO0000000377,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 326CO0000000377 が「検疫法施行令」として存在することを確認,2026-10-27
+出典一覧,制度-27,検疫（検疫所の業務・検疫感染症の一覧）,https://www.mhlw.go.jp/stf/newpage_54498.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-1,令和5（2023）年度 国民医療費の概況（表1・表2・表3 財源別国民医療費・統計表第2表・第6表 傷病分類別医科診療医療費）,https://www.mhlw.go.jp/toukei/saikin/hw/k-iryohi/23/dl/R05data.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-2,高額療養費制度の見直しについて（令和８年８月診療分から）（患者負担割合及び高額療養費自己負担限度額：令和8年8月〜令和9年7月、令和9年8月〜）,https://www.mhlw.go.jp/content/001726232.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-3,高額療養費制度を利用される皆さまへ（令和8年8月からの見直しの説明）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/juuyou/kougakuiryou/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-4,薬価基準収載品目リスト及び後発医薬品に関する情報について（令和8年10月14日適用）1．内用薬（Excel）,https://www.mhlw.go.jp/topics/2026/04/xls/tp20261014-01_01.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-5,薬価基準収載品目リスト及び後発医薬品に関する情報について（令和8年10月14日適用）2．注射薬（Excel）,https://www.mhlw.go.jp/topics/2026/04/xls/tp20261014-01_02.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-6,抗HIV治療ガイドライン2026年3月版（表V-2 初回治療として選択すべき抗HIV薬レジメン、表V-3、表IV-2）,https://hiv-guidelines.jp/pdf/hiv_guideline2026.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-7,HIV感染症及びその併存疾患や関連医療費の実態把握のための研究 令和4年度 総括研究報告書（付属資料3 HIV治療中の患者の年間医療費推計 表2）,https://mhlw-grants.niph.go.jp/system/files/report_pdf/202220001A-sokatsu.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-8,HIV感染症及びその併存疾患や関連医療費の実態把握のための研究 令和4年度 分担研究報告書「抗HIV薬に関する医療経済分析」（R-表1）,https://mhlw-grants.niph.go.jp/system/files/report_pdf/202220001A-buntan2.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-9,HIV感染症及びその併存疾患や関連医療費の実態把握のための研究 令和3年度 分担研究報告書（抗HIV薬に関する医療経済分析：分析条件「割引率は設定しない」）,https://mhlw-grants.niph.go.jp/system/files/report_pdf/202120005A-buntan2.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-10,HIV感染症及びその併存疾患や関連医療費の実態把握のための研究 令和6年度 分担研究報告書「DTG/3TCの2剤併用療法と後発薬を含むDTG+ABC/3TCの費用対効果分析」,https://mhlw-grants.niph.go.jp/system/files/report_pdf/202419007A-buntan1_1.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-11,自立支援医療の患者負担の基本的な枠組み（「重度かつ継続」の範囲と負担上限月額・月額医療費の負担イメージ）,https://www.mhlw.go.jp/content/001717102.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-12,障害者の日常生活及び社会生活を総合的に支援するための法律（障害者総合支援法）第7条・第58条・第92条・第94条・第95条,https://laws.e-gov.go.jp/law/417AC0000000123,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 417AC0000000123 が「障害者の日常生活及び社会生活を総合的に支援するための法律」として存在することを確認,2026-10-27
+出典一覧,費用-13,感染症の予防及び感染症の患者に対する医療に関する法律（感染症法）第17条・第19条・第26条・第37条・第37条の2・第39条・第58条・第61条・第62条,https://laws.e-gov.go.jp/law/410AC0000000114,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 410AC0000000114 が「感染症の予防及び感染症の患者に対する医療に関する法律」として存在することを確認,2026-10-27
+出典一覧,費用-14,診療報酬の算定方法の一部を改正する件（令和8年厚生労働省告示第69号）別表第一 医科診療報酬点数表（A000初診料・A001再診料・A102結核病棟入院基本料・A220・D012・D016・D017・D020〜D023・D026・D400・E001・E002）,https://www.mhlw.go.jp/content/12400000/001686842.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-15,診療報酬の算定方法の一部を改正する件（令和8年厚生労働省告示第69号）制定文（令和8年6月1日から適用）,https://www.mhlw.go.jp/content/12400000/001665291.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-16,令和5年（2023）患者調査の概況 3 退院患者の平均在院日数等（表6 傷病分類別にみた年齢階級別退院患者の平均在院日数）,https://www.mhlw.go.jp/toukei/saikin/hw/kanja/23/dl/heikin.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-17,令和7（2025）年 医療施設（動態）調査・病院報告の概況（表4 病床の種類別にみた平均在院日数）,https://www.mhlw.go.jp/toukei/saikin/hw/iryosd/25/dl/11gaikyou07.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-18,2025年 結核登録者情報調査年報集計結果（表4-2 喀痰塗抹陽性肺結核、表11 薬剤耐性）,https://www.mhlw.go.jp/content/10900000/001755866.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-19,感染症法に基づく消毒・滅菌の手引きについて（健感発0311第8号）別添「5 結核 3）患者への対応」,https://www.mhlw.go.jp/content/000911977.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-20,「結核医療の基準」の一部改正について（健感発1018第1号）改正後の結核医療の基準,https://www.mhlw.go.jp/content/000844766.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-21,結核医療の基準の一部を改正する件の施行について（感発0327第7号、令和7年厚生労働省告示第74号）,https://www.mhlw.go.jp/content/001485302.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-22,結核（検査・治療方法：標準的な治療期間は6か月〜9か月）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-23,令和8年度予算案の概要（健康・生活衛生局 感染症対策部）1．感染症対策（エイズ対策の推進・各種感染症対策の推進）,https://www.mhlw.go.jp/wp/yosan/yosan/26syokanyosan/dl/gaiyo-13.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-24,結核医療費助成について（医療費公費負担制度）,https://www.hokeniryo.metro.tokyo.lg.jp/kansen/tomin/josei/joseinituite,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-25,梅毒に関するQ&A,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/syphilis_qa.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-26,Syphilis（Fact sheet：Treatment）,https://www.who.int/news-room/fact-sheets/detail/syphilis,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-27,母子保健に関する最近の動きについて（第8回こども家庭審議会成育医療等分科会 資料1-1：妊婦健康診査について・妊婦健診における経済的負担の軽減）,https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/effb25c5-a638-4fda-8e4d-320fb344dbdb/2bf3f2f9/20260306_councils_shingikai_seiiku_iryou_effb25c5_03.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-28,麻しん（はしか）（治療・合併症）,https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-29,予防接種法 第49条・第50条・第51条・第52条,https://laws.e-gov.go.jp/law/323AC0000000068,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 323AC0000000068 が「予防接種法」として存在することを確認,2026-10-27
+出典一覧,費用-31,自立支援医療制度の概要（更生医療の対象：身体障害者手帳の交付を受けた18歳以上の人）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/hukushi_kaigo/shougaishahukushi/jiritsu/gaiyo.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,費用-32,自立支援医療（更生医療）の概要（対象となる障害と治療の例：免疫機能障害→抗HIV療法など）,https://www.mhlw.go.jp/bunya/shougaihoken/jiritsu/kousei.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-1,HIVとエイズ,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/aids/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-2,HIV感染症／AIDS（後天性免疫不全症候群）,https://id-info.jihs.go.jp/infectious-diseases/hiv-infection-and-aids/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-3,エイズQ＆A（HIV/エイズの知識）,https://api-net.jfap.or.jp/knowledge/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-4,エイズ検査・相談の基礎知識,https://api-net.jfap.or.jp/inspection/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-5,令和7年度世界エイズデーキャンペーンポスター（U=U 検出されない＝性感染しない）,https://www.mhlw.go.jp/content/001587797.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-6,U=Uについて,https://www.city.sapporo.jp/hokenjo/f1kansen/f04aids/u-u.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-7,Global HIV & AIDS statistics — Fact sheet（2025年の世界の数字）,https://www.unaids.org/en/resources/fact-sheet,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-8,令和7（2025）年エイズ発生動向 －概要－,https://api-net.jfap.or.jp/status/japan/data/2025/nenpo/r07gaiyo.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-9,妊婦に対する健康診査についての望ましい基準（平成27年3月31日厚生労働省告示第226号）※第9回妊娠・出産・産後における妊産婦等の支援策等に関する検討会 参考資料2「妊婦健康診査の公費負担の状況に係る調査結果について」3ページに全文収録,https://www.mhlw.go.jp/content/12401000/001477164.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-10,梅毒,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/seikansenshou/syphilis.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-11,梅毒に関するQ&A,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/syphilis_qa.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-12,梅毒,https://id-info.jihs.go.jp/infectious-diseases/syphilis/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-13,Syphilis（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/syphilis,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-14,Sexually Transmitted Infections - Strategic information（Updated adult and congenital syphilis estimates – 2016 to 2022）,https://www.who.int/teams/global-hiv-hepatitis-and-stis-programmes/stis/strategic-information,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-15,Sexually transmitted infections (STIs)（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis),開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-16,感染症発生動向調査 年別一覧（全数把握 五類）-2024-（梅毒の病型別報告数：先天梅毒）,https://id-info.jihs.go.jp/surveillance/idwr/idwr/2024/year-data/05/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-17,感染症発生動向調査で届け出られた梅毒の概要（2026年9月30日現在）表4 先天梅毒,https://id-info.jihs.go.jp/surveillance/idss/target-diseases/syphilis/notification/syphilis2026q3.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-18,性感染症に関する特定感染症予防指針（令和7年11月10日）【全文】,https://www.mhlw.go.jp/content/10900000/001595216.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-19,麻しん（はしか）,https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-20,麻しん（はしか）に関するQ&A,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/measles_qa.htm,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-21,麻しん,https://id-info.jihs.go.jp/infectious-diseases/measles/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-22,麻しんの発生に関するリスクアセスメント（2026年第一版）（2026年3月19日時点）,https://id-info.jihs.go.jp/risk-assessment/measles/measles_ra_2026_1.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-23,感染症発生動向調査事業年報 2024 第7-1表 報告数，都道府県・性別・全全数把握対象疾患・感染地域別（麻しん）,https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/syulist/Syu_07_1.xlsx,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-24,麻しん速報グラフ 2025年第52週（2026年1月6日現在）8. 週別推定感染地域(国内・外)別麻しん報告数,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2025/meas25-52.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-25,麻しん速報グラフ 2026年第41週（2026年10月14日現在）8. 週別推定感染地域(国内・外)別麻しん報告数,https://id-info.jihs.go.jp/surveillance/idwr/diseases/measles/graph/2026/meas26-41.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-26,Measles（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/measles,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-27,"Measles deaths down 88% since 2000, but cases surge（ニュースリリース）",https://www.who.int/news/item/28-11-2025-measles-deaths-down-88--since-2000--but-cases-surge,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-28,"Weekly epidemiological record No 48, 2025: Progress towards measles elimination – worldwide, 2000–2024",https://iris.who.int/server/api/core/bitstreams/8ac932cb-6d3f-4922-8335-f34d70419fe3/content,開ける,"アプリ内ブラウザでWHO IRIS内から取得し、PDF（WER10048-591-604.pdf、467,600バイト）が返ることを確認",2026-10-27
+出典一覧,解説-29,結核,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-30,結核,https://id-info.jihs.go.jp/infectious-diseases/tuberculosis/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-31,感染症法に基づく医師及び獣医師の届出について 結核（届出基準：臨床的特徴・無症状病原体保有者〔潜在性結核感染症〕）,https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou11/01-02-02.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-32,感染症の予防及び感染症の患者に対する医療に関する法律（第6条・第17条・第19条・第20条・第22条・第26条・第37条の2・第53条の14・第53条の15）,https://laws.e-gov.go.jp/law/410AC0000000114,開ける,HTTP 200。e-Gov 法令API（v2）で法令ID 410AC0000000114 が「感染症の予防及び感染症の患者に対する医療に関する法律」として存在することを確認,2026-10-27
+出典一覧,解説-33,結核医療の適用基準（「感染症の予防及び感染症の患者に対する医療に関する法律における結核患者の入退院及び就業制限の取扱いについて」〔平成19年9月7日健感発第0907001号〕第一 入院に関する基準）,https://www.pref.kagawa.lg.jp/kansensyo/kekkaku-iryoukijun.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-34,「感染症の予防及び感染症の患者に対する医療に関する法律における結核患者の入退院及び就業制限の取扱いについて（平成19年9月7日健感発第0907001号）」（抜粋）新旧対照表 第2 退院に関する基準,https://www.mhlw.go.jp/content/10900000/0000036299_1.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-35,「結核患者に対するＤＯＴＳ（直接服薬確認療法）の推進について」の一部改正について（健感発1125第1号）,https://www.mhlw.go.jp/file/06-Seisakujouhou-10900000-Kenkoukyoku/16112501.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-36,「結核医療の基準」の一部改正について（健感発1018第1号、改正後全文つき）,https://www.mhlw.go.jp/content/000844766.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-37,結核医療の基準の一部を改正する件の施行について（感発0327第7号）,https://www.mhlw.go.jp/content/001485302.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-38,2025年 結核登録者情報調査年報集計結果（薬剤耐性・潜在性結核感染症・治療成績の解説と表11・表15）,https://www.mhlw.go.jp/content/10900000/001755866.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-39,令和8年度 結核・呼吸器感染症予防週間及び非結核性抗酸菌症啓発週間 リーフレット（日本語）,https://www.mhlw.go.jp/content/001741896.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-40,Tuberculosis（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/tuberculosis,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-41,Global tuberculosis report 2025: information sheet,https://cdn.who.int/media/docs/default-source/global-tuberculosis-report-2025/global-tb-report-2025_factsheet.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,解説-42,Global tuberculosis reports（1997〜2025年の報告書一覧。2025年版が最新）,https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/tb-reports,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-1,風しん（2025年9月26日掲載の「世界保健機関西太平洋地域事務局による風しんの排除認定の報告について」を含む）,https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-2,風しん,https://id-info.jihs.go.jp/infectious-diseases/rubella/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-3,風しんの追加的対策について,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/rubella/index_00001.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-4,B型肝炎,https://id-info.jihs.go.jp/infectious-diseases/hepatitis-b/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-5,B型肝炎ワクチン,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/hepatitis-b/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-6,肝炎総合対策の推進（肝炎ウイルス検査・医療費助成）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/kanen/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-7,C型肝炎,https://id-info.jihs.go.jp/infectious-diseases/hepatitis-c/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-8,Tuberculosis（ファクトシート。Drug-resistant TB の項）,https://www.who.int/news-room/fact-sheets/detail/tuberculosis,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-9,結核（DOTSの推進、結核登録者情報調査年報）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-10,結核,https://id-info.jihs.go.jp/infectious-diseases/tuberculosis/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-11,ポリオ,https://id-info.jihs.go.jp/infectious-diseases/poliomyelitis/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-12,5種混合ワクチン,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/yobou-sesshu/vaccine/dpt-ipv-hib/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-13,デング熱,https://id-info.jihs.go.jp/infectious-diseases/dengue-fever/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-14,デング熱,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000131101.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-15,マラリア,https://id-info.jihs.go.jp/infectious-diseases/malaria/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-16,Malaria（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/malaria,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-17,腸チフス・パラチフス,https://id-info.jihs.go.jp/infectious-diseases/typhoid-and-paratyphoid-fevers/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-18,"腸チフス、パラチフス（Typhoid Fever, Paratyphoid Fever）",https://www.forth.go.jp/moreinfo/topics/name11.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-19,薬剤耐性（AMR）対策（薬剤耐性（AMR）対策アクションプラン2023-2027 ほか）,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000120172.html,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-20,AMR臨床リファレンスセンター（抗菌薬とは？）,https://amr.jihs.go.jp/,開ける,HTTP 200（HEAD）,2026-10-27
+出典一覧,他-21,Antimicrobial resistance（ファクトシート）,https://www.who.int/news-room/fact-sheets/detail/antimicrobial-resistance,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,感染症情報,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,感染症情報提供サイト,,https://id-info.jihs.go.jp/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,感染症発生動向調査週報（IDWR）,,https://id-info.jihs.go.jp/surveillance/idwr/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,感染症発生動向調査事業年報 -2024-,,https://id-info.jihs.go.jp/surveillance/idwr/annual/2024/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,2025年 結核登録者情報調査年報集計結果,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000175095_00018.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,病原微生物検出情報（IASR）,,https://id-info.jihs.go.jp/surveillance/iasr/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,予防接種情報,,https://id-info.jihs.go.jp/immunization/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Global Health Observatory（GHO）,,https://www.who.int/data/gho,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,AIDSinfo,,https://aidsinfo.unaids.org/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Tuberculosis data（WHO Global Tuberculosi,,https://www.who.int/teams/global-programme-on-tuberculosis-and-lung-health/data,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Measles reported cases and incidence（はしか,,https://immunizationdata.who.int/global/wiise-detail-page/measles-reported-cases-and-incidence,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Rubella reported cases and incidence（風しん,,https://immunizationdata.who.int/global/wiise-detail-page/rubella-reported-cases-and-incidence,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Profil Kesehatan Indonesia 2025（インドネシア保健,,https://kemkes.go.id/id/profil-kesehatan-indonesia-2025,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Annual Health Report 2081/82（ネパール年次保健報告）,,https://dohs.gov.np/content/111/annual-health-report-2081-82/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,Digital Disease Surveillance（DDS）ポータル,,https://ddsdoe.ddc.moph.go.th/dds-portal/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,特定技能制度,,https://www.moj.go.jp/isa/applications/ssw/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,育成就労制度,,https://www.moj.go.jp/isa/applications/index_00005.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,特定技能に関する二国間の協力覚書,,https://www.moj.go.jp/isa/applications/ssw/nyuukokukanri05_00021.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,「外国人雇用状況」の届出状況まとめ,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/gaikokujin/gaikokujin-koyou/06.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,外国人技能実習制度について,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/jinzaikaihatsu/global_cooperation/index.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,送出国政府窓口と二国間取決め,,https://www.otit.go.jp/system/sender/memorandum/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,入国前結核スクリーニング（JPETS）公式サイト,,https://jpets.mhlw.go.jp/jp/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,入国前結核スクリーニング（Japan Pre-Entry Tuberculosi,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou03/index_00006.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,厚生労働科学研究成果データベース,,https://mhlw-grants.niph.go.jp/,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,国民医療費,,https://www.mhlw.go.jp/toukei/list/37-21.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,医療費の動向調査（MEDIAS）,,https://www.mhlw.go.jp/bunya/iryouhoken/database/zenpan/iryou_doukou.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,患者調査,,https://www.mhlw.go.jp/toukei/list/10-20.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,NDBオープンデータ,,https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177182.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,令和8年度診療報酬改定について（診療報酬点数表）,,https://www.mhlw.go.jp/stf/newpage_67729.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,薬価基準収載品目リスト及び後発医薬品に関する情報について,,https://www.mhlw.go.jp/topics/2026/04/tp20260401-01.html,開ける,HTTP 200（HEAD）,2026-10-27
+さらに詳しく,結核医療費助成について（医療費公費負担制度）,,https://www.hokeniryo.metro.tokyo.lg.jp/kansen/tomin/josei/joseinituite,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,フィリピン・特定技能,,https://www.moj.go.jp/isa/content/930004026.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,フィリピン・技能実習,,https://www.mhlw.go.jp/content/11800000/001405950.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,カンボジア・特定技能,,https://www.moj.go.jp/isa/content/930004215.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,カンボジア・技能実習,,https://www.mhlw.go.jp/content/11800000/001493399.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ネパール・特定技能,,https://www.moj.go.jp/isa/content/930004222.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ネパール・技能実習,,https://www.mhlw.go.jp/content/11800000/001423244.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ミャンマー・特定技能,,https://www.moj.go.jp/isa/content/930004216.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ミャンマー・技能実習,,https://www.mhlw.go.jp/content/11800000/001417804.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,モンゴル・特定技能,,https://www.moj.go.jp/isa/content/930004253.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,モンゴル・技能実習,,https://www.mhlw.go.jp/content/11800000/001414862.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,スリランカ・特定技能,,https://www.moj.go.jp/isa/content/930004294.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,スリランカ・技能実習,,https://www.mhlw.go.jp/content/11800000/001417637.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,スリランカ・育成就労,,https://www.moj.go.jp/isa/content/001467566.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,インドネシア・特定技能,,https://www.moj.go.jp/isa/content/930004302.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,インドネシア・技能実習,,https://www.mhlw.go.jp/content/11800000/001423084.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ベトナム・特定技能,,https://www.moj.go.jp/isa/content/930004427.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ベトナム・技能実習,,https://www.mhlw.go.jp/content/11800000/001201026.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,バングラデシュ・特定技能,,https://www.moj.go.jp/isa/content/930004389.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,バングラデシュ・技能実習,,https://www.mhlw.go.jp/content/11800000/001417418.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,バングラデシュ・育成就労,,https://www.moj.go.jp/isa/content/001473089.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ウズベキスタン・特定技能,,https://www.moj.go.jp/isa/content/930004576.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ウズベキスタン・技能実習,,https://www.mhlw.go.jp/content/11800000/001419353.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ウズベキスタン・育成就労,,https://www.moj.go.jp/isa/content/001465669.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,パキスタン・特定技能,,https://www.moj.go.jp/isa/content/930004989.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,パキスタン・技能実習,,https://www.mhlw.go.jp/content/11800000/001422592.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,タイ・特定技能,,https://www.moj.go.jp/isa/content/930004991.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,タイ・技能実習,,https://www.mhlw.go.jp/content/11800000/001422915.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,タイ・育成就労,,https://www.moj.go.jp/isa/content/001470064.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,インド・特定技能,,https://www.moj.go.jp/isa/content/001338905.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,インド・技能実習,,https://www.mhlw.go.jp/content/11800000/001405878.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,マレーシア・特定技能,,https://www.moj.go.jp/isa/content/001373341.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ラオス・特定技能,,https://www.moj.go.jp/isa/content/001377521.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ラオス・技能実習,,https://www.mhlw.go.jp/content/11800000/001406398.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ラオス・育成就労,,https://www.moj.go.jp/isa/content/001463673.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,キルギス・特定技能,,https://www.moj.go.jp/isa/content/001399176.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,タジキスタン・特定技能,,https://www.moj.go.jp/isa/content/001423075.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,ブータン・技能実習,,https://www.mhlw.go.jp/content/11800000/001401700.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,東ティモール・技能実習,,https://www.mhlw.go.jp/content/11800000/001595116.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,東ティモール・育成就労,,https://www.moj.go.jp/isa/content/001472612.pdf,開ける,HTTP 200（HEAD）,2026-10-27
+協力覚書の資料,フィジー・技能実習,,https://www.mhlw.go.jp/content/11800000/001423565.pdf,開ける,HTTP 200（HEAD）,2026-10-27

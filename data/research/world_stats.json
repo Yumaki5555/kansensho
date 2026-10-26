@@ -1081,7 +1081,7 @@
    "syphilis": {
     "cs_rate": {
      "year": 2023,
-     "value": 1033.777027872
+     "value": 985.77
     }
    }
   },
@@ -5754,7 +5754,7 @@
    "syphilis": {
     "syph_cases": {
      "year": 2023,
-     "value": 209253.0
+     "value": 736.0
     },
     "cs_rate": {
      "year": 2024,

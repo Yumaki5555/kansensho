@@ -131,11 +131,27 @@ def n(v):
 # WHO Global Health Observatory
 def gho(code):
     d = json.load(open(get(GHO.format(code), f"gho_{code}.json", refresh), encoding="utf-8"))["value"]
-    out = {}
+    d = [x for x in d if x.get("Dim1") in (None, "SEX_BTSX")]  # 男女計だけ
+    # 同じ国・同じ年に、資料の違う値が2つ以上あることがある（例：新しい年の報告で直された値、ほかの国の資料が混ざった値）
+    same = {}
     for x in d:
-        if x.get("Dim1") not in (None, "SEX_BTSX"):  # 男女計だけ
+        same.setdefault((x.get("DataSourceDim"), x["TimeDim"], x.get("Value")), set()).add(x["SpatialDim"])
+    groups = {}
+    for x in d:
+        groups.setdefault((x["SpatialDim"], int(x["TimeDim"])), []).append(x)
+    out = {}
+    for (iso3, y), xs in groups.items():
+        # ①WHOに登録された日が新しいもの
+        top = max(x.get("Date") or "" for x in xs)
+        xs = [x for x in xs if (x.get("Date") or "") == top]
+        # ②登録日も同じなら、ほかの国と同じ資料・同じ値の記録（その国の値が混ざったもの）を除く
+        if len({x.get("Value") for x in xs}) > 1:
+            xs = [x for x in xs if same[(x.get("DataSourceDim"), x["TimeDim"], x.get("Value"))] == {iso3}] or xs
+        # ③それでも決められないときは、その年は使わない
+        if len({x.get("Value") for x in xs}) > 1:
+            print("値を決められないため使わない:", code, iso3, y, [(x.get("DataSourceDim"), x.get("Value")) for x in xs])
             continue
-        out.setdefault(x["SpatialDim"], {})[int(x["TimeDim"])] = x
+        out.setdefault(iso3, {})[y] = xs[0]
     return out
 
 
