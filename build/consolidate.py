@@ -184,6 +184,28 @@ for kind, items in wd["notes"].items():
 for s in wd["sources"]:
     sources.append({"出典ID": sid("世界", s["id"]), "病気": WORLD, "資料名": s["title"], "発行元": s["publisher"],
                     "URL": s["url"], "公表日・更新日": s.get("published") or "記載なし", "確認日": s.get("accessed") or "2026-10-26"})
+# 協力覚書の国のほかに、UNAIDSの推計がある全部の国を足す（world_hiv_all.json）。
+# 2010年比はUNAIDSの国別資料（ファクトシート）にしかないため、足した国では空のまま
+wa = json.load(open(os.path.join(src_dir, "world_hiv_all.json"), encoding="utf-8"))
+ja_of = {r["iso3"]: r["name"] for r in json.load(open(os.path.join(src_dir, "world_stats.json"), encoding="utf-8"))["rows"]}
+iso_of = {v: k for k, v in ja_of.items()}
+by_iso = {r["iso3"]: r for r in wa["rows"]}
+assert wa["data_year"] == wd["data_year"]
+for w in world:
+    if w["区分"] == "国":
+        w["ISO3"] = iso_of[w["名前"]]
+        # ファクトシートで読み取った値が、全部の国のファイルの値と同じかを確かめる
+        a = by_iso[w["ISO3"]]
+        diff = [(label, w[label], a[k]) for k, label in WCOLS if k in a and a[k] != w[label]]
+        assert not diff, (w["名前"], diff)
+have = {w["ISO3"] for w in world if w["区分"] == "国"}
+for a in wa["rows"]:
+    if a["iso3"] not in have:
+        world.append({"区分": "国", "名前": ja_of[a["iso3"]], "英語名": a["en"], "協力覚書": None, "年": wa["data_year"],
+                      **{label: a.get(k) for k, label in WCOLS}, "出典ID": sid("世界", wa["source"]["id"]), "ISO3": a["iso3"]})
+s = wa["source"]
+sources.append({"出典ID": sid("世界", s["id"]), "病気": WORLD, "資料名": s["title"], "発行元": s["publisher"],
+                "URL": s["url"], "公表日・更新日": s["published"], "確認日": s["accessed"]})
 
 # 公費で受けられる支援（検査・予防・治療）。出典の「S1」などは公費の資料、「HIV-14」などは病気ごとの資料
 KOUHI = "公費の制度"

@@ -1450,14 +1450,14 @@
     </div>
     <div class="kj-tabpanel" role="tabpanel" id="world-countries" aria-labelledby="wt-countries" tabindex="-1" hidden>
       <div class="kj-card" id="world-table-card">
-        <h3>国ごとの数字（日本と協力覚書を結んだ20か国）</h3>
-        <p class="kj-cap">「特定技能」「技能実習」「育成就労」は、日本がその国と外国人材の受け入れについて協力覚書（MOC）を結んでいる制度です（育成就労は技能実習に代わって2027年4月に始まる予定）。最初は感染している人の多い順です（並び替えできます）。「新たな感染」「エイズによる死亡」は1年間の人数、「15〜49歳の感染率」はその年代の人口のうち感染している人の割合です。「&lt;100」は100人未満という意味です。</p>
+        <h3>国ごとの数字（UNAIDSの推計がある国）</h3>
+        <p class="kj-cap">UNAIDSが2025年の推計を出している国を載せています（日本・中国・アメリカなどは、UNAIDSの資料に国の推計の数字がないため載っていません）。「協力覚書」で、日本と協力覚書（MOC）を結んだ国にしぼりこめます。「特定技能」「技能実習」「育成就労」は、日本がその国と外国人材の受け入れについて協力覚書を結んでいる制度です（育成就労は技能実習に代わって2027年4月に始まる予定）。最初は感染している人の多い順です（並び替えできます）。「新たな感染」「エイズによる死亡」は1年間の人数、「15〜49歳の感染率」はその年代の人口のうち感染している人の割合、「治療を受けている人」はHIVとともに生きる人のうち治療を受けている人の割合です。「&lt;100」は100人未満、「&gt;98」は98%より多いという意味です。2010年からの増減は、UNAIDSの国別資料で確かめた協力覚書の国だけにあるため、下のグラフと「複数国の比較」で見られます。</p>
         <p class="kj-callout kj-callout-info" style="margin:0"><span><b>人数と割合はちがいます。</b>「感染している人」「新たな感染」「エイズによる死亡」は人数（推計）で、人口の多い国ほど大きくなりやすい数です。人口に対する広がりは「15〜49歳の感染率」で見てください。</span></p>
         <div class="kj-controls">
           <label class="kj-field"><span>国名で探す</span><input type="search" class="kj-input" id="wc-q" placeholder="例：ベトナム" autocomplete="off"></label>
           <label class="kj-field"><span>並び替え</span><select class="kj-select" id="wc-sort"></select></label>
           <label class="kj-field"><span>順番</span><select class="kj-select" id="wc-order"><option value="desc">多い順・高い順</option><option value="asc">少ない順・低い順</option></select></label>
-          <label class="kj-field"><span>協力覚書</span><select class="kj-select" id="wc-moc"><option value="">すべて</option><option value="特定技能">特定技能の覚書がある国</option><option value="技能実習">技能実習の覚書がある国</option><option value="育成就労">育成就労の覚書がある国</option></select></label>
+          <label class="kj-field"><span>協力覚書</span><select class="kj-select" id="wc-moc"><option value="">しぼりこまない</option><option value="any">協力覚書がある国だけ</option><option value="特定技能">特定技能の覚書がある国</option><option value="技能実習">技能実習の覚書がある国</option><option value="育成就労">育成就労の覚書がある国</option><option value="none">協力覚書がない国</option></select></label>
         </div>
         <p class="kj-count" id="wc-count" aria-live="polite"></p>
         <div class="kj-scroll"><table class="kj-table" id="world-table"></table></div>
@@ -1480,6 +1480,7 @@
     <div class="kj-tabpanel" role="tabpanel" id="world-compare" aria-labelledby="wt-compare" tabindex="-1" hidden>
       <div class="kj-card kj-pick">
         <h3>比べる国・地域を選ぶ（8つまで）</h3>
+        <p class="kj-cap">2010年からの変化がわかる、世界全体・地域と、日本と協力覚書を結んだ国から選べます。ほかの国は「国別」の表で見られます。</p>
         <div class="kj-controls">
           <label class="kj-field"><span>しぼりこむ</span><input type="search" class="kj-input" id="wp-q" placeholder="国名・地域名" autocomplete="off"></label>
           <button type="button" class="kj-mini" id="wp-clear">選択をすべて外す</button>
@@ -3897,10 +3898,10 @@ const W_COLS = [
   { k: '新たな感染', t: '新たな感染（1年間）', g: 'n' },
   { k: 'エイズによる死亡', t: 'エイズによる死亡（1年間）', g: 'n' },
   { k: '15〜49歳の感染率（%）', t: '15〜49歳の感染率', g: 'r', kind: 'p' },
-  { k: '新たな感染の増減（2010年比・%）', t: '新たな感染の2010年比', g: 'r', kind: 'pct' },
-  { k: '死亡の増減（2010年比・%）', t: 'エイズによる死亡の2010年比', g: 'r', kind: 'pct' },
   { k: '治療を受けている人（%）', t: '治療を受けている人', g: 'r', kind: 'p' },
 ];
+// 2010年比はUNAIDSの国別資料にしかなく、協力覚書の国だけにある。グラフと複数国の比較は、この国と世界・地域だけにする
+const wIsMoc = (r) => r.区分 !== '国' || !!r.協力覚書;
 const wstate = { q: '', sort: '感染している人', order: 'desc', moc: '', pick: ['世界', 'アジア太平洋', '東欧・中央アジア'], pq: '', slope: '新たな感染の増減（2010年比・%）', metric: '感染している人' };
 const normKana = (s) => String(s).normalize('NFKC').toLowerCase().replace(/[ァ-ヶ]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0x60));
 function renderWorld() {
@@ -3938,7 +3939,7 @@ function renderWorld() {
   const changeBox = $('#world-change-chart');
   chart(changeBox, () => drawWorldChange(changeBox));
   $('#world-change-src').replaceChildren(srcLine(['世界-1'], [['対象', `${world.年}年の推計（2010年との比較）`], ['区分', '推計値（UNAIDS）']]));
-  { const k = '新たな感染の増減（2010年比・%）'; const cs = W.data.filter((r) => r.区分 === '国' && typeof r[k] === 'number');
+  { const k = '新たな感染の増減（2010年比・%）'; const cs = W.data.filter((r) => r.区分 === '国' && wIsMoc(r) && typeof r[k] === 'number');
     setInsight('world-change-insight', [`日本と協力覚書を結んだ国のうち、1年間の新たな感染が2010年より減った国は${cs.filter((r) => r[k] < 0).length}か国、増えた国は${cs.filter((r) => r[k] > 0).length}か国です（UNAIDSの推計）。`, `世界全体では2010年と比べて${showW(world[k], 'pct')}（${world[k] < 0 ? '減少' : '増加'}）です。`]); }
   EXPORTS['world-change'] = () => ({ title: '日本と協力覚書を結んだ国：新たな感染の2010年比', file: 'HIV世界の動向_新たな感染の2010年比', color: HEX[0], sub: `1年間に新たに感染した人の数を2010年と比べた増減（%）／${world.年}年の推計（UNAIDS）／右（＋）が増加、左（−）が減少`, legend: [{ type: 'bar', name: '増加（＋）', hex: '#b13a28' }, { type: 'bar', name: '減少（−）', hex: '#23704a' }], source: srcText(['世界-1']), draw: (b, opt) => drawWorldChange(b, opt) });
   // 複数国の比較
@@ -3963,17 +3964,32 @@ function renderWorld() {
   $('#world-moc-src ul').replaceChildren(...rel.map((s) => h('li', {}, srcButton(s.出典ID), ' ', `${s.資料名}（${s.発行元}・${s['公表日・更新日']}） `, extLink(s.出典ID, '資料を開く') || '')));
 }
 const metricLabel = () => ($('#wp-metric').selectedOptions[0] || {}).textContent || wstate.metric;
+// 協力覚書でしぼりこむ（any＝覚書がある国、none＝ない国、ほかは制度の名前）
+const wMoc = (r, moc) => { const m = String(r.協力覚書 || ''); return !moc || (moc === 'any' ? !!m : moc === 'none' ? !m : m.split('・').includes(moc)); };
+let wMocOpts = null;
 function renderWorldTable() {
   const t = $('#world-table');
   const q = normKana(wstate.q.trim());
-  let rows = W.data.filter((r) => r.区分 === '国').filter((r) => !q || normKana(r.名前).includes(q) || normKana(r.英語名 || '').includes(q)).filter((r) => !wstate.moc || String(r.協力覚書 || '').split('・').includes(wstate.moc));
+  // 並び替えで選んだ数字（国名順のときは感染している人）がある国だけを出す。選択肢は、選ぶと国が1つ以上出るものだけ（（ ）に数）
+  const key = wstate.sort === '名前' ? '感染している人' : wstate.sort;
+  const has = (r) => r[key] !== null && r[key] !== undefined;
+  const all = W.data.filter((r) => r.区分 === '国');
+  const base = all.filter(has);
+  const reset = !base.some((r) => wMoc(r, wstate.moc));
+  if (reset) wstate.moc = '';
+  wMocOpts = wMocOpts || [...$('#wc-moc').options].map((o) => [o.value, o.textContent]);
+  const ms = $('#wc-moc');
+  ms.replaceChildren(...wMocOpts.map(([v, tx]) => [v, tx, base.filter((r) => wMoc(r, v)).length]).filter(([v, , n]) => n || v === wstate.moc).map(([v, tx, n]) => h('option', { value: v }, `${tx}（${n}）`)));
+  ms.value = wstate.moc;
+  const hit = all.filter((r) => !q || normKana(r.名前).includes(q) || normKana(r.英語名 || '').includes(q)).filter((r) => wMoc(r, wstate.moc));
+  let rows = hit.filter(has);
   const dir = wstate.order === 'asc' ? 1 : -1;
   if (wstate.sort === '名前') rows.sort((a, b) => a.名前.localeCompare(b.名前, 'ja') * dir);
   else rows.sort((a, b) => { const x = sortVal(a[wstate.sort]), y = sortVal(b[wstate.sort]); if (x === null && y === null) return 0; if (x === null) return 1; if (y === null) return -1; return (x - y) * dir; });
   t.replaceChildren();
   const th = t.createTHead();
   const g = th.insertRow(); g.className = 'kj-thgroup';
-  g.append(h('th', { colspan: 3, class: 'kj-left' }, ''), h('th', { colspan: 3 }, '人数（推計）'), h('th', { colspan: 4 }, '割合・2010年からの増減（推計）'));
+  g.append(h('th', { colspan: 3, class: 'kj-left' }, ''), h('th', { colspan: 3 }, '人数（推計）'), h('th', { colspan: 2 }, '割合（推計）'));
   const hr = th.insertRow();
   hr.append(h('th', { class: 'kj-sticky kj-left' }, '国'), h('th', { class: 'kj-left' }, '協力覚書'), h('th', {}, '対象年'),
     ...W_COLS.map((c) => h('th', { 'aria-sort': wstate.sort === c.k ? (wstate.order === 'asc' ? 'ascending' : 'descending') : null }, `${c.t}${wstate.sort === c.k ? (wstate.order === 'asc' ? ' ▲' : ' ▼') : ''}`)));
@@ -3981,7 +3997,7 @@ function renderWorldTable() {
   rows.forEach((r) => {
     const tr = body.insertRow();
     tr.id = `world-row-${r.英語名.replace(/[^A-Za-z]/g, '')}`;
-    tr.append(h('td', { class: 'kj-name kj-sticky' }, r.名前), h('td', { class: 'kj-tagcell' }, r.協力覚書 || '—'), h('td', { class: 'kj-nowrap' }, `${r.年}年`));
+    tr.append(h('td', { class: 'kj-name kj-sticky' }, r.名前), h('td', { class: 'kj-tagcell' }, r.協力覚書 || 'なし'), h('td', { class: 'kj-nowrap' }, `${r.年}年`));
     W_COLS.forEach((c) => {
       const v = r[c.k];
       const td = h('td', { class: v === null || v === undefined ? 'kj-muted' : null });
@@ -3991,13 +4007,17 @@ function renderWorldTable() {
     });
   });
   indexDirty = true;
-  $('#wc-count').textContent = `20か国中 ${rows.length}か国を表示（並び：${(W_COLS.find((c) => c.k === wstate.sort) || { t: '国名' }).t}・${wstate.order === 'asc' ? '少ない順' : '多い順'}。値がない国はいちばん下）`;
-  $('#world-table-src').replaceChildren(srcLine(['世界-1'], [['対象', `${W.data[0].年}年の推計`], ['区分', '推計値（UNAIDS）'], ['「—」', 'UNAIDSに値がない']]));
+  const kc = W_COLS.find((c) => c.k === key);
+  const none = hit.filter((r) => !has(r)).map((r) => r.名前);
+  $('#wc-count').textContent = [`UNAIDSの推計がある${all.length}か国のうち ${rows.length}か国を表示（${q ? '国名で探すときは、協力覚書のしぼりこみの中から探します。' : ''}並び：${(W_COLS.find((c) => c.k === wstate.sort) || { t: '国名' }).t}・${wstate.order === 'asc' ? '少ない順' : '多い順'}）。`,
+    reset ? '選んだ組み合わせでは表示できる国がないため、「協力覚書」のしぼりこみを外しました。' : '',
+    none.length ? `UNAIDSに「${kc.t}」の推計がない${none.length <= 12 ? none.join('・') : `${none.length}か国`}は載せていません。` : ''].join('');
+  $('#world-table-src').replaceChildren(srcLine([...new Set(rows.map((r) => r.出典ID))], [['対象', `${W.data[0].年}年の推計`], ['区分', '推計値（UNAIDS）'], ['「—」', 'UNAIDSに値がない']]));
 }
 function drawWorldChange(box, opt = {}) {
   const note = $('#world-change-note');
   const key = '新たな感染の増減（2010年比・%）';
-  const all = W.data.filter((r) => r.区分 === '国');
+  const all = W.data.filter((r) => r.区分 === '国' && wIsMoc(r));
   const none = all.filter((r) => typeof r[key] !== 'number').map((r) => r.名前);
   note.textContent = none.length ? `${none.join('・')}は、UNAIDSにこの数字がないため載せていません。` : '';
   drawDiverge(box, all.filter((r) => typeof r[key] === 'number').sort((a, b) => b[key] - a[key]), key, opt);
@@ -4042,7 +4062,7 @@ function pickedRows() { return wstate.pick.map((n) => W.data.find((r) => r.名�
 function renderPick() {
   const list = $('#wp-list');
   const q = normKana(wstate.pq.trim());
-  const order = W.data.filter((r) => r.区分 !== '国').concat(W.data.filter((r) => r.区分 === '国'));
+  const order = W.data.filter((r) => r.区分 !== '国').concat(W.data.filter((r) => r.区分 === '国' && wIsMoc(r)));
   list.replaceChildren(...order.filter((r) => !q || normKana(r.名前).includes(q) || wstate.pick.includes(r.名前)).map((r) => {
     const on = wstate.pick.includes(r.名前);
     const inp = h('input', { type: 'checkbox', value: r.名前 });
