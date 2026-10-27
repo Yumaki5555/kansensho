@@ -423,7 +423,9 @@ for c in order:
         else:
             if isinstance(v, float) and v == int(v) and k != "はしか_100万人あたり":
                 v = int(v)
-            fm = '0"年"' if k.endswith("年") else "0.0" if (k == "はしか_100万人あたり" or isinstance(v, float)) else "#,##0"
+            # 梅毒の割合・率はWHOの表示と同じ小数第2位まで（0.0 だと 0.05% が 0.1 に見える）
+            fm = ('0"年"' if k.endswith("年") else "0.0#" if k in ("梅毒_妊婦の陽性率", "梅毒_先天梅毒の率") and isinstance(v, float)
+                  else "0.0" if (k == "はしか_100万人あたり" or isinstance(v, float)) else "#,##0")
             put(cw, r, j, v, fmt=fm)
     r += 1
 cw.auto_filter.ref = f"A{first_c - 1}:{get_column_letter(len(ccols))}{r - 1}"

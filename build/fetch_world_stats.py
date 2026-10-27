@@ -174,6 +174,10 @@ def latest(code, iso3, year=None, min_year=None):
         m = re.match(r"^(<\s*[\d.]+)", txt.replace(" ", " "))
         if m:
             v = m.group(1).replace(" ", "")
+        # 梅毒の割合・率は、WHOのサイトに表示される値（小数第2位まで）を使う。数値欄は桁が長かったり（0.052737148）、
+        # 逆に小数第1位に丸められていたり（表示 0.85 → 数値欄 0.8）することがあるため
+        if code in ("syph_anc", "cs_rate") and re.fullmatch(r"\d+(\.\d+)?", txt):
+            v = float(txt)
         return {"year": y, "value": v, "text": txt, "low": x.get("Low"), "high": x.get("High")}
     return None
 
