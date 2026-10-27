@@ -4493,13 +4493,22 @@ function drawVenn(box, opt = {}) {
   const r = Math.min(H * 0.4, W * 0.25), cy = H / 2 + 6, cx1 = W / 2 - r * 0.55, cx2 = W / 2 + r * 0.55;
   svg.append('circle').attr('cx', cx1).attr('cy', cy).attr('r', r).style('fill', 'var(--kj-pay-ins)').style('fill-opacity', 0.14).style('stroke', 'var(--kj-pay-ins)').style('stroke-width', 2.5);
   svg.append('circle').attr('cx', cx2).attr('cy', cy).attr('r', r).style('fill', 'var(--kj-pay-self)').style('fill-opacity', 0.14).style('stroke', 'var(--kj-pay-self)').style('stroke-width', 2.5);
-  svg.append('text').attr('class', 'kj-venn-t').attr('x', cx1 - r * 0.25).attr('y', 18).attr('text-anchor', 'middle').text(`協力覚書 ${v.nMoc}か国`);
-  svg.append('text').attr('class', 'kj-venn-t').attr('x', cx2 + r * 0.25).attr('y', 18).attr('text-anchor', 'middle').text(`JPETSの対象 ${v.nJ}か国`);
+  // 上の2つの見出しは、狭い幅でくっつくときは中央から左右に分けて置く
+  const t1 = `協力覚書 ${v.nMoc}か国`, t2 = `JPETSの対象 ${v.nJ}か国`;
+  const w1 = measure(svg, [t1], 'kj-venn-t'), w2 = measure(svg, [t2], 'kj-venn-t');
+  let x1 = cx1 - r * 0.25, x2 = cx2 + r * 0.25;
+  if (x1 + w1 / 2 + 12 > x2 - w2 / 2) { x1 = Math.max(w1 / 2, W / 2 - 6 - w1 / 2); x2 = Math.min(W - w2 / 2, W / 2 + 6 + w2 / 2); }
+  svg.append('text').attr('class', 'kj-venn-t').attr('x', x1).attr('y', 18).attr('text-anchor', 'middle').text(t1);
+  svg.append('text').attr('class', 'kj-venn-t').attr('x', x2).attr('y', 18).attr('text-anchor', 'middle').text(t2);
   [[cx1 - r * 0.48, v.mocOnly.length, '協力覚書だけ'], [W / 2, v.both.length, '両方'], [cx2 + r * 0.48, v.jOnly.length, 'JPETSだけ']].forEach(([x, n, t]) => {
     svg.append('text').attr('class', 'kj-venn-n').attr('x', x).attr('y', cy + 6).attr('text-anchor', 'middle').text(`${n}`);
     svg.append('text').attr('class', 'kj-venn-l').attr('x', x).attr('y', cy + 28).attr('text-anchor', 'middle').text(t);
   });
-  svg.append('text').attr('class', 'kj-venn-m').attr('x', W / 2).attr('y', H - 4).attr('text-anchor', 'middle').text('協力覚書を結んだ国＝検査がある国、ではありません');
+  // 下の一文は、図の幅に入らないときは「＝」の後で2行にし、その分だけ図を高くする
+  const msg = '協力覚書を結んだ国＝検査がある国、ではありません', cut = msg.indexOf('＝') + 1;
+  const ml = measure(svg, [msg], 'kj-venn-m') <= W ? [msg] : [msg.slice(0, cut), msg.slice(cut)];
+  ml.forEach((s, i) => svg.append('text').attr('class', 'kj-venn-m').attr('x', W / 2).attr('y', H - 4 + 17 * i).attr('text-anchor', 'middle').text(s));
+  if (ml.length > 1) svg.attr('viewBox', `0 0 ${W} ${H + 17 * (ml.length - 1)}`);
   box.querySelector('.kj-venn-lists').replaceChildren(
     h('div', {}, h('b', {}, `両方（${v.both.length}か国）`), v.both.map((x) => `${v.nm(x)}${v.st(x)}`).join('、')),
     h('div', {}, h('b', {}, `協力覚書だけ（${v.mocOnly.length}か国）`), v.mocOnly.map(v.nm).join('、')),
