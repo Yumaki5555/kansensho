@@ -1247,6 +1247,7 @@
       <div class="kj-controls"><label class="kj-field"><span>国を選んで詳しく見る</span><select class="kj-select" id="home-cmp-pick"></select></label></div>
       <p class="kj-cap" id="home-cmp-warn"></p>
       <div class="kj-rt"><div class="kj-scroll"><table class="kj-table kj-cmp-table" id="home-cmp-table"></table></div></div>
+      <p class="kj-cap" id="home-cmp-none"></p>
       <p class="kj-links"><a class="kj-btn" href="#countries" data-nav>すべての国で比べる・並び替える →</a><a href="#entry" data-nav>入国前対策の説明</a><a href="#riyou-3" data-nav>偏見・差別の防止</a></p>
       <div id="home-cmp-src"></div>
     </section>
@@ -1289,7 +1290,7 @@
         <label class="kj-field"><span>並び替え</span><select class="kj-select" id="cty-sort"></select></label>
         <label class="kj-field"><span>順番</span><select class="kj-select" id="cty-order"><option value="desc">多い順・高い順</option><option value="asc">少ない順・低い順</option></select></label>
       </div>
-      <p class="kj-cap">「日本と関係の深い国」は、日本と協力覚書を結んだ20か国と、入国前の結核検査（JPETS）の対象国（中国を含む）、参考の日本です。</p>
+      <p class="kj-cap">「日本と関係の深い国」は、日本と協力覚書を結んだ20か国と、入国前の結核検査（JPETS）の対象国（中国を含む）、参考の日本です。選択肢の（ ）の数字は、選んだときに表示される国・地域の数です。WHOに数字がない国・地域は表示しないため、表示される国がない選択肢は出していません。</p>
       <p class="kj-count" id="cty-count" aria-live="polite"></p>
     </div>
     <figure class="kj-fig" id="cty-fig">
@@ -2868,7 +2869,9 @@ function renderDisease(d) {
   const m0 = CM[d.id].m[0];
   const cfig = h('figure', { class: 'kj-fig', id: `${d.id}-cty` });
   const cPlot = h('div', { class: 'kj-plot' });
-  cfig.append(figHead(`日本と関係の深い国の${m0.short}`, `${m0.def} 日本と協力覚書を結んだ国と、入国前の結核検査の対象国を、多い順に並べています（日本は参考）。棒にふれる・タップすると詳しい数字が出ます。`, `${d.id}-cty`), cPlot,
+  const cNone = noValNote(C.data.filter((r) => isFocus(r) && cval(r, m0) === null), d.id, m0);
+  cfig.append(figHead(`日本と関係の深い国の${m0.short}`, `${m0.def} 日本と協力覚書を結んだ国と、入国前の結核検査の対象国を、多い順に並べています${focusRows(d.id, m0).some((r) => r.ISO3 === 'JPN') ? '（日本は参考）' : ''}。棒にふれる・タップすると詳しい数字が出ます。`, `${d.id}-cty`), cPlot,
+    cNone.length ? h('p', { class: 'kj-cap' }, ...cNone) : '',
     insight(ctyInsight(d, m0)),
     h('p', { class: 'kj-links' }, h('a', { href: '#countries', 'data-nav': '', 'data-setd': d.id, class: 'kj-btn' }, `すべての国で${d.label}を比べる →`), h('a', { href: '#cty-cautions', 'data-nav': '' }, '国別の数字の注意')),
     srcLine([CM[d.id].src], [['対象', cYear(d.id, m0)], ['区分', m0.kind]]));
@@ -3169,10 +3172,19 @@ function sortRows(rows, m, order) {
     return (x - y) * dir;
   });
 }
+// 日本と関係の深い国。数字がない国は表やグラフに出さない（日本は参考としていちばん下）
 function focusRows(did, m) {
-  const rows = sortRows(C.data.filter((r) => isFocus(r) && r.ISO3 !== 'JPN'), m, 'desc');
-  const jp = C.data.find((r) => r.ISO3 === 'JPN');
+  const rows = sortRows(C.data.filter((r) => isFocus(r) && r.ISO3 !== 'JPN' && cval(r, m) !== null), m, 'desc');
+  const jp = C.data.find((r) => r.ISO3 === 'JPN' && cval(r, m) !== null);
   return jp ? rows.concat([jp]) : rows;
+}
+// 数字がないため載せていない国の一文。link を付けると、日本のときは国内の数字のページへの案内も出す
+function noValNote(rows, did, m, link) {
+  if (!rows.length) return [];
+  const nm = [...rows].sort((a, b) => (a.ISO3 === 'JPN') - (b.ISO3 === 'JPN') || a.国.localeCompare(b.国, 'ja')).map((r) => (r.ISO3 === 'JPN' ? '日本' : r.国));
+  const out = [`${did === 'hiv' ? 'UNAIDSの推計' : 'WHOのデータ'}に「${m.short}」の数字がない${nm.length <= 12 ? nm.join('・') : `${nm.length}の国・地域`}は載せていません。`];
+  if (link && rows.some((r) => r.ISO3 === 'JPN')) out.push('日本の国内の数字は', h('a', { href: `#${did}`, 'data-nav': '' }, `${DBY[did].label}のページ`), 'にあります。');
+  return out;
 }
 // 状態の札（色だけでなく記号と文字でも区別）
 const ST = [['実施中', 'kj-st-on', '●'], ['開始予定', 'kj-st-plan', '◔'], ['調整中', 'kj-st-plan', '◔'], ['制度対象外', 'kj-st-out', '○'], ['対象外', 'kj-st-out', '○'], ['検査制度なし', 'kj-st-none', '×'], ['未確認', 'kj-st-unk', '？'], ['確認できず', 'kj-st-unk', '？']];
@@ -3244,11 +3256,11 @@ function mocCell(r) {
   if (r.ISO3 === 'JPN') return h('span', { class: 'kj-sm' }, '—');
   return r.協力覚書 ? h('span', {}, r.協力覚書.split('・').map((x, i) => [i ? '・' : '', x]).flat(), h('span', { class: 'kj-sm' }, '協力覚書あり')) : h('span', { class: 'kj-sm' }, 'なし（一覧に記載なし）');
 }
-function mainCell(r, did) {
+function mainCell(r, did, m0 = CM[did].m[0]) {
   const ms = CM[did].m;
-  const v = ctext(r, ms[0]);
-  const sub = ms.slice(1).map((m) => { const t = ctext(r, m); return t === null ? null : `${m.short} ${t}`; }).filter(Boolean).join('・');
-  const y = r[ms[0].yk];
+  const v = ctext(r, m0);
+  const sub = ms.filter((m) => m !== m0).map((m) => { const t = ctext(r, m); return t === null ? null : `${m.short} ${t}`; }).filter(Boolean).join('・');
+  const y = r[m0.yk];
   return [v === null ? h('span', { class: 'kj-sm' }, did === 'hiv' ? 'UNAIDSの推計なし' : 'WHOに報告なし') : v, h('span', { class: 'kj-sm' }, [y && v !== null ? `${y}年` : '', sub].filter(Boolean).join('・'))];
 }
 function renderHomeCmp() {
@@ -3273,6 +3285,9 @@ function renderHomeCmp() {
     pick.addEventListener('change', () => { if (pick.value) goTo(`c-${pick.value}`); });
   }
   $('#home-cmp-warn').replaceChildren(`${m0.def}`, h('b', {}, 'その国の人口全体の数字で、日本へ入国する人の数字ではありません。'));
+  const none = noValNote(C.data.filter((r) => isFocus(r) && cval(r, m0) === null), homeD, m0, true);
+  $('#home-cmp-none').replaceChildren(...none);
+  $('#home-cmp-none').hidden = !none.length;
   $('#home-cmp-src').replaceChildren(srcLine([CM[homeD].src, ...E.data.filter((x) => x.区分 === 'JPETSの国').flatMap((x) => String(x.出典ID || '').split('・'))], [['対象', cYear(homeD, m0)], ['区分', m0.kind]]));
   indexDirty = true;
 }
@@ -3280,45 +3295,69 @@ function renderHomeCmp() {
 /* --- 国別の比較のページ --- */
 const cstate = { d: 'tb', scope: 'focus', region: '', moc: '', jpets: '', q: '', sort: null, order: 'desc', pick: ['PHL', 'VNM', 'IDN', 'NPL', 'MMR', 'CHN', 'JPN'], sel: null };
 const PICK_C = 8;
-function cFiltered() {
-  const q = normKana(cstate.q.trim());
+// 条件に合う国（数字の有無はここでは見ない）
+function cBase(st = cstate) {
+  const q = normKana(st.q.trim());
   return C.data.filter((r) => {
     if (q) return normKana(r.国).includes(q) || normKana(r.英語名).includes(q);
-    if (cstate.scope === 'focus' && !isFocus(r)) return false;
-    if (cstate.region && r.地域 !== cstate.region) return false;
+    if (st.scope === 'focus' && !isFocus(r)) return false;
+    if (st.region && r.地域 !== st.region) return false;
     const moc = String(r.協力覚書 || '');
-    if (cstate.moc === 'any' && !moc) return false;
-    if (cstate.moc === 'none' && moc) return false;
-    if (cstate.moc && !['any', 'none'].includes(cstate.moc) && !moc.split('・').includes(cstate.moc)) return false;
-    if (cstate.jpets === '対象外' && jpetsRow(r.ISO3)) return false;
-    if (cstate.jpets && cstate.jpets !== '対象外' && (jpetsRow(r.ISO3) || {}).状態 !== cstate.jpets) return false;
+    if (st.moc === 'any' && !moc) return false;
+    if (st.moc === 'none' && moc) return false;
+    if (st.moc && !['any', 'none'].includes(st.moc) && !moc.split('・').includes(st.moc)) return false;
+    if (st.jpets === '対象外' && jpetsRow(r.ISO3)) return false;
+    if (st.jpets && st.jpets !== '対象外' && (jpetsRow(r.ISO3) || {}).状態 !== st.jpets) return false;
     return true;
   });
 }
-const curM = () => { const cm = CM[cstate.d]; return cm.m.find((m) => m.k === cstate.sort) || cm.m[0]; };
+// 表やグラフに出す国：条件に合い、選んだ数字がある国だけ（WHOに数字がない国は出さない）
+const cFiltered = (st = cstate) => { const m = curM(st); return cBase(st).filter((r) => cval(r, m) !== null); };
+const curM = (st = cstate) => { const cm = CM[st.d]; return cm.m.find((m) => m.k === st.sort) || cm.m[0]; };
+// 病気や表示する国を変えて、表示できる国が0になったら、しぼりこみを外す（1つ外せば足りるなら、それだけ）
+const CTY_LABEL = { region: '地域', moc: '協力覚書', jpets: '入国前の結核検査', sort: '並び替え' };
+function ctyFix() {
+  if (cFiltered({ ...cstate, q: '' }).length) return [];
+  const keys = Object.keys(CTY_LABEL).filter((k) => (k === 'sort' ? curM() !== CM[cstate.d].m[0] : cstate[k]));
+  const one = keys.find((k) => cFiltered({ ...cstate, q: '', [k]: k === 'sort' ? null : '' }).length);
+  const reset = one ? [one] : keys;
+  reset.forEach((k) => { cstate[k] = k === 'sort' ? null : ''; });
+  return reset.map((k) => CTY_LABEL[k]);
+}
+// 選択肢は、選んだときに表示される国が1つ以上あるものだけ（（ ）の数字はその数）
+let mocOpts = null;
+function ctyOptions() {
+  const cm = CM[cstate.d];
+  const fill = (sel, key, opts) => {
+    const cur = key === 'sort' ? cstate.sort || cm.m[0].k : cstate[key];
+    sel.replaceChildren(...opts.map(([v, t]) => [v, t, cFiltered({ ...cstate, q: '', [key]: v }).length]).filter(([v, , n]) => n || v === cur).map(([v, t, n]) => h('option', { value: v }, `${t}（${n}）`)));
+    sel.value = cur;
+  };
+  mocOpts = mocOpts || [...$('#cty-moc').options].map((o) => [o.value, o.textContent]);
+  fill($('#cty-region'), 'region', [['', 'すべての地域'], ...[...new Set(C.data.map((r) => r.地域))].sort((a, b) => a.localeCompare(b, 'ja')).map((x) => [x, x])]);
+  fill($('#cty-moc'), 'moc', mocOpts);
+  fill($('#cty-jpets'), 'jpets', [['', 'しぼりこまない'], ...[...new Set(E.data.filter((x) => x.区分 === 'JPETSの国').map((x) => x.状態))].map((x) => [x, `${x}の国`]), ['対象外', '対象国ではない国']]);
+  fill($('#cty-sort'), 'sort', [...cm.m.map((m) => [m.k, m.t]), ['国名', '国名（五十音）']]);
+}
 function renderCountries() {
   dChips($('#cty-d'), cstate.d, (id) => { cstate.d = id; cstate.sort = null; renderCountries(); });
-  const rs = $('#cty-region');
-  if (rs.options.length <= 1) rs.append(...[...new Set(C.data.map((r) => r.地域))].sort((a, b) => a.localeCompare(b, 'ja')).map((x) => h('option', { value: x }, x)));
-  const js = $('#cty-jpets');
-  if (js.options.length <= 1) js.append(...[...new Set(E.data.filter((x) => x.区分 === 'JPETSの国').map((x) => x.状態))].map((x) => h('option', { value: x }, `${x}の国`)), h('option', { value: '対象外' }, '対象国ではない国'));
-  const so = $('#cty-sort');
-  so.replaceChildren(...CM[cstate.d].m.map((m) => h('option', { value: m.k }, m.t)), h('option', { value: '国名' }, '国名（五十音）'));
-  so.value = cstate.sort || CM[cstate.d].m[0].k;
   updateCountries();
 }
 function updateCountries() {
+  const reset = ctyFix();
+  ctyOptions();
   const d = DBY[cstate.d], cm = CM[cstate.d];
   const m = curM();
   let rows = cFiltered();
   rows = cstate.sort === '国名' ? [...rows].sort((a, b) => a.国.localeCompare(b.国, 'ja') * (cstate.order === 'asc' ? 1 : -1)) : sortRows(rows, m, cstate.order);
   const total = C.data.length;
-  $('#cty-count').textContent = `${total}の国・地域のうち ${rows.length}を表示（${cstate.q ? '国名で探すときは、すべての国・地域から探します。' : ''}並び：${cstate.sort === '国名' ? '国名' : m.short}・${cstate.order === 'asc' ? '少ない順' : '多い順'}。データがない国はいちばん下）`;
+  $('#cty-count').replaceChildren(`${total}の国・地域のうち ${rows.length}を表示（${cstate.q ? '国名で探すときは、すべての国・地域から探します。' : ''}並び：${cstate.sort === '国名' ? '国名' : m.short}・${cstate.order === 'asc' ? '少ない順' : '多い順'}）。`,
+    reset.length ? `選んだ組み合わせでは表示できる国がないため、「${reset.join('」「')}」のしぼりこみを外しました。` : '', ...noValNote(cBase().filter((r) => cval(r, m) === null), cstate.d, m, true));
   // 表
   const t = $('#cty-table');
   t.replaceChildren();
   const hr = t.createTHead().insertRow();
-  hr.append(h('th', {}, '比べる'), h('th', { class: 'kj-left kj-sticky' }, '国名'), h('th', {}, `${cm.m[0].short}${cm.m[0].unit === '%' ? '（%）' : ''}`), h('th', { class: 'kj-left' }, '日本との協力覚書'), h('th', { class: 'kj-left' }, '入国前の検査制度'), h('th', {}, ''));
+  hr.append(h('th', {}, '比べる'), h('th', { class: 'kj-left kj-sticky' }, '国名'), h('th', {}, `${m.short}${m.unit === '%' ? '（%）' : ''}`), h('th', { class: 'kj-left' }, '日本との協力覚書'), h('th', { class: 'kj-left' }, '入国前の検査制度'), h('th', {}, ''));
   const body = t.createTBody();
   rows.forEach((r) => {
     const tr = h('tr', { id: `cty-row-${r.ISO3}`, class: [r.ISO3 === cstate.sel ? 'kj-sel' : '', r.ISO3 === 'JPN' ? 'kj-ref' : ''].filter(Boolean).join(' ') || null });
@@ -3327,11 +3366,11 @@ function updateCountries() {
     cb.disabled = !cb.checked && cstate.pick.length >= PICK_C;
     cb.addEventListener('change', () => { if (cb.checked) { if (!cstate.pick.includes(r.ISO3)) cstate.pick.push(r.ISO3); } else cstate.pick = cstate.pick.filter((x) => x !== r.ISO3); updateCountries(); });
     tr.append(h('td', { class: 'kj-rt-check', 'data-label': '比べる' }, cb), h('td', { class: 'kj-sticky kj-left', 'data-label': '' }, h('button', { type: 'button', class: 'kj-namebtn', onclick: () => selectCountry(r.ISO3) }, r.ISO3 === 'JPN' ? '（参考）日本' : r.国, h('small', {}, `${r.英語名}・${r.地域}`))),
-      h('td', { class: 'kj-big-cell', 'data-label': cm.m[0].short }, ...mainCell(r, cstate.d)), h('td', { class: 'kj-left', 'data-label': '日本との協力覚書' }, mocCell(r)), h('td', { class: 'kj-st-cell', 'data-label': '入国前の検査制度' }, preentryCell(r, cstate.d)),
+      h('td', { class: 'kj-big-cell', 'data-label': m.short }, ...mainCell(r, cstate.d, m)), h('td', { class: 'kj-left', 'data-label': '日本との協力覚書' }, mocCell(r)), h('td', { class: 'kj-st-cell', 'data-label': '入国前の検査制度' }, preentryCell(r, cstate.d)),
       h('td', { 'data-label': '' }, h('button', { type: 'button', class: 'kj-mini', onclick: () => selectCountry(r.ISO3) }, '詳細を見る')));
     body.append(tr);
   });
-  $('#cty-table-src').replaceChildren(srcLine([cm.src, 'WHO-5'], [['対象', cYear(cstate.d, cm.m[0])], ['区分', cm.kind], ['地域', '国連のM49の区分をもとにまとめたもの']]));
+  $('#cty-table-src').replaceChildren(srcLine([cm.src, 'WHO-5'], [['対象', cYear(cstate.d, m)], ['区分', cm.kind], ['地域', '国連のM49の区分をもとにまとめたもの']]));
   // グラフ
   const mm = cstate.sort === '国名' ? cm.m[0] : m;
   const chartRows = (cstate.sort === '国名' ? sortRows(rows, mm, 'desc') : rows).slice(0, 30);
