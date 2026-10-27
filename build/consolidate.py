@@ -289,6 +289,16 @@ else:
         if r["区分"] == "国" and r["協力覚書"]:
             moc_of[en2iso[r["英語名"]]] = r["協力覚書"]
 jpets_of = {c["iso3"]: c for c in (seido["preentry"]["jpets_countries"] if seido else [])}
+# 都道府県が結んだ外国人材の覚書（2026-10-27）。国の協力覚書とは別に数え、「協力覚書」「関係の深い国」には入れない
+PREFS = ("北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 "
+         "岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 福岡県 "
+         "佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県").split()
+pmoc = (seido or {}).get("moc_pref") or {}
+assert not pmoc or set(x["pref"] for x in pmoc["items"]) | set(pmoc["none_found"]) == set(PREFS), "47都道府県のどれかが抜けている"
+pref_of = {}
+for x in pmoc.get("items", []):
+    if x.get("iso3"):
+        pref_of.setdefault(x["iso3"], []).append(x["pref"])
 countries = []
 for r in ws["rows"]:
     t, m, hv, sy = r.get("tb") or {}, r.get("measles") or {}, r.get("hiv") or {}, r.get("syphilis") or {}
@@ -296,6 +306,7 @@ for r in ws["rows"]:
     countries.append({
         "ISO3": r["iso3"], "国": r["name"], "英語名": r["en"], "地域": r["region"],
         "協力覚書": moc_of.get(r["iso3"]),
+        "県の覚書": "・".join(dict.fromkeys(pref_of[r["iso3"]])) if r["iso3"] in pref_of else None,
         "入国前結核検査": jp["status"] if jp else None, "入国前結核検査_開始": jp.get("start") if jp else None,
         "関係の深い国": bool(moc_of.get(r["iso3"]) or jp or r["iso3"] == "JPN"),
         "結核_年": t.get("year"), "結核_罹患率": t.get("rate"), "結核_罹患率_下限": t.get("rate_lo"), "結核_罹患率_上限": t.get("rate_hi"),
@@ -312,6 +323,7 @@ for r in ws["rows"]:
     })
     countries[-1] = {k: v for k, v in countries[-1].items() if v is not None}  # 値のない項目は書かない（ファイルを小さくする）
 assert set(moc_of) <= {c["ISO3"] for c in countries}, set(moc_of) - {c["ISO3"] for c in countries}
+assert set(pref_of) <= {c["ISO3"] for c in countries}, set(pref_of) - {c["ISO3"] for c in countries}
 add_sources(ws["sources"], "WHO", COUNTRY)
 Y_ = ws["years"]
 notes.append({"病気": COUNTRY, "種類": "数え方", "表": None, "出典ID": None, "文":
@@ -341,6 +353,18 @@ if seido:
         entry.append({"区分": "覚書の健康の記載", "国": c["name"], "ISO3": c["iso3"], "内容": c.get("health_clause"), "出典ID": None})
     for n in seido["moc"].get("notes", []):
         notes.append({"病気": ENTRY, "種類": "協力覚書", "表": None, "文": n["text"], "出典ID": ids("制度", n.get("source_ids"))})
+    name_of = {r["iso3"]: r["name"] for r in ws["rows"]}
+    for x in sorted(pmoc.get("items", []), key=lambda x: (PREFS.index(x["pref"]), x.get("date") or "")):
+        entry.append({"区分": "県の覚書", "都道府県": x["pref"], "国": name_of.get(x.get("iso3")) or x.get("country"), "ISO3": x.get("iso3"),
+                      "相手": x["counterpart"], "相手の種類": x.get("counterpart_type"), "ほかの署名者": x.get("other_signatories") or None,
+                      "名前": x.get("title"), "日付": x.get("date"), "日付の種類": x.get("date_kind"), "分野": x.get("fields"), "内容": x.get("summary"),
+                      "資料URL": x.get("doc_url") or None, "健康の記載": x.get("health_clause"), "期間": x.get("status") or None,
+                      "出典ID": ids("制度", x.get("source_ids"))})
+    if pmoc:
+        entry.append({"区分": "県の覚書_調べた範囲", "確認日": pmoc.get("checked"), "見つからなかった都道府県": "・".join(pmoc.get("none_found", [])),
+                      "内容": pmoc.get("method"), "出典ID": None})
+        for n in pmoc.get("notes", []):
+            notes.append({"病気": ENTRY, "種類": "県の覚書", "表": None, "文": n["text"], "出典ID": ids("制度", n.get("source_ids"))})
     P = seido["preentry"]
     for s in P["systems"]:
         entry.append({"区分": "制度", "ID": s.get("id"), "名前": s["name"], "病気": "・".join(s.get("diseases") or []), "内容": s.get("what"),

@@ -1580,7 +1580,7 @@
       <p>また、国別の感染状況（その国の人口全体の数字）は、その国から日本へ入国する人の感染の割合ではありません。</p>
     </div>
     <details class="kj-deep" id="entry-deep">
-      <summary><svg class="kj-ic" aria-hidden="true" focusable="false"><use href="#kj-i-book"/></svg><span class="kj-deep-t">詳しく調べる：制度の資料</span><span class="kj-deep-g">制度の状態の見方、4つの感染症×制度、JPETSの対象国・対象外・検査の内容、在留資格ごとの適用範囲、そのほかの制度、協力覚書の一覧、制度上の確認事項</span></summary>
+      <summary><svg class="kj-ic" aria-hidden="true" focusable="false"><use href="#kj-i-book"/></svg><span class="kj-deep-t">詳しく調べる：制度の資料</span><span class="kj-deep-g">制度の状態の見方、4つの感染症×制度、JPETSの対象国・対象外・検査の内容、在留資格ごとの適用範囲、そのほかの制度、協力覚書の一覧、都道府県が結んだ覚書、制度上の確認事項</span></summary>
       <div class="kj-deep-body">
         <section class="kj-card" id="entry-status-key" aria-labelledby="entry-status-h">
           <h3 id="entry-status-h">制度の状態の見方（実施中・開始予定など）</h3><p class="kj-cap">ここから下は、制度そのものの状態です。上の早見の「義務あり・条件付き…」は、選んだ人にとって義務かどうかを示します。</p>
@@ -1612,6 +1612,17 @@
             <div id="entry-moc-src"></div>
           </div>
           <div class="kj-card" id="world-moc-card"><h3>協力覚書についての説明</h3><ul class="kj-list kj-list-sm"></ul></div>
+        </section>
+        <section class="kj-section" id="entry-pmoc" aria-labelledby="entry-pmoc-h">
+          <h3 class="kj-h3" id="entry-pmoc-h">都道府県が結んだ外国人材の覚書（国の協力覚書とは別）</h3>
+          <div class="kj-card">
+            <p class="kj-cap" id="entry-pmoc-cap"></p>
+            <div class="kj-controls"><label class="kj-field"><span>相手の国</span><select class="kj-select" id="entry-pmoc-cty"></select></label><label class="kj-field"><span>都道府県</span><select class="kj-select" id="entry-pmoc-pref"></select></label></div>
+            <p class="kj-cap" id="entry-pmoc-count" aria-live="polite"></p>
+            <div class="kj-rt"><div class="kj-scroll"><table class="kj-table" id="entry-pmoc-table"></table></div></div>
+            <div id="entry-pmoc-src"></div>
+          </div>
+          <div class="kj-card" id="entry-pmoc-card"><h3>都道府県の覚書についての説明</h3><ul class="kj-list kj-list-sm"></ul></div>
         </section>
         <section class="kj-card" id="entry-gaps" aria-labelledby="entry-gaps-h">
           <h3 id="entry-gaps-h">制度上の確認事項</h3>
@@ -3208,7 +3219,7 @@ const ST_DEF = [
   ['未確認', '公的資料が見つからなかったもの。制度がないと決めつけてはいません。'],
 ];
 const jpetsRow = (iso) => E.data.find((r) => r.区分 === 'JPETSの国' && r.ISO3 === iso);
-const fmtDate = (s) => (s && /^\d{4}-\d{2}-\d{2}$/.test(s) ? `${Number(s.slice(0, 4))}年${Number(s.slice(5, 7))}月${Number(s.slice(8, 10))}日` : s || '');
+const fmtDate = (s) => (s && /^\d{4}-\d{2}-\d{2}$/.test(s) ? `${Number(s.slice(0, 4))}年${Number(s.slice(5, 7))}月${Number(s.slice(8, 10))}日` : s && /^\d{4}-\d{2}$/.test(s) ? `${Number(s.slice(0, 4))}年${Number(s.slice(5, 7))}月` : s || '');
 function preentryCell(r, did) {
   if (r.ISO3 === 'JPN') return h('span', { class: 'kj-sm' }, '—（日本）');
   if (did === 'tb') {
@@ -3469,6 +3480,14 @@ function renderCountryDetail() {
     h('tbody', {}, ...mocs.map((x) => h('tr', {}, h('td', { class: 'kj-name' }, x.制度), h('td', { class: 'kj-left', style: 'min-width:14em' }, x.名前 || '—'), h('td', { class: 'kj-left kj-nowrap' }, x.日付 ? `${fmtDate(x.日付)}${x.日付の種類 ? `（${x.日付の種類}）` : ''}` : '確認できず'),
       h('td', { class: 'kj-left', style: 'min-width:16em' }, x.内容 || '—'), h('td', { class: 'kj-left' }, /^https:\/\//.test(x.資料URL || '') ? h('a', { href: x.資料URL, target: '_blank', rel: 'noopener noreferrer' }, '公式資料', h('span', { 'aria-hidden': 'true' }, '↗')) : '', ...srcBtns(x.出典ID)))))))
     : h('p', {}, r.ISO3 === 'JPN' ? '—' : `出入国在留管理庁・外国人技能実習機構の協力覚書の一覧に、${r.国}は載っていません（${SITE.asOf}確認）。`);
+  // B（つづき）都道府県が結んだ外国人材の覚書
+  const pms = E.data.filter((x) => x.区分 === '県の覚書' && x.ISO3 === r.ISO3);
+  const B2 = pms.length ? h('details', { class: 'kj-details', style: 'margin-top:12px', open: pms.length <= 5 }, h('summary', {}, `都道府県が結んだ外国人材の覚書（${pms.length}件・国の協力覚書とは別）`),
+    h('div', { class: 'kj-scroll' }, h('table', { class: 'kj-table' },
+      h('thead', {}, h('tr', {}, ...['都道府県', '相手', '分野・主な内容', '日付'].map((x) => h('th', { class: 'kj-left' }, x)))),
+      h('tbody', {}, ...pms.map((x) => h('tr', {}, h('td', { class: 'kj-name' }, x.都道府県), h('td', { class: 'kj-left', style: 'min-width:12em' }, x.相手, x.相手の種類 ? h('span', { class: 'kj-sm' }, x.相手の種類) : ''),
+        h('td', { class: 'kj-left', style: 'min-width:16em' }, x.分野 ? h('b', {}, x.分野) : '', x.分野 ? h('br') : '', x.内容 || '', ...srcBtns(x.出典ID)), h('td', { class: 'kj-left kj-nowrap' }, x.日付 ? fmtDate(x.日付) : '確認できず')))))),
+    h('p', { class: 'kj-cap' }, '健康・感染症の記載の確認結果は、', h('a', { href: '#entry-pmoc', 'data-nav': '' }, '「都道府県が結んだ外国人材の覚書」'), 'の一覧にあります。')) : null;
   // C. 入国前の健康確認
   const sys = E.data.find((x) => x.区分 === '制度' && x.ID === 'jpets');
   const others = E.data.filter((x) => x.区分 === '制度' && x.ID !== 'jpets');
@@ -3493,6 +3512,7 @@ function renderCountryDetail() {
     else dl.push('この国はJPETSの対象国ではないため、入国前の結核の証明書は求められていません（制度対象外）。');
     dl.push('HIV/エイズ・梅毒・はしかの入国前検査の扱いは、上の「4つの感染症ごと」の表のとおりです（どの国から入国する人も同じ）。');
     if (mocs.length) dl.push(hc && hc.内容 ? `協力覚書の健康に関する記載：${hc.内容}` : '協力覚書の締結と、入国前の健康診断・検査の義務は、別の制度です。');
+    if (pms.length) dl.push('都道府県が結んだ覚書も、入国前の健康診断や検査の義務を決めるものではありません（義務は国の法令や運用要領、JPETSのガイドラインで決まっています）。');
   }
   const gaps = E.data.filter((x) => x.区分 === '確認事項');
   const D_ = h('div', { style: 'display:grid;gap:8px' }, h('ul', { class: 'kj-list kj-list-sm' }, ...dl.map((x) => h('li', {}, x))),
@@ -3500,9 +3520,9 @@ function renderCountryDetail() {
   const sec = (abc, title, body) => h('div', { class: 'kj-cd-sec' }, h('h4', {}, h('span', { class: 'kj-abc', 'aria-hidden': 'true' }, abc), title), body);
   box.replaceChildren(
     h('div', { class: 'kj-cd-head' }, h('h3', {}, r.国), h('span', { class: 'kj-cap' }, `${r.英語名}・${r.地域}`)),
-    h('div', { class: 'kj-cd-badges' }, r.協力覚書 ? h('span', { class: 'kj-tag kj-tag-plain' }, `協力覚書：${r.協力覚書}`) : null, r.ISO3 !== 'JPN' ? (j ? stBadge(j.状態, '（JPETS）') : h('span', { class: 'kj-tag kj-tag-plain' }, 'JPETSの対象国ではない')) : null),
+    h('div', { class: 'kj-cd-badges' }, r.協力覚書 ? h('span', { class: 'kj-tag kj-tag-plain' }, `協力覚書：${r.協力覚書}`) : null, pms.length ? h('span', { class: 'kj-tag kj-tag-plain' }, `都道府県の覚書：${pms.length}件`) : null, r.ISO3 !== 'JPN' ? (j ? stBadge(j.状態, '（JPETS）') : h('span', { class: 'kj-tag kj-tag-plain' }, 'JPETSの対象国ではない')) : null),
     h('p', { class: 'kj-cap' }, '国の人口全体の数字です。この国から日本へ入国する人の感染の割合ではなく、個人の感染や危険性を表すものでもありません。'),
-    sec('A', '感染症の状況', A_), sec('B', '日本との協力覚書', B_), sec('C', '入国前の健康確認', C_), sec('D', '制度上の確認事項', D_),
+    sec('A', '感染症の状況', A_), sec('B', '日本との協力覚書', B2 ? h('div', {}, B_, B2) : B_), sec('C', '入国前の健康確認', C_), sec('D', '制度上の確認事項', D_),
     h('p', { class: 'kj-links' }, h('a', { href: '#cty-table-card', 'data-nav': '' }, '比較表に戻る'), h('a', { href: '#entry', 'data-nav': '' }, '日本の入国前対策'), h('a', { href: '#riyou-3', 'data-nav': '' }, '偏見・差別の防止')));
   indexDirty = true;
 }
@@ -3569,6 +3589,42 @@ function renderEntry() {
   const ml = $('#world-moc-card ul');
   drawList(ml, WORLD, '協力覚書');
   notesOf(ENTRY_N, '協力覚書').forEach((n) => ml.append(h('li', {}, n.文, ...srcBtns(n.出典ID))));
+  // 都道府県が結んだ外国人材の覚書（国の協力覚書とは別。県の公式ページで確かめたものだけ）
+  const pm = E.data.filter((x) => x.区分 === '県の覚書');
+  const prg = E.data.find((x) => x.区分 === '県の覚書_調べた範囲');
+  const pt = $('#entry-pmoc-table');
+  pt.replaceChildren();
+  $('#entry-pmoc').hidden = !pm.length;
+  if (pm.length) {
+    const nP = new Set(pm.map((x) => x.都道府県)).size, nC = new Set(pm.map((x) => x.国)).size;
+    $('#entry-pmoc-cap').textContent = `国の協力覚書とは別に、都道府県が人材を確保するために、相手の国の役所や州・省、学校などと結んだ覚書です。47都道府県の公式ページを調べ、外国人材の受け入れ・育成についての覚書が見つかった${nP}都道府県の${pm.length}件（相手は${nC}か国）を載せています（${prg ? fmtDate(prg.確認日) : SITE.asOf}確認）。相手の国の名前を押すと、その国の感染状況などが見られます。`;
+    const hr2 = pt.createTHead().insertRow();
+    ['都道府県', '相手の国', '相手（署名した相手）', '分野・主な内容', '日付', '健康・感染症の記載'].forEach((x, i) => hr2.append(h('th', { class: i ? 'kj-left' : 'kj-left kj-sticky' }, x)));
+    const b2 = pt.createTBody();
+    const row = (x) => h('tr', {},
+      h('td', { class: 'kj-sticky kj-left kj-name', 'data-label': '' }, x.都道府県),
+      h('td', { class: 'kj-left', style: 'min-width:6em', 'data-label': '相手の国' }, C.data.some((z) => z.ISO3 === x.ISO3) ? h('button', { type: 'button', class: 'kj-namebtn', onclick: () => goTo(`c-${x.ISO3}`) }, x.国) : x.国 || '—'),
+      h('td', { class: 'kj-left', style: 'min-width:11em', 'data-label': '相手（署名した相手）' }, x.相手, x.相手の種類 ? h('span', { class: 'kj-sm' }, x.相手の種類) : '', x.ほかの署名者 ? h('span', { class: 'kj-sm' }, `ほかの署名者：${x.ほかの署名者}`) : ''),
+      h('td', { class: 'kj-left', style: 'min-width:16em', 'data-label': '分野・主な内容' }, x.分野 ? h('b', {}, x.分野) : '', x.分野 ? h('br') : '', x.内容 || '', x.期間 ? h('span', { class: 'kj-sm' }, x.期間) : '', ...srcBtns(x.出典ID)),
+      h('td', { class: 'kj-left', style: 'min-width:6.5em', 'data-label': '日付' }, x.日付 ? fmtDate(x.日付) : '確認できず', x.日付の種類 ? h('span', { class: 'kj-sm' }, x.日付の種類) : ''),
+      h('td', { class: 'kj-left', style: 'min-width:11em', 'data-label': '健康・感染症の記載' }, x.健康の記載 || '—', /^https:\/\//.test(x.資料URL || '') ? [' ', h('a', { href: x.資料URL, target: '_blank', rel: 'noopener noreferrer', title: x.名前 || '' }, '覚書の本文', h('span', { 'aria-hidden': 'true' }, '↗'))] : ''));
+    // 相手の国・都道府県でしぼりこむ（選択肢の（ ）は件数）
+    const sc = $('#entry-pmoc-cty'), sp = $('#entry-pmoc-pref');
+    const opts = (sel, key, all) => sel.replaceChildren(h('option', { value: '' }, `${all}（${pm.length}件）`), ...[...new Set(pm.map((x) => x[key]))].sort((a, b) => key === '国' ? pm.filter((x) => x.国 === b).length - pm.filter((x) => x.国 === a).length : 0).map((v) => h('option', { value: v }, `${v}（${pm.filter((x) => x[key] === v).length}件）`)));
+    opts(sc, '国', 'すべての国'); opts(sp, '都道府県', 'すべての都道府県');
+    const drawP = () => {
+      const hit = pm.filter((x) => (!sc.value || x.国 === sc.value) && (!sp.value || x.都道府県 === sp.value));
+      b2.replaceChildren(...hit.map(row));
+      $('#entry-pmoc-count').textContent = hit.length ? `${hit.length}件を表示しています（都道府県の北から順、同じ都道府県の中は日付の順）。` : '選んだ組み合わせの覚書はありません。「すべて」に戻してください。';
+      indexDirty = true;
+    };
+    sc.onchange = drawP; sp.onchange = drawP;
+    drawP();
+    $('#entry-pmoc-src').replaceChildren(srcLine([...new Set(pm.flatMap((x) => String(x.出典ID || '').split('・')).filter(Boolean))].slice(0, 6), [['日付', '署名日・締結日（県の公式ページのとおり）']]));
+    const pl = $('#entry-pmoc-card ul');
+    pl.replaceChildren(...notesOf(ENTRY_N, '県の覚書').map((n) => h('li', {}, n.文, ...srcBtns(n.出典ID))));
+    if (prg) pl.append(h('li', {}, `調べ方：${prg.内容}`), h('li', {}, `県の公式ページで見つからなかった都道府県：${prg.見つからなかった都道府県 || 'なし'}（見つからなかったことは、覚書がないことを確かめたものではありません）。`));
+  }
   const gaps = E.data.filter((x) => x.区分 === '確認事項');
   const kinds = [...new Set(gaps.map((x) => x.名前))];
   $('#entry-gaps-box').replaceChildren(...(gaps.length ? kinds.map((k) => h('div', { class: 'kj-subblock' }, h('h4', {}, k), h('ul', { class: 'kj-list kj-list-sm' }, ...gaps.filter((x) => x.名前 === k).map((x) => h('li', {}, x.内容, ...srcBtns(x.出典ID)))))) : [noData()]));

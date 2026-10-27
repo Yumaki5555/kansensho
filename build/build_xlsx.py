@@ -522,6 +522,28 @@ r = section(ew, r, "協力覚書についての説明")
 for n in notes_of(WORLD, "協力覚書") + notes_of("入国前対策", "協力覚書"):
     r = para(ew, r, f"・{n['文']}" + (f"（出典 {n['出典ID']}）" if n["出典ID"] else ""), cols=8, per_line=150)
 r += 1
+pm = [e for e in entry if e["区分"] == "県の覚書"]
+if pm:
+    r = section(ew, r, "都道府県が結んだ外国人材の覚書（国の協力覚書とは別）")
+    for n in notes_of("入国前対策", "県の覚書"):
+        r = para(ew, r, f"・{n['文']}" + (f"（出典 {n['出典ID']}）" if n["出典ID"] else ""), cols=8, per_line=150)
+    r = header(ew, r, ["都道府県", "相手の国", "相手（署名した相手）と覚書の名前", "日付", "分野", "主な内容", "健康・感染症の記載", "出典ID"])
+    for x in pm:
+        put(ew, r, 1, x["都道府県"], f_bold, fill_soft)
+        put(ew, r, 2, x.get("国"), align=wrap)
+        put(ew, r, 3, f"{x['相手']}（{x.get('相手の種類') or '—'}）" + (f"、ほかの署名者：{x['ほかの署名者']}" if x.get("ほかの署名者") else "")
+            + f"\n{x.get('名前') or '名前は公表されていない'}", align=wrap)
+        put(ew, r, 4, (x.get("日付") or "確認できず") + (f"（{x['日付の種類']}）" if x.get("日付の種類") else ""), align=wrap)
+        put(ew, r, 5, x.get("分野"), align=wrap)
+        put(ew, r, 6, (x.get("内容") or "") + (f"（{x['期間']}）" if x.get("期間") else ""), align=wrap)
+        put(ew, r, 7, x.get("健康の記載"), align=wrap)
+        put(ew, r, 8, x.get("出典ID"), align=wrap)
+        ew.row_dimensions[r].height = max(30, 15 * math.ceil(max((len(x["相手"]) + len(x.get("名前") or "")) / 22 + 1, len(x.get("内容") or "") / 30, len(x.get("健康の記載") or "") / 20)))
+        r += 1
+    rng = next((e for e in entry if e["区分"] == "県の覚書_調べた範囲"), None)
+    if rng:
+        r = para(ew, r, f"調べた範囲：{rng['内容']}（{rng['確認日']}確認）。県の公式ページで見つからなかった都道府県：{rng['見つからなかった都道府県'] or 'なし'}。", f_note, cols=8, per_line=150)
+    r += 1
 r = section(ew, r, "制度上の確認事項")
 for x in [e for e in entry if e["区分"] == "確認事項"]:
     r = para(ew, r, f"【{x['名前']}】{x['内容']}（出典 {x.get('出典ID') or '—'}）", cols=8, per_line=150)
