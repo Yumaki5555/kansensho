@@ -2152,6 +2152,25 @@ function measure(svg, texts, cls) {
   t.remove();
   return w;
 }
+// 枠の幅に入らない見出しは、「：」「・」の後や「（」の前で折り返す（それでも入らないところは1文字ずつ）
+function fitLines(svg, text, cls, maxW) {
+  if (!text) return [];
+  if (measure(svg, [text], cls) <= maxW) return [text];
+  const parts = [];
+  let p = '';
+  for (const ch of text) {
+    if (ch === '（' && p) { parts.push(p); p = ''; }
+    p += ch;
+    if (ch === '：' || ch === '・') { parts.push(p); p = ''; }
+  }
+  if (p) parts.push(p);
+  const lines = [];
+  let cur = '';
+  const add = (s) => { if (cur && measure(svg, [cur + s], cls) > maxW) { lines.push(cur); cur = s; } else cur += s; };
+  parts.forEach((s) => (measure(svg, [s], cls) <= maxW ? add(s) : [...s].forEach(add)));
+  if (cur) lines.push(cur);
+  return lines;
+}
 function tipOf(box) {
   let t = box.querySelector('.kj-tip');
   if (!t) { t = el('div', 'kj-tip'); t.hidden = true; box.append(t); }
@@ -2420,10 +2439,13 @@ function plotBars(svg, F, cfg) {
 // 横棒（国・地域などを並べる）。値のないものは「データなし」と書き、0として描かない
 function plotHBars(svg, F, cfg) {
   const rows = cfg.rows;
-  const rowH = cfg.rowH || 28, mt = F.y0 + (cfg.title ? 26 : 0) + (cfg.unit ? 18 : 0) + 4, mb = 24;
+  // 見出し・単位は枠の幅で折り返す。折り返した分だけ下へずらす（下端は戻り値で返す）
+  const tl = fitLines(svg, cfg.title, 'kj-ptitle', F.w), ul = fitLines(svg, cfg.unit, 'kj-unitlab', F.w);
+  const titleH = tl.length ? 26 + 18 * (tl.length - 1) : 0, unitH = ul.length ? 18 + 17 * (ul.length - 1) : 0;
+  const rowH = cfg.rowH || 28, mt = F.y0 + titleH + unitH + 4, mb = 24;
   const g = svg.append('g');
-  if (cfg.title) g.append('text').attr('class', 'kj-ptitle').attr('x', F.x0).attr('y', F.y0 + 16).text(cfg.title);
-  if (cfg.unit) g.append('text').attr('class', 'kj-unitlab').attr('x', F.x0).attr('y', F.y0 + (cfg.title ? 26 : 0) + 13).text(cfg.unit);
+  tl.forEach((s, i) => g.append('text').attr('class', 'kj-ptitle').attr('x', F.x0).attr('y', F.y0 + 16 + 18 * i).text(s));
+  ul.forEach((s, i) => g.append('text').attr('class', 'kj-unitlab').attr('x', F.x0).attr('y', F.y0 + titleH + 13 + 17 * i).text(s));
   const f = cfg.fmt || fmt;
   const lab = (r) => (typeof r.v === 'number' ? f(r.v) : r.v === null || r.v === undefined ? (cfg.none || 'データなし') : String(r.v));
   const ml = F.x0 + Math.min(F.w * 0.42, measure(svg, rows.map((r) => r.name), 'kj-rowlab') + 10);
@@ -3280,14 +3302,15 @@ function drawCountryBars(box, rows, did, m, opt = {}) {
   const d = DBY[did];
   const W = opt.width || Math.max(300, box.clientWidth);
   const rowH = opt.exporting ? Math.max(18, Math.min(28, Math.floor(440 / Math.max(1, rows.length)))) : 28;
-  const H = hRowsH(rows.length, { unit: true, rowH });
-  const svg = svgIn(box, opt.exporting ? Math.min(W, 900) : W, H, `${m.short}の国別の横棒グラフ`);
-  plotHBars(svg, { x0: 0, y0: 0, w: opt.exporting ? Math.min(W, 900) : W, h: H }, {
+  const H = hRowsH(rows.length, { unit: true, rowH }), w = opt.exporting ? Math.min(W, 900) : W;
+  const svg = svgIn(box, w, H, `${m.short}の国別の横棒グラフ`);
+  const bottom = plotHBars(svg, { x0: 0, y0: 0, w, h: H }, {
     rowH, unit: `${m.t}${m.unit === '人' ? '　単位：人' : ''}`, color: colorOf(d), fmt: (v) => m.f(v), tickFmt: (t) => (m.unit === '%' ? `${t}%` : m.unit === '人' ? man(t) : fmt(t)),
     none: 'データなし', box: opt.exporting ? null : box,
     rows: rows.map((r) => ({ key: r.ISO3, name: r.ISO3 === 'JPN' ? '（参考）日本' : r.国, v: cval(r, m), color: r.ISO3 === 'JPN' ? 'var(--cds-chart-reference)' : colorOf(d), strong: r.ISO3 === cstate.sel, r })),
     tip: (x) => countryTip(x.r, did), onClick: opt.noClick ? null : (x) => selectCountry(x.key),
   });
+  if (bottom > H) svg.attr('viewBox', `0 0 ${w} ${bottom}`);
 }
 
 /* --- トップの表 --- */
@@ -3420,14 +3443,18 @@ function drawCountryMulti(box, picked, opt = {}) {
   const svg = svgIn(box, W, H, '選んだ国を4つの感染症で比べる横棒グラフ');
   if (!picked.length) { svg.append('text').attr('class', 'kj-tick').attr('x', W / 2).attr('y', 30).attr('text-anchor', 'middle').text('表の「比べる」にチェックを入れてください'); return; }
   const gap = cols === 2 ? 36 : 0, pw = (W - gap * (cols - 1)) / cols;
+  // 見出しが折り返すと1枚が高くなるので、次の段は前の段のいちばん下から描く
+  let y0 = 0, bottom = 0;
   DISEASES.forEach((d, k) => {
+    if (k && k % cols === 0) y0 = bottom + 16;
     const m = d.id === 'measles' ? (CM.measles.m.find((x) => x.k === 'はしか_100万人あたり') || CM.measles.m[0]) : CM[d.id].m[0];
-    plotHBars(svg, { x0: (k % cols) * (pw + gap), y0: Math.floor(k / cols) * ph, w: pw, h: ph }, {
+    bottom = Math.max(bottom, plotHBars(svg, { x0: (k % cols) * (pw + gap), y0, w: pw, h: ph }, {
       rowH, title: `${d.label}：${m.short}`, unit: `${cYear(d.id, m)}・${m.kind}`, color: colorOf(d), fmt: (v) => m.f(v), tickFmt: (t) => (m.unit === '%' ? `${t}%` : fmt(t)), none: d.id === 'hiv' ? 'UNAIDSの推計なし' : 'データなし',
       box: opt.exporting ? null : box, rows: picked.map((r) => ({ key: `${d.id}-${r.ISO3}`, name: r.ISO3 === 'JPN' ? '（参考）日本' : r.国, v: cval(r, m), color: r.ISO3 === 'JPN' ? 'var(--cds-chart-reference)' : colorOf(d), r })),
       tip: (x) => countryTip(x.r, d.id),
-    });
+    }));
   });
+  svg.attr('viewBox', `0 0 ${W} ${bottom + 16}`);
 }
 EXPORTS.countries = () => {
   const cm = CM[cstate.d], d = DBY[cstate.d];
@@ -3780,11 +3807,12 @@ function drawCostChart(box, opt = {}) {
   else rows = costItems(/1日分の薬価/, 'HIV/エイズ').sort((a, b) => b.値 - a.値).map((r, i) => ({ key: `d${i}`, name: r.名前.replace('の1日分の薬価', ''), v: r.値, color: 'var(--series-1)', r }));
   const H = hRowsH(rows.length, { unit: true, rowH: 32 });
   const svg = svgIn(box, W, H, COST_CHARTS[costChart].t);
-  plotHBars(svg, { x0: 0, y0: 0, w: W, h: H }, {
+  const bottom = plotHBars(svg, { x0: 0, y0: 0, w: W, h: H }, {
     rowH: 32, unit: costChart === 'hiv' ? '単位：円（1人当たり・1年間の平均）' : '単位：円（1日分）', color: 'var(--series-1)', fmt: (v) => `${fmt(Math.round(v * 10) / 10)}円`, tickFmt: (t) => (t >= 10000 ? `${t / 10000}万` : fmt(t)),
     box: opt.exporting ? null : box, rows,
     tip: (x) => ({ title: x.r.名前, lines: [['金額', `${fmt(x.r.値)}${x.r.単位 ? ` ${x.r.単位}` : '円'}`], ['対象年・時点', x.r.年 || '—'], ['数字の種類', x.r.種類 || '—'], x.r.対象 ? ['対象', x.r.対象] : null], note: [x.r.範囲 ? `範囲：${x.r.範囲}` : '', x.r.計算式 ? `計算：${x.r.計算式}` : '', `出典：${x.r.出典ID || '—'}`].filter(Boolean) }),
   });
+  if (bottom > H) svg.attr('viewBox', `0 0 ${W} ${bottom}`);
 }
 function renderCostChart() {
   const fig = $('#cost-fig');
