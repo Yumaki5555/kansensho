@@ -1186,7 +1186,8 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
     <nav class="kj-drawer" id="kj-drawer" aria-label="メニュー" hidden>
       <ul>
         <li><a href="#home" data-nav data-view-link="home">トップ</a></li>
-        <li><a href="#sanpun" data-nav>まず3分でわかる（5つの図）</a></li>
+        <li><a href="#sanpun-tb" data-nav>まず3分でわかる（結核編）</a></li>
+        <li><a href="#sanpun-hiv" data-nav>まず3分でわかる（HIV/エイズ編）</a></li>
         <li><a href="#countries" data-nav data-group-link="world">① 世界では何が流行？</a>
           <ul>
             <li><a href="#countries" data-nav data-view-link="countries">国別の比較表</a></li>
@@ -1279,11 +1280,16 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
 
     <!-- ③ まず3分でわかる：5つのステップの図解（ボタンなし。上から読むだけで完結） -->
     <section class="kj-section kj-sanpun" id="sanpun" aria-labelledby="sanpun-h">
-      <div class="kj-band"><span class="kj-band-k">まず3分でわかる</span><h2 id="sanpun-h">結核を例に、5つの図で全体をつかむ</h2></div>
+      <div class="kj-band"><span class="kj-band-k">まず3分でわかる</span><h2 id="sanpun-h"><span id="sanpun-dz">結核</span>を例に、5つの図で全体をつかむ</h2></div>
+      <!-- 例にする病気の切りかえ（5つの図の枠の外に置く。#sanpun-hiv で HIV/エイズ編を直接開ける） -->
+      <div class="kj-seg kj-s3-pick" role="group" aria-label="例にする病気を選ぶ" id="sanpun-pick">
+        <button type="button" data-s3="tb" aria-pressed="true">結核編</button>
+        <button type="button" data-s3="hiv" aria-pressed="false">HIV/エイズ編</button>
+      </div>
       <div class="kj-s3-list">
         <article class="kj-s3" id="step1" aria-labelledby="step1-h">
           <span class="kj-s3-no" aria-hidden="true">1</span>
-          <h3 id="step1-h"><span class="kj-vh">STEP 1　</span>海外では今も結核が流行している</h3>
+          <h3 id="step1-h"><span class="kj-vh">STEP 1　</span><span id="step1-t">海外では今も結核が流行している</span></h3>
           <p class="kj-s3-lead" id="step1-lead"></p>
           <div class="kj-s3-fig" id="step1-fig"></div>
           <p class="kj-s3-desc" id="step1-desc"></p>
@@ -1291,7 +1297,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         </article>
         <article class="kj-s3" id="step2" aria-labelledby="step2-h">
           <span class="kj-s3-no" aria-hidden="true">2</span>
-          <h3 id="step2-h"><span class="kj-vh">STEP 2　</span>日本への入国と健康確認</h3>
+          <h3 id="step2-h"><span class="kj-vh">STEP 2　</span><span id="step2-t">日本への入国と健康確認</span></h3>
           <p class="kj-s3-lead" id="step2-lead"></p>
           <div class="kj-s3-fig" id="step2-fig"></div>
           <p class="kj-s3-desc" id="step2-desc"></p>
@@ -1299,7 +1305,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         </article>
         <article class="kj-s3" id="step3" aria-labelledby="step3-h">
           <span class="kj-s3-no" aria-hidden="true">3</span>
-          <h3 id="step3-h"><span class="kj-vh">STEP 3　</span>入国前に何を検査している？</h3>
+          <h3 id="step3-h"><span class="kj-vh">STEP 3　</span><span id="step3-t">入国前に何を検査している？</span></h3>
           <p class="kj-s3-lead" id="step3-lead"></p>
           <div class="kj-s3-fig" id="step3-fig"></div>
           <p class="kj-s3-desc" id="step3-desc"></p>
@@ -1307,7 +1313,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         </article>
         <article class="kj-s3" id="step4" aria-labelledby="step4-h">
           <span class="kj-s3-no" aria-hidden="true">4</span>
-          <h3 id="step4-h"><span class="kj-vh">STEP 4　</span>日本国内の結核患者は？</h3>
+          <h3 id="step4-h"><span class="kj-vh">STEP 4　</span><span id="step4-t">日本国内の結核患者は？</span></h3>
           <p class="kj-s3-lead" id="step4-lead"></p>
           <div class="kj-s3-fig" id="step4-fig"></div>
           <p class="kj-s3-desc" id="step4-desc"></p>
@@ -1315,7 +1321,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
         </article>
         <article class="kj-s3" id="step5" aria-labelledby="step5-h">
           <span class="kj-s3-no" aria-hidden="true">5</span>
-          <h3 id="step5-h"><span class="kj-vh">STEP 5　</span>結核の治療費は、誰が払う？</h3>
+          <h3 id="step5-h"><span class="kj-vh">STEP 5　</span><span id="step5-t">結核の治療費は、誰が払う？</span></h3>
           <p class="kj-s3-lead" id="step5-lead"></p>
           <div class="kj-s3-fig" id="step5-fig"></div>
           <p class="kj-s3-desc" id="step5-desc"></p>
@@ -4918,24 +4924,25 @@ function renderStep1() {
     `結核の新しい患者の割合は、入国前の結核検査（JPETS）の対象の${js.length}か国で、日本の約${rx(lo, jv)}〜${rx(hi, jv)}倍です${nOn < jr.length ? `（実施中は、このうち${nOn}か国）` : ''}。`,
     `WHOの推計（${yt}・人口10万人あたり1年間の新しい患者数）。国全体の数字で、日本へ入国する人の数字ではありません。JPETSの状況：${jpetsListText()}。${srcPlain(`${CM.tb.src}・制度-8`)}`);
 }
-// STEP 2：海外から入国 → 国籍・在留資格・目的などで違う健康確認 → 日本での生活（制度名・国の数・詳しい条件は「入国時の検査」のページ）
-function renderStep2() {
+// STEP 2：海外から入国 → 国籍・在留資格・目的などで違う健康確認 → 日本での生活（制度名・国の数・詳しい条件は「入国時の検査」のページ）。結核編・HIV/エイズ編で共通（説明の一文だけ違う）
+function renderStep2(k = 'tb') {
   const syss = ckSystems();
   const pre = syss.filter((x) => /^(jpets|health_form)$/.test(x.ID));
   const node = (ics, label, key) => h('li', { class: key ? 'kj-pflow-key' : null }, h('span', { class: 'kj-pflow-ic' }, ...ics.map((ic) => icon(ic))), h('b', {}, label));
   setStep(2, '日本に来る外国人全員が、同じ感染症検査を受けるわけではない',
     h('ol', { class: 'kj-pflow', 'aria-label': '入国から日本での生活までの流れ' },
       node(['person', 'pass'], '海外から日本へ入国'), node(['care'], '国籍・在留資格・目的などで、必要な健康確認が違う', true), node(['home'], '日本での生活・就労・就学')),
-    '入国前に結核の証明書が必要な人もいれば、求められない人もいます。',
+    k === 'tb' ? '入国前に結核の証明書が必要な人もいれば、求められない人もいます。' : '国籍や在留資格によって、入国前・入国後に受ける健康確認が違います。',
     `${syss.length ? `${fmtDate(syss[0].基準日)}時点の制度。` : ''}${srcPlain([...new Set(pre.flatMap((x) => String(x.出典ID).split('・')))].join('・'))}`);
 }
-// STEP 3：結核を先頭に、4つの病気 × 入国前の検査の義務（入国時の検疫・入国後の健康診断とは別の制度）
-function renderStep3() {
+// STEP 3：その編の病気（結核・HIV/エイズ）を先頭に、4つの病気 × 入国前の検査の義務（入国時の検疫・入国後の健康診断とは別の制度）
+function renderStep3(k = 'tb') {
   const syss = ckSystems();
   const pre = syss.filter((x) => /^(jpets|health_form)$/.test(x.ID));
   if (!pre.length) { setStep(3, '', noData('入国時の検査のデータを読み込めませんでした。'), '', ''); return; }
   const LABEL = { 義務あり: '一律義務あり', 条件付き: '一部の対象者に義務あり', 一律義務なし: '一律義務なし', 導入予定: '未確認・導入予定', 未確認: '未確認・導入予定' };
-  const ag = [...DISEASES].sort((x, y) => (y.id === 'tb') - (x.id === 'tb')).map((d) => ({ d, a: ckAggregate(pre, d) }));
+  const ag = [...DISEASES].sort((x, y) => (y.id === k) - (x.id === k)).map((d) => ({ d, a: ckAggregate(pre, d) }));
+  if (k !== 'tb') { renderStep3Other(syss, pre, ag, LABEL); return; }
   // 結核の義務の対象（結核の証明書・在留資格の健康診断）。短期滞在が対象外と確かめられているのは結核の証明書（ルールで判定）
   const jp = pre.find((x) => x.ID === 'jpets'), hf = pre.find((x) => x.ID === 'health_form');
   const who = [jp && `${jp.だれが.replace(/（.*?）/g, '')}（結核の証明書）`, hf && `${hf.だれが.replace(/（.*?）/g, '')}（胸部エックス線の検査）`].filter(Boolean);
@@ -4946,16 +4953,34 @@ function renderStep3() {
   const all = ag.filter(({ a }) => a.st === '義務あり');
   const star = ag.some(({ a }) => a.star);
   setStep(3, all.length ? `入国前の検査が全員の義務なのは、${all.map(({ d }) => d.label).join('・')}` : `${DISEASES.length}つの病気とも、入国前の検査は全員の義務ではない`,
-    [h('p', { class: 'kj-dq2-h' }, '入国前の検査の義務'),
-      h('ul', { class: 'kj-dq2', 'aria-label': '4つの病気と入国前の検査の義務' }, ...ag.map(({ d, a }) => {
-        const k = S5[a.st] || S5.未確認;
-        const sub = (d.label.match(/（.*$/) || [])[0];
-        return h('li', { style: `--c:${colorOf(d)}` }, h('span', {}, icon(d.id), d.label.replace(/（.*$/, ''), sub ? h('small', {}, sub) : null),
-          h('span', { class: `kj-s5 ${k[0]}` }, h('i', { 'aria-hidden': 'true' }, k[1]), `${LABEL[a.st] || a.st}${a.star ? '※' : ''}`),
-          d.id === 'tb' && a.st === '条件付き' && tbWho ? h('small', {}, tbWho) : null);
-      }))],
+    dq2List(ag, LABEL, (d, a) => (d.id === 'tb' && a.st === '条件付き' ? tbWho : '')),
     '入国時の検疫や入国後の健康診断とは別の制度です。「義務なし」は検査されないという意味ではありません。',
     `${fmtDate(syss[0].基準日)}時点。調べた制度：${pre.map((x) => x.名前.replace(/（.*$/, '')).join('・')}。${star ? '※一部の在留資格は未確認。' : ''}${srcPlain([...new Set(pre.flatMap((x) => String(x.出典ID).split('・')))].join('・'))}`);
+}
+// 4つの病気と入国前の検査の義務の一覧（subOf で、行の下に小さな一文を付ける）
+function dq2List(ag, LABEL, subOf) {
+  return [h('p', { class: 'kj-dq2-h' }, '入国前の検査の義務'),
+    h('ul', { class: 'kj-dq2', 'aria-label': '4つの病気と入国前の検査の義務' }, ...ag.map(({ d, a }) => {
+      const k = S5[a.st] || S5.未確認;
+      const sub = (d.label.match(/（.*$/) || [])[0], note = subOf(d, a);
+      return h('li', { style: `--c:${colorOf(d)}` }, h('span', {}, icon(d.id), d.label.replace(/（.*$/, ''), sub ? h('small', {}, sub) : null),
+        h('span', { class: `kj-s5 ${k[0]}` }, h('i', { 'aria-hidden': 'true' }, k[1]), `${LABEL[a.st] || a.st}${a.star ? '※' : ''}`),
+        note ? h('small', {}, note) : null);
+    }))];
+}
+// STEP 3（HIV/エイズ編）：入国前の2つの制度にHIVの検査が入っていないことを、判定のきまりで確かめてから書く。上陸拒否（入国時）の対象外も一言
+function renderStep3Other(syss, pre, ag, LABEL) {
+  const { d, a } = ag[0];
+  const jp = pre.find((x) => x.ID === 'jpets'), hf = pre.find((x) => x.ID === 'health_form'), land = syss.find((x) => x.ID === 'landing');
+  const ev = (sys, s) => (sys ? ckEval(sys, d, { j: '実施中', s, name: '', start: '' }).st : null);
+  const noJp = ev(jp, '留学') === '一律義務なし', noHf = ['特定技能', '育成就労'].every((s) => ev(hf, s) === '一律義務なし');
+  const noLand = ev(land, '') === '一律義務なし';
+  const nm = d.label.replace(/\/.*$/, '');
+  const star = ag.some((x) => x.a.star);
+  setStep(3, a.st === '一律義務なし' ? `調べた制度では、入国前に${nm}の検査は求められていない` : `入国前の${nm}の検査：${LABEL[a.st] || a.st}`,
+    dq2List(ag, LABEL, (x) => (x === d && noJp && noHf ? `結核の証明書は結核だけが対象。特定技能などの健康診断の様式にも、${nm}の検査欄はない` : '')),
+    noLand ? `${d.label}は感染症法の五類感染症で、入国を断る理由になる病気（上陸拒否）にも入っていません。` : '入国時の検疫や入国後の健康診断とは別の制度です。',
+    `${fmtDate(syss[0].基準日)}時点。調べた制度：${pre.map((x) => x.名前.replace(/（.*$/, '')).join('・')}。${star ? '※一部の在留資格は未確認。' : ''}${srcPlain([...new Set(pre.concat(noLand ? [land] : []).flatMap((x) => String(x.出典ID).split('・')))].join('・'))}`);
 }
 // STEP 4：代表的な数字1つ（結核の新登録患者のうち外国生まれ）を100%の帯で。推移・ほかの病気は「日本の状況」のページ
 function renderStep4() {
@@ -4995,8 +5020,85 @@ function renderStep5() {
     `薬・検査・食事代などは含みません。70歳未満・窓口${Math.round((c.rate || 0.3) * 10)}割・${kb.t || ''}・${c.high ? '所得の多い世帯' : `本人負担のない世帯${capIn ? `（所得の多い世帯は1か月${man(capIn.値)}円まで）` : ''}`}。${out ? `入院しない通院の治療は、申請すると本人負担が医療費の${out.値}%。` : ''}公的医療保険は主に保険料、公費は税金でまかなわれます。${srcPlain(r.出典ID)}`);
 }
 
+/* --- まず3分でわかる（HIV/エイズ編）：結核編と同じ5つの問いで、HIV/エイズを例にする --- */
+// STEP 1：世界でHIVとともに生きる人（UNAIDSの推計）と、そのうちアジア太平洋の地域。日本はUNAIDSの推計がないので並べない
+function renderHivStep1() {
+  const K = '感染している人', w = W.data.find((r) => r.区分 === '世界'), ap = W.data.find((r) => r.区分 === '地域' && r.名前 === 'アジア太平洋');
+  if (!w || typeof w[K] !== 'number' || !ap || typeof ap[K] !== 'number') { setStep(1, '', noData('世界の数字を読み込めませんでした。'), '', ''); return; }
+  const p = (ap[K] / w[K]) * 100, chg = w['新たな感染の増減（2010年比・%）'];
+  setStep(1, ['世界では', h('span', { class: 'kj-nw' }, `約${man(w[K])}人`), 'がHIVとともに生きている'],
+    h('div', { class: 'kj-share', style: `--c:${colorOf(DBY.hiv)}` },
+      h('p', { class: 'kj-share-n' }, h('span', { class: 'kj-nw' }, 'うちアジア太平洋'), h('span', { class: 'kj-big' }, `約${man(ap[K])}人`), h('span', { class: 'kj-nw' }, `世界の約${Math.round(p)}%`)),
+      h('div', { class: 'kj-share-bar', role: 'img', 'aria-label': `世界 約${man(w[K])}人のうち、アジア太平洋 約${man(ap[K])}人（約${Math.round(p)}%）` }, h('span', { style: `width:${p}%` })),
+      h('p', { class: 'kj-share-key' }, h('span', {}, h('i'), 'アジア太平洋'), h('span', {}, h('i'), 'そのほかの地域'))),
+    typeof chg === 'number' && chg < 0 ? `新たな感染は2010年より${-chg}%減りましたが、${w.年}年も約${man(w.新たな感染)}人が新たに感染しました。` : `${w.年}年に新たに感染した人は約${man(w.新たな感染)}人です。`,
+    `UNAIDSの推計（${w.年}年。世界の推計の幅は${man(w['感染している人（下限）'])}〜${man(w['感染している人（上限）'])}人）。日本と協力覚書を結ぶ国の多くはアジア太平洋にあります。日本の推計値はUNAIDSに公表されていません。${srcPlain([...new Set([w.出典ID, ap.出典ID])].join('・'))}`);
+}
+// STEP 4：新たに報告されたHIV感染者・エイズ患者のうち、エイズを発症してから見つかった人（エイズ患者）の割合を100%の帯で
+function renderHivStep4() {
+  const t = B.data.find((x) => x.病気 === 'HIV/エイズ' && /^新規報告に占めるエイズ患者の割合/.test(x.表 || ''));
+  const y = t ? num((String(t.表).match(/(\d{4})年/) || [])[1]) : null;
+  const pr = t && B.data.find((x) => x.病気 === 'HIV/エイズ' && x.表 === t.表 && x.区分 === '全国' && x.列 === `${y}年(%)`);
+  const get = (k) => A.data.find((r) => r.病気 === 'HIV/エイズ' && r.指標 === k && num(r.年) === y);
+  const ai = get('エイズ患者'), all = get('合計');
+  if (!pr || !ai || !all) { setStep(4, '', noData('国内の数字を読み込めませんでした。'), '', ''); return; }
+  const p = num(pr.値), k = all.区分 || all.種類, kind = k === '確定' ? '（確定値）' : k === '速報' ? '（速報値）' : '';
+  const free = notesOf('HIV/エイズ', '対策').find((n) => /無料/.test(n.文 || ''));
+  setStep(4, ['新たに報告された人の', h('span', { class: 'kj-nw' }, `約${Math.round(p / 10)}割`), 'は、エイズを発症してから見つかっている'],
+    h('div', { class: 'kj-share', style: `--c:${colorOf(DBY.hiv)}` },
+      h('p', { class: 'kj-share-n' }, h('span', { class: 'kj-big' }, `${p.toFixed(1)}%`), h('span', { class: 'kj-nw' }, `${fmt(ai.値)}件 ／ 全体 ${fmt(all.値)}件`)),
+      h('div', { class: 'kj-share-bar', role: 'img', 'aria-label': `エイズを発症してからわかった人 ${fmt(ai.値)}件（${p.toFixed(1)}%）、発症する前にわかった人（全体 ${fmt(all.値)}件）` }, h('span', { style: `width:${p}%` })),
+      h('p', { class: 'kj-share-key' }, h('span', {}, h('i'), 'エイズを発症してからわかった人'), h('span', {}, h('i'), '発症する前にわかった人'))),
+    `エイズ患者は、発症して初めてHIV感染がわかった人です。${free ? '保健所などでは、無料・匿名で検査を受けられます。' : ''}`,
+    `${y}年${kind}・新たに報告されたHIV感染者とエイズ患者の数（件）。割合は資料に書かれた値。${srcPlain([...new Set([pr.出典ID, all.出典ID, free && free.出典ID].filter(Boolean))].join('・'))}`);
+}
+// STEP 5：HIVの治療を1年間続けた代表例（全国の平均の医療費をもとにしたモデル試算）で、本人負担・公費（自立支援医療）・公的医療保険
+function renderHivStep5() {
+  const r = scenarios().find((x) => x.項目 === 'hiv');
+  const s = r && scenarioSplit(r);
+  if (!s) { setStep(5, '', noData('医療費の例を読み込めませんでした。'), '', ''); return; }
+  let c = {};
+  try { c = JSON.parse(r.条件 || '{}'); } catch (e) { c = {}; }
+  const kb = KOGAKU[c.kb === undefined ? 2 : c.kb] || {};
+  const fy = (String(r.注 || '').match(/\d{4}年度/) || [''])[0];
+  const pct = (v) => `${Math.round((v / s.M) * 100)}%`;
+  setStep(5, ['HIVの治療には、本人負担を抑える', h('span', { class: 'kj-nw' }, '公費の制度がある')],
+    h('div', { class: 'kj-pay1' },
+      h('p', { class: 'kj-pay1-t' }, `例：${r.名前}`),
+      h('p', { class: 'kj-pay1-total' }, h('span', {}, '医療費の総額', h('br'), h('small', {}, r.種類 || 'モデル試算')), h('span', { class: 'kj-big kj-nw' }, manYen(s.M))),
+      payBar(s),
+      h('dl', {}, ...[[2, 'self', '本人負担'], [1, 'pub', '公費（自立支援医療）'], [0, 'ins', '公的医療保険']].map(([j, k, t]) => h('div', {}, h('dt', {}, h('i', { style: `background:${PAY[j][1]}` }), t), h('dd', {}, manYen(s[k]), h('small', {}, pct(s[k]))))))),
+    '自立支援医療を使うと、本人の負担は所得に応じた1か月の上限までになります。',
+    `${fy ? `${fy}の平均（HIV以外の病気の治療費も含む）を、毎月同じ額として計算。` : ''}70歳未満・窓口${Math.round((c.rate || 0.3) * 10)}割・${[kb.t, c.jcap_text].filter(Boolean).join('・')}。公的医療保険は主に保険料、公費は税金でまかなわれます。${srcPlain(r.出典ID)}`);
+}
+/* --- 3分でわかるのシリーズ（結核編・HIV/エイズ編）。見出しの下のボタンで、同じ5つの問いの例にする病気を入れかえる --- */
+const S3 = {
+  tb: { dz: '結核', t: ['海外では今も結核が流行している', '日本への入国と健康確認', '入国前に何を検査している？', '日本国内の結核患者は？', '結核の治療費は、誰が払う？'],
+    draw: () => { renderStep1(); renderStep2('tb'); renderStep3('tb'); renderStep4(); renderStep5(); } },
+  hiv: { dz: 'HIV/エイズ', t: ['世界では今もHIVが広がっている', '日本への入国と健康確認', '入国前にHIVの検査はある？', '日本国内のHIV・エイズは？', 'HIVの治療費は、誰が払う？'],
+    draw: () => { renderHivStep1(); renderStep2('hiv'); renderStep3('hiv'); renderHivStep4(); renderHivStep5(); } },
+};
+let s3 = 'tb';
+function renderSanpun() {
+  const x = S3[s3];
+  $('#sanpun-dz').textContent = x.dz;
+  x.t.forEach((t, i) => { $(`#step${i + 1}-t`).textContent = t; });
+  $$('#sanpun-pick button').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.s3 === s3)));
+  // 入れかえる前の編のグラフは、描く対象から外す（入れかえのたびに増えないように）
+  const sp = $('#sanpun');
+  CHARTS = CHARTS.filter((c) => !sp.contains(c.el));
+  x.draw();
+  indexDirty = true;
+}
+function setSanpun(k) {
+  if (!S3[k] || k === s3) return;
+  s3 = k;
+  renderSanpun();
+  drawVisible();
+}
+
 function renderExplainer() {
-  renderStep1(); renderStep2(); renderStep3(); renderStep4(); renderStep5();
+  renderSanpun();
   renderEntryFlow(); renderEntryTflow(); renderCompareFx();
   renderCkMatrix($('#entry-mx'));
   renderDZ(); renderChecker(); renderKadai(); renderTerms();
@@ -5084,6 +5186,9 @@ function route(first) {
   let id = '';
   try { id = decodeURIComponent(location.hash.slice(1)); } catch (e) { id = location.hash.slice(1); }
   id = ALIAS[id] !== undefined ? ALIAS[id] : id;
+  // #sanpun-tb・#sanpun-hiv：「まず3分でわかる」の編を選んでから、その場所へ
+  const sm = /^sanpun-(tb|hiv)$/.exec(id);
+  if (sm) { setSanpun(sm[1]); id = 'sanpun'; }
   const cm = /^c-([A-Z]{3})$/.exec(id);
   if (cm && C.data.some((r) => r.ISO3 === cm[1])) {
     cstate.sel = cm[1];
@@ -5251,10 +5356,11 @@ $('#kj-q').addEventListener('keydown', (ev) => {
   }
   if (ev.key === 'Enter') { ev.preventDefault(); const x = lastResults[Math.max(0, resultIdx)]; if (x) openResult(x); }
 });
-const QUICK = [['まず3分でわかる', 'sanpun'], ['入国時の検査の早見', 'entry-check'], ['100万円の医療費の試算', 'cost-sim'], ['外国人の場合の制度', 'cost-foreign'], ['制度の課題を考える', 'kadai'], ['ことばの説明', 'guide-terms'], ['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
+const QUICK = [['まず3分でわかる', 'sanpun'], ['まず3分でわかる（HIV/エイズ編）', 'sanpun-hiv'], ['入国時の検査の早見', 'entry-check'], ['100万円の医療費の試算', 'cost-sim'], ['外国人の場合の制度', 'cost-foreign'], ['制度の課題を考える', 'kadai'], ['ことばの説明', 'guide-terms'], ['国別の比較表', 'countries'], ['入国前の結核検査（JPETS）', 'entry-jpets'], ['協力覚書の一覧', 'entry-moc'], ['治療費と公的負担', 'cost'], ['公費の比較表', 'kouhi-map'], ['HIVの自己負担の上限', 'kouhi-hiv-cost'], ['結核の医療費（申請）', 'kouhi-tb-apply'], ['はしかの2026年の途中経過', 'measles-ytd'], ['国内の状況', 'compare'], ['出典一覧', 'sources'], ['免責事項', 'riyou-6']];
 $('#kj-quick').replaceChildren(h('span', { class: 'kj-search-hint', style: 'width:100%' }, 'よく見られる項目'), ...QUICK.map(([t, id]) => h('a', { href: `#${id}`, class: 'kj-mini', 'data-nav': '' }, t)));
 
 /* ===== 操作の受け付け ===== */
+$$('#sanpun-pick button').forEach((b) => b.addEventListener('click', () => setSanpun(b.dataset.s3)));
 $$('#compare-mode button').forEach((b) => b.addEventListener('click', () => { compareMode = b.dataset.mode; renderCompare(); redrawIn($('#compare')); }));
 $$('#compare-shape button').forEach((b) => b.addEventListener('click', () => { compareShape = b.dataset.shape; renderCompare(); redrawIn($('#compare')); }));
 $$('#kouhi-mode button').forEach((b) => b.addEventListener('click', () => { kouhiMode = b.dataset.mode; renderKouhiMap(); }));
