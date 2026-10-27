@@ -4900,10 +4900,12 @@ const setStep = (n, lead, fig, desc, note) => { $(`#step${n}-lead`).replaceChild
 const rx = (a, b) => { const r = a / b; return r >= 10 ? Math.round(r) : Math.round(r * 10) / 10; };
 // 金額は「万円」で（ちょうどでない額は「約」をつける）
 const manYen = (n) => (n === 0 ? '0円' : n % 10000 === 0 ? `${fmt(n / 10000)}万円` : `約${fmt(Math.round(n / 10000))}万円`);
-// STEP 1：同じ病気・同じものさし・同じ年で、日本と海外（入国前に結核の検査を求める国）を比べる
+// STEP 1：同じ病気・同じものさし・同じ年で、日本と海外（入国前の結核検査 JPETS の対象国。実施中・予定・調整中を含む）を比べる
 function renderStep1() {
   const m = CM.tb.m[0];
-  const js = E.data.filter((x) => x.区分 === 'JPETSの国').map((x) => C.data.find((r) => r.ISO3 === x.ISO3)).filter((r) => r && typeof cval(r, m) === 'number');
+  const jr = E.data.filter((x) => x.区分 === 'JPETSの国');
+  const nOn = jr.filter((x) => x.状態 === '実施中').length;
+  const js = jr.map((x) => C.data.find((r) => r.ISO3 === x.ISO3)).filter((r) => r && typeof cval(r, m) === 'number');
   const jp = C.data.find((r) => r.ISO3 === 'JPN');
   if (!js.length || !jp) { setStep(1, '', noData('国別の数字を読み込めませんでした。'), '', ''); return; }
   const rows = [...js].sort((a, b) => cval(b, m) - cval(a, m)).concat([jp]);
@@ -4913,8 +4915,8 @@ function renderStep1() {
   const box = h('div', { class: 'kj-plot' });
   chart(box, () => drawCountryBars(box, rows, 'tb', m, { noClick: true }));
   setStep(1, '日本では少なくなった結核も、海外ではまだ多い', box,
-    `結核の新しい患者の割合は、入国前に結核の検査を求める${js.length}か国で、日本の約${rx(lo, jv)}〜${rx(hi, jv)}倍です。`,
-    `WHOの推計（${yt}・人口10万人あたり1年間の新しい患者数）。国全体の数字で、日本へ入国する人の数字ではありません。${srcPlain(`${CM.tb.src}・制度-8`)}`);
+    `結核の新しい患者の割合は、入国前の結核検査（JPETS）の対象の${js.length}か国で、日本の約${rx(lo, jv)}〜${rx(hi, jv)}倍です${nOn < jr.length ? `（実施中は、このうち${nOn}か国）` : ''}。`,
+    `WHOの推計（${yt}・人口10万人あたり1年間の新しい患者数）。国全体の数字で、日本へ入国する人の数字ではありません。JPETSの状況：${jpetsListText()}。${srcPlain(`${CM.tb.src}・制度-8`)}`);
 }
 // STEP 2：海外から入国 → 国籍・在留資格・目的などで違う健康確認 → 日本での生活（制度名・国の数・詳しい条件は「入国時の検査」のページ）
 function renderStep2() {
