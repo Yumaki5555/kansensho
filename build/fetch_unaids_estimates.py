@@ -82,14 +82,15 @@ TC = {k: t_col(t) for k, t in {
     "vls": "Percentage of people living with HIV with suppressed viral load",
 }.items()}
 
-out_rows = []
+out_rows, regions = [], {}
 for code in sorted({c for (y, c) in E if y == YEAR}):
-    if not re.fullmatch(r"[A-Z]{3}", code):
-        continue  # 世界・地域（03M49WLD・UNAAP など）は入れない
     e, t = E[(YEAR, code)], T.get((YEAR, code)) or [None] * len(rows_t[5])
     row = {"iso3": code, "en": e[2], **{k: val(e[j]) for k, j in EC.items()}}
     row["plhiv_low"], row["plhiv_high"] = val(e[EC["plhiv"] + 1]), val(e[EC["plhiv"] + 2])
     row.update({k: val(t[j]) for k, j in TC.items()})
+    if not re.fullmatch(r"[A-Z]{3}", code):
+        regions[code] = row  # 世界・地域（03M49WLD・UNAAP など）は、ファクトシートの値を確かめるためだけに使う
+        continue
     if all(row[k] is None for k in [*EC, *TC]):
         continue
     out_rows.append(row)
@@ -98,6 +99,7 @@ out = {
     "checked": CHECKED,
     "data_year": YEAR,
     "rows": out_rows,
+    "regions": regions,
     "source": {"id": "S15", "title": f"HIV estimates with uncertainty bounds 1990-{YEAR}（全部の国の{YEAR}年の推計）", "publisher": "国連合同エイズ計画（UNAIDS）",
                "url": PAGE, "published": "2026-07-27（2026年版の推計）", "accessed": CHECKED, "data": XLSX},
 }

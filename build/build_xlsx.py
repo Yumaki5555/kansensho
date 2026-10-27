@@ -219,7 +219,8 @@ wcols = ["区分", "協力覚書", "感染している人", "感染している�
          "新たな感染の増減（2010年比・%）", "エイズによる死亡", "死亡の増減（2010年比・%）", "感染を知っている人（%）",
          "治療を受けている人（%）", "ウイルスが抑えられている人（%）"]
 by_plhiv = lambda ws_: sorted(ws_, key=lambda w: -(w["感染している人"] if isinstance(w["感染している人"], (int, float)) else -1))  # noqa: E731
-for part, rows_w in [(f"世界と地域（{world[0]['年']}年）", [w for w in world if w["区分"] != "国"]),
+for part, rows_w in [(f"世界と地域（{world[0]['年']}年、地域は感染している人の多い順）",
+                      [w for w in world if w["区分"] == "世界"] + by_plhiv([w for w in world if w["区分"] == "地域"])),
                      (f"日本と協力覚書を結んだ国（{world[0]['年']}年、感染している人の多い順）",
                       by_plhiv([w for w in world if w["区分"] == "国" and w["協力覚書"]])),
                      (f"そのほかの国（UNAIDSの推計がある国、{world[0]['年']}年、感染している人の多い順）",

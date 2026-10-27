@@ -191,13 +191,16 @@ ja_of = {r["iso3"]: r["name"] for r in json.load(open(os.path.join(src_dir, "wor
 iso_of = {v: k for k, v in ja_of.items()}
 by_iso = {r["iso3"]: r for r in wa["rows"]}
 assert wa["data_year"] == wd["data_year"]
+# 世界・地域の名前と、UNAIDSの表計算ファイルのコード
+REGION_CODE = {"世界": "03M49WLD", "アジア太平洋": "UNAAP", "東欧・中央アジア": "UNAEECA", "東部・南部アフリカ": "UNAESA", "西部・中部アフリカ": "UNAWCA",
+               "中南米": "UNALA", "カリブ": "UNACAR", "中東・北アフリカ": "UNAMENA", "西欧・中欧・北米": "UNAWCENA"}
 for w in world:
     if w["区分"] == "国":
         w["ISO3"] = iso_of[w["名前"]]
-        # ファクトシートで読み取った値が、全部の国のファイルの値と同じかを確かめる
-        a = by_iso[w["ISO3"]]
-        diff = [(label, w[label], a[k]) for k, label in WCOLS if k in a and a[k] != w[label]]
-        assert not diff, (w["名前"], diff)
+    # ファクトシートで読み取った値が、全部の国のファイルの値と同じかを確かめる
+    a = by_iso[w["ISO3"]] if w["区分"] == "国" else wa["regions"][REGION_CODE[w["名前"]]]
+    diff = [(label, w[label], a[k]) for k, label in WCOLS if k in a and a[k] != w[label]]
+    assert not diff, (w["名前"], diff)
 have = {w["ISO3"] for w in world if w["区分"] == "国"}
 for a in wa["rows"]:
     if a["iso3"] not in have:

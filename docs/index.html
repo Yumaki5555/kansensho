@@ -62,7 +62,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
 @media (max-width: 560px) { .site-bar-in { padding-block: 2px; gap: 0 12px; font-size: 0.8125rem; } .site-bar a { min-height: 34px; } .site-home span { display: none; } }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-<script src="data.js?v=8f31f075"></script>
+<script src="data.js?v=a31085f3"></script>
 <script>window.KJ_SITE = { name: "世界の感染症と日本の水際対策", url: "https://yumaki5555.github.io/kansensho/", asOf: "2026年10月27日時点", xlsx: "kansensho_2026-10.xlsx" };</script>
 <script>
 // ページ本体（claude.ai 版と共通）にデータを渡す小さな仕組み
@@ -1544,7 +1544,7 @@ a:focus-visible { outline: 3px solid var(--color-fg); outline-offset: 2px; }
     <div class="kj-tabpanel" role="tabpanel" id="world-regions" aria-labelledby="wt-regions" tabindex="-1" hidden>
       <div class="kj-card">
         <h3>地域で比べる</h3>
-        <p class="kj-cap">協力覚書の国の多くはアジア太平洋、ウズベキスタン・キルギス・タジキスタンは東欧・中央アジアの地域に入ります。いちばん下の行は参考の世界全体です。</p>
+        <p class="kj-cap">UNAIDSが世界を分けた8つの地域を、感染している人の多い順に並べています。協力覚書の国の多くはアジア太平洋、ウズベキスタン・キルギス・タジキスタンは東欧・中央アジアの地域に入ります。いちばん下の行は参考の世界全体です。</p>
         <div class="kj-scroll"><table class="kj-table" id="world-region-table"></table></div>
         <div id="world-region-src"></div>
       </div>
@@ -3985,7 +3985,7 @@ function calcOpts() {
 const man = (n) => (n >= 10000 ? `${fmt(Math.round(n / 1000) / 10)}万` : fmt(n));
 const showW = (v, kind) => {
   if (v === null || v === undefined || v === '') return '—';
-  if (typeof v === 'string') return v;
+  if (typeof v === 'string') return kind === 'p' && /^[<>][\d.]+$/.test(v) ? `${v}%` : v;  // 「<0.1」「>98」の割合にも % を付ける
   if (kind === 'man') return man(v);
   if (kind === 'pct') return pct(v).replace('.0%', '%');
   if (kind === 'p') return `${v}%`;
@@ -4020,7 +4020,7 @@ function renderWorld() {
     tile('治療（抗HIV薬）を受けている人', String(world['治療を受けている人（%）']), '%', [`感染を知っている人 ${world['感染を知っている人（%）']}%、ウイルスが抑えられている人 ${world['ウイルスが抑えられている人（%）']}%（どれも、HIVとともに生きる人全体のうちの割合）`]));
   $('#world-global-src').replaceChildren(srcLine([world.出典ID], [['対象', `${world.年}年の推計`], ['区分', '推計値（UNAIDS）']]));
   // 地域
-  const regions = W.data.filter((r) => r.区分 === '地域').concat([world]);
+  const regions = W.data.filter((r) => r.区分 === '地域').sort((a, b) => sortVal(b.感染している人) - sortVal(a.感染している人)).concat([world]);
   const rt = $('#world-region-table');
   rt.replaceChildren();
   const rh = rt.createTHead().insertRow();
